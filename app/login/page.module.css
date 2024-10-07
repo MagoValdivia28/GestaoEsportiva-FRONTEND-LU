@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
 .divpai {
   display: flex;
   align-items: center;
@@ -5,12 +7,10 @@
   height: 100vh;
   background-color: #f0f0f0;
 }
-.img {
-  background-image: url('../assets/imagens/aapm.png');
-  width: 10%;
-  height: 20%;
-  background-size: cover;
-  
+#logo {
+  position: absolute;
+  top: 0;
+  right: 0;
 } 
 
 .form {
@@ -28,6 +28,8 @@
 .formdiv1 label {
   margin-bottom: 0.5%;
   font-weight: bold;
+  font-family: 'Questrial', sans-serif;
+  font-weight: normal;
 }
 
 .formdiv1 {
@@ -62,6 +64,9 @@
 .formdiv2 label {
   margin-bottom: 0.5%;
   font-weight: bold;
+  font-family: 'Questrial', sans-serif;
+  font-weight: normal;
+
 }
 
 .formdiv2 input {
@@ -92,5 +97,8 @@
 #h1 {
   color: #C72828;
   text-align: center;
+  font-weight: normal;
   margin-bottom: 15%;
+  font-family: 'Questrial', sans-serif;
 }
+
