@@ -1,11 +1,17 @@
 .divpai {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   background-color: #f0f0f0;
 }
+.img {
+  background-image: url('../assets/imagens/aapm.png');
+  width: 10%;
+  height: 20%;
+  background-size: cover;
+  
+} 
 
 .form {
   display: flex;
@@ -88,8 +94,3 @@
   text-align: center;
   margin-bottom: 15%;
 }
-.img {
-  background-image: url('../assets/imagens/aapm.png');
-  width: 5%;
-  height: 9%;
-} 
