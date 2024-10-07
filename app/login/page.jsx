@@ -1,12 +1,17 @@
 import React from 'react';
 import styles from './page.module.css';
+import Image from 'next/image';
 
 const Login = () => {
   return (
     <div className={styles.divpai}>
+      <div className={styles.img}/>
+        
+ 
+
 
       <form className={styles.form}>
-        <h1 id={styles.h1}>Log In</h1>
+        <h1 id={styles.h1}>Login</h1>
         <div className={styles.formdiv1}>
           <label htmlFor="email">Email</label>
           <input type="email" id="email" name="email" required />
@@ -17,8 +22,6 @@ const Login = () => {
         </div>
         <button type="submit" className={styles.submitButton}>Entrar</button>
       </form>
-
-
     </div>
   );
 };
