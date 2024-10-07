@@ -1,13 +1,15 @@
-"use client"
-import { useEffect, useState } from "react"
-import styles from "./page.module.css"
+import React from 'react';
+import styles from './page.module.css';
 
-export default function LogIn() {
+
+const Login = () => {
   return (
-    <main className={styles.container}>
+    <div className={styles.divpai}>
+
       <h1>Log In</h1>
-    </main>
-  )
-}
 
+    </div>
+  );
+};
 
+export default Login; 
