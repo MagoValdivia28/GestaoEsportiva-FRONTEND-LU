@@ -45,7 +45,7 @@ const GdeEquipes = () => {
                     <List_times />
                 </div>
 
-
+                <button className={styles.button}>Adicionar Equipe</button>
 
             </div>
         </div>

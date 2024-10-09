@@ -11,6 +11,7 @@
   margin: 0 auto;
   margin-top: 5rem;
   flex-direction: column;
+  margin-bottom: 4rem;
 
 }
 
@@ -87,5 +88,21 @@
   margin-bottom: 0.5em;
   text-align: left;
   color: #767676;
+}
+
+.button {
+  display: flex;
+  width: 20%;
+  background-color: #af0000;
+  color: white;
+  padding: 1rem;
+  justify-content: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+  margin: auto;
 }
 
