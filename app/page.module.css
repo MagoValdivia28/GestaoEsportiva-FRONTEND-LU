@@ -30,7 +30,8 @@
     width: 0%;
     height: 20%;
     margin-right: 0;
-}.profileButton {
+}
+.profileButton {
     background-color: transparent;
     color: white;
     border: 2px solid white;
