@@ -1,0 +1,48 @@
+.divpai {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+#logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+} 
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3%;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profileButton {
+  background-color: transparent;
+  color: black;
+  border: 2px solid;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+}
+
+.profileButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
