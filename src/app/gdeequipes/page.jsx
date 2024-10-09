@@ -1,11 +1,11 @@
 "use client";
 
 import styles from './page.module.css';
-import logo from "../assets/imagens/logo.jpg";
+import logo from "../assets/imagens/logo.png";
 import Image from 'next/image';
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from 'react';
-import List_times from '../../components/list_times/list_times';
+import List_times from '../components/list_times/list_times';
 
 
 const GdeEquipes = () => {

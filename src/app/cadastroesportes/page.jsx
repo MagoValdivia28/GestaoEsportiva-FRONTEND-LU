@@ -1,7 +1,7 @@
 'use client';
 import styles from './page.module.css';
 import Image from 'next/image';
-import logo from "../../../assets/imagens/logo.jpg";
+import logo from "../../../assets/imagens/logo.png";
 import { FaUser } from 'react-icons/fa';
 import { MdOutlineUploadFile } from "react-icons/md";
 
