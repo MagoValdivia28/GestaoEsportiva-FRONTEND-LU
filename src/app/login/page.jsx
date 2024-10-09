@@ -1,7 +1,7 @@
 import styles from './page.module.css';
 import logo from "../../../assets/imagens/logo.jpg";
 import Image from 'next/image';
-import Teste from '@/src/components/teste';
+import Teste from '@/src/app/components/teste';
 import axios from 'axios';
 
 const Login = () => {
