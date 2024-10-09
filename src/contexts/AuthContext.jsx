@@ -8,6 +8,7 @@ export const AuthProvider = ({ children }) => {
     const api = process.env.EXPO_PUBLIC_API_URL;
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(false);
+        
 
     const signIn = async (nameParams, passwordParams) => {
         setLoading(true);
@@ -21,7 +22,6 @@ export const AuthProvider = ({ children }) => {
             // setUser(userWithoutPassword); 
         } catch (error) {
             console.log(error);
-            
         } finally {
             setLoading(false);
         }
