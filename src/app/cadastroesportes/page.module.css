@@ -3,13 +3,12 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f0f0f0;
 }
 
 #logo {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 1rem;
+  left: 1rem;
 }
 
 .form {
@@ -74,7 +73,6 @@
 }
 
 .h1 {
-  font-family: 'Questrial', sans-serif;
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 2rem;
