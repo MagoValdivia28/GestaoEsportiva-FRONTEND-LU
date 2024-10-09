@@ -1,7 +1,7 @@
 "use client";
 
 import styles from './page.module.css';
-import logo from "../assets/imagens/logo.png";
+// import logo from "../assets/imagens/logo.png";
 import Image from 'next/image';
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from 'react';
