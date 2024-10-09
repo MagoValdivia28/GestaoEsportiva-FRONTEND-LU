@@ -1,5 +1,5 @@
 import styles from './page.module.css';
-import logo from "../assets/imagens/logo.jpg";
+import logo from "../../../assets/images/logo.jpg";
 import Image from 'next/image';
 
 const Login = () => {

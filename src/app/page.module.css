@@ -1,6 +1,6 @@
 .container{
 
-    background-image: url('./assets/imagens/homeTopo.jpg');
+    background-image: url('../../assets/images/homeTopo.jpg');
     background-size: cover;
     height: 90vh;
     background-repeat: no-repeat;
