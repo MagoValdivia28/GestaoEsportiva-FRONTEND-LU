@@ -14,6 +14,7 @@
     "@expo/vector-icons": "^14.0.4",
     "@mui/material": "^6.1.2",
     "@mui/styles": "^6.1.2",
+    "axios": "^1.7.7",
     "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18",
