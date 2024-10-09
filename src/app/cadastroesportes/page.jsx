@@ -1,8 +1,9 @@
 'use client';
 import styles from './page.module.css';
 import Image from 'next/image';
-import logo from "../assets/imagens/logo.jpg";
+import logo from "../../../assets/imagens/logo.jpg";
 import { FaUser } from 'react-icons/fa';
+import { MdOutlineUploadFile } from "react-icons/md";
 
 const CadastroEsportes = () => {
   const handleProfileClick = () => {
@@ -22,9 +23,13 @@ const CadastroEsportes = () => {
           <input type="text" id="nome" name="nome" required />
         </div>
         <div className={styles.formdiv2}>
-          <label htmlFor="descricao">Descrição</label>
+          <label htmlFor="descricao">Tipo</label>
           <input type="text" id="descricao" name="descricao" required />
         </div>
+
+        <MdOutlineUploadFile
+          size={90}
+        />
         <button type="submit" className={styles.submitButton}>Cadastrar</button>
       </form>
     </div>
