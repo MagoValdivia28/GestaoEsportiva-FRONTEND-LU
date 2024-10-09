@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import { FaUser } from 'react-icons/fa';
 import logo from './assets/imagens/logo.jpg';
 import styles from './page.module.css';
 
@@ -14,7 +15,7 @@ export default function Home() {
         <div className={styles.top}>
           <Image src={logo} alt="Logo" width={100} height={100} />
           <button className={styles.profileButton} onClick={handleProfileClick}>
-            Perfil
+            <FaUser size={20} />
           </button>
         </div>
         <div>
