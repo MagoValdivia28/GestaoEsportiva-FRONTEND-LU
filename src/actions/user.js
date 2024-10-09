@@ -9,12 +9,12 @@ export const signIn = async (nameParams, passwordParams) => {
             nome: nameParams,
             senha: passwordParams
         });
-        console.log(response);
+        return response.data;
     } catch (error) {
         if(error.response){
-            console.log(error.response.data);
+            return error.response.data.message;
         } else {
-            console.log(error);
+            return error;
         }
     }
 }

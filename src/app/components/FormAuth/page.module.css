@@ -1,0 +1,109 @@
+.divpai {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #FBFBFB;
+}
+#logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+} 
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3%;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 33px 32px 9px rgba(0,0,0,0.1);
+ 
+  
+}
+
+.formdiv1 label {
+  margin-bottom: 0.5%;
+  font-weight: bold;
+  font-family: 'Questrial', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.formdiv1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.formdiv1 input {
+  padding: 8px;
+  box-sizing: border-box;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-color: rgb(179, 179, 179);
+  border-width: 0.15rem;
+  outline: none;
+  width: 20rem;
+  font-family: 'Questrial', sans-serif;
+}
+
+.formdiv2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+
+.formdiv2 label {
+  margin-bottom: 0.5%;
+  font-weight: bold;
+  font-family: 'Questrial', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.formdiv2 input {
+  padding: 8px;
+  box-sizing: border-box;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-color: rgb(179, 179, 179);
+  border-width: 0.15rem;
+  outline: none;
+  width: 20rem;
+  font-family: 'Questrial', sans-serif;
+}
+.submitButton { 
+  width: 70%;
+  padding: 15px;
+  background-color: #C72828;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15%;
+  font-family: 'Questrial', sans-serif;
+  font-weight: bold ;
+  font-size: 18px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.submitButton:hover { 
+  background-color: #861515;
+}
+#h1 {
+  color: #C72828;
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 15%;
+  font-family: 'Questrial', sans-serif;
+  font-size: 42px;
+}

@@ -1,34 +1,29 @@
 "use client"
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { signIn } from '@/src/actions/user';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const api = process.env.EXPO_PUBLIC_API_URL;
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(false);
-        
+    const [acessToken, setAcessToken] = useState(null);
 
-    const signIn = async (nameParams, passwordParams) => {
+
+    const signInContext = async (nameParams, passwordParams) => {
         setLoading(true);
-        try {
-            const response = await axios.post(`${api}/users/login`, {
-                nome: nameParams,
-                senha: passwordParams
-            });
-            console.log(response.data);
-            // const { password, ...userWithoutPassword } = response.data;   
-            // setUser(userWithoutPassword); 
-        } catch (error) {
-            console.log(error);
-        } finally {
-            setLoading(false);
+        const response = await signIn(nameParams, passwordParams);
+        setLoading(false);
+        if (response) {
+            setUser(response.user);
+            setAcessToken(response.token);
         }
+        return response;
     };
 
     return (
-        <AuthContext.Provider value={{ signIn }}>
+        <AuthContext.Provider value={{ signInContext, loading, user, acessToken }}>
             {children}
         </AuthContext.Provider>
     );
