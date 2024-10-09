@@ -18,9 +18,9 @@ export default function Home() {
             <FaUser size={20} />
           </button>
         </div>
-        <div>
-          <h1>Seja bem-vindo!</h1>
-          <h2>Entre com sua conta</h2>
+        <div className={styles.text}>
+          <p className={styles.h1}>AAPM</p>
+          <p className={styles.h2}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id finibus ipsum. Phasellus dapibus sed massa et finibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id finibus ipsum. Phasellus dapibus sed massa et finibus. Sed bibendum turpis et lectus tempor pulvinar.. Sed bibendum turpis et lectus tempor pulvinar.</p>
         </div>
         <div>
           <button className={styles.button}>Conheça-nos</button>
