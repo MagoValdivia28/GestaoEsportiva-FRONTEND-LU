@@ -1,7 +1,7 @@
 "use client";
 
 import styles from './page.module.css';
-import logo from "../assets/imagens/logo.jpg";
+// import logo from "@/assets/imagens/";
 import Image from 'next/image';
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from 'react';
@@ -12,7 +12,7 @@ const GdeEquipes = () => {
 
     return (
         <div className={styles.main_div}>
-            <Image src={logo} id={styles.logo} width={130} height={130} />
+            {/* <Image src={logo} id={styles.logo} width={130} height={130} /> */}
             <div className={styles.container_times}>
                 <div className={styles.title_container}>
                     <h1 className={styles.title}>Gerenciamento de equipes</h1>
