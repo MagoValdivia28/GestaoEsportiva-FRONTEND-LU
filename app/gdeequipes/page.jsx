@@ -5,6 +5,8 @@ import logo from "../assets/imagens/logo.jpg";
 import Image from 'next/image';
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from 'react';
+import List_times from '../components/list_times/list_times';
+
 
 const GdeEquipes = () => {
 
@@ -30,23 +32,7 @@ const GdeEquipes = () => {
 
                 <div className={styles.times}>
                     <h2>Equipes Aprovadas</h2>
-                    <ul className={styles.listUl}>
-
-                        <li className={styles.cards_time}>
-
-                            <div className={styles.card_top}>
-                                {/* <p className={styles.exit_button}>X</p> */}
-                                <div className={styles.gray_circule}></div>
-                            </div>
-
-                            <div className={styles.info_card}>
-                                <h3>Equipe 03</h3>
-                                <h4>Membros:</h4>
-                                <p>Sla</p>
-                            </div>
-                        </li>
-
-                    </ul>
+                    <List_times />
                 </div>
 
             </div>
