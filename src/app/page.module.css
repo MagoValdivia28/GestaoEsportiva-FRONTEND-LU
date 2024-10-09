@@ -1,5 +1,5 @@
 .container {
-    background-image: url('./assets/imagens/hometopo.png');
+    background-image: url('../../assets/imagens/hometopo.png');
     background-size: cover;
     height: 100vh;
     background-repeat: no-repeat;

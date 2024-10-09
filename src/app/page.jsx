@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';
-import logo from './assets/imagens/logo.jpg';
+import logo from '../../assets/imagens/logo.jpg';
 import styles from './page.module.css';
 
 export default function Home() {
