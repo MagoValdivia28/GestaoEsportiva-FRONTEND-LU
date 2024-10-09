@@ -31,9 +31,21 @@ const GdeEquipes = () => {
 
 
                 <div className={styles.times}>
-                    <h2>Equipes Aprovadas</h2>
+                    <h2 className={styles.title}>Equipes Aprovadas</h2>
                     <List_times />
                 </div>
+
+                <div className={styles.times}>
+                    <h2 className={styles.title}>Equipes Pendentes</h2>
+                    <List_times />
+                </div>
+
+                <div className={styles.times}>
+                    <h2 className={styles.title}>Equipes Rejeitadas</h2>
+                    <List_times />
+                </div>
+
+
 
             </div>
         </div>

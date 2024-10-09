@@ -22,7 +22,7 @@
 }
 
 .title {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5em;
   text-align: left;
@@ -76,14 +76,16 @@
   margin-bottom: 1em;
 }
 
-
-
-
-
-
-
-
 .times {
-  background-color: aqua;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.times h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  text-align: left;
+  color: #767676;
 }
 
