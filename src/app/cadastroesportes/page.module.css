@@ -16,7 +16,6 @@
   flex-direction: column;
   align-items: center;
   padding: 3%;
-  background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -44,7 +43,6 @@
 .formdiv2 {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
   margin-top: 2rem;
 }
@@ -56,6 +54,8 @@
   font-family: 'Questrial', sans-serif;
   font-weight: normal;
   font-size: 18px;
+  color: rgb(122, 120, 120);
+
 }
 
 .formdiv2 input {
@@ -67,22 +67,15 @@
   border-color: rgb(179, 179, 179);
   border-width: 0.15rem;
   outline: none;
-  width: 20rem;
+  width: 50rem;
   font-family: 'Questrial', sans-serif;
   margin-bottom: 5rem;
-}
-
-.h1 {
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 2rem;
 
 }
 
 .formdiv1 {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
   margin-top: 2rem;
 }
@@ -94,6 +87,7 @@
   font-family: 'Questrial', sans-serif;
   font-weight: normal;
   font-size: 18px;
+  color: rgb(122, 120, 120);
 }
 
 .formdiv1 input {
@@ -105,7 +99,7 @@
   border-color: rgb(179, 179, 179);
   border-width: 0.15rem;
   outline: none;
-  width: 20rem;
+  width: 50rem;
   font-family: 'Questrial', sans-serif;
 }
 
@@ -133,4 +127,26 @@
 .submitButton:hover {
   background-color: #861515;
 
+}
+
+.txt {
+  font-family: 'Questrial', sans-serif;
+  color: rgb(122, 120, 120);
+  font-size: 18px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.txt1 {
+  font-family: 'Questrial', sans-serif;
+  color: rgb(122, 120, 120);
+  font-size: 22px;
+  margin-top: 2rem;
+  margin-right: 25rem;
+}
+
+.backButton {
+  border: none;
+  text-decoration: none;
+  color: #000;
 }
