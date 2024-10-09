@@ -29,13 +29,13 @@ const GdeEquipes = () => {
 
 
                 <div className={styles.times}>
+                    <h2>Equipes Aprovadas</h2>
                     <ul className={styles.listUl}>
-                        <h2>Equipes Aprovadas</h2>
-
 
                         <li className={styles.cards_time}>
 
                             <div className={styles.card_top}>
+                                {/* <p className={styles.exit_button}>X</p> */}
                                 <div className={styles.gray_circule}></div>
                             </div>
 
@@ -46,7 +46,6 @@ const GdeEquipes = () => {
                             </div>
                         </li>
 
-                        
                     </ul>
                 </div>
 

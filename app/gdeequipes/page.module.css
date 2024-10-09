@@ -87,9 +87,14 @@
   background-color: aqua;
 }
 
+.listUl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 
 .cards_time {
-  /* background-color: purple; */
   width: 20rem;
   height: 25rem;
   display: flex;
@@ -109,6 +114,16 @@
   align-items: flex-end;
 }
 
+/* .exit_button {
+  color: white;
+  position: relative;
+  top: -5rem;
+  right: -11rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+} */
+
 .gray_circule {
   width: 6rem;
   height: 6rem;
@@ -117,7 +132,6 @@
   display: flex;
   position: relative;
   top : 3rem;
-
 }
 
 .info_card {
