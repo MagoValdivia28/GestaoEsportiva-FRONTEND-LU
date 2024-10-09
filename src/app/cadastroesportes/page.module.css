@@ -73,6 +73,14 @@
   margin-bottom: 5rem;
 }
 
+.h1 {
+  font-family: 'Questrial', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+
+}
+
 .formdiv1 {
   display: flex;
   flex-direction: column;
