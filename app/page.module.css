@@ -31,3 +31,16 @@
     height: 20%;
     margin-right: 0;
 }
+.profileButton {
+    background-color: #FFD700;
+    color: #000000;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
