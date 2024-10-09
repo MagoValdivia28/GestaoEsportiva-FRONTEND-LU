@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Login = () => {
   return (
     <div className={styles.divpai}>
-      <Image src={logo} id={styles.logo} width={100} height={100} />
+      <Image src={logo} id={styles.logo} width={130} height={130} />
       <form className={styles.form}>
         <h1 id={styles.h1}>Login</h1>
         <div className={styles.formdiv1}>
