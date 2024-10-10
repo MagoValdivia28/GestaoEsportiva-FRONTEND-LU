@@ -11,7 +11,7 @@ import List_times from '../components/list_times/list_times';
 const GdeEquipes = () => {
 
     return (
-        <div className={styles.main_div}>
+        <main className={styles.main_div}>
             {/* <Image src={logo} id={styles.logo} width={130} height={130} /> */}
             <div className={styles.container_times}>
                 <div className={styles.title_container}>
@@ -48,7 +48,7 @@ const GdeEquipes = () => {
                 <button className={styles.button}>Adicionar Equipe</button>
 
             </div>
-        </div>
+        </main>
     );
 }
 
