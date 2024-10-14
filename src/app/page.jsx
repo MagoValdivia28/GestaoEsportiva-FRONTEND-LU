@@ -1,29 +1,53 @@
 'use client';
 import Image from 'next/image';
-import { FaUser } from 'react-icons/fa';
+import { FaUser, FaUsers, FaTrophy, FaComments } from 'react-icons/fa';
 import logo from '../../assets/imagens/logo.png';
 import styles from './page.module.css';
 
 export default function Home() {
   const handleProfileClick = () => {
-    alert('Perfil button clicked!');
+    alert('Perfil de safado clicked!');
+  };
+  const handleconhecanosClick = () => {
+    alert('conheca-nos filho da puta clicked!');
   };
 
   return (
     <main className={styles.container}>
       <div className={styles.opacity}>
         <div className={styles.top}>
-          <Image src={logo} alt="Logo" width={100} height={100} />
+          <Image src={logo} alt="Logo" width={100} height={100} className={styles.logo}
+          />
           <button className={styles.profileButton} onClick={handleProfileClick}>
-            <FaUser size={20} />
+            <FaUser size={20} className={styles.pb2} />
           </button>
         </div>
         <div className={styles.text}>
           <p className={styles.h1}>AAPM</p>
-          <p className={styles.h2}>Lorem ipsum doloit amet, consectetur adipiscing elit. Duis id finibus ipsum. Phasellus dapibus sed massa et finibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id finibus ipsum. Phasellus dapibus sed massa et finibus. Sed bibendum turpis et lectus tempor pulvinar.. Sed bibendum turpis et lectus tempor pulvinar.</p>
+          <p className={styles.h2}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id finibus ipsum.
+            Phasellus dapibus sed massa et finibus. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Duis id finibus ipsum. Phasellus dapibus sed massa et finibus.
+            Sed bibendum turpis et lectus tempor pulvinar. Sed bibendum turpis et lectus tempor pulvinar.
+          </p>
         </div>
-        <div>
-          <button className={styles.button}>Conheça-nos</button>
+        <div className={styles.divbutton}>
+          <button className={styles.button} onClick={handleconhecanosClick} >Conheça-nos</button>
+        </div>
+      </div>
+
+      <div className={styles.container2}>
+        <div className={styles.cards}>
+          <FaUsers size={30} />
+          <p>Gerenciamento de Equipe</p>
+        </div>
+        <div className={styles.cards}>
+          <FaTrophy size={30} />
+          <p>Gerenciamento de Atividades Esportivas</p>
+        </div>
+        <div className={styles.cards}>
+          <FaComments size={30} /> 
+          <p>Gerenciamento de Comentários</p>
         </div>
       </div>
     </main>
