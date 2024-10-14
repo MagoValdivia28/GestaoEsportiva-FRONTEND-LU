@@ -12,9 +12,7 @@ export default function Home() {
   const handleConhecaNosClick = () => {
     alert('Conheça-nos filho da puta clicked!');
   };
-  
-  // Funções para os cards
-  const handleGerenciamentoEquipeClick = () => {
+    const handleGerenciamentoEquipeClick = () => {
     alert('Gerenciamento de Equipe clicked!');
   };
   
