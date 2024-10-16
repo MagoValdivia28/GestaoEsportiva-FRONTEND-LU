@@ -1,14 +1,14 @@
 .container {
     background-image: url('../../assets/imagens/hometopo.png');
     background-size: cover;
-    height: 85vh; /* Define a altura do contêiner */
+    height: 85vh; 
     background-repeat: no-repeat;
     background-position: bottom;
     border-bottom-right-radius: 90px;
     border-bottom-left-radius: 90px;
     color: white;
     padding-top: 2%;
-    position: relative; /* Adiciona posição relativa para o backdrop funcionar corretamente */
+    position: relative; 
 }
 
 .opacity {
@@ -20,9 +20,9 @@
     border-bottom-right-radius: 90px;
     border-bottom-left-radius: 90px;
     padding-top: 2%;
-    height: 100%; /* Define a altura do elemento para preencher o contêiner */
-    backdrop-filter: blur(3px); /* Aplica o efeito de desfoque */
-    background-color: rgba(0, 0, 0, 0); /* Fundo semi-transparente */
+    height: 100%; 
+    backdrop-filter: blur(3px); 
+    background-color: rgba(0, 0, 0, 0); 
 }
 
 .top {
@@ -30,7 +30,7 @@
     justify-content: space-between;
     width: 90%;
     margin-top: -3%;
-    background-color: transparent; /* Manter fundo transparente */
+    background-color: transparent;
 }
 
 .img {
@@ -109,7 +109,6 @@
     border: 2px solid white;
     border-radius: 25px;
     padding: 10px 20px;
-    
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s, transform 0.3s;
@@ -176,10 +175,10 @@
     height: 10vh;
     color: rgb(155, 5, 5);
     background-color: transparent;
-
 }
+
 .p2{
     padding-top: 25%;
     background-color: transparent;
-
 }
+
