@@ -12,11 +12,18 @@ const FormAuth = ({ setError }) => {
   const { signInContext, user, acessToken } = useContext(AuthContext);
 
   const handleSubmit = async () => {
-    const response = await signInContext(name, password);
-    setError(response);
-    setTimeout(() => {
-      setError(null);
-    }, 3000);
+    if (!name || !password) {
+      setError('Preencha todos os campos');
+      setTimeout(() => {
+        setError(null);
+      }, 3000);
+    } else {
+      const response = await signInContext(name, password);
+      setError(response);
+      setTimeout(() => {
+        setError(null);
+      }, 3000);
+    }
   };
 
   return (
