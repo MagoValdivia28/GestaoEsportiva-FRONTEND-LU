@@ -16,8 +16,7 @@ const Gereciamento = () => {
         <Image src={logo} id={styles.logo} width={130} height={130} />
         <h1 className={styles.titulo}>Gerenciamento de Esportes</h1>
         <div className={styles.divfilho}>
-          <button className={styles.botao} onClick={() => router.push('/esportes/cadastro')}>Cadastrar Esporte</button>
-          <button className={styles.botao} onClick={() => router.push('/esportes/listagem')}>Listar Esportes</button>
+
         </div>
         </div>
     );
