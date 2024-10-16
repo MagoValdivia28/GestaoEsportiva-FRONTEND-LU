@@ -171,7 +171,11 @@
     width: 100%;
     height: 10vh;
     color: rgb(155, 5, 5);
+    background-color: transparent;
+
 }
 .p2{
     padding-top: 25%;
+    background-color: transparent;
+
 }
