@@ -8,18 +8,18 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 const Gereciamento = () => {
-    const router = useRouter();
-    const { user } = useContext(AuthContext);
+  const router = useRouter();
+  const { user } = useContext(AuthContext);
 
-    return (
-      <div className={styles.divpai}>
-        <Image src={logo} id={styles.logo} width={130} height={130} />
-        <h1 className={styles.titulo}>Gerenciamento de Esportes</h1>
-        <div className={styles.divfilho}>
+  return (
+    <div className={styles.divpai}>
+      <Image src={logo} id={styles.logo} width={130} height={130} />
+      <h1 className={styles.titulo}>Gerenciamento de Esportes</h1>
+      <div className={styles.divfilho}>
 
-        </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default Gereciamento;
