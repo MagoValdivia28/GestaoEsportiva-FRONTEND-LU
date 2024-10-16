@@ -7,6 +7,7 @@
     border-bottom-right-radius: 90px;
     border-bottom-left-radius: 90px;
     color: white;
+    padding-top: 2%;
     position: relative; /* Adiciona posição relativa para o backdrop funcionar corretamente */
 }
 
@@ -53,6 +54,7 @@
     width: 40px;
     height: 40px;
     margin-right: 10px;
+    margin-top: 3%;
 }
 
 .pb2 {
@@ -98,6 +100,7 @@
     display: flex;
     justify-content: center;
     background-color: transparent;
+    padding-bottom: 2%;
 }
 
 .button {
@@ -106,6 +109,7 @@
     border: 2px solid white;
     border-radius: 25px;
     padding: 10px 20px;
+    
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s, transform 0.3s;
