@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation';
 import { FaUser, FaUsers, FaTrophy, FaComments } from 'react-icons/fa';
 import logo from '../../assets/imagens/logo.png';
 import styles from './page.module.css';
-import GdeEquipes from './gdeequipes/page';
 
 export default function Home() {
   const router = useRouter();
