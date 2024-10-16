@@ -10,18 +10,32 @@
 
 .popup_inner {
   position: absolute;
-  left: 25%;
-  right: 25%;
-  top: 25%;
-  bottom: 25%;
-  margin: auto;
-  background-color: #221c1c;
+  top: 10px;
+  right: 20px;
+  /* transform: translate(-50%, -50%); */
+  
+  background-color: #ef6a68;
   border-radius: 10px;
-  padding: 20px;
+  padding: 17px;
   z-index: 20;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  animation: shake 0.5s;
+}
+
+.icon {
+  background-color: transparent;
 }
 
 .h2 {
-  color: #fff;
   text-align: center;
+  background-color: transparent;
+  color: #fff;
+  font-size: 19px;
+}
+
+@keyframes shake {
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(0); }
 }
