@@ -6,7 +6,7 @@ import { Gerenciamento } from '@/src/app/components/Gerenciamentoesportes';
 const Gestaoesportes = () => {
 
   return (
-    <div className={styles.divpai}>
+    <div className={styles.main_div}>
       <Image src={logo} id={styles.logo} width={130} height={130} />
   
     </div>
