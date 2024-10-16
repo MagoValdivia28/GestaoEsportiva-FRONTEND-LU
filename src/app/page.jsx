@@ -1,10 +1,14 @@
 'use client';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { FaUser, FaUsers, FaTrophy, FaComments } from 'react-icons/fa';
 import logo from '../../assets/imagens/logo.png';
 import styles from './page.module.css';
+import GdeEquipes from './gdeequipes/page';
 
 export default function Home() {
+  const router = useRouter();
+
   const handleProfileClick = () => {
     alert('Perfil de safado clicked!');
   };
@@ -12,10 +16,7 @@ export default function Home() {
   const handleConhecaNosClick = () => {
     alert('Conheça-nos filho da puta clicked!');
   };
-    const handleGerenciamentoEquipeClick = () => {
-    alert('Gerenciamento de Equipe clicked!');
-  };
-  
+
   const handleGerenciamentoAtividadesClick = () => {
     alert('Gerenciamento de Atividades Esportivas clicked!');
   };
@@ -48,7 +49,7 @@ export default function Home() {
       </div>
   
       <div className={styles.container2}>
-        <div className={styles.cards} onClick={handleGerenciamentoEquipeClick}>
+        <div className={styles.cards} onClick={() => router.replace('/gdeequipes')}>
           <FaUsers size={30} className={styles.iconC2} />
           <p className={styles.p2}>Gerenciamento de Equipe</p>
         </div>
@@ -62,6 +63,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-  
   );
 }
