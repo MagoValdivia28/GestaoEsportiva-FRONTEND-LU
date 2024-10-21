@@ -28,30 +28,28 @@ export default function Home() {
     <div className={styles.homeContainer}>
     {/* Seção de Introdução */}
     <section className={styles.heroSection}>
-      <div>
-        <div className='img1'/>
-        <div className='img1'/>
-      </div>
-      <div className={styles.heroOverlay}>
+      <div className={styles.blur}>
+      
+        <div className={styles.heroOverlay}>
         <div className={styles.heroContent}>
-          <h1>AAPM</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id finibus ipsum.</p>
-          <button className={styles.ctaButton}>Conheça-nos</button>
+        <div className={styles.logo}/>
+
+        <div  className={styles.heroTitle}>
+          <h1 style={{ fontSize: '50px' }}>AAPM</h1>
+          <p style={{ fontSize: '17px' }}> A AAPM (Associação de Alunos, Pais e Mestres) do SENAI promove a cooperação entre alunos, pais, professores e a comunidade para aprimorar a formação dos estudantes. Ela organiza eventos e projetos, arrecada recursos para melhorar a escola e apoia alunos em situação de vulnerabilidade, fortalecendo o vínculo entre a instituição e a comunidade e contribuindo para uma educação de qualidade.</p>
+          <button className={styles.button}>Conheça-nos</button>
         </div>
+        </div>
+      </div>
       </div>
     </section>
 
     {/* Boas-vindas e Gerenciar Campeonatos */}
     <section className={styles.welcomeSection}>
-      <h2>Seja <span className={styles.highlightText}>bem vindo(a)!</span></h2>
+      <h2><span>Seja</span> <span className={styles.highlightText}>bem vindo(a)!</span></h2>
       <div className={styles.championshipsManagement}>
         <div className={styles.championshipCard}>
-          <div
-            src="/trophy-image.jpg"
-            alt="Trophy"
-            layout="fill"
-            className={styles.trophyImage}
-          />
+          <div className={styles.trophyImage}/>
           <div className={styles.cardContent}>
             <h3>Gerenciar Campeonatos</h3>
           </div>

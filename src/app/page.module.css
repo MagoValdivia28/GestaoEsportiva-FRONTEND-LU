@@ -103,22 +103,6 @@
     padding-bottom: 2%;
 }
 
-.button {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    border-radius: 25px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-}
-
 .container2 {
     padding-top: 13%;
     padding-left: 5%;
@@ -184,113 +168,148 @@
  */
 
 
- .homeContainer {
-    font-family: Arial, sans-serif;
-    color: #333;
-  }
+.homeContainer {
+  font-family: Arial, sans-serif;
+  color: #333;
   
-  .heroSection {
-    position: relative;
-    background-image: url('../../assets/imagens/hometopo.png'); /* Substitua pela URL da sua imagem na pasta public */
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-  }
   
-  .heroOverlay {
-    background-color: rgba(0, 0, 0, 0.3);
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+}
+
+.heroSection {
+  position: relative;
+  background-image: url('../../assets/imagens/hometopo.png');
+  /* Substitua pela URL da sua imagem na pasta public */
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
+.blur{
+  backdrop-filter: blur(3px); 
+  background-color: rgba(0, 0, 0, 0); 
+  height: 90vh;
+}
+
+.logo {
+  background-image: url('../../assets/imagens/logo.png');
+  /* Substitua pela URL da sua imagem na pasta public */
+  background-size: cover;
+  background-position: center;
+  height: 20vh;
+  width: 20vh;
+  margin-bottom: 3%;
+}
+
+.heroTitle {
+  justify-content: center;
+  align-items: center;
+  margin-left: 15%;
+  margin-right: 15%;
+
+}
+
+.p {
+  font-size: 2px;
+}
+
+.heroOverlay {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   
-  .heroContent {
-    text-align: center;
-    color: white;
-  }
-  
-  .heroContent h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .heroContent p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .ctaButton {
-    padding: 0.8rem 2rem;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .ctaButton:hover {
-    background-color: #555;
-  }
-  
-  /* Seção de boas-vindas */
-  .welcomeSection {
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .welcomeSection h2 {
-    font-size: 2rem;
-  }
-  
-  .highlightText {
-    color: red;
-    font-weight: bold;
-  }
-  
-  /* Cartões de Gerenciamento */
-  .championshipsManagement {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .championshipCard {
-    position: relative;
-    width: 300px;
-    height: 200px;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .trophyImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.7;
-    background-image: url('../../assets/imagens/trophy-image.jpg');
-        background-size: cover;
-    background-position: center;
-  }
-  
-  .cardContent {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .emptyCard {
-    width: 300px;
-    height: 200px;
-    background-color: #ddd;
-    border-radius: 10px;
-  }
+}
+
+.heroContent {
+  text-align: center;
+  color: white;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.heroContent p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 1rem;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+
+.welcomeSection {
+  padding: 2rem;
+  text-align: left  ;
+}
+
+.welcomeSection h2 {
+  font-size: 2rem;
+}
+
+.highlightText {
+  color: red;
+  font-weight: bold;
+}
+
+/* Cartões de Gerenciamento */
+.championshipsManagement {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.championshipCard {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.trophyImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  background-image: url('../../assets/imagens/trophy-image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+}
+
+.emptyCard {
+  width: 300px;
+  height: 200px;
+  background-color: #ddd;
+  border-radius: 10px;
+}
