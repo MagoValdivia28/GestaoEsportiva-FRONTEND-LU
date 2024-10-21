@@ -14,13 +14,23 @@ const Gestaoesportes = () => {
       </div>
 
       <div className={styles.container}>
-        <h2> Placar do evento atual</h2>
+        <h2 className={styles.h2Title}> Placar do evento atual</h2>
 
         <List_times />
       </div>
 
-    </div>
 
+      <div className={styles.modalidade_container}>
+        <div className={styles.modalidade_container_title}>
+          <h2 className={styles.h2modalidade}>Modalidades</h2>
+          <div className={styles.redLine}></div>
+        </div>
+
+
+        {/* dps o night faz o carrosel de modalidades */}
+      </div>
+
+    </div>
   );
 };
 
