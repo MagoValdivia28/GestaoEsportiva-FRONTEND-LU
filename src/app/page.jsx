@@ -25,42 +25,77 @@ export default function Home() {
   };
   
   return (
-    <main className={styles.container}>
-      <div className={styles.opacity}>
-        <div className={styles.top}>
-          <Image src={logo} alt="Logo" width={100} height={100} className={styles.logo} />
-          <button className={styles.profileButton} onClick={handleProfileClick}>
-            <FaUser size={20} className={styles.pb2} />
-          </button>
-        </div>
-        <div className={styles.text}>
-          <p className={styles.h1}>AAPM</p>
-          <p className={styles.h2}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id finibus ipsum.
-            Phasellus dapibus sed massa et finibus. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Duis id finibus ipsum. Phasellus dapibus sed massa et finibus.
-            Sed bibendum turpis et lectus tempor pulvinar.
-          </p>
-        </div>
-        <div className={styles.divbutton}>
-          <button className={styles.button} onClick={handleConhecaNosClick}>Conheça-nos</button>
+    <div className={styles.homeContainer}>
+    {/* Seção de Introdução */}
+    <section className={styles.heroSection}>
+      <div>
+        <div className='img1'/>
+        <div className='img1'/>
+      </div>
+      <div className={styles.heroOverlay}>
+        <div className={styles.heroContent}>
+          <h1>AAPM</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id finibus ipsum.</p>
+          <button className={styles.ctaButton}>Conheça-nos</button>
         </div>
       </div>
-  
-      <div className={styles.container2}>
-        <div className={styles.cards} onClick={() => router.replace('/gdeequipes')}>
-          <FaUsers size={30} className={styles.iconC2} />
-          <p className={styles.p2}>Gerenciamento de Equipe</p>
+    </section>
+
+    {/* Boas-vindas e Gerenciar Campeonatos */}
+    <section className={styles.welcomeSection}>
+      <h2>Seja <span className={styles.highlightText}>bem vindo(a)!</span></h2>
+      <div className={styles.championshipsManagement}>
+        <div className={styles.championshipCard}>
+          <div
+            src="/trophy-image.jpg"
+            alt="Trophy"
+            layout="fill"
+            className={styles.trophyImage}
+          />
+          <div className={styles.cardContent}>
+            <h3>Gerenciar Campeonatos</h3>
+          </div>
         </div>
-        <div className={styles.cards} onClick={handleGerenciamentoAtividadesClick}>
-          <FaTrophy size={30} className={styles.iconC2} />
-          <p className={styles.p2}>Gerenciamento de Atividades Esportivas</p>
-        </div>
-        <div className={styles.cards} onClick={handleGerenciamentoComentariosClick}>
-          <FaComments size={30} className={styles.iconC2} />
-          <p className={styles.p2}>Gerenciamento de Comentários</p>
-        </div>
+        <div className={styles.emptyCard}></div>
       </div>
-    </main>
+    </section>
+  </div>
+    // <main className={styles.container}>
+    //   <div className={styles.opacity}>
+    //     <div className={styles.top}>
+    //       <Image src={logo} alt="Logo" width={100} height={100} className={styles.logo} />
+    //       <button className={styles.profileButton} onClick={handleProfileClick}>
+    //         <FaUser size={20} className={styles.pb2} />
+    //       </button>
+    //     </div>
+    //     <div className={styles.text}>
+    //       <p className={styles.h1}>AAPM</p>
+    //       <p className={styles.h2}>
+    //         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id finibus ipsum.
+    //         Phasellus dapibus sed massa et finibus. Lorem ipsum dolor sit amet, consectetur
+    //         adipiscing elit. Duis id finibus ipsum. Phasellus dapibus sed massa et finibus.
+    //         Sed bibendum turpis et lectus tempor pulvinar.
+    //       </p>
+    //     </div>
+    //     <div className={styles.divbutton}>
+    //       <button className={styles.button} onClick={handleConhecaNosClick}>Conheça-nos</button>
+    //     </div>
+    //   </div>
+
+    //   <div className={styles.container2}>
+    //     <div className={styles.cards} onClick={() => router.replace('/gdeequipes')}>
+    //       <FaUsers size={30} className={styles.iconC2} />
+    //       <p className={styles.p2}>Gerenciamento de Equipe</p>
+    //     </div>
+    //     <div className={styles.cards} onClick={handleGerenciamentoAtividadesClick}>
+    //       <FaTrophy size={30} className={styles.iconC2} />
+    //       <p className={styles.p2}>Gerenciamento de Atividades Esportivas</p>
+    //     </div>
+    //     <div className={styles.cards} onClick={handleGerenciamentoComentariosClick}>
+    //       <FaComments size={30} className={styles.iconC2} />
+    //       <p className={styles.p2}>Gerenciamento de Comentários</p>
+    //     </div>
+    //   </div>
+    // </main>
   );
 }
