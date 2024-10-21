@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { FaUser, FaUsers, FaTrophy, FaComments } from 'react-icons/fa';
+import { FaUser, FaUsers, FaArrowRight, FaComments } from 'react-icons/fa';
 import logo from '../../assets/imagens/logo.png';
 import styles from './page.module.css';
 
@@ -49,9 +49,11 @@ export default function Home() {
       <h2><span>Seja</span> <span className={styles.highlightText}>bem vindo(a)!</span></h2>
       <div className={styles.championshipsManagement}>
         <div className={styles.championshipCard}>
-          <div className={styles.trophyImage}/>
+          <div className={styles.trophyImage}>
+            <FaArrowRight size={50} className={styles.icon} />
+          </div>
           <div className={styles.cardContent}>
-            <h3>Gerenciar Campeonatos</h3>
+            <h3 className={styles.p2}>Gerenciar Campeonatos</h3>
           </div>
         </div>
         <div className={styles.emptyCard}></div>
@@ -86,7 +88,7 @@ export default function Home() {
     //       <p className={styles.p2}>Gerenciamento de Equipe</p>
     //     </div>
     //     <div className={styles.cards} onClick={handleGerenciamentoAtividadesClick}>
-    //       <FaTrophy size={30} className={styles.iconC2} />
+    //       <FaArrowRight size={30} className={styles.iconC2} />
     //       <p className={styles.p2}>Gerenciamento de Atividades Esportivas</p>
     //     </div>
     //     <div className={styles.cards} onClick={handleGerenciamentoComentariosClick}>
