@@ -2,7 +2,6 @@
 import styles from './page.module.css';
 import logo from "../../../assets/imagens/logo.png";
 import Image from 'next/image';
-import { List } from '@mui/material';
 import List_times from '../components/list_times/list_times';
 
 const Gestaoesportes = () => {
