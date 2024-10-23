@@ -11,7 +11,7 @@ export default function Home() {
   const handleProfileClick = () => {
     alert('Perfil de safado clicked!');
   };
-  
+
   const handleConhecaNosClick = () => {
     alert('Conheça-nos filho da puta clicked!');
   };
@@ -19,52 +19,53 @@ export default function Home() {
   const handleGerenciamentoAtividadesClick = () => {
     alert('Gerenciamento de Atividades Esportivas clicked!');
   };
-  
+
   const handleGerenciamentoComentariosClick = () => {
     alert('Gerenciamento de Comentários clicked!');
   };
-  
+
   return (
     <div className={styles.homeContainer}>
-    {/* Seção de Introdução */}
-    <section className={styles.heroSection}>
-      <div className={styles.blur}>
-      
-        <div className={styles.heroOverlay}>
-        <div className={styles.heroContent}>
-        <div className={styles.logo}/>
+      {/* Seção de Introdução */}
+      <section className={styles.heroSection}>
+        <div className={styles.blur}>
 
-        <div  className={styles.heroTitle}>
-          <h1 style={{ fontSize: '50px' }}>AAPM</h1>
-          <p style={{ fontSize: '17px' }}> A AAPM (Associação de Alunos, Pais e Mestres) do SENAI promove a cooperação entre alunos, pais, professores e a comunidade para aprimorar a formação dos estudantes. Ela organiza eventos e projetos, arrecada recursos para melhorar a escola e apoia alunos em situação de vulnerabilidade, fortalecendo o vínculo entre a instituição e a comunidade e contribuindo para uma educação de qualidade.</p>
-          <button className={styles.button}>Conheça-nos</button>
-        </div>
-        </div>
-      </div>
-      </div>
-    </section>
+          <div className={styles.heroOverlay}>
+            <div className={styles.heroContent}>
+              <div className={styles.logo} />
 
-    {/* Boas-vindas e Gerenciar Campeonatos */}
-    <section className={styles.welcomeSection}>
-      <h2><span>Seja</span> <span className={styles.highligext}>bem vindo(a)!</span></h2>
-      <div className={styles.championshipsManagement}>
-        <div className={styles.championshipCard}>
-          <div className={styles.trophyImage}>
-            <FaArrowRight size={50} className={styles.icon} />
-          </div>
-          <div className={styles.cardContent}>
-            <h3 className={styles.p2}>Gerenciar Campeonatos</h3>
+              <div className={styles.heroTitle}>
+                <h1 style={{ fontSize: '50px' }}>AAPM</h1>
+                <p style={{ fontSize: '17px' }}> A AAPM (Associação de Alunos, Pais e Mestres) do SENAI promove a cooperação entre alunos, pais, professores e a comunidade para aprimorar a formação dos estudantes. Ela organiza eventos e projetos, arrecada recursos para melhorar a escola e apoia alunos em situação de vulnerabilidade, fortalecendo o vínculo entre a instituição e a comunidade e contribuindo para uma educação de qualidade.</p>
+                <button className={styles.button}>Conheça-nos</button>
+              </div>
+            </div>
           </div>
         </div>
-        <div className={styles.emptyCard}>
-        <FaArrowRight size={50} className={styles.icon2} />
+      </section>
 
-          <p className={styles.pcard2}>feed
-            back</p>
+      {/* Boas-vindas e Gerenciar Campeonatos */}
+      <section className={styles.welcomeSection}>
+        <div className={styles.linhavermelha} />
+        <h2><span>Seja</span> <span className={styles.highligext}>bem vindo(a)!</span></h2>
+        <div className={styles.championshipsManagement}>
+          <div className={styles.championshipCard}>
+            <div className={styles.trophyImage}>
+              <FaArrowRight size={50} className={styles.icon} />
+            </div>
+            <div className={styles.cardContent}>
+              <h3 className={styles.p2}>Gerenciar Campeonatos</h3>
+            </div>
+          </div>
+          <div className={styles.emptyCard}>
+            <FaArrowRight size={50} className={styles.icon2} />
+
+            <p className={styles.pcard2}>feed
+              back</p>
+          </div>
         </div>
-      </div>
-    </section>
-  </div>
+      </section>
+    </div>
     // <main className={styles.container}>
     //   <div className={styles.opacity}>
     //     <div className={styles.top}>

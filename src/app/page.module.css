@@ -171,8 +171,6 @@
 .homeContainer {
   font-family: Arial, sans-serif;
   color: #333;
-  
-  
 }
 
 .heroSection {
@@ -251,10 +249,16 @@
   transform: scale(1.05);
 }
 
+.linhavermelha{
+  background-color: rgb(197, 10, 10);
+  width: 100%;
+  height: 4px;
 
+}
 .welcomeSection {
   padding: 2rem;
   text-align: left  ;
+  margin-bottom: 3%;
 }
 
 .welcomeSection h2 {
@@ -286,7 +290,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center;transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.championshipCard:hover {
+  transform: scale(1.05); /* Slightly larger scaling for a more noticeable effect */
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background color change */
 }
 
 .trophyImage {
@@ -322,15 +333,20 @@
   background-color: #aa0404;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensures space between elements */
-  
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Smooth transition for hover effects */
 }
 
+.emptyCard:hover {
+  transform: scale(1.05); /* Slightly larger scaling for a noticeable effect */
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
+  background-color: rgba(170, 4, 4, 0.9); /* Slightly darken the background on hover */
+}
 .pcard2 {
   font-size: 3.5rem;
   color: white;
   text-align: left; /* Keeps the text aligned to the left */
-  margin-top: auto; /* Pushes the text to the bottom of the card */
 }
 
 .icon2 {
