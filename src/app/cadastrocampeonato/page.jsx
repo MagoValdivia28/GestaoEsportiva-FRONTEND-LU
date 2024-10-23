@@ -1,4 +1,4 @@
-"use client"
+"use client"  
 import styles from './page.module.css';
 import Image from 'next/image';
 import logo from "../../../assets/imagens/logo.png";
@@ -42,8 +42,6 @@ const CadastroCampeonato = () => {
             <input type="text" id="descricao" name="descricao" required />
           </div>
         </div>
-
-        <Image className={styles.img} src={aapm} id={styles.logo} width={650} height={480} />
 
 
         <button type="submit" className={styles.submitButton}>Cadastrar</button>
