@@ -46,7 +46,7 @@ export default function Home() {
 
     {/* Boas-vindas e Gerenciar Campeonatos */}
     <section className={styles.welcomeSection}>
-      <h2><span>Seja</span> <span className={styles.highlightText}>bem vindo(a)!</span></h2>
+      <h2><span>Seja</span> <span className={styles.highligext}>bem vindo(a)!</span></h2>
       <div className={styles.championshipsManagement}>
         <div className={styles.championshipCard}>
           <div className={styles.trophyImage}>
@@ -56,7 +56,12 @@ export default function Home() {
             <h3 className={styles.p2}>Gerenciar Campeonatos</h3>
           </div>
         </div>
-        <div className={styles.emptyCard}></div>
+        <div className={styles.emptyCard}>
+        <FaArrowRight size={50} className={styles.icon2} />
+
+          <p className={styles.pcard2}>feed
+            back</p>
+        </div>
       </div>
     </section>
   </div>
