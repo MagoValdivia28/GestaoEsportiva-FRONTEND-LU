@@ -1,11 +1,14 @@
 'use client';
-import styles from './page.module.css'; 
+import styles from './page.module.css';
 import hometopo from '../../../assets/imagens/hometopo.png';
 import logo from '../../../assets/imagens/logo.png';
 import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';
 import Card from '../components/Card/page';
 import { useRouter } from 'next/navigation'; // Importando useRouter
+import { useEffect, useState } from 'react';
+import { getCampeonatoByDate } from '@/src/actions/campeonato';
+import PopUpError from '@/src/app/components/PopUpError';
 
 export default function Home() {
   const router = useRouter(); // Inicializando o roteador
@@ -51,13 +54,14 @@ export default function Home() {
         <main className={styles.main}>
           <h2>Gerenciamento de atividades desportivas</h2>
           <hr className={styles.separator} />
-        <div className={styles.cardContainer}>
-          <Card title="Adicionar" imageUrl={hometopo} onClick={handleAddClick} /> {/* Passando o manipulador de clique */}
-          <Card title="Historico" imageUrl={hometopo} />
-          <Card title="Interclasse" imageUrl={hometopo} />
-        </div>
-      </main>
-    </div>
+          <div className={styles.cardContainer}>
+            <Card title="Adicionar" imageUrl={hometopo} onClick={handleAddClick} /> {/* Passando o manipulador de clique */}
+            <Card title="Historico" imageUrl={hometopo} />
+            <Card title="Interclasse" imageUrl={hometopo} />
+          </div>
+        </main>
+      </div>
+      {error && <PopUpError error={error} />}
     </>
   );
 }
