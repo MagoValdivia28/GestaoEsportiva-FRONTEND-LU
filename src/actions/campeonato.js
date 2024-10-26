@@ -18,4 +18,17 @@ export const createCampeonato = async (nameParams, dateStartsParams, dateEndsPar
             return error;
         }
     }
-}
+};
+
+export const getCampeonatoByDate = async (dateParams) => {
+    try {
+        const response = await axios.get(`${api}/campeonatos/date/${dateParams}`);
+        return response.data;
+    } catch (error) {
+        if(error.response){
+            return error.response.data;
+        } else {
+            return error;
+        }
+    }
+};

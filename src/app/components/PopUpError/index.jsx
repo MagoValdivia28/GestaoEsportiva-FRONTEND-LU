@@ -3,7 +3,6 @@ import { BiErrorAlt } from "react-icons/bi";
 import { PiShieldCheckLight } from "react-icons/pi";
 
 const PopUpError = ({ error }) => {
-  console.log(error);
   return (
     <div className={styles.popup}>
       {

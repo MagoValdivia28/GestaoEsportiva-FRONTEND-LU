@@ -13,7 +13,7 @@ const FormAuth = ({ setError }) => {
 
   const handleSubmit = async () => {
     if (!name || !password) {
-      setError('Preencha todos os campos');
+      setError({ message: 'Preencha todos os campos!' });
       setTimeout(() => {
         setError(null);
       }, 3000);
