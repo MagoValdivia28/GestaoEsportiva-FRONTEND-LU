@@ -13,6 +13,7 @@ import PopUpError from '@/src/app/components/PopUpError';
 export default function Home() {
   const router = useRouter(); // Inicializando o roteador
   const [error, setError] = useState(null);
+  const [campeonato, setCampeonato] = useState(null);
 
   useEffect(() => {
     const getCampeonato = async () => {
@@ -27,6 +28,8 @@ export default function Home() {
         setTimeout(() => {
           setError(null);
         }, 1500);
+      } else {
+        setCampeonato(response);
       }
     };
     getCampeonato();
@@ -58,6 +61,13 @@ export default function Home() {
             <Card title="Adicionar" imageUrl={hometopo} onClick={handleAddClick} /> {/* Passando o manipulador de clique */}
             <Card title="Historico" imageUrl={hometopo} />
             <Card title="Interclasse" imageUrl={hometopo} />
+            {
+              campeonato && (
+                campeonato.map((item) => (
+                  <Card key={item.id} title={item.titulo} imageUrl={hometopo} />
+                ))
+              )
+            }
           </div>
         </main>
       </div>

@@ -37,6 +37,9 @@ const CadastroCampeonato = () => {
       setError(response);
       setTimeout(() => {
         setError(null);
+        if (response.status === "sucess") {
+          router.push('/gecampeonatos');
+        }
       }, 3000);
     }
   };
