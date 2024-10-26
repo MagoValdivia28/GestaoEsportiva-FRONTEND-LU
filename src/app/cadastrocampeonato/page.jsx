@@ -1,4 +1,5 @@
 "use client"
+import { useRouter } from 'next/navigation';
 import styles from './page.module.css';
 import Image from 'next/image';
 import logo from "../../../assets/imagens/logo.png";
@@ -10,6 +11,7 @@ import { useState } from 'react';
 import PopUpError from '@/src/app/components/PopUpError';
 
 const CadastroCampeonato = () => {
+  const router = useRouter();
   const [nome, setNome] = useState(null);
   const [data_inicio, setDataInicio] = useState(null);
   const [data_final, setDataFinal] = useState(null);
@@ -17,6 +19,11 @@ const CadastroCampeonato = () => {
 
   const handleProfileClick = () => {
     alert('Perfil clicado!');
+  };
+
+  const handleBack = (e) => {
+    e.preventDefault();
+    router.back();
   };
 
   const handleSubmit = async () => {
@@ -43,7 +50,7 @@ const CadastroCampeonato = () => {
         </button>
         <div className={styles.form}>
           <div className={styles.backtohome}>
-            <Link className={styles.backButton} href={"./"}>
+            <Link className={styles.backButton} onClick={handleBack} href={"#"}>
               <LiaArrowCircleLeftSolid size={30} />
             </Link>
             <p className={styles.txt1}>Gerenciamento de Campeonatos</p>
