@@ -59,9 +59,13 @@ const Home = () => {
           <Card title="Adicionar" imageUrl={adicionar} onClick={handleAddClick} />
           <Card title="Histórico" imageUrl={historico} onClick={handleHistoricoClick} />
           <Card title="Interclasse" imageUrl={hometopo} />
-          {campeonato.map(item => (
-            <Card onClick={() => handleRoute(item.id)} key={item.id} title={item.titulo} imageUrl={hometopo}  />
-          ))}
+          {
+              campeonato && (
+                campeonato.map((item) => (
+                  <Card onClick={() => handleRoute(item.id)} key={item.id} title={item.titulo} imageUrl={hometopo} />
+                ))
+              )
+            }
         </div>
       </main>
 
