@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './page.module.css';
 import Image from 'next/image';
 import Logo from '../../../assets/imagens/logo.png';
+
 import hometopo from '../../../assets/imagens/hometopo.png';
 const Historico = () => {
   const campeonatos = [
