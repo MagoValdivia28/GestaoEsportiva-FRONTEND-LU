@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';
 import { useRouter } from 'next/navigation'; 
 
-export default function Campeonato() {
+export default function () {
   const router = useRouter(); 
 
   return (
