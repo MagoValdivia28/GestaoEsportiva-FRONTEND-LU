@@ -13,7 +13,6 @@
 }
 
 .title_container {
-    margin-left: 5rem;
     width: 21rem;
     border-bottom: 0.25rem solid #af1912;
     display: flex;
@@ -23,6 +22,8 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0.5rem;
+    color: #767676;
+    margin-left: 6rem;
 
 }
 
@@ -35,9 +36,21 @@
 }
 
 .container {
-    margin-left: 5rem;
-    width: 21rem;
     display: flex;
+    flex-direction: column;
+}
+
+.confrontos_container {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 1.5rem; 
+    margin-bottom: 1.5rem;
+    padding: 3rem;
+    width: 80%;
 }
 
 

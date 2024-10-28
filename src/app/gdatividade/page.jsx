@@ -13,9 +13,7 @@ const GdeAtividade = () => {
                 <Image src={logo} id={styles.logo} width={130} height={130} />
             </div>
 
-            <div className={styles.title_container}>
                 <h2 className={styles.h2Title}>Gerenciamento de atividade</h2>
-            </div>
 
 
             <div className={styles.list_container}>
@@ -24,6 +22,12 @@ const GdeAtividade = () => {
 
             <div className={styles.container}>
                 <h2 className={styles.h2Title}>Confrontos</h2>
+
+                <div className={styles.confrontos_container}>
+                    <div>
+
+                    </div>
+                </div>
             </div>
         </main>
     )
