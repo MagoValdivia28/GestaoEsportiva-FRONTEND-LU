@@ -1,11 +1,13 @@
-// pages/historico.js
-import React from 'react';
+'use client'// pages/historico.js
+import React, { useState } from 'react';
 import styles from './page.module.css';
 import Image from 'next/image';
 import Logo from '../../../assets/imagens/logo.png';
 
-import hometopo from '../../../assets/imagens/hometopo.png';
 const Historico = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedCampeonato, setSelectedCampeonato] = useState(null);
+
   const campeonatos = [
     {
       ano: 2023,
@@ -28,8 +30,17 @@ const Historico = () => {
       vencedor: 'Time Azul',
       imagem: Logo,
     },
-    // Adicione mais campeonatos conforme necessário
   ];
+
+  const handleCardClick = (campeonato) => {
+    setSelectedCampeonato(campeonato);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedCampeonato(null);
+  };
 
   return (
     <div className={styles.container}>
@@ -41,7 +52,7 @@ const Historico = () => {
       <div className={styles.line}></div>
       <div className={styles.cardsContainer}>
         {campeonatos.map((campeonato, index) => (
-          <div key={index} className={styles.card}>
+          <div key={index} className={styles.card} onClick={() => handleCardClick(campeonato)}>
             <Image src={campeonato.imagem} alt={campeonato.titulo} width={130} className={styles.image} />
             <h2>{campeonato.ano}</h2>
             <h3>{campeonato.titulo}</h3>
@@ -50,6 +61,19 @@ const Historico = () => {
           </div>
         ))}
       </div>
+
+      {showModal && selectedCampeonato && (
+        <div className={styles.modalOverlay} onClick={closeModal}>
+          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.closeButton} onClick={closeModal}>&times;</button>
+            <Image src={selectedCampeonato.imagem} alt={selectedCampeonato.titulo} width={130} className={styles.modalImage} />
+            <h2>{selectedCampeonato.ano}</h2>
+            <h3>{selectedCampeonato.titulo}</h3>
+            <p>{selectedCampeonato.descricao}</p>
+            <p><strong>Vencedor:</strong> {selectedCampeonato.vencedor}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,88 +1,148 @@
 /* styles/Historico.module.css */
+
 .container {
-    padding: 20px;
-    background-color: #ffffff;
-    color: #333;
-    text-align: center;
-    position: relative; /* Necessário para posicionamento relativo */
-  }
-  
-  .logo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 130px; /* Ajuste o tamanho conforme necessário */
-    height: auto;
-    
-  }
-  
-  .title {
-    text-align: left;
-    margin-left: 13%;
-    margin-bottom: 10px;
-    margin-top: 10%;
-  }
-  
-  .titleRed {
-    color: #b22222; /* Vermelho para "Histórico" */
-    font-size: 4rem; /* Tamanho grande para "Histórico" */
-  }
-  
-  .titleBlack {
-    color: #000; /* Preto para "de Campeonatos" */
-    font-size: 2.5rem; /* Tamanho menor para "de Campeonatos" */
-    margin-left: 10px; /* Espaço entre as partes do título */
-    font: bold;
-  }
-  
-  .line {
-    width: 80%;
-    height: 4px;
-    background-color: #b22222;
-    margin: 20px auto;
-  }
-  
-  .cardsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .card {
-    background-color: #fff;
-    border: 2px solid #b22222;
-    border-radius: 8px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 3, 0.9);
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .image {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
-  }
-  
-  .card h2 {
-    color: #b22222;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .card p {
-    font-size: 1rem;
-    margin-bottom: 5px;
-  }
-  
+  padding: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 120px;
+  height: auto;
+}
+
+.title {
+  text-align: left;
+  margin-left: 15%;
+  margin-bottom: 10px;
+  margin-top: 8%;
+}
+
+.titleRed {
+  color: #d32f2f;
+  font-size: 3.5rem;
+}
+
+.titleBlack {
+  color: #212121;
+  font-size: 2.2rem;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.line {
+  width: 75%;
+  height: 3px;
+  background-color: #d32f2f;
+  margin: 20px auto;
+  border-radius: 1.5px;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.card {
+  background-color: #fff;
+  border: 2px solid #d32f2f;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  color: #d32f2f;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #424242;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #616161;
+  margin-bottom: 4px;
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 25px;
+  width: 85%;
+  max-width: 450px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid #d32f2f;
+  animation: fadeIn 0.3s ease;
+}
+
+.modalImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #d32f2f;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+  color: #b71c1c;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
