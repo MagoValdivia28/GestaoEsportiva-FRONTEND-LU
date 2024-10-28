@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';
 import Card from '../components/Card/page';
 import { useRouter } from 'next/navigation'; // Importando useRouter
+import historico from '../../../assets/imagens/historico.jpg'
 
 export default function Home() {
   const router = useRouter(); // Inicializando o roteador
@@ -35,7 +36,7 @@ export default function Home() {
 
         <div className={styles.cardContainer}>
           <Card title="Adicionar" imageUrl={hometopo} onClick={handleAddClick} /> {/* Passando o manipulador de clique */}
-          <Card title="Historico" imageUrl={hometopo} onClick={handlehistorico}/>
+          <Card title="Historico" imageUrl={historico} onClick={handlehistorico}/>
           <Card title="Interclasse" imageUrl={hometopo} />
         </div>
       </main>
