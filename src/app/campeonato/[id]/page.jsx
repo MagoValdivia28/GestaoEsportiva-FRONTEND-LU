@@ -1,12 +1,13 @@
 'use client';
 import styles from './page.module.css';
-import logo from '../../../assets/imagens/logo.png';
+import logo from '@/assets/imagens/logo.png';
 import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';
-import { useRouter } from 'next/navigation'; 
+import { useRouter, useParams } from 'next/navigation'; 
 
-export default function () {
+const CampeonatoDetails = () => {
   const router = useRouter(); 
+  const { id } = useParams();
 
   return (
     <>
@@ -37,7 +38,4 @@ export default function () {
   );
 }
 
-
-  
-  
-     
+export default CampeonatoDetails;
