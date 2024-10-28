@@ -41,7 +41,11 @@ export default function Home() {
   };
   const handlehistorico = () => {
     router.push('/historico');
-  }
+  };
+
+  const handleRoute = (id) => {
+    router.push(`/campeonato/${id}`);
+  };
 
   return (
     <>
@@ -64,7 +68,7 @@ export default function Home() {
             {
               campeonato && (
                 campeonato.map((item) => (
-                  <Card key={item.id} title={item.titulo} imageUrl={hometopo} />
+                  <Card onClick={() => handleRoute(item.id)} key={item.id} title={item.titulo} imageUrl={hometopo} />
                 ))
               )
             }
