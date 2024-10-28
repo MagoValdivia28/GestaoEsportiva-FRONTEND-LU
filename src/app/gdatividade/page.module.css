@@ -1,0 +1,57 @@
+.main_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: none;
+    background-color: #fbfbfb;
+}
+
+.div_img {
+    height: 100%;
+    width: 130px;
+    margin: 2rem;
+}
+
+.title_container {
+    margin-left: 5rem;
+    width: 21rem;
+    border-bottom: 0.25rem solid #af1912;
+    display: flex;
+}
+
+.h2Title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem;
+
+}
+
+.list_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.container {
+    margin-left: 5rem;
+    width: 21rem;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
