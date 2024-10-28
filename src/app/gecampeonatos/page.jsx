@@ -32,6 +32,10 @@ const Home = () => {
     fetchCampeonato();
   }, []);
 
+  const handleRoute = (id) => {
+    router.push(`/campeonato/${id}`);
+  };
+
   const handleAddClick = () => router.push('/cadastrocampeonato');
   const handleHistoricoClick = () => router.push('/historico');
 
@@ -56,7 +60,7 @@ const Home = () => {
           <Card title="Histórico" imageUrl={historico} onClick={handleHistoricoClick} />
           <Card title="Interclasse" imageUrl={hometopo} />
           {campeonato.map(item => (
-            <Card key={item.id} title={item.titulo} imageUrl={hometopo} />
+            <Card onClick={() => handleRoute(item.id)} key={item.id} title={item.titulo} imageUrl={hometopo}  />
           ))}
         </div>
       </main>
