@@ -55,7 +55,7 @@
     border-radius: 8px;
     padding: 20px;
     width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 3, 0.9);
     transition: transform 0.2s ease-in-out;
   }
   

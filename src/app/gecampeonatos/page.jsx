@@ -15,6 +15,9 @@ export default function Home() {
   const handleAddClick = () => {
     router.push('/cadastrocampeonato'); // Redirecionando para a página de cadastro
   };
+  const handlehistorico = () => {
+    router.push('/historico');
+  }
 
   return (
     <div className={styles.container}>
@@ -32,7 +35,7 @@ export default function Home() {
 
         <div className={styles.cardContainer}>
           <Card title="Adicionar" imageUrl={hometopo} onClick={handleAddClick} /> {/* Passando o manipulador de clique */}
-          <Card title="Historico" imageUrl={hometopo} />
+          <Card title="Historico" imageUrl={hometopo} onClick={handlehistorico}/>
           <Card title="Interclasse" imageUrl={hometopo} />
         </div>
       </main>
