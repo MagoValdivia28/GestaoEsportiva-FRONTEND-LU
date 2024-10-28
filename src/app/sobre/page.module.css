@@ -1,0 +1,143 @@
+.container {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.cardPrincipal {
+  background-color: #fff;
+  border-bottom-left-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.sobreA {
+  font-size: 3.5rem;
+  font-family: "JosefinSans_700Bold";
+  color: #000;
+  margin-right: 35rem;
+}
+
+.novaG {
+  font-size: 3rem;
+  font-family: "JosefinSans_700Bold";
+  color: #AF0000;
+  margin-right: 20rem;
+}
+
+.solut {
+  font-size: 2.5rem;
+  font-family: "JosefinSans_700Bold";
+  color: #AF0000;
+}
+
+.cardObj {
+  background-color: #fff;
+  border-radius: 1.25rem;
+  padding: 1rem;
+  margin: 2rem;
+}
+
+.tituloObj,
+.nomeEquipe {
+  font-size: 3rem;
+  font-family: "JosefinSans_700Bold";
+  text-align: center;
+  color: #000;
+}
+
+.textObj,
+.textMembro {
+  font-size: 1.25rem;
+  font-family: "JosefinSans_500Medium";
+  text-align: center;
+}
+
+.cardEquipe {
+  background-color: #fff;
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.linha {
+  width: 90%;
+  background-color: #AF0000;
+  height: 0.375rem;
+  border: none;
+  margin: 1.25rem auto;
+}
+
+.cardImg,
+.backImg {
+  background-color: #fff;
+  border-radius: 0.625rem;
+  width: 100%;
+  max-width: 22.5rem;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.fotoEquipe {
+  border-radius: 5%;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.img_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+  position: relative;
+  top: 6rem;
+
+}
+
+.fotoMembro {
+  border-radius: 50%;
+  width: 40%;
+  margin: 0 auto;
+  border: white solid 0.5rem;
+}
+
+.card {
+  width: 90%;
+  margin: auto;
+}
+
+.info_card {
+  background-color: #d9d9d9;
+  border: 0.3rem solid #AF0000;
+  border-radius: 1.5rem;
+  width: 100%;
+}
+
+.texts_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.cardDetalheZ {
+  background-color: #d9d9d9;
+  border: 0.3rem solid #AF0000;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  margin: 1.5rem auto;
+  max-width: 21.25rem;
+}
+
+.nomeMembro {
+  font-size: 1.25rem;
+  font-family: "JosefinSans_700Bold";
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.membro {
+  text-align: center;
+}
