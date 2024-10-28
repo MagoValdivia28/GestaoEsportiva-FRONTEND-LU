@@ -1,4 +1,5 @@
 'use client';
+
 import styles from './page.module.css'; 
 import hometopo from '../../../assets/imagens/hometopo.png';
 import logo from '../../../assets/imagens/logo.png';
