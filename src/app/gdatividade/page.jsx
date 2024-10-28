@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { List } from '@mui/material';
 import List_times from '../components/list_times/list_times';
 import VDP from '../components/vdp/vdp';
+import { HiOutlineTrash } from "react-icons/hi";
+import { FaRegEdit } from "react-icons/fa";
 
 
 const GdeAtividade = () => {
@@ -25,7 +27,14 @@ const GdeAtividade = () => {
 
                 <div className={styles.confrontos_container}>
                     <div className={styles.confronto}>
+                        <div className={styles.date_container}>
+                            <h3 className={styles.date}>12/10/2021</h3>
+                            <div className={styles.icons_container}>
+                                <FaRegEdit className={styles.icon} />
+                                <HiOutlineTrash className={styles.icon} />
+                            </div>
 
+                        </div>
                     </div>
 
 
