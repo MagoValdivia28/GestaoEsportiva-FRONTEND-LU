@@ -63,7 +63,7 @@ export default function Home() {
           <hr className={styles.separator} />
           <div className={styles.cardContainer}>
             <Card title="Adicionar" imageUrl={hometopo} onClick={handleAddClick} /> {/* Passando o manipulador de clique */}
-            <Card title="Historico" imageUrl={hometopo} />
+            <Card title="Historico" imageUrl={hometopo} onClick={handlehistorico} />
             <Card title="Interclasse" imageUrl={hometopo} />
             {
               campeonato && (

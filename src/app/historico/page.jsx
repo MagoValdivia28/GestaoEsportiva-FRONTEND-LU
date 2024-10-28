@@ -76,7 +76,7 @@ const Historico = () => {
         <div className={styles.modalOverlay} onClick={closeModal}>
           <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
             <button className={styles.closeButton} onClick={closeModal}>&times;</button>
-            <Image src={selectedCampeonato.imagem} alt={selectedCampeonato.titulo} width={130} className={styles.modalImage} />
+            <Image src={Logo} alt={selectedCampeonato.titulo} width={130} className={styles.modalImage} />
             <h2>{selectedCampeonato.ano}</h2>
             <h3>{selectedCampeonato.titulo}</h3>
             <p>{selectedCampeonato.descricao}</p>
