@@ -13,7 +13,7 @@ export const createCampeonato = async (nameParams, dateStartsParams, dateEndsPar
         return response.data;
     } catch (error) {
         if(error.response){
-            return error.response.data.message;
+            return error.response.data;
         } else {
             return error;
         }
