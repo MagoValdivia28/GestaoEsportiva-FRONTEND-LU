@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';
 import { useRouter } from 'next/navigation'; 
 
-export default function Modalidades() {
+export default function Campeonato() {
   const router = useRouter(); 
 
   return (
