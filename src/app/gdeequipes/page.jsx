@@ -5,7 +5,8 @@ import styles from './page.module.css';
 import Image from 'next/image';
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from 'react';
-import List_times from '../components/list_times/list_times';
+import Equipes from '../components/equipes/equipes';
+
 
 
 const GdeEquipes = () => {
@@ -32,17 +33,17 @@ const GdeEquipes = () => {
 
                 <div className={styles.times}>
                     <h2 className={styles.title}>Equipes Aprovadas</h2>
-                    <List_times />
+                    <Equipes />
                 </div>
 
                 <div className={styles.times}>
                     <h2 className={styles.title}>Equipes Pendentes</h2>
-                    <List_times />
+                    <Equipes />
                 </div>
 
                 <div className={styles.times}>
                     <h2 className={styles.title}>Equipes Rejeitadas</h2>
-                    <List_times />
+                    <Equipes />
                 </div>
 
                 <button className={styles.button}>Adicionar Equipe</button>
