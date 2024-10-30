@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';
 
 const Header = () => (
-    <header>
+    <header className={styles.header}>
         <Image src={logo} className={styles.logo} width={130} height={130} />
         <div className={styles.profileIcon}>
             <button className={styles.profileButton}>
