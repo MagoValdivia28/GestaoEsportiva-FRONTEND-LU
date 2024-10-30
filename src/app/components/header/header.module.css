@@ -1,0 +1,30 @@
+.logo:hover {
+    transform: scale(1.05);
+    /* Aumenta o tamanho ao passar o mouse */
+    cursor: pointer;
+
+}
+
+.profileIcon img {
+    border-radius: 50%;
+}
+
+.profileButton {
+    background-color: transparent;
+    color: black;
+    border: 2px solid;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 2%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+}

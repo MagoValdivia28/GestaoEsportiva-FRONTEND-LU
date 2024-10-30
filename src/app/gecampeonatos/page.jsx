@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation'; // Importando useRouter
 import { useEffect, useState } from 'react';
 import { getCampeonatoByDate } from '@/src/actions/campeonato';
 import PopUpError from '@/src/app/components/PopUpError';
+import Header from '../components/header/header';
 
 export default function Home() {
   const router = useRouter(); // Inicializando o roteador
@@ -50,14 +51,8 @@ export default function Home() {
   return (
     <>
       <div className={styles.container}>
-        <header className={styles.header}>
-          <Image src={logo} className={styles.logo} width={130} height={130} />
-          <div className={styles.profileIcon}>
-            <button className={styles.profileButton}>
-              <FaUser size={20} />
-            </button>
-          </div>
-        </header>
+
+        <Header />
         <main className={styles.main}>
           <h2>Gerenciamento de atividades desportivas</h2>
           <hr className={styles.separator} />
