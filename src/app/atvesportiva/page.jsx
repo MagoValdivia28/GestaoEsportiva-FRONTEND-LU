@@ -7,7 +7,7 @@ import CardModality from '../components/CardModality/page';
 import { useRouter } from 'next/navigation'; // Importando useRouter
 import { useEffect, useState } from 'react';
 
-const Gestaoesportes = () => {
+const Gestaoesportes = () => {''
 
   const router = useRouter(); // Inicializando o roteador
   const [error, setError] = useState(null);
