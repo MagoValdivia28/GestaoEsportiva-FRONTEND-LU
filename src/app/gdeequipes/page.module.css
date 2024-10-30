@@ -1,80 +1,70 @@
 .main_div {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Centraliza os itens no eixo transversal */
   margin-top: 2em;
 }
 
 .container_times {
-  display: flex;
-  width: 92%;
-  /* background-color: red; */
+  width: 92%; /* Mantém a largura do contêiner */
   margin: 0 auto;
   margin-top: 5rem;
-  flex-direction: column;
   margin-bottom: 4rem;
-
-}
-
-.title_container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 2em;
+  text-align: center; /* Centraliza o texto */
 }
 
 .title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5em;
   text-align: left;
-  color: #767676;
-
+  margin-left: 15%;
 }
 
-.redLine {
-  width: 22rem;
-  height: 0.2rem;
-  background-color: #af0000;
-  margin-bottom: 1em;
+.titleRed {
+  color: #d32f2f;
+  font-size: 3rem; /* Tamanho do título restaurado */
+}
+
+.titleBlack {
+  color: #212121;
+  font-size: 2.2rem; /* Tamanho do título restaurado */
+  margin-left: 8px;
+  font-weight: 500; /* Peso da fonte restaurado */
+}
+
+.line {
+  width: 75%; /* Mantém a largura da linha */
+  height: 3px; /* Espessura da linha */
+  background-color: #d32f2f; /* Cor da linha */
+  margin: 2% auto; /* Centraliza a linha */
+  border-radius: 1.5px; /* Arredondamento da linha */
 }
 
 .search_container {
   display: flex;
   width: 100%;
+  justify-content: center; /* Centraliza a barra de pesquisa */
   margin-bottom: 2rem;
-  flex-direction: column;
 }
 
 .input_container {
   display: flex;
-  width: 100%;
+  width: 50%; /* Aumenta a largura do campo de entrada */
   align-items: center;
 }
 
 .input_container input {
   box-sizing: border-box;
+  width: 100%; /* Permite que o campo de entrada use toda a largura disponível */
+  padding: 0.5em; /* Aumenta o padding para melhor usabilidade */
+  border: 2px solid #d32f2f; /* Adiciona borda ao campo de entrada */
+  border-radius: 0.5rem; /* Arredonda os cantos */
   outline: none;
-  width: 20rem;
-  padding: 0.25em;
-  outline: none;
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  border-bottom: 0;
-
 }
 
 .input_container label {
   font-weight: bold;
   font-size: 1em;
   margin-left: 0.5em;
-}
-
-.blackline {
-  width: 22rem;
-  height: 0.1rem;
-  background-color: black;
-  margin-bottom: 1em;
+  color: #d32f2f; /* Cor do ícone de pesquisa */
 }
 
 .times {
@@ -83,26 +73,28 @@
 }
 
 .times h2 {
-  font-size: 1.8rem;
+  font-size: 1.8rem; /* Tamanho do título das equipes */
   font-weight: bold;
   margin-bottom: 0.5em;
   text-align: left;
-  color: #767676;
+  color: #767676; /* Cor do título das equipes */
 }
 
 .button {
   display: flex;
   width: 20%;
-  background-color: #af0000;
+  background-color: #d32f2f; /* Altera a cor do botão para vermelho */
   color: white;
   padding: 1rem;
   justify-content: center;
   border-radius: 0.5rem;
   cursor: pointer;
   border: none;
-  outline: none;
   font-size: 1rem;
-  margin-bottom: 0.5em;
-  margin: auto;
+  margin: 2em auto; /* Espaçamento superior e inferior com centralização */
+  transition: background-color 0.3s ease; /* Adiciona transição suave na cor do botão */
 }
 
+.button:hover {
+  background-color: #af0000; /* Altera a cor do botão ao passar o mouse */
+}
