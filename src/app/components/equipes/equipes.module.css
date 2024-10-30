@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    align-items: center;
   }
   
   
@@ -11,7 +12,8 @@
     display: flex;
     margin-bottom: 1em;
     flex-direction: column;
-    margin: 2.5rem;
+
+    margin: auto;
   }
   
   .card_top {
@@ -36,8 +38,8 @@
   } */
   
   .gray_circule {
-    width: 6rem;
-    height: 6rem;
+    width: 8rem;
+    height: 8rem;
     background-color: #d9d9d9;
     border-radius: 50%;
     display: flex;
@@ -55,18 +57,20 @@
     align-items: center;
     border-bottom-left-radius: 2.5rem;
     border-bottom-right-radius: 2.5rem;
+    border: 2px solid #af0000;
+
   }
   
   .info_card h3 {
     font-size: 2rem;
-    color: #767676;
+    color: #000000;
     font-weight: bold;
     margin-bottom: 3rem;
   }
   
   .info_card h4 {
     font-size: 1.3rem;
-    color: #767676;
+    color: #000000;
     font-weight: bold;
     margin-bottom: 0.5em;
   }
