@@ -1,0 +1,65 @@
+/* styles/Home.module.css */
+.container {
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.logo {
+    width: 130px;
+    height: auto;
+}
+
+.profileButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+.title {
+    text-align: left;
+    margin-left: 15%;
+    margin-bottom: 10px;
+}
+
+.titleRed {
+    color: #d32f2f;
+    font-size: 3rem;
+}
+
+.titleBlack {
+    color: #212121;
+    font-size: 2.2rem;
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+.line {
+    width: 75%;
+    height: 3px;
+    background-color: #d32f2f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin: auto;
+    margin-bottom: 3%;
+    margin-top: 2%;
+
+    border-radius: 1.5px;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}

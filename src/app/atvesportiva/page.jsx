@@ -6,6 +6,8 @@ import List_times from '../components/list_times/list_times';
 import CardModality from '../components/CardModality/page';
 import { useRouter } from 'next/navigation'; // Importando useRouter
 import { useEffect, useState } from 'react';
+import Header from '../components/header/header';
+
 
 const Gestaoesportes = () => {''
 
@@ -15,9 +17,7 @@ const Gestaoesportes = () => {''
 
   return (
     <div className={styles.main_div}>
-      <div className={styles.div_img}>
-        <Image src={logo} id={styles.logo} width={130} height={130} />
-      </div>
+      <Header />
 
       <div className={styles.container}>
         <h2 className={styles.h2Title}> Placar do evento atual</h2>

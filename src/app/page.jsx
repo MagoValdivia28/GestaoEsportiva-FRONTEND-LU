@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { FaUser, FaUsers, FaArrowRight, FaComments } from 'react-icons/fa';
+//que codigo bosta é esse
 import logo from '../../assets/imagens/logo.png';
 import styles from './page.module.css';
 
@@ -13,7 +14,7 @@ export default function Home() {
   };
 
   const handleGerenciarCampeonatosClick = () => {
-    router.push('/gecampeonatos');
+    router.push('/campeonato');
   };
 
   const handleFeedbackClick = () => {
