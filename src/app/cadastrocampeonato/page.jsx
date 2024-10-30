@@ -6,7 +6,7 @@ import logo from "../../../assets/imagens/logo.png";
 import { FaUser } from 'react-icons/fa';
 import { LiaArrowCircleLeftSolid } from "react-icons/lia";
 import Link from 'next/link';
-import { createCampeonato } from '@/src/actions/campeonato';
+import { createCampeonato } from '@/src/actions/api';
 import { useState } from 'react';
 import PopUpError from '@/src/app/components/PopUpError';
 
@@ -38,7 +38,7 @@ const CadastroCampeonato = () => {
       setTimeout(() => {
         setError(null);
         if (response.status === "sucess") {
-          router.push('/gecampeonatos');
+          router.push('/campeonato');
         }
       }, 3000);
     }

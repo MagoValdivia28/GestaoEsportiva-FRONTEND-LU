@@ -1,0 +1,76 @@
+.listUl {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+  }
+  
+  
+  .cards_time {
+    width: 20rem;
+    height: 25rem;
+    display: flex;
+    margin-bottom: 1em;
+    flex-direction: column;
+
+    margin: auto;
+  }
+  
+  .card_top {
+    width: 100%;
+    height: 10rem;
+    background-color: #af0000;
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: 2.5rem;
+    border-top-right-radius: 2.5rem;
+    align-items: flex-end;
+  }
+  
+  /* .exit_button {
+    color: white;
+    position: relative;
+    top: -5rem;
+    right: -11rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+  } */
+  
+  .gray_circule {
+    width: 8rem;
+    height: 8rem;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+    top : 3rem;
+  }
+  
+  .info_card {
+    background-color: #ffff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 2.5rem;
+    border-bottom-right-radius: 2.5rem;
+    border: 2px solid #af0000;
+
+  }
+  
+  .info_card h3 {
+    font-size: 2rem;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 3rem;
+  }
+  
+  .info_card h4 {
+    font-size: 1.3rem;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
