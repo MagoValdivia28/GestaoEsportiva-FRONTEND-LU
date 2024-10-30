@@ -1,0 +1,28 @@
+.header{
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo:hover {
+    cursor: pointer;
+
+}
+
+.profileIcon img {
+    border-radius: 50%;
+}
+
+.profileButton {
+    background-color: #d9d9d9;
+    color: black;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    margin: 1.5rem;
+
+}

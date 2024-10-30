@@ -3,14 +3,13 @@ import styles from './page.module.css';
 import logo from "../../../assets/imagens/logo.png";
 import Image from 'next/image';
 import List_times from '../components/list_times/list_times';
+import Header from '../components/header/header';
 
 const Gestaoesportes = () => {
 
   return (
     <div className={styles.main_div}>
-      <div className={styles.div_img}>
-        <Image src={logo} id={styles.logo} width={130} height={130} />
-      </div>
+      <Header />
 
       <div className={styles.container}>
         <h2 className={styles.h2Title}> Placar do evento atual</h2>
