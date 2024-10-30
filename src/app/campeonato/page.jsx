@@ -21,7 +21,7 @@ const geCampeonatos = () => {
     const fetchCampeonato = async () => {
       const date = new Date();
       const formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-      const response = await getAPI('campeonatos/date', formattedDate);
+      const response = await getAPI('campeonatos/date/', formattedDate);
       if (response.message) {
         setError(response);
         setTimeout(() => setError(null), 1500);

@@ -3,13 +3,17 @@
 import styles from './page.module.css';
 // import logo from "../assets/imagens/logo.png";
 import Image from 'next/image';
-import Header from '../components/header/header';
+import Header from '@/src/app/components/header';
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from 'react';
-import Equipes from '../components/equipes/equipes';
+import Equipes from '@/src/app/components/equipes/equipes';
 import { getAPI } from '@/src/actions/api';
+import { useRouter, useParams } from 'next/navigation'; 
 
 const GdeEquipes = () => {
+    const { id } = useParams();
+    console.log(id);
+    
     const [approvedTeams, setApprovedTeams] = useState([]);
     const [pendingTeams, setPendingTeams] = useState([]);
     const [rejectedTeams, setRejectedTeams] = useState([]);
