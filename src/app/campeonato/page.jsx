@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation';
 import { getCampeonatoByDate } from '@/src/actions/campeonato';
 import PopUpError from '@/src/app/components/PopUpError';
 
-const Home = () => {
+const geCampeonatos = () => {
   const router = useRouter();
   const [error, setError] = useState(null);
   const [campeonato, setCampeonato] = useState([]);
@@ -74,4 +74,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default geCampeonatos;
