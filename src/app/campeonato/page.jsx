@@ -11,6 +11,7 @@ import Card from '../components/Card/page';
 import { useRouter } from 'next/navigation';
 import { getAPI } from '@/src/actions/api';
 import PopUpError from '@/src/app/components/PopUpError';
+import Header from '../components/header/header';
 
 const geCampeonatos = () => {
   const router = useRouter();
@@ -41,12 +42,7 @@ const geCampeonatos = () => {
 
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <Image src={logo} alt="Logo" className={styles.logo} width={130} height={130} />
-        <button className={styles.profileButton}>
-          <FaUser size={20} />
-        </button>
-      </header>
+      <Header />
       
       <main className={styles.main}>
         <h1 className={styles.title}>

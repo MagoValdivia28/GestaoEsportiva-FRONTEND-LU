@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import styles from './header.module.css';
 import logo from '@/assets/imagens/logo.png';
 import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';
+
 
 const Header = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -29,7 +31,10 @@ const Header = () => {
 
     return (
         <header className={styles.header}>
-            <Image src={logo} className={styles.logo} width={130} height={130} />
+            <Link className={styles.buttonHome} href={"/"}>
+                <Image src={logo} className={styles.logo} width={130} height={130} />
+            </Link>
+
             <div className={styles.profileIcon}>
                 <button className={styles.profileButton} onClick={togglePopup}>
                     <FaUser size={20} />
