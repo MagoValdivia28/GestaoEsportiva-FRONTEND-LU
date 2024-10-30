@@ -20,18 +20,21 @@ const CampeonatoDetails = () => {
             </button>
           </div>
         </header>
-        <main className={styles.main}>
-          <h2>Gerenciamento de atividades</h2>
-          <hr className={styles.separator} />
+         <h1 className={styles.title}>
+          <span className={styles.titleRed}>Gerenciamento</span>
+          <span className={styles.titleBlack}> de Atividades</span>
+        </h1>
+        <div className={styles.line}></div>
           <div className={styles.cardContainer}>
             <div className={styles.card}>
+              <div>
               <p>Gerenciamento de Equipe</p>
             </div>
-            <div className={styles.card}>
+          </div>
+            <div className={styles.card2}>
               <p>Modalidades</p>
             </div>
           </div>
-        </main>
       </div>
     
     </>
