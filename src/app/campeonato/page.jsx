@@ -9,7 +9,7 @@ import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';
 import Card from '../components/Card/page';
 import { useRouter } from 'next/navigation';
-import { getCampeonatoByDate } from '@/src/actions/campeonato';
+import { getCampeonatoByDate } from '@/src/actions/api';
 import PopUpError from '@/src/app/components/PopUpError';
 
 const geCampeonatos = () => {

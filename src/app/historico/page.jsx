@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './page.module.css';
 import Image from 'next/image';
 import Logo from '../../../assets/imagens/logo.png';
-import { getCampeonatos } from '@/src/actions/campeonato';
+import { getAPI } from '@/src/actions/api';
 
 const Historico = () => {
   const [showModal, setShowModal] = useState(false);
@@ -12,7 +12,7 @@ const Historico = () => {
 
   useEffect(() => {
     const getAllCampeonatos = async () => {
-      const campeonatos = await getCampeonatos();
+      const campeonatos = await getAPI('campeonatos');
       setCampeonatos(campeonatos.campeonatos);
     };
     getAllCampeonatos();
