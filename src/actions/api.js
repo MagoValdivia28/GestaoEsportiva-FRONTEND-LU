@@ -3,9 +3,9 @@
 import axios from "axios"
 const api = process.env.EXPO_PUBLIC_API_URL;
 
-export const getCampeonatos = async () => {
+export const getAPI = async (path) => {
     try {
-        const response = await axios.get(`${api}/campeonatos`);
+        const response = await axios.get(`${api}/${path}`);
         return response.data;
     } catch (error) {
         if(error.response){
