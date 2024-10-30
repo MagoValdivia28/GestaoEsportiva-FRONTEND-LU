@@ -3,9 +3,9 @@
 import axios from "axios"
 const api = process.env.EXPO_PUBLIC_API_URL;
 
-export const getAPI = async (path) => {
+export const getAPI = async (path, query) => {
     try {
-        const response = await axios.get(`${api}/${path}`);
+        const response = await axios.get(`${api}/${path}${query ? query : ''}`);
         return response.data;
     } catch (error) {
         if(error.response){
