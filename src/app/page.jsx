@@ -14,7 +14,7 @@ export default function Home() {
   };
 
   const handleGerenciarCampeonatosClick = () => {
-    router.push('/gecampeonatos');
+    router.push('/campeonato');
   };
 
   const handleFeedbackClick = () => {
