@@ -8,7 +8,7 @@ import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from 'react';
 import Equipes from '@/src/app/components/equipes/equipes';
 import { getAPI } from '@/src/actions/api';
-import { useRouter, useParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 const GdeEquipes = () => {
     const { id } = useParams();
