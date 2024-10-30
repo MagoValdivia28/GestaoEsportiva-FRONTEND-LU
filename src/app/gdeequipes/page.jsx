@@ -3,6 +3,7 @@
 import styles from './page.module.css';
 // import logo from "../assets/imagens/logo.png";
 import Image from 'next/image';
+import Header from '../components/header/header';
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from 'react';
 import Equipes from '../components/equipes/equipes';
@@ -10,6 +11,7 @@ import Equipes from '../components/equipes/equipes';
 const GdeEquipes = () => {
     return (
         <div className={styles.main_div}>
+            <Header/>
             {/* <Image src={logo} id={styles.logo} width={130} height={130} /> */}
             <div className={styles.container_times}>
                 <h1 className={styles.title}>
@@ -18,10 +20,9 @@ const GdeEquipes = () => {
                 </h1>
                 <div className={styles.line}></div>
             </div>
-
             <div className={styles.search_container}>
                 <div className={styles.input_container}>
-                    <input type="search" id="Search" name="Search" required />
+                    <input type="search" id="Search" name="Search" placeholder='pesquisar equipe por nome' required />
                     <label htmlFor="Search">
                         <FaSearch />
                     </label>
@@ -33,11 +34,14 @@ const GdeEquipes = () => {
                 <h2 className={styles.title}>Equipes Aprovadas</h2>
                 <Equipes />
             </div>
+            <div className={styles.line}></div>
+
 
             <div className={styles.times}>
                 <h2 className={styles.title}>Equipes Pendentes</h2>
-                <Equipes />
+                <Equipes  />
             </div>
+            <div className={styles.line}></div>
 
             <div className={styles.times}>
                 <h2 className={styles.title}>Equipes Rejeitadas</h2>
