@@ -40,6 +40,7 @@ export const getCampeonatoByDate = async (dateParams) => {
     } catch (error) {
         if(error.response){
             return error.response.data;
+            
         } else {
             return error;
         }
