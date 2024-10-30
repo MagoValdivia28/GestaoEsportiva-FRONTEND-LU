@@ -9,7 +9,7 @@ import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';
 import Card from '../components/Card/page';
 import { useRouter } from 'next/navigation';
-import { getCampeonatoByDate } from '@/src/actions/api';
+import { getAPI } from '@/src/actions/api';
 import PopUpError from '@/src/app/components/PopUpError';
 
 const geCampeonatos = () => {
@@ -21,7 +21,7 @@ const geCampeonatos = () => {
     const fetchCampeonato = async () => {
       const date = new Date();
       const formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-      const response = await getCampeonatoByDate(formattedDate);
+      const response = await getAPI('campeonatos/date', formattedDate);
       if (response.message) {
         setError(response);
         setTimeout(() => setError(null), 1500);
