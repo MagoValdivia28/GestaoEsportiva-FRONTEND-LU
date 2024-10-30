@@ -3,28 +3,34 @@
 import styles from './page.module.css';
 // import logo from "../assets/imagens/logo.png";
 import Image from 'next/image';
-import Header from '@/src/app/components/header';
+import Header from '@/src/app/components/header/header';
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from 'react';
 import Equipes from '@/src/app/components/equipes/equipes';
 import { getAPI } from '@/src/actions/api';
-import { useRouter, useParams } from 'next/navigation'; 
+import { useRouter, useParams } from 'next/navigation';
 
 const GdeEquipes = () => {
     const { id } = useParams();
-    console.log(id);
-    
+
     const [approvedTeams, setApprovedTeams] = useState([]);
     const [pendingTeams, setPendingTeams] = useState([]);
     const [rejectedTeams, setRejectedTeams] = useState([]);
     useEffect(() => {
-        getAPI('times/campeonato/', '8c61af59-06f2-4928-a998-393880fbbb85', {status: 'aprovada'}).then(data => setApprovedTeams(data.times));
-        getAPI('times/campeonato/', '8c61af59-06f2-4928-a998-393880fbbb85', {status: 'pendente'}).then(data => setPendingTeams(data.times));
-        getAPI('times/campeonato/', '8c61af59-06f2-4928-a998-393880fbbb85', {status: 'rejeitada'}).then(data => setRejectedTeams(data.times));
+        getAPI('times/campeonato/', id, { status: 'aprovada' }).then(data => setApprovedTeams(data.times));
+        getAPI('times/campeonato/', id, { status: 'pendente' }).then(data => setPendingTeams(data.times));
+        getAPI('times/campeonato/', id, { status: 'rejeitada' }).then(data => setRejectedTeams(data.times));
     }, []);
+
+    const handleSearch = (e) => {
+        const search = e.target.value;
+        getAPI('times/campeonato/', id, { status: 'aprovada', name: search }).then(data => setApprovedTeams(data.times));
+        getAPI('times/campeonato/', id, { status: 'pendente', name: search }).then(data => setPendingTeams(data.times));
+        getAPI('times/campeonato/', id, { status: 'rejeitada', name: search }).then(data => setRejectedTeams(data.times));
+    };
     return (
         <div className={styles.main_div}>
-            <Header/>
+            <Header />
             {/* <Image src={logo} id={styles.logo} width={130} height={130} /> */}
             <div className={styles.container_times}>
                 <h1 className={styles.title}>
@@ -35,7 +41,7 @@ const GdeEquipes = () => {
             </div>
             <div className={styles.search_container}>
                 <div className={styles.input_container}>
-                    <input type="search" id="Search" name="Search" placeholder='pesquisar equipe por nome' required />
+                    <input type="search" id="Search" name="Search" placeholder='Pesquisar equipe por nome' onChange={handleSearch} />
                     <label htmlFor="Search">
                         <FaSearch />
                     </label>
@@ -46,9 +52,9 @@ const GdeEquipes = () => {
             <div className={styles.times}>
                 <h2 className={styles.title}>Equipes Aprovadas</h2>
                 {
-                    approvedTeams.map(team => (
+                    approvedTeams ? approvedTeams.map(team => (
                         <Equipes key={team.time_id} nameTeam={team.time_nome} members={team.jogadores} />
-                    ))
+                    )) : <p>Nao tem</p>
                 }
             </div>
             <div className={styles.line}></div>
@@ -57,9 +63,9 @@ const GdeEquipes = () => {
             <div className={styles.times}>
                 <h2 className={styles.title}>Equipes Pendentes</h2>
                 {
-                    pendingTeams.map(team => (
+                    pendingTeams ? pendingTeams.map(team => (
                         <Equipes key={team.time_id} nameTeam={team.time_nome} members={team.jogadores} />
-                    ))
+                    )) : <p>Nao tem</p>
                 }
             </div>
             <div className={styles.line}></div>
@@ -67,9 +73,9 @@ const GdeEquipes = () => {
             <div className={styles.times}>
                 <h2 className={styles.title}>Equipes Rejeitadas</h2>
                 {
-                    rejectedTeams.map(team => (
+                    rejectedTeams ? rejectedTeams.map(team => (
                         <Equipes key={team.time_id} nameTeam={team.time_nome} members={team.jogadores} />
-                    ))
+                    )) : <p>Nao tem</p>
                 }
             </div>
 
