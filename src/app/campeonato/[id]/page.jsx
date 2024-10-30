@@ -11,7 +11,7 @@ const CampeonatoDetails = () => {
 
   // Função para redirecionar para a página de gerenciamento de equipe
   const navigateToTeamManagement = () => {
-    router.push('/gdeequipes'); // Redireciona para a página "gedeequipe"
+    router.push(`/campeonato/${id}/gdeequipes`); // Redireciona para a página "gedeequipe"
   };
 
   return (

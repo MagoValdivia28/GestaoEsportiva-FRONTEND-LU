@@ -1,6 +1,6 @@
 import styles from './equipes.module.css';
 
-const Equipes = () => (
+const Equipes = ({nameTeam, members}) => (
         <ul className={styles.listUl}>
 
             <li className={styles.cards_time}>
@@ -11,9 +11,13 @@ const Equipes = () => (
                 </div>
 
                 <div className={styles.info_card}>
-                    <h3>Equipe 03</h3>
+                    <h3>{nameTeam}</h3>
                     <h4>Membros:</h4>
-                    <p>Sla</p>
+                    {
+                        members.map(member => (
+                            <p key={member.id}>{member.nome}</p>
+                        ))
+                    }
                 </div>
             </li>
 

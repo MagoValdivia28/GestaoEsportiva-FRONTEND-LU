@@ -3,12 +3,13 @@
 import axios from "axios"
 const api = process.env.EXPO_PUBLIC_API_URL;
 
-export const getAPI = async (path, query) => {
+export const getAPI = async (path, id, query) => {
     try {
-        const response = await axios.get(`${api}/${path}${query ? query : ''}`);
+        const url = `${api}/${path}${id ? id : ''}?${new URLSearchParams(query).toString()}`;
+        const response = await axios.get(url);
         return response.data;
     } catch (error) {
-        if(error.response){
+        if (error.response) {
             return error.response.data;
         } else {
             return error;
@@ -25,7 +26,7 @@ export const createCampeonato = async (nameParams, dateStartsParams, dateEndsPar
         });
         return response.data;
     } catch (error) {
-        if(error.response){
+        if (error.response) {
             return error.response.data;
         } else {
             return error;
@@ -38,9 +39,9 @@ export const getCampeonatoByDate = async (dateParams) => {
         const response = await axios.get(`${api}/campeonatos/date/${dateParams}`);
         return response.data;
     } catch (error) {
-        if(error.response){
+        if (error.response) {
             return error.response.data;
-            
+
         } else {
             return error;
         }
