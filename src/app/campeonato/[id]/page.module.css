@@ -1,5 +1,5 @@
 .container {
-  padding: 20px;
+  padding: 2%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -14,7 +14,35 @@
 .logo:hover {
   transform: scale(1.05);
   cursor: pointer;
+}
 
+.title {
+  text-align: left;
+  margin-left: 15%;
+}
+
+.titleRed {
+  color: #d32f2f;
+  font-size: 3rem;
+}
+
+.titleBlack {
+  color: #212121;
+  font-size: 2.2rem;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.line {
+  width: 75%;
+  height: 3px;
+  background-color: #d32f2f;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin: auto;
+  margin-bottom: 3%;
+  margin-top: 2%;
+  border-radius: 1.5px;
 }
 
 .profileIcon img {
@@ -29,17 +57,6 @@
 
 .main h2 {
   color: grey;
-}
-
-.separator {
-  width: 55%;
-  height: 3px;
-  background-color: rgb(182, 3, 3);
-  margin-right: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  margin-bottom: 2rem;
 }
 
 .profileButton {
@@ -59,32 +76,98 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-
 }
 
+/* Card styling with fixed gradient background */
 .card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
   width: 25rem;
-  height: 20rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-  background-color: #E5E5E5;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
+  height: 16rem;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background-image: url('../../../../assets/imagens/equipe.jpg'); /* Atualize o caminho da imagem */
+  
+  background-size: cover;
+  background-position: center;
+  color: white;
   display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border: 3px solid #d32f2f; /* Borda vermelha */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer; /* Adiciona o cursor pointer ao card */
 }
 
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  border-radius: 8px;
+}
+
+.card p {
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8%;
+  color: #ffffff;
+}
+
+/* Hover effect for cards */
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* Aumenta o tamanho do card ao passar o mouse */
 }
 
 .cardContainer {
   display: flex;
   justify-content: space-around;
+  
   flex-wrap: wrap;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
+
+.card2 {
+  position: relative;
+  width: 25rem;
+  height: 16rem;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background-image: url('../../../../assets/imagens/adicionar.jpg'); /* Atualize o caminho da imagem */
+  background-size: cover;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border: 3px solid #d32f2f; /* Borda vermelha */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.card2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  border-radius: 8px;
+}
+
+.card2 p {
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8%;
+  color: #ffffff;
+}
+
+/* Hover effect for the second card */
+.card2:hover {
+  transform: scale(1.05); /* Aumenta o tamanho do card ao passar o mouse */
+}
+
