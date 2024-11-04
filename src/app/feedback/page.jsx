@@ -24,11 +24,7 @@ const FeedBack = () => {
 
     return (
         <main className={styles.main_container}>
-            <div className={styles.firstIMG_container}>
-                <Header />
-                <div className={styles.img}></div>
-            </div>
-
+            <Header />
             <div className={styles.about_container}>
                 <div className={styles.info_about_container}>
                     <h1>
