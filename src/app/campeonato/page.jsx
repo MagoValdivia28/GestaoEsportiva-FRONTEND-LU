@@ -54,7 +54,6 @@ const geCampeonatos = () => {
         <div className={styles.cardsContainer}>
           <Card title="Adicionar" imageUrl={adicionar} onClick={handleAddClick} />
           <Card title="Histórico" imageUrl={historico} onClick={handleHistoricoClick} />
-          <Card title="Interclasse" imageUrl={hometopo} />
           {
               campeonato && (
                 campeonato.map((item) => (
