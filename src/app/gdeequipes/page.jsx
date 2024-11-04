@@ -69,8 +69,7 @@ const GdeEquipes = () => {
                 }
             </div>
 
-            <button className={styles.button}>Adicionar Equipe</button>
-        </div>
+        </main>
     );
 }
 
