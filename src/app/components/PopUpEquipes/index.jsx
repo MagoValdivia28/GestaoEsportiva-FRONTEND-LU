@@ -31,7 +31,7 @@ const CadastroPopup = ({ isOpen, onClose }) => {
         });
     };
 
-    // Função para lidar com o envio do formulário
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Dados enviados:', formData);
