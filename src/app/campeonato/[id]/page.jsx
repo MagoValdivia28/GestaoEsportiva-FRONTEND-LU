@@ -4,6 +4,7 @@ import logo from '@/assets/imagens/logo.png';
 import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';
 import { useRouter, useParams } from 'next/navigation'; 
+import Header from '../../components/header/header';
 
 const CampeonatoDetails = () => {
   const router = useRouter(); 
@@ -16,15 +17,9 @@ const CampeonatoDetails = () => {
 
   return (
     <>
+        <Header /> 
       <div className={styles.container}>
-        <header className={styles.header}>
-          <Image src={logo} className={styles.logo} width={130} height={130} />
-          <div className={styles.profileIcon}>
-            <button className={styles.profileButton}>
-              <FaUser size={20} />
-            </button>
-          </div>
-        </header>
+       
         <h1 className={styles.title}>
           <span className={styles.titleRed}>Gerenciamento</span>
           <span className={styles.titleBlack}> de Atividades</span>
