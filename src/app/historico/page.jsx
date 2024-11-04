@@ -4,6 +4,7 @@ import styles from './page.module.css';
 import Image from 'next/image';
 import Logo from '../../../assets/imagens/logo.png';
 import { getAPI } from '@/src/actions/api';
+import Header from '../components/header/header';
 
 const Historico = () => {
   const [showModal, setShowModal] = useState(false);
@@ -53,23 +54,24 @@ const Historico = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <Image src={Logo} alt="Logo SENAI" className={styles.logo} />
+    <main className={styles.container}>
+      <Header />
       <h1 className={styles.title}>
-        <span className={styles.titleRed}>Histórico</span> 
+        <span className={styles.titleRed}>Histórico</span>
         <span className={styles.titleBlack}> de Campeonatos</span>
       </h1>
       <div className={styles.line}></div>
       <div className={styles.cardsContainer}>
-        {campeonatos.map((campeonato) => (
-          <div key={campeonato.id} className={styles.card} onClick={() => handleCardClick(campeonato)}>
-            <Image src={Logo} alt={campeonato.titulo} width={130} className={styles.image} />
-            <h2>{new Date(campeonato.data_final).getFullYear()}</h2>
-            <h3>{campeonato.titulo}</h3>
-            {/* <p>{campeonato.descricao}</p> */}
-            {/* <p><strong>Vencedor:</strong> {campeonato.vencedor}</p> */}
-          </div>
-        ))}
+        {
+          campeonatos.length > 0 ? campeonatos.map((campeonato, index) => (
+            <div key={index} className={styles.card} onClick={() => handleCardClick(campeonato)}>
+              <Image src={Logo} alt={campeonato.titulo} width={130} />
+              <h2>{campeonato.ano}</h2>
+              <h3>{campeonato.titulo}</h3>
+              <p>{campeonato.descricao}</p>
+            </div>
+          )) : <h2 className={styles.none_camp}>Nenhum campeonato cadastrado</h2>
+        }
       </div>
 
       {showModal && selectedCampeonato && (
@@ -84,7 +86,7 @@ const Historico = () => {
           </div>
         </div>
       )}
-    </div>
+    </main>
   );
 };
 
