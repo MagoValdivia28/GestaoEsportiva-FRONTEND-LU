@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px; /* Espaçamento entre os cards */
+}
+
+.card {
+  border: 2px solid #d32f2f;
+  border-radius: 12px;
+  width: 280px; /* Largura padrão para os cards */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden; /* Esconde partes da imagem que saem do card */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cardImage {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+.cardTitle {
+  font-size: 1.4rem;
+  color: #d32f2f; /* Cor do título */
+}

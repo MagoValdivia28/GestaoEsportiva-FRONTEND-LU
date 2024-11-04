@@ -1,0 +1,65 @@
+.main_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: none;
+    background-color: #fbfbfb;
+}
+
+.div_img {
+    height: 100%;
+    width: 130px;
+    margin: 2rem;
+}
+
+.title_container {
+    width: 21rem;
+    border-bottom: 0.25rem solid #af1912;
+    display: flex;
+}
+
+.h2Title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem;
+    color: #767676;
+    margin-left: 6rem;
+
+}
+
+.list_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.confrontos_container {
+    display: flex;
+    margin: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 80%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

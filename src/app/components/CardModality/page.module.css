@@ -1,0 +1,47 @@
+
+.card {
+    position: relative;
+    width: 300px; /* Defina a largura desejada */
+    height: 200px; /* Defina a altura desejada */
+    border-radius: 8px; /* Arredonda os cantos do cartão */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra do cartão */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo {
+    font-weight: bold;
+}
+
+
+.card:hover {
+    transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    color: white;
+}
+
+.cardOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s; /* Efeito de transição na sobreposição */
+}
+
+.card:hover .cardOverlay {
+    opacity: 1; /* Mostra a sobreposição ao passar o mouse */
+}
+
+.cardTitle {
+    color: rgb(0, 0, 0); /* Cor do texto do título */
+    font-size: 20px; /* Tamanho do texto */
+    text-align: center; /* Centraliza o texto */
+}

@@ -1,0 +1,76 @@
+/* CadastroPopup.css */
+
+.popupoverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupcontent {
+  background-color: #fbfbfb;
+  padding: 20px;
+  border-radius: 8px;
+  width: 70rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+  text-align: center;
+}
+
+.popupcontent h2 {
+  margin-bottom: 15px;
+}
+
+.popupcontent label { 
+  margin-bottom: 5px;
+}
+
+
+.popupcontent select,
+.popupcontent button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.popupcontent button {
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 8px;
+}
+
+.popupcontent button[type="submit"] {
+  background-color: hsl(0, 39%, 49%);
+  margin-bottom: 10px;
+}
+
+.popupcontent button[type="button"] {
+  background-color: #f44336;
+}
+
+.participantes{
+  width: 90%;
+  margin-bottom: 0.7rem;
+}
+
+.labelpart{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.participantes_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+}

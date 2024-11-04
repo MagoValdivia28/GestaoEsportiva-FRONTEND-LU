@@ -1,0 +1,33 @@
+.popup_inner {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background-color: #ef6a68;
+  border-radius: 10px;
+  padding: 17px;
+  z-index: 20;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  animation: shake 0.5s;
+}
+.h2{
+  color: #fff;
+}
+.popup_inner2 {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background-color: #42dd15;
+  border-radius: 10px;
+  padding: 17px;
+  z-index: 20;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  animation: shake 0.5s;
+}

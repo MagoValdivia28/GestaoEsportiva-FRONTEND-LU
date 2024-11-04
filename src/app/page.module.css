@@ -1,12 +1,14 @@
-.container {
+/* .container {
     background-image: url('../../assets/imagens/hometopo.png');
     background-size: cover;
-    height: 100vh;
+    height: 85vh; 
     background-repeat: no-repeat;
     background-position: bottom;
     border-bottom-right-radius: 90px;
     border-bottom-left-radius: 90px;
     color: white;
+    padding-top: 2%;
+    position: relative; 
 }
 
 .opacity {
@@ -18,19 +20,25 @@
     border-bottom-right-radius: 90px;
     border-bottom-left-radius: 90px;
     padding-top: 2%;
-    backdrop-filter: blur(0.7px);
+    height: 100%; 
+    backdrop-filter: blur(3px); 
+    background-color: rgba(0, 0, 0, 0); 
 }
+
 .top {
     display: flex;
     justify-content: space-between;
     width: 90%;
+    margin-top: -3%;
+    background-color: transparent;
 }
 
-.img{
+.img {
     width: 0%;
     height: 20%;
     margin-right: 0;
 }
+
 .profileButton {
     background-color: transparent;
     color: white;
@@ -46,46 +54,303 @@
     width: 40px;
     height: 40px;
     margin-right: 10px;
+    margin-top: 3%;
 }
+
+.pb2 {
+    background-color: transparent;
+}
+
 .profileButton:hover {
     background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
+
+.logo {
+    background-color: transparent;
+}
+
 .text {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 6%;
+    background-color: transparent;
 }
+
 .h1 {
     font-size: 60px;
     font-weight: 700;
     margin-bottom: 10px;
+    background-color: transparent;
 }
+
 .h2 {
-    font-size: 10px;
+    font-size: 16px;
     font-weight: 500;
     margin-left: 30%;
     margin-right: 30%;
     text-align: center;
     margin-bottom: 10%;
+    background-color: transparent;
 }
 
+.divbutton {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    padding-bottom: 2%;
+}
+
+.container2 {
+    padding-top: 13%;
+    padding-left: 5%;
+    padding-bottom: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10%;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    background-color: #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: transform 0.3s;
+    width: 20%;
+    height: 40vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    cursor: pointer;
+}
+
+.cards:hover {
+    transform: scale(1.05);
+}
+
+.cards p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: gray;
+}
+
+.cards::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: rgb(155, 5, 5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.iconC2 {
+    width: 100%;
+    height: 10vh;
+    color: rgb(155, 5, 5);
+    background-color: transparent;
+}
+
+.p2{
+    padding-top: 25%;
+    background-color: transparent;
+}
+ */
+
+
+.homeContainer {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.heroSection {
+  position: relative;
+  background-image: url('../../assets/imagens/hometopo.png');
+  /* Substitua pela URL da sua imagem na pasta public */
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
+.blur{
+  backdrop-filter: blur(3px); 
+  background-color: rgba(0, 0, 0, 0); 
+  height: 90vh;
+}
+
+.logo {
+  background-image: url('../../assets/imagens/logo.png');
+  /* Substitua pela URL da sua imagem na pasta public */
+  background-size: cover;
+  background-position: center;
+  height: 20vh;
+  width: 20vh;
+  margin-bottom: 3%;
+}
+
+.heroTitle {
+  justify-content: center;
+  align-items: center;
+  margin-left: 15%;
+  margin-right: 15%;
+
+}
+
+.p {
+  font-size: 2px;
+}
+
+.heroOverlay {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.heroContent {
+  text-align: center;
+  color: white;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.heroContent p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
 
 .button {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    border-radius: 25px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
-    margin-top: 20px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 1rem;
 }
 
 .button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.linhavermelha{
+  background-color: rgb(197, 10, 10);
+  width: 100%;
+  height: 4px;
+
+}
+.welcomeSection {
+  padding: 2rem;
+  text-align: left  ;
+  margin-bottom: 3%;
+}
+
+.welcomeSection h2 {
+  font-size: 2rem;
+  padding-top: 6%;
+}
+
+.highligext {
+  color: red;
+  font-weight: bold;
+}
+
+
+/* Cartões de Gerenciamento */
+.championshipsManagement {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.championshipCard {
+  position: relative;
+  width: 50%;
+  height: 65vh;
+  border-top-left-radius: 6%;
+  border-bottom-right-radius: 6%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.championshipCard:hover {
+  transform: scale(1.05); /* Slightly larger scaling for a more noticeable effect */
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background color change */
+}
+
+.trophyImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-image: url('../../assets/imagens/trophy-image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.p2{
+  font-size: 50px;
+}
+.icon{
+  color: white;
+  font-size: 10px;
+  display: flex;
+  float: right;  
+}
+.cardContent {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+}
+.emptyCard {
+  width: 30%;
+  border-top-left-radius: 6%;
+  border-bottom-right-radius: 6%;
+  background-color: #aa0404;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Smooth transition for hover effects */
+}
+
+.emptyCard:hover {
+  transform: scale(1.05); /* Slightly larger scaling for a noticeable effect */
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
+  background-color: rgba(170, 4, 4, 0.9); /* Slightly darken the background on hover */
+}
+.pcard2 {
+  font-size: 3.5rem;
+  color: white;
+  text-align: left; /* Keeps the text aligned to the left */
+}
+
+.icon2 {
+  color: white;
+  font-size: 10px;
+  align-self: flex-end; /* Aligns the icon to the right */
 }

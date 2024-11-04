@@ -1,5 +1,4 @@
 "use client"
-import { useRouter } from 'next/router';
 import styles from './page.module.css';
 import Image from 'next/image';
 import logo from "../../../assets/imagens/logo.png";
