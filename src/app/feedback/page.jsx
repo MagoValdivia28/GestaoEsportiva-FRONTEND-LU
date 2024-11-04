@@ -1,11 +1,25 @@
+"use client";
+
 import styles from './page.module.css';
 import { IoInformationCircleOutline } from "react-icons/io5";
 import { TbCoins } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 import { GiTennisCourt } from "react-icons/gi";
+import emailjs from '@emailjs/Browser';
 
 
 const FeedBack = () => {
+    const [ feedBack, setFeedBack ] = useState('');
+
+    const sendFeedBack = () => {
+        if (feedBack == '') {
+            alert('O campo de feedback não pode estar vazio');
+            return;
+        }
+        emailjs.send('service_1q7z5qf', 'template_1q7z5qf', {message: feedBack}, 'user_1q7z5qf')
+    }
+
+
     return (
         <main className={styles.main_container}>
             <div className={styles.firstIMG_container}>
@@ -59,9 +73,18 @@ const FeedBack = () => {
             </div>
 
             <div className={styles.feedback_container}>
-
-            </div>
-        </main>
+                <GiTennisCourt className={styles.icon} />
+                <div className={styles.feedback_text} >
+                    <h1>Contate-nos</h1>
+                    <input
+                        type="text"
+                        placeholder="Escreva seu comentario para a AAPM!!"
+                        onChange={(e) => setFeedBack(e.target.value)}
+                        value = {feedBack}
+                    />
+                </div>
+            </div >
+        </main >
     )
 }
 

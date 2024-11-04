@@ -2,12 +2,14 @@
     width: 100%;
     background-color: #f7f7f7;
 }
+
 .firstIMG_container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
+    background-color: transparent;
 }
 
 .img {
@@ -22,6 +24,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+    background-color: transparent;
 }
 
 .info_about_container {
@@ -32,12 +35,15 @@
     align-items: center;
     flex-direction: column;
     padding: 2rem;
+    background-color: transparent;
 }
+
 .info_about_container h1 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 0.5em;
     text-align: left;
+    background-color: transparent;
 }
 
 .img_about_container {
@@ -62,6 +68,7 @@
     padding: 2rem;
     width: 90%;
     margin: auto;
+    background-color: transparent;
 }
 
 .iconMVV {
@@ -72,6 +79,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: transparent;
 }
 
 .icon {
@@ -79,11 +87,13 @@
     height: 50%;
     object-fit: cover;
     color: #ad0000;
+    background-color: transparent;
 }
 
 .iconMVV p {
     font-size: 1rem;
     text-align: center;
+    background-color: transparent;
 }
 
 
@@ -92,8 +102,34 @@
 .feedback_container {
     display: flex;
     justify-content: center;
-    align-items: center;
     margin: 2rem 0;
     padding: 3rem;
-    background-color: blue;
+    width: 98%;
+    background-color: transparent;
+}
+
+.feedback_text {
+    width: 100%;
+    background-color: transparent;
+}
+
+.feedback_text input {
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 1em;
+    width: 100%;
+    text-decoration: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    background-color: transparent;
+    
+}
+
+.feedback_text h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    text-align: left;
+    background-color: transparent;
 }
