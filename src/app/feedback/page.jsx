@@ -1,11 +1,12 @@
-"use client";
+"use client"
 
 import styles from './page.module.css';
 import { IoInformationCircleOutline } from "react-icons/io5";
 import { TbCoins } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 import { GiTennisCourt } from "react-icons/gi";
-import emailjs from '@emailjs/Browser';
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 
 const FeedBack = () => {
@@ -16,7 +17,7 @@ const FeedBack = () => {
             alert('O campo de feedback não pode estar vazio');
             return;
         }
-        emailjs.send('service_1q7z5qf', 'template_1q7z5qf', {message: feedBack}, 'user_1q7z5qf')
+         emailjs.send('service_1q7z5qf', 'template_1q7z5qf', {message: feedBack}, 'user_1q7z5qf')
     }
 
 
