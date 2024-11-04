@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import './page.module.css';
 import styles from './page.module.css';
+import { FaX } from "react-icons/fa6";
 
 const CadastroPopup = ({ isOpen, onClose }) => {
     // Estado para armazenar os valores dos campos do formulário
@@ -45,6 +46,9 @@ const CadastroPopup = ({ isOpen, onClose }) => {
         <div className={styles.popupoverlay}>
             <div className={styles.popupcontent}>
                 <h2>Cadastro</h2>
+                <button type="button" onClick={onClose}>
+                        <FaX />
+                    </button>
                 <form onSubmit={handleSubmit}>
                     <label>Nome:</label>
                     <input
@@ -177,7 +181,7 @@ const CadastroPopup = ({ isOpen, onClose }) => {
                     />
 
                     <button type="submit">Cadastrar</button>
-                    <button type="button" onClick={onClose}>Cancelar</button>
+                   
                 </form>
             </div>
         </div>
