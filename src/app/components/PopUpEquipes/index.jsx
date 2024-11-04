@@ -45,10 +45,10 @@ const CadastroPopup = ({ isOpen, onClose }) => {
     return (
         <div className={styles.popupoverlay}>
             <div className={styles.popupcontent}>
-                <h2>Cadastro</h2>
-                <button type="button" onClick={onClose}>
+            <button type="button" onClick={onClose} className={styles.X}>
                         <FaX />
                     </button>
+                <h2>Cadastro</h2>
                 <form onSubmit={handleSubmit}>
                     <label>Nome:</label>
                     <input
@@ -180,7 +180,7 @@ const CadastroPopup = ({ isOpen, onClose }) => {
                         onChange={handleChange}
                     />
 
-                    <button type="submit">Cadastrar</button>
+                    <button type="submit" className={styles.cadastro}>Cadastrar</button>
                    
                 </form>
             </div>
