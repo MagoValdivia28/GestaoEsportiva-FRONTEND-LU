@@ -15,6 +15,11 @@ const CampeonatoDetails = () => {
     router.push(`/campeonato/${id}/gdeequipes`); // Redireciona para a página "gedeequipe"
   };
 
+  // Função para redirecionar para a página de gerenciamento de modalidades
+  const navigateToModalidadeManagement = () => {
+    router.push(`/campeonato/${id}/atvesportiva`); // Redireciona para a página "modalidades"
+  };
+
   return (
     <>
         <Header /> 
@@ -31,7 +36,7 @@ const CampeonatoDetails = () => {
               <p>Gerenciamento de Equipe</p>
             </div>
           </div>
-          <div className={styles.card2}>
+          <div className={styles.card2} onClick={navigateToModalidadeManagement}>
             <p>Modalidades</p>
           </div>
         </div>
