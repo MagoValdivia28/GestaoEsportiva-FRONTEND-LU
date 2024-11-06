@@ -31,26 +31,37 @@
 
 
 .popupcontent select,
-.popupcontent button {
+.cadastro {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
 }
 
-.popupcontent button {
+.cadastro{
   cursor: pointer;
   border: none;
   color: white;
   padding: 8px;
 }
 
-.popupcontent button[type="submit"] {
+.cadastro {
   background-color: hsl(0, 39%, 49%);
   margin-bottom: 10px;
 }
 
-.popupcontent button[type="button"] {
-  background-color: #f44336;
+.cadastro {
+  width: 25%;
+  padding: 13px;
+  background-color: #C72828;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 5%;
+  font-family: 'Questrial', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .participantes{
@@ -73,4 +84,10 @@
   align-items: center;
   text-align: center;
 
+}
+
+.X {
+  margin-left: 98%;
+  border: none;
+  background: none;
 }
