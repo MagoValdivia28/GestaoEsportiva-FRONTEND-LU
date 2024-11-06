@@ -4,11 +4,12 @@ import { useRouter } from 'next/navigation';
 import { FaUser, FaUsers, FaArrowRight, FaComments } from 'react-icons/fa';
 import styles from './page.module.css';
 
+
 export default function Home() {
   const router = useRouter();
 
   const handleConhecaNosClick = () => {
-    router.push('/feedback'); // Navigate to the "Conheça-nos" page
+    router.push('/'); // Navigate to the "Conheça-nos" page
   };
 
   const handleGerenciarCampeonatosClick = () => {
@@ -19,9 +20,13 @@ export default function Home() {
     router.push('/feedback');
   };
 
+  const handlesobreClick = () => {
+    router.push('/sobre');
+  };
+
   return (
     <div className={styles.homeContainer}>
-      {/* Seção de Introdução */}
+
       <section className={styles.heroSection}>
         <div className={styles.blur}>
           <div className={styles.heroOverlay}>
@@ -54,6 +59,11 @@ export default function Home() {
           <div className={styles.emptyCard} onClick={handleFeedbackClick}>
             <FaArrowRight size={50} className={styles.icon2} />
             <p className={styles.pcard2}>feedback</p>
+          </div>
+
+          <div className={styles.sobrecard} onClick={handlesobreClick}>
+            <FaArrowRight size={50} className={styles.icon2} />
+            <p className={styles.pcard2}>Sobre Nós</p>
           </div>
         </div>
       </section>

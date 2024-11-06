@@ -10,16 +10,14 @@ import fp from '../../../assets/imagens/fp.jpeg';
 import pravel from '../../../assets/imagens/pravel.jpeg';
 import logo from "../../../assets/imagens/logo.png";
 import { FaUser } from 'react-icons/fa';
+import Header from '../components/header/header';
 
 export default function Sobre() {
   return (
     <div className={styles.container}>
-      <Image src={logo} id={styles.logo} width={130} height={130} />
-      <div className={styles.profileIcon}>
-        <button className={styles.profileButton}>
-          <FaUser size={20} />
-        </button>
-      </div>
+
+      <Header/>
+
       <div className={styles.textsobre}>
         <img className={styles.fotoRS} />
         <h1 className={styles.sobreA}>Sobre a</h1>
