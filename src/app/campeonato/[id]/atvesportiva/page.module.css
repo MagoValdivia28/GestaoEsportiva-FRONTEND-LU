@@ -57,9 +57,10 @@
     max-width: 90%;
 }
 
-.addButton{
+.addButton {
     background-color: #ffffff;
-    border: 2px solid #d32f2f; /* Borda vermelha */
+    border: 2px solid #d32f2f;
+    /* Borda vermelha */
     color: rgb(0, 0, 0);
     border-radius: 0.5rem;
     margin: auto;
@@ -78,4 +79,40 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     background-color: #fae0e0;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.closeButton {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    background-color: #ff4c4c;
 }
