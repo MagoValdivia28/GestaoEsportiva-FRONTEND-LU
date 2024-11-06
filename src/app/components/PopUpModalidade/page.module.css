@@ -1,0 +1,61 @@
+.PopupOverlay {
+    position: fixed;
+    width: 78rem;
+    background: #f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .PopupContent {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 40rem;
+    height: 25rem;
+    position: relative;
+    
+  }
+  
+  .CloseButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .label {
+    margin-top: 2.8rem;
+  }
+  
+  .input{
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    width: 10rem;
+    margin-top: 2.8rem;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
