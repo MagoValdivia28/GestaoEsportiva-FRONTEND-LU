@@ -36,9 +36,8 @@ const FormularioModalidade = ({ isOpen, onClose }) => {
         <button type="button" onClick={onClose} className={Styles.CloseButton}>
         <FaX />
         </button>
-        <h2>Cadastro</h2>
+        <h2 className={Styles.h2}>Cadastro</h2>
         <form className={Styles.form} onSubmit={handleSubmit}>
-          <label className={Styles.label}>Nome:</label>
           <input
             type="text"
             name="nome"
@@ -46,20 +45,20 @@ const FormularioModalidade = ({ isOpen, onClose }) => {
             onChange={handleChange}
             required
             className={Styles.input}
-          />
+            placeholder="Nome"          />
 
-          <label className={Styles.label}>Tipo:</label>
+
           <select
             name="tipo"
             value={formData.modalidade}
             onChange={handleChange}
             required
             className={Styles.input}
+            placeholder="Tipo" 
           >
-            <option value="">Selecione</option>
-            <option value="Futebol">Futebol</option>
-            <option value="Basquete">Basquete</option>
-            <option value="Vôlei">Vôlei</option>
+            <option value="">Tipo</option>
+            <option value="1X1">1 versus 1</option>
+            <option value="AllXAll">1 contra todos</option>
           </select>
 
           <button type="submit"  className={Styles.btn}>
