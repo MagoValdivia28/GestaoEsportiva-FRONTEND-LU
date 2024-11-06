@@ -160,7 +160,9 @@
   width: 30%;
   border-top-left-radius: 6%;
   border-bottom-right-radius: 6%;
-  background-color: #aa0404;
+  background-image: url('../../assets/imagens/chat.png');
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -177,7 +179,9 @@
   font-size: 3.5rem;
   color: white;
   text-align: left; /* Keeps the text aligned to the left */
+  margin-left: 10px; /* Adds a small margin to the left */
 }
+
 
 .icon2 {
   color: white;
