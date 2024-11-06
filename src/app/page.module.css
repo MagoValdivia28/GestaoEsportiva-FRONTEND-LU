@@ -11,20 +11,20 @@
   background-position: center;
   height: 90vh;
 }
-.blur{
-  backdrop-filter: blur(3px); 
-  background-color: rgba(0, 0, 0, 0); 
+
+.blur {
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0);
   height: 90vh;
 }
 
 .logo {
   background-image: url('../../assets/imagens/logo.png');
-  /* Substitua pela URL da sua imagem na pasta public */
   background-size: cover;
   background-position: center;
-  height: 20vh;
-  width: 20vh;
-  margin-bottom: 3%;
+  height: 22vh;
+  width: 22vh;
+  margin-top: 2rem;
 }
 
 .heroTitle {
@@ -44,7 +44,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  
+
 }
 
 .heroContent {
@@ -79,15 +79,16 @@
   transform: scale(1.05);
 }
 
-.linhavermelha{
+.linhavermelha {
   background-color: rgb(197, 10, 10);
   width: 100%;
   height: 4px;
 
 }
+
 .welcomeSection {
   padding: 2rem;
-  text-align: left  ;
+  text-align: left;
   margin-bottom: 3%;
 }
 
@@ -102,7 +103,6 @@
 }
 
 
-/* Cartões de Gerenciamento */
 .championshipsManagement {
   display: flex;
   justify-content: center;
@@ -120,14 +120,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 
 .championshipCard:hover {
-  transform: scale(1.05); /* Slightly larger scaling for a more noticeable effect */
+  transform: scale(1.05);
   cursor: pointer;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
-  background-color: rgba(255, 255, 255, 0.1); /* Subtle background color change */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .trophyImage {
@@ -138,15 +139,18 @@
   background-size: cover;
   background-position: center;
 }
-.p2{
+
+.p2 {
   font-size: 50px;
 }
-.icon{
+
+.icon {
   color: white;
   font-size: 10px;
   display: flex;
-  float: right;  
+  float: right;
 }
+
 .cardContent {
   position: absolute;
   bottom: 10px;
@@ -156,6 +160,7 @@
   font-weight: bold;
 
 }
+
 .emptyCard {
   width: 30%;
   border-top-left-radius: 6%;
@@ -166,25 +171,100 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Smooth transition for hover effects */
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  position: relative;
+  /* Adicionado */
+}
+
+.emptyCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  border-top-left-radius: 6%;
+  border-bottom-right-radius: 6%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adicionado para escurecer a imagem */
+  z-index: 1;
+}
+
+.emptyCard>* {
+  position: relative;
+  z-index: 2;
 }
 
 .emptyCard:hover {
-  transform: scale(1.05); /* Slightly larger scaling for a noticeable effect */
+  transform: scale(1.05);
   cursor: pointer;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
-  background-color: rgba(170, 4, 4, 0.9); /* Slightly darken the background on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background-color: rgba(170, 4, 4, 0.9);
 }
+
 .pcard2 {
   font-size: 3.5rem;
   color: white;
-  text-align: left; /* Keeps the text aligned to the left */
-  margin-left: 10px; /* Adds a small margin to the left */
+  text-align: left;
+  margin-left: 10px;
 }
 
 
 .icon2 {
   color: white;
   font-size: 10px;
-  align-self: flex-end; /* Aligns the icon to the right */
+  align-self: flex-end;
+}
+
+.sobrecard {
+  width: 30%;
+  border-top-left-radius: 6%;
+  border-bottom-right-radius: 6%;
+  background-image: url('../../assets/imagens/gpdoscria.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  position: relative;
+}
+
+.sobrecard::before {  
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 6%;
+  border-bottom-right-radius: 6%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.sobrecard>* {
+  position: relative;
+  z-index: 2;
+}
+
+.sobrecard:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background-color: rgba(170, 4, 4, 0.9);
+}
+
+.pcard2 {
+  font-size: 3.5rem;
+  color: white;
+  text-align: left;
+  margin-left: 10px;
+}
+
+
+.icon2 {
+  color: white;
+  font-size: 10px;
+  align-self: flex-end;
 }
