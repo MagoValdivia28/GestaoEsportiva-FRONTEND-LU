@@ -11,6 +11,7 @@ import { useParams } from 'next/navigation';
 const Gestaoesportes = () => {
   const { id } = useParams();
   const [teams, setTeams] = useState([]);
+  const [modalities, setModalities] = useState([]);
   const [showModal, setShowModal] = useState(false); // Novo estado para controle do modal
 
   useEffect(() => {
@@ -23,6 +24,16 @@ const Gestaoesportes = () => {
       }
     };
     fetchTeams();
+  }, []);
+
+  useEffect(() => {
+    const fetchModalidades = async () => {
+      const data = await getAPI('modalidades/campeonato/', id);
+      console.log(data);
+      setModalities(data);
+      
+    }
+    fetchModalidades();
   }, []);
 
   const handleAddModality = () => {
@@ -49,9 +60,11 @@ const Gestaoesportes = () => {
         </div>
 
         <div className={styles.modalidades}>
-          <CardModality title="Futebol" />
-          <CardModality title="Vôlei" />
-          <CardModality title="Basquete" />
+        {
+            modalities.length > 0 && modalities.map((modality) => (
+              <CardModality key={modality.id} title={modality.nome_modalidade} />
+            )) 
+          }
           <button onClick={handleAddModality} className={styles.addButton}>+</button>
         </div>
       </div>
