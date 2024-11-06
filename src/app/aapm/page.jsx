@@ -7,32 +7,36 @@ import { CgProfile } from "react-icons/cg";
 import { GiTennisCourt } from "react-icons/gi";
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import imgtop from '../../../assets/imagens/ImgAapm.png'
+import imgfut from '../../../assets/imagens/futzin.png'
+import Image from 'next/image';
 
 
 const Aapm = () => {
-    const [ Aapm, setAapm ] = useState('');
+    const [Aapm, setAapm] = useState('');
 
     const sendAapm = () => {
         if (Aapm == '') {
             alert('O campo de Aapm não pode estar vazio');
             return;
         }
-         emailjs.send('service_1q7z5qf', 'template_1q7z5qf', {message: Aapm}, 'user_1q7z5qf')
+        emailjs.send('service_1q7z5qf', 'template_1q7z5qf', { message: Aapm }, 'user_1q7z5qf')
     }
 
 
     return (
         <main className={styles.main_container}>
             <div className={styles.firstIMG_container}>
-                <div className={styles.img}></div>
+                <div className={styles.img}>
+                    <Image src={imgtop} className={styles.img} />
+
+                </div>
             </div>
 
             <div className={styles.about_container}>
                 <div className={styles.info_about_container}>
                     <h1>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem maiores repellat sunt autem
-                        explicabo quod voluptates aliquid ducimus
-                        eligendi dolores nam dolore eveniet quaerat, natus fugiat ipsam officia rerum placeat.
+                        Participe das Atividades
                     </h1>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem maiores repellat sunt autem
@@ -42,7 +46,7 @@ const Aapm = () => {
                 </div>
 
                 <div className={styles.img_about_container}>
-
+                    <Image src={imgfut} className={styles.imagem} />
                 </div>
             </div>
 
@@ -62,29 +66,15 @@ const Aapm = () => {
                         deserunt neque ducimus, voluptas ullam ut maiores voluptatum soluta!
                         Modi suscipit facilis soluta in voluptatum.</p>
                 </div>
-
-                <div className={styles.iconMVV}>
-                    <CgProfile className={styles.icon} />
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        Consequatur dicta molestiae earum provident inventore accusamus
-                        deserunt neque ducimus, voluptas ullam ut maiores voluptatum soluta!
-                        Modi suscipit facilis soluta in voluptatum
-                    </p>
-                </div>
+                    <div className={styles.iconMVV}>
+                        <CgProfile className={styles.icon} />
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Consequatur dicta molestiae earum provident inventore accusamus
+                            deserunt neque ducimus, voluptas ullam ut maiores voluptatum soluta!
+                            Modi suscipit facilis soluta in voluptatum
+                        </p>
+                    </div>
             </div>
-
-            <div className={styles.Aapm_container}>
-                <GiTennisCourt className={styles.icon} />
-                <div className={styles.Aapm_text} >
-                    <h1>Contate-nos</h1>
-                    <input
-                        type="text"
-                        placeholder="Escreva seu comentario para a AAPM!!"
-                        onChange={(e) => setAapm(e.target.value)}
-                        value = {Aapm}
-                    />
-                </div>
-            </div >
         </main >
     )
 }

@@ -54,7 +54,6 @@
     align-items: center;
     flex-direction: column;
     padding: 10rem;
-    background-color: yellow;
     border-radius: 10%;
 }
 
@@ -80,6 +79,7 @@
     align-items: center;
     flex-direction: column;
     background-color: transparent;
+    
 }
 
 .icon {
@@ -126,10 +126,14 @@
     
 }
 
-.Aapm_text h1 {
+.feedback_text h1 {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 0.5em;
     text-align: left;
     background-color: transparent;
+}
+.imagem{
+    width: 25rem;
+    height: 20rem;
 }
