@@ -1,5 +1,5 @@
 .popup_inner {
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
@@ -17,7 +17,7 @@
   color: #fff;
 }
 .popup_inner2 {
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
