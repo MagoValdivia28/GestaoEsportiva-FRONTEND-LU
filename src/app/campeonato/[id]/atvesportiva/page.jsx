@@ -10,7 +10,6 @@ import { useParams } from 'next/navigation';
 
 const Gestaoesportes = () => {
   const { id } = useParams();
-  console.log(id);
 
   const [teams, setTeams] = useState([]);
 
