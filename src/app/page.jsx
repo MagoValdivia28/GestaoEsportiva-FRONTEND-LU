@@ -9,7 +9,7 @@ export default function Home() {
   const router = useRouter();
 
   const handleConhecaNosClick = () => {
-    router.push('/'); // Navigate to the "Conheça-nos" page
+    router.push('/aapm'); // Navigate to the "Conheça-nos" page
   };
 
   const handleGerenciarCampeonatosClick = () => {
