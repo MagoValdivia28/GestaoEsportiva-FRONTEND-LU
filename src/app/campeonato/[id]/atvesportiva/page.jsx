@@ -7,6 +7,7 @@ import CardModality from '@/src/app/components/CardModality/page';
 import Header from '@/src/app/components/header/header';
 import { getAPI } from '@/src/actions/api';
 import { useParams } from 'next/navigation';
+import FormularioModalidade from '@/src/app/components/PopUpModalidade';
 
 const Gestaoesportes = () => {
   const { id } = useParams();
@@ -70,14 +71,7 @@ const Gestaoesportes = () => {
       </div>
 
       {/* Pop-up modal */}
-      {showModal && (
-        <div className={styles.modalOverlay} onClick={handleCloseModal}>
-          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-            <h2>Adicionar Nova Modalidade</h2>
-            <button onClick={handleCloseModal} className={styles.closeButton}>Fechar</button>
-          </div>
-        </div>
-      )}
+      <FormularioModalidade isOpen={showModal} onClose={handleCloseModal} />
     </div>
   );
 };

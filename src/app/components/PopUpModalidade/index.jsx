@@ -9,6 +9,9 @@ const FormularioModalidade = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     nome: '',
     tipo: '',
+    desc: '',
+    limit: '',
+    value: ''
   });
 
   // Função para lidar com mudanças nos campos de entrada
@@ -46,8 +49,29 @@ const FormularioModalidade = ({ isOpen, onClose }) => {
             required
             className={Styles.input}
             placeholder="Nome"          />
-
-
+          <input
+            type="text"
+            name="desc"
+            value={formData.desc}
+            onChange={handleChange}
+            className={Styles.input}
+            placeholder="Descrição"          />
+          <input
+            type="number"
+            name="limit"
+            value={formData.limit}
+            onChange={handleChange}
+            required
+            className={Styles.input}
+            placeholder="Limite de Jogadores"          />
+          <input
+            type="number"
+            name="value"
+            value={formData.value}
+            onChange={handleChange}
+            required
+            className={Styles.input}
+            placeholder="Valor por Jogadores"          />
           <select
             name="tipo"
             value={formData.modalidade}
@@ -71,3 +95,17 @@ const FormularioModalidade = ({ isOpen, onClose }) => {
 };
 
 export default FormularioModalidade;
+
+//const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+//const openPopup = () => {
+//  setIsPopupOpen(true);
+//};
+
+//const closePopup = () => {  
+//  setIsPopupOpen(false);
+//};
+
+
+//<button onClick={openPopup} className={Styles.addButton}>+</button>
+//<FormularioModalidade isOpen={isPopupOpen} onClose={closePopup} />
