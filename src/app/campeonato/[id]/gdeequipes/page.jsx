@@ -17,30 +17,31 @@ const GdeEquipes = () => {
     const [rejectedTeams, setRejectedTeams] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [modalities, setModalities] = useState([]);
+
     useEffect(() => {
-        getAPI('times/campeonato/', id, { status: 'aprovada' }).then(data => setApprovedTeams(data.times));
-        getAPI('times/campeonato/', id, { status: 'pendente' }).then(data => setPendingTeams(data.times));
-        getAPI('times/campeonato/', id, { status: 'rejeitada' }).then(data => setRejectedTeams(data.times));
+        getAPI('times/campeonato/', id, { status: 'aprovada' }).then(data => setApprovedTeams(data?.times || []));
+        getAPI('times/campeonato/', id, { status: 'pendente' }).then(data => setPendingTeams(data?.times || []));
+        getAPI('times/campeonato/', id, { status: 'rejeitada' }).then(data => setRejectedTeams(data?.times || []));
     }, []);
 
     useEffect(() => {
         const fetchModalidades = async () => {
             const data = await getAPI('modalidades/campeonato/', id);
-            setModalities(data);    
+            setModalities(data || []);
         }
         fetchModalidades();
     }, []);
 
     const handleSearch = (e) => {
         const search = e.target.value;
-        getAPI('times/campeonato/', id, { status: 'aprovada', name: search }).then(data => setApprovedTeams(data.times));
-        getAPI('times/campeonato/', id, { status: 'pendente', name: search }).then(data => setPendingTeams(data.times));
-        getAPI('times/campeonato/', id, { status: 'rejeitada', name: search }).then(data => setRejectedTeams(data.times));
+        getAPI('times/campeonato/', id, { status: 'aprovada', name: search }).then(data => setApprovedTeams(data?.times || []));
+        getAPI('times/campeonato/', id, { status: 'pendente', name: search }).then(data => setPendingTeams(data?.times || []));
+        getAPI('times/campeonato/', id, { status: 'rejeitada', name: search }).then(data => setRejectedTeams(data?.times || []));
     };
+
     return (
         <div className={styles.main_div}>
             <Header />
-            {/* <Image src={logo} id={styles.logo} width={130} height={130} /> */}
             <div className={styles.container_times}>
                 <h1 className={styles.title}>
                     <span className={styles.titleRed}>Gerenciamento</span>
@@ -48,9 +49,16 @@ const GdeEquipes = () => {
                 </h1>
                 <div className={styles.line}></div>
             </div>
+
             <div className={styles.search_container}>
                 <div className={styles.input_container}>
-                    <input type="search" id="Search" name="Search" placeholder='Pesquisar equipe por nome' onChange={handleSearch} />
+                    <input 
+                        type="search" 
+                        id="Search" 
+                        name="Search" 
+                        placeholder='Pesquisar equipe por nome' 
+                        onChange={handleSearch} 
+                    />
                     <label htmlFor="Search">
                         <FaSearch />
                     </label>
@@ -60,38 +68,59 @@ const GdeEquipes = () => {
 
             <div className={styles.times}>
                 <h2 className={styles.title}>Equipes Aprovadas</h2>
-                {
-                    approvedTeams ? approvedTeams.map(team => (
+                {(approvedTeams || []).length > 0 ? (
+                    approvedTeams.map(team => (
                         <Equipes key={team.time_id} nameTeam={team.time_nome} members={team.jogadores} />
-                    )) : <p>Nao tem</p>
-                }
+                    ))
+                ) : (
+                    <p>Não há equipes aprovadas</p>
+                )}
             </div>
-            <div className={styles.line}></div>
 
+            <div className={styles.line}></div>
 
             <div className={styles.times}>
                 <h2 className={styles.title}>Equipes Pendentes</h2>
-                {
-                    pendingTeams ? pendingTeams.map(team => (
+                {(pendingTeams || []).length > 0 ? (
+                    pendingTeams.map(team => (
                         <Equipes key={team.time_id} nameTeam={team.time_nome} members={team.jogadores} />
-                    )) : <p>Nao tem</p>
-                }
+                    ))
+                ) : (
+                    <p>Não há equipes pendentes</p>
+                )}
             </div>
+
             <div className={styles.line}></div>
 
             <div className={styles.times}>
                 <h2 className={styles.title}>Equipes Rejeitadas</h2>
-                {
-                    rejectedTeams ? rejectedTeams.map(team => (
+                {(rejectedTeams || []).length > 0 ? (
+                    rejectedTeams.map(team => (
                         <Equipes key={team.time_id} nameTeam={team.time_nome} members={team.jogadores} />
-                    )) : <p>Nao tem</p>
-                }
+                    ))
+                ) : (
+                    <p>Não há equipes rejeitadas</p>
+                )}
             </div>
 
-            <button onClick={() => setIsOpen(true)} className={styles.button}>Adicionar Equipe</button>
-            <CadastroPopup isOpen={isOpen} onClose={() => setIsOpen(false)} modalities={modalities} />
+            <button onClick={() => setIsOpen(true)} className={styles.button}>
+                Adicionar Equipe
+            </button>
+
+            {isOpen && (
+                <div className={styles.overlay}>
+                    <div className={styles.popup}>
+                        <CadastroPopup 
+                            isOpen={isOpen} 
+                            onClose={() => setIsOpen(false)} 
+                            modalities={modalities} 
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
 
 export default GdeEquipes;
+
