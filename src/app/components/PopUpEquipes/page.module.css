@@ -1,53 +1,87 @@
-/* CadastroPopup.css */
-
-.popupoverlay {
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro transparente */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.popupcontent {
-  background-color: #fbfbfb;
-  padding: 20px;
-  border-radius: 8px;
-  width: 70rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
-  text-align: center;
-}
-
-.popupcontent h2 {
-  margin-bottom: 15px;
-}
-
-.popupcontent label { 
-  margin-bottom: 5px;
-}
-
-
-.popupcontent select,
-.cadastro {
+/* General Input Styling */
+.popupcontent input[type="text"],
+.popupcontent input[type="file"],
+.popupcontent select {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #c72828; /* Red Border */
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+/* Input Focus - Enhanced Border and Background */
+.popupcontent input[type="text"]:focus,
+.popupcontent input[type="file"]:focus,
+.popupcontent select:focus {
+  border-color: #c72828; /* Red Border */
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(199, 40, 40, 0.3); /* Optional shadow effect */
 }
 
-.cadastro{
-  cursor: pointer;
-  border: none;
-  color: white;
-  padding: 8px;
+/* Error State for Inputs */
+.popupcontent input[type="text"].error,
+.popupcontent input[type="file"].error,
+.popupcontent select.error {
+  border-color: #d32f2f; /* Darker red for error state */
+  background-color: #ffe6e6; /* Light red background */
 }
 
-.cadastro {
-  background-color: hsl(0, 39%, 49%);
-  margin-bottom: 10px;
+/* Flexbox Layout for Participante and Sala */
+.labelpart {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.participantes{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.participante_sala {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+  align-items: center;
+  border-bottom: 1px solid #c72828; /* Red Border */
 }
 
+.participante_sala input {
+  width: 45%; /* Adjust input width for better balance */
+  border-radius: 6px;
+  border: 1px solid #c72828; /* Red Border */
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+/* Focused Input for Participante and Sala */
+.participante_sala input:focus {
+  border-color: #c72828;
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(199, 40, 40, 0.3); /* Optional shadow effect */
+}
+
+/* Label Adjustments for Better Alignment */
+.participante_sala label {
+  width: 40%; /* Keep label width proportional */
+  font-size: 16px;
+  color: #555;
+}
+
+/* Button Styling */
 .cadastro {
   width: 25%;
   padding: 13px;
-  background-color: #C72828;
+  background-color: #c72828;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -59,30 +93,39 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.participantes{
-  width: 90%;
-  margin-bottom: 0.7rem;
+/* Button Hover Effect */
+.cadastro:hover {
+  background-color: #741b1b;
 }
 
-.labelpart{
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.participantes_container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-}
-
+/* Close Button Styling */
 .X {
   margin-left: 98%;
   border: none;
   background: none;
+  cursor: pointer;
+}
+.textored {
+  color: #c72828;
+  font-size: 3rem;
+}
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .popupcontent {
+    width: 90%;
+  }
+
+  .participante_sala {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .participante_sala label,
+  .participante_sala input {
+    width: 100%;
+  }
+
+  .cadastro {
+    width: 100%; /* Full width for smaller screens */
+  }
 }

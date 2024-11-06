@@ -124,6 +124,7 @@
 /* Estilos para o popup */
 .popup {
   background-color: white;
+  border: 2px solid #d32f2f;
   padding: 2rem;
   width: 90%;
   max-width: 600px;
