@@ -62,7 +62,6 @@ const Gestaoesportes = () => {
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
             <h2>Adicionar Nova Modalidade</h2>
             <button onClick={handleCloseModal} className={styles.closeButton}>Fechar</button>
-            {/* Conteúdo do formulário de adição de modalidade */}
           </div>
         </div>
       )}
