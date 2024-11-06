@@ -7,6 +7,8 @@ import { getAPI } from '@/src/actions/api';
 import { FaX } from "react-icons/fa6";
 
 const CadastroPopup = ({ isOpen, onClose, modalities }) => {
+    console.log(modalities);
+
     const [formData, setFormData] = useState({
         nome: '',
         sala: '',
@@ -45,7 +47,7 @@ const CadastroPopup = ({ isOpen, onClose, modalities }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(formData);
-        
+
         // await getAPI('times/', undefined, formData);
         onClose();
     };
@@ -249,9 +251,13 @@ const CadastroPopup = ({ isOpen, onClose, modalities }) => {
                         required
                     >
                         <option value="">Selecione</option>
-                        {modalities.map(modalidade => (
-                            <option key={modalidade.id} value={modalidade.nome_modalidade}>{modalidade.nome_modalidade}</option>
-                        ))}
+                        {
+                            modalities.length > 0 && modalities.map(modality => (
+                                <option key={modality.modalidade_id} value={modality.modalidade_id}>
+                                    {modality.modalidade_nome}
+                                </option>
+                            ))
+                        }
                     </select>
                     <label>Imagem:</label>
                     <input
