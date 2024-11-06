@@ -6,9 +6,9 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;  
   background-color: rgba(0, 0, 0, 0.6); /* Fundo preto translúcido */
-  z-index: 1000; /* Garante que o overlay esteja acima de outros elementos */
+  z-index: 16; /* Garante que o overlay esteja acima de outros elementos */
 }
 
 .PopupContent {
