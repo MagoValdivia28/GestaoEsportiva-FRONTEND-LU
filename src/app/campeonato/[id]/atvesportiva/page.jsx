@@ -27,13 +27,12 @@ const Gestaoesportes = () => {
     fetchTeams();
   }, []);
 
+  const fetchModalidades = async () => {
+    const data = await getAPI('modalidades/campeonato/', id);
+    setModalities(data);
+  }
+
   useEffect(() => {
-    const fetchModalidades = async () => {
-      const data = await getAPI('modalidades/campeonato/', id);
-      console.log(data);
-      setModalities(data);
-      
-    }
     fetchModalidades();
   }, []);
 
@@ -71,7 +70,7 @@ const Gestaoesportes = () => {
       </div>
 
       {/* Pop-up modal */}
-      <FormularioModalidade isOpen={showModal} onClose={handleCloseModal} />
+      <FormularioModalidade isOpen={showModal} onClose={handleCloseModal} campeonato_id={id} onModalidadeAdded={fetchModalidades} />
     </div>
   );
 };
