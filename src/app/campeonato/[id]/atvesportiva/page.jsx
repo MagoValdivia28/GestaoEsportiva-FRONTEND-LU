@@ -25,6 +25,10 @@ const Gestaoesportes = () => {
     fetchTeams();
   }, []);
 
+  const handleAddModality = () => {
+    // Handle the add modality action here, e.g., navigating to a form
+    console.log("Add modality button clicked!");
+  };
 
 
   return (
@@ -48,6 +52,8 @@ const Gestaoesportes = () => {
           <CardModality title="Futebol" />
           <CardModality title="Vôlei" />
           <CardModality title="Basquete" />
+          <button onClick={handleAddModality} className={styles.addButton}>+</button>
+
         </div>
 
 
