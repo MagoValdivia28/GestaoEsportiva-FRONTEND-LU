@@ -5,8 +5,12 @@ import { useState } from 'react';
 import Image from 'next/image';
 import FormAuth from '@/src/app/components/FormAuth';
 import PopUpError from '@/src/app/components/PopUpError';
+import { useRouter } from 'next/navigation';
+import { getAPI } from '@/src/actions/api';
+import { useContext } from 'react';
 
 const Login = () => {
+  const router = useRouter();
   const [error, setError] = useState(null);
   return (
     <>
