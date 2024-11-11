@@ -21,35 +21,31 @@
   text-align: center;
 }
 
-.popupcontent h2 {
-  margin-bottom: 15px;
-}
-
 .popupcontent label { 
   margin-bottom: 5px;
 }
 
 
 .popupcontent select,
-.popupcontent button {
+.cadastrar {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
 }
 
-.popupcontent button {
+.cadastrar {
   cursor: pointer;
   border: none;
   color: white;
   padding: 8px;
 }
 
-.popupcontent button[type="submit"] {
+.cadastrar {
   background-color: hsl(0, 39%, 49%);
   margin-bottom: 10px;
 }
 
-.popupcontent button[type="button"] {
+.cadastrar {
   background-color: #f44336;
 }
 
