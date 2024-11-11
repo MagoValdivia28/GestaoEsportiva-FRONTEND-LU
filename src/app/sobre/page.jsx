@@ -20,14 +20,6 @@ export default function Sobre() {
           <FaUser size={20} />
         </button>
       </div>
-      <div className={styles.textsobre}>
-        <img className={styles.fotoRS} />
-        <h1 className={styles.sobreA}>Sobre a</h1>
-        <h2 className={styles.novaG}>NovaGenix</h2>
-        <h2 className={styles.solut}>Solutions</h2>
-      </div>
-
-
       <div className={styles.cardEquipe}>
         <hr className={styles.linha} />
 
