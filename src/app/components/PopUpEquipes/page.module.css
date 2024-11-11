@@ -48,10 +48,19 @@
 .participante_sala {
   display: flex;
   justify-content: space-between;
-  gap: 15px;
   width: 100%;
   align-items: center;
   border-bottom: 1px solid #c72828; /* Red Border */
+}
+
+.participante_sala div {
+  width: 45%; /* Adjust input width for better balance */
+}
+
+.title {
+  font-size: 2rem;
+  color: #c72828;
+  margin-bottom: 1rem;
 }
 
 .participante_sala input {
@@ -75,6 +84,10 @@
   width: 40%; /* Keep label width proportional */
   font-size: 16px;
   color: #555;
+}
+
+.containerForm {
+  margin-top: 1rem;
 }
 
 /* Button Styling */
