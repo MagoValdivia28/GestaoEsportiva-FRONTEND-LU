@@ -1,7 +1,8 @@
 "use client";
 
 import styles from './page.module.css';
-import CadastroPopup from '@/src/app/components/PopUpEquipes';
+// import logo from "../assets/imagens/logo.png";
+import Image from 'next/image';
 import Header from '@/src/app/components/header/header';
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from 'react';
@@ -15,20 +16,10 @@ const GdeEquipes = () => {
     const [approvedTeams, setApprovedTeams] = useState([]);
     const [pendingTeams, setPendingTeams] = useState([]);
     const [rejectedTeams, setRejectedTeams] = useState([]);
-    const [isOpen, setIsOpen] = useState(false);
-    const [modalities, setModalities] = useState([]);
     useEffect(() => {
         getAPI('times/campeonato/', id, { status: 'aprovada' }).then(data => setApprovedTeams(data.times));
         getAPI('times/campeonato/', id, { status: 'pendente' }).then(data => setPendingTeams(data.times));
         getAPI('times/campeonato/', id, { status: 'rejeitada' }).then(data => setRejectedTeams(data.times));
-    }, []);
-
-    useEffect(() => {
-        const fetchModalidades = async () => {
-            const data = await getAPI('modalidades/campeonato/', id);
-            setModalities(data);    
-        }
-        fetchModalidades();
     }, []);
 
     const handleSearch = (e) => {
@@ -88,8 +79,7 @@ const GdeEquipes = () => {
                 }
             </div>
 
-            <button onClick={() => setIsOpen(true)} className={styles.button}>Adicionar Equipe</button>
-            <CadastroPopup isOpen={isOpen} onClose={() => setIsOpen(false)} modalities={modalities} />
+            <button className={styles.button}>Adicionar Equipe</button>
         </div>
     );
 }

@@ -9,7 +9,6 @@ import Link from 'next/link';
 import { createCampeonato } from '@/src/actions/api';
 import { useState } from 'react';
 import PopUpError from '@/src/app/components/PopUpError';
-import Header from '../components/header/header';
 
 const CadastroCampeonato = () => {
   const router = useRouter();
@@ -46,9 +45,12 @@ const CadastroCampeonato = () => {
   };
 
   return (
-    <main>
-      <Header />
+    <>
       <div className={styles.container}>
+        <Image src={logo} id={styles.logo} width={100} height={100} />
+        <button className={styles.profileButton} onClick={handleProfileClick}>
+          <FaUser size={20} />
+        </button>
         <div className={styles.form}>
           <div className={styles.backtohome}>
             <Link className={styles.backButton} onClick={handleBack} href={"#"}>
@@ -78,7 +80,7 @@ const CadastroCampeonato = () => {
         </div>
       </div>
       {error && <PopUpError error={error} />}
-    </main>
+    </>
   );
 };
 

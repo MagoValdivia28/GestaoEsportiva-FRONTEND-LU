@@ -1,6 +1,11 @@
 /* CadastroPopup.css */
 
 .popupoverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro transparente */
   display: flex;
   justify-content: center;
@@ -26,37 +31,26 @@
 
 
 .popupcontent select,
-.cadastro {
+.popupcontent button {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
 }
 
-.cadastro{
+.popupcontent button {
   cursor: pointer;
   border: none;
   color: white;
   padding: 8px;
 }
 
-.cadastro {
+.popupcontent button[type="submit"] {
   background-color: hsl(0, 39%, 49%);
   margin-bottom: 10px;
 }
 
-.cadastro {
-  width: 25%;
-  padding: 13px;
-  background-color: #C72828;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 5%;
-  font-family: 'Questrial', sans-serif;
-  font-weight: bold;
-  font-size: 18px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+.popupcontent button[type="button"] {
+  background-color: #f44336;
 }
 
 .participantes{
@@ -79,10 +73,4 @@
   align-items: center;
   text-align: center;
 
-}
-
-.X {
-  margin-left: 98%;
-  border: none;
-  background: none;
 }

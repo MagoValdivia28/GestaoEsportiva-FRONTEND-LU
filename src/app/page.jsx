@@ -2,13 +2,15 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { FaUser, FaUsers, FaArrowRight, FaComments } from 'react-icons/fa';
+//que codigo bosta é esse
+import logo from '../../assets/imagens/logo.png';
 import styles from './page.module.css';
 
 export default function Home() {
   const router = useRouter();
 
   const handleConhecaNosClick = () => {
-    router.push('/feedback'); // Navigate to the "Conheça-nos" page
+    router.push('/conheca-nos'); // Navigate to the "Conheça-nos" page
   };
 
   const handleGerenciarCampeonatosClick = () => {
@@ -16,7 +18,7 @@ export default function Home() {
   };
 
   const handleFeedbackClick = () => {
-    router.push('/feedback');
+    router.push('/feedback'); 
   };
 
   return (
