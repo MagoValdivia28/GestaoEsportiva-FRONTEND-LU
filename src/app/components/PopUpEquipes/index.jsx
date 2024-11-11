@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import './page.module.css';
 import styles from './page.module.css';
-import { getAPI } from '@/src/actions/api';
+import { createEquipe } from '@/src/actions/api';
+import { createJogador } from '@/src/actions/api';
 import { FaX } from "react-icons/fa6";
 
 
@@ -11,26 +12,26 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError }) => {
   const [formData, setFormData] = useState({
     nome: '',
     sala: '',
-    participante1: '',
-    participantesala1: '',
-    participante2: '',
-    participantesala2: '',
-    participante3: '',
-    participantesala3: '',
-    participante4: '',
-    participantesala4: '',
-    participante5: '',
-    participantesala5: '',
-    participante6: '',
-    participantesala6: '',
-    participante7: '',
-    participantesala7: '',
-    participante8: '',
-    participantesala8: '',
-    participante9: '',
-    participantesala9: '',
-    participante10: '',
-    participantesala10: '',
+    participante1: null,
+    participantesala1: null,
+    participante2: null,
+    participantesala2: null,
+    participante3: null,
+    participantesala3: null,
+    participante4: null,
+    participantesala4: null,
+    participante5: null,
+    participantesala5: null,
+    participante6: null,
+    participantesala6: null,
+    participante7: null,
+    participantesala7: null,
+    participante8: null,
+    participantesala8: null,
+    participante9: null,
+    participantesala9: null,
+    participante10: null,
+    participantesala10: null,
     modalidade: '',
     imagem: null
   });
@@ -45,14 +46,66 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const jogadores = [
+      formData.participante1,
+      formData.participante2,
+      formData.participante3,
+      formData.participante4,
+      formData.participante5,
+      formData.participante6,
+      formData.participante7,
+      formData.participante8,
+      formData.participante9,
+      formData.participante10,
+    ];
+
+    const hasJogadores = jogadores.some(jogador => jogador && jogador.trim() !== '');
+
+    if (!hasJogadores) {
+      setError({ status: "error", message: 'Por favor, adicione pelo menos um jogador.' });
+      setTimeout(() => setError(null), 3000);
+      return;
+    }
+
     if (formData.imagem.type !== 'image/jpeg' && formData.imagem.type !== 'image/png') {
       setError({ status: "error", message: 'Formato de imagem inválido' });
       setTimeout(() => setError(null), 3000);
     } else {
-      console.log(formData);
-      // await getAPI('times/', undefined, formData);
+      const response = await createEquipe(formData.nome, formData.sala, formData.modalidade, 'pendente');
+      if (response.status === 'success') {
+        await createJogadores(response.data.id);
+      }
       onClose();
     }
+  };
+
+  const createJogadores = async (teamId) => {
+    const jogadores = [
+      { nome: formData.participante1, sala: formData.participantesala1 },
+      { nome: formData.participante2, sala: formData.participantesala2 },
+      { nome: formData.participante3, sala: formData.participantesala3 },
+      { nome: formData.participante4, sala: formData.participantesala4 },
+      { nome: formData.participante5, sala: formData.participantesala5 },
+      { nome: formData.participante6, sala: formData.participantesala6 },
+      { nome: formData.participante7, sala: formData.participantesala7 },
+      { nome: formData.participante8, sala: formData.participantesala8 },
+      { nome: formData.participante9, sala: formData.participantesala9 },
+      { nome: formData.participante10, sala: formData.participantesala10 },
+    ];
+
+    for (const jogador of jogadores) {
+      if (jogador.nome && jogador.nome.trim() !== '') {
+        try {
+          await createJogador(jogador.nome, jogador.sala, teamId);
+        } catch (error) {
+          if (error.response) {
+            setError({ status: "error", message: error.response.data.message });
+            setTimeout(() => setError(null), 3000);
+            return;
+          }
+        }
+      }
+    };
   };
 
   if (!isOpen) return null;
@@ -347,5 +400,4 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError }) => {
     </div>
   );
 };
-
 export default CadastroPopup;
