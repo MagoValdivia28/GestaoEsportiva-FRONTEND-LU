@@ -2,32 +2,6 @@
   background-color: #fff;
   padding: 1rem;
 }
-
-.textsobre {
-  background-color: #fff;
-  border-bottom-left-radius: 2.5rem;
-  border-bottom-right-radius: 2.5rem;
-  padding: 2rem;
-  text-align: center;
-}
-
-.sobreA {
-  font-size: 3.5rem;
-  color: #000;
-  margin-right: 35rem;
-}
-
-.novaG {
-  font-size: 3rem;
-  color: #AF0000;
-  margin-right: 20rem;
-}
-
-.solut {
-  font-size: 2.5rem;
-  color: #AF0000;
-}
-
 .textMembro {
   font-size: 1.25rem;
   text-align: center;
