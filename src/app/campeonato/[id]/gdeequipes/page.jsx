@@ -32,6 +32,14 @@ const GdeEquipes = () => {
         fetchModalidades();
     }, []);
 
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [isOpen]);
+
     const handleSearch = (e) => {
         const search = e.target.value;
         getAPI('times/campeonato/', id, { status: 'aprovada', name: search }).then(data => setApprovedTeams(data?.times || []));

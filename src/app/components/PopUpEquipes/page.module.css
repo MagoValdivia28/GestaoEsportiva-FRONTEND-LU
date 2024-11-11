@@ -10,6 +10,9 @@
   background-color: #ffffff;
   box-sizing: border-box;
 }
+
+
+
 /* Input Focus - Enhanced Border and Background */
 .popupcontent input[type="text"]:focus,
 .popupcontent input[type="file"]:focus,
