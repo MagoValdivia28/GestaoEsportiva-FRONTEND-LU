@@ -5,20 +5,32 @@ import { IoInformationCircleOutline } from "react-icons/io5";
 import { TbCoins } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 import { GiTennisCourt } from "react-icons/gi";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import Header from '../components/header/header';
+import { getAPI } from '@/src/actions/api';
 
 const FeedBack = () => {
-    const [feedBack, setFeedBack] = useState('');
+    const [feedbacks, setFeedbacks] = useState('');
 
-    const sendFeedBack = () => {
-        if (!feedBack) {
-            alert('O campo de feedback não pode estar vazio');
-            return;
-        }
-        emailjs.send('service_1q7z5qf', 'template_1q7z5qf', { message: feedBack }, 'user_1q7z5qf');
-    };
+    // const sendFeedBack = () => {
+    //     if (!feedBack) {
+    //         alert('O campo de feedback não pode estar vazio');
+    //         return;
+    //     }
+    //     emailjs.send('service_1q7z5qf', 'template_1q7z5qf', { message: feedBack }, 'user_1q7z5qf');
+    // };
+
+    useEffect(() => {
+        const getAllFeedBacks = async () => {
+          const feedbackAPI = await getAPI('feedback');
+          setFeedbacks(feedbackAPI.feedback);
+            console.log("esses são os feedbacks", feedbackAPI.feedbacks);
+            
+        };
+        getAllFeedBacks();
+      }, []);
+      
 
     return (
         <main className={styles.mainContainer}>
