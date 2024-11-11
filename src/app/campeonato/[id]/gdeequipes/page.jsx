@@ -8,10 +8,11 @@ import { useEffect, useState } from 'react';
 import Equipes from '@/src/app/components/equipes/equipes';
 import { getAPI } from '@/src/actions/api';
 import { useParams } from 'next/navigation';
+import PopUpError from '@/src/app/components/PopUpError';
 
 const GdeEquipes = () => {
     const { id } = useParams();
-
+    const [error, setError] = useState(null);
     const [approvedTeams, setApprovedTeams] = useState([]);
     const [pendingTeams, setPendingTeams] = useState([]);
     const [rejectedTeams, setRejectedTeams] = useState([]);
@@ -60,12 +61,12 @@ const GdeEquipes = () => {
 
             <div className={styles.search_container}>
                 <div className={styles.input_container}>
-                    <input 
-                        type="search" 
-                        id="Search" 
-                        name="Search" 
-                        placeholder='Pesquisar equipe por nome' 
-                        onChange={handleSearch} 
+                    <input
+                        type="search"
+                        id="Search"
+                        name="Search"
+                        placeholder='Pesquisar equipe por nome'
+                        onChange={handleSearch}
                     />
                     <label htmlFor="Search">
                         <FaSearch />
@@ -118,14 +119,18 @@ const GdeEquipes = () => {
             {isOpen && (
                 <div className={styles.overlay}>
                     <div className={styles.popup}>
-                        <CadastroPopup 
-                            isOpen={isOpen} 
-                            onClose={() => setIsOpen(false)} 
-                            modalities={modalities} 
+                        <CadastroPopup
+                            isOpen={isOpen}
+                            onClose={() => setIsOpen(false)}
+                            modalities={modalities}
+                            setError={setError}
                         />
                     </div>
                 </div>
             )}
+            {
+                error && <PopUpError error={error} />
+            }
         </div>
     );
 }

@@ -6,9 +6,8 @@ import styles from './page.module.css';
 import { getAPI } from '@/src/actions/api';
 import { FaX } from "react-icons/fa6";
 
-const CadastroPopup = ({ isOpen, onClose, modalities }) => {
-  console.log(modalities);
 
+const CadastroPopup = ({ isOpen, onClose, modalities, setError }) => {
   const [formData, setFormData] = useState({
     nome: '',
     sala: '',
@@ -46,10 +45,14 @@ const CadastroPopup = ({ isOpen, onClose, modalities }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-
-    // await getAPI('times/', undefined, formData);
-    onClose();
+    if (formData.imagem.type !== 'image/jpeg' && formData.imagem.type !== 'image/png') {
+      setError({ status: "error", message: 'Formato de imagem inválido' });
+      setTimeout(() => setError(null), 3000);
+    } else {
+      console.log(formData);
+      // await getAPI('times/', undefined, formData);
+      onClose();
+    }
   };
 
   if (!isOpen) return null;
@@ -324,7 +327,7 @@ const CadastroPopup = ({ isOpen, onClose, modalities }) => {
             <option value="">Selecione</option>
             {modalities.length > 0 &&
               modalities.map((modality) => (
-                <option key={modality.modalidade_id} value={modality.modalidade_id}>
+                <option key={modality.id} value={modality.id}>
                   {modality.nome_modalidade}
                 </option>
               ))}
