@@ -58,27 +58,29 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError }) => {
       formData.participante9,
       formData.participante10,
     ];
-
+  
     const hasJogadores = jogadores.some(jogador => jogador && jogador.trim() !== '');
-
+  
     if (!hasJogadores) {
       setError({ status: "error", message: 'Por favor, adicione pelo menos um jogador.' });
       setTimeout(() => setError(null), 3000);
       return;
     }
-
+  
     if (formData.imagem.type !== 'image/jpeg' && formData.imagem.type !== 'image/png') {
       setError({ status: "error", message: 'Formato de imagem inválido' });
       setTimeout(() => setError(null), 3000);
     } else {
       const response = await createEquipe(formData.nome, formData.sala, formData.modalidade, 'pendente');
       if (response.status === 'success') {
-        await createJogadores(response.data.id);
+        const jogadoresCriados = await createJogadores(response.data.id);
+        if (jogadoresCriados) {
+          onClose();
+        }
       }
-      onClose();
     }
   };
-
+  
   const createJogadores = async (teamId) => {
     const jogadores = [
       { nome: formData.participante1, sala: formData.participantesala1 },
@@ -92,20 +94,20 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError }) => {
       { nome: formData.participante9, sala: formData.participantesala9 },
       { nome: formData.participante10, sala: formData.participantesala10 },
     ];
-
+  
     for (const jogador of jogadores) {
       if (jogador.nome && jogador.nome.trim() !== '') {
-        try {
-          await createJogador(jogador.nome, jogador.sala, teamId);
-        } catch (error) {
-          if (error.response) {
-            setError({ status: "error", message: error.response.data.message });
-            setTimeout(() => setError(null), 3000);
-            return;
-          }
+        const response = await createJogador(jogador.nome, jogador.sala, teamId);
+        console.log(response);
+  
+        if (response.message === 'Erro ao criar jogador') {
+          setError({ status: "error", message: 'Por favor, preencha a sala de todos os jogadores.' });
+          setTimeout(() => setError(null), 3000);
+          return false;
         }
       }
-    };
+    }
+    return true;
   };
 
   if (!isOpen) return null;

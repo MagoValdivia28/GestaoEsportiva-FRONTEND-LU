@@ -87,7 +87,7 @@ export const createJogador = async (nameParams, salaParams, time_idParams) => {
             return error;
         }
     }
-}
+};
 
 export const getCampeonatoByDate = async (dateParams) => {
     try {
