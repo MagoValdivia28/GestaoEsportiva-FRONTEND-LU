@@ -34,6 +34,26 @@ export const createCampeonato = async (nameParams, dateStartsParams, dateEndsPar
     }
 };
 
+export const createModalidade = async (nameParams, descParams, limitParams, campeonato_idParams, valueParams, typeParams) => {
+    try {
+        const response = await axios.post(`${api}/modalidades`, {
+            nome: nameParams,
+            descricao: descParams,
+            limite_pessoas: limitParams,
+            campeonato_id: campeonato_idParams,
+            valor_por_pessoa: valueParams,
+            tipo: typeParams
+        });
+        return response.data;
+    } catch (error) {
+        if (error.response) {
+            return error.response.data;
+        } else {
+            return error;
+        }
+    }
+};
+
 export const getCampeonatoByDate = async (dateParams) => {
     try {
         const response = await axios.get(`${api}/campeonatos/date/${dateParams}`);
@@ -41,7 +61,6 @@ export const getCampeonatoByDate = async (dateParams) => {
     } catch (error) {
         if (error.response) {
             return error.response.data;
-
         } else {
             return error;
         }
