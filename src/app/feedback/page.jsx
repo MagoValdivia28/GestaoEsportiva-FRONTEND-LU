@@ -4,33 +4,43 @@ import styles from './page.module.css';
 import { IoInformationCircleOutline } from "react-icons/io5";
 import { TbCoins } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
-import { GiTennisCourt } from "react-icons/gi";
 import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import Header from '../components/header/header';
 import { getAPI } from '@/src/actions/api';
 
 const FeedBack = () => {
-    const [feedbacks, setFeedbacks] = useState('');
+    const [feedbacks, setFeedbacks] = useState([]);
+    const [feedback, setFeedback] = useState('');
 
-    // const sendFeedBack = () => {
-    //     if (!feedBack) {
-    //         alert('O campo de feedback não pode estar vazio');
-    //         return;
-    //     }
-    //     emailjs.send('service_1q7z5qf', 'template_1q7z5qf', { message: feedBack }, 'user_1q7z5qf');
-    // };
+    const sendFeedBack = () => {
+        if (!feedback) {
+            alert('O campo de feedback não pode estar vazio');
+            return;
+        }
+
+        emailjs.send('service_1q7z5qf', 'template_1q7z5qf', { message: feedback }, 'user_1q7z5qf')
+            .then(response => {
+                console.log("Feedback enviado com sucesso!", response.status, response.text);
+                setFeedback(''); // Limpa o campo de feedback após o envio
+            })
+            .catch(error => {
+                console.error("Erro ao enviar feedback:", error);
+            });
+    };
 
     useEffect(() => {
         const getAllFeedBacks = async () => {
-          const feedbackAPI = await getAPI('feedback');
-          setFeedbacks(feedbackAPI.feedback);
-            console.log("esses são os feedbacks", feedbackAPI.feedbacks);
-            
+            try {
+                const feedbackAPI = await getAPI('feedback');
+                setFeedbacks(feedbackAPI.feedbacks || []);
+                console.log("Feedbacks recebidos:", feedbackAPI.feedbacks);
+            } catch (error) {
+                console.error("Erro ao buscar feedbacks:", error);
+            }
         };
         getAllFeedBacks();
-      }, []);
-      
+    }, []);
 
     return (
         <main className={styles.mainContainer}>
@@ -41,8 +51,7 @@ const FeedBack = () => {
                         <span className={styles.titleRed}>gerenciamento</span>
                         <span className={styles.titleBlack}>dos FeedBacks</span>
                     </h1>
-                    <p>pagina destinada ao gerenciamento de feedbacks e opinioes dos clientes, com o objetivo de melhorar a qualidade dos nossos serviços e produtos.
-                    </p>
+                    <p>Página destinada ao gerenciamento de feedbacks e opiniões dos clientes, com o objetivo de melhorar a qualidade dos nossos serviços e produtos.</p>
                 </div>
                 <div className={styles.aboutImage}></div>
             </section>
@@ -62,10 +71,22 @@ const FeedBack = () => {
                 </div>
             </section>
 
-        
+            <section className={styles.receivedFeedbacks}>
+                <h2>Feedbacks Recebidos</h2>
+                <div className={styles.feedbackList}>
+                    {feedbacks.length > 0 ? (
+                        feedbacks.map((feedback, index) => (
+                            <div key={index} className={styles.feedbackItem}>
+                                {feedback.content} {/* ajuste conforme o formato de feedback da API */}
+                            </div>
+                        ))
+                    ) : (
+                        <p>Nenhum feedback recebido ainda.</p>
+                    )}
+                </div>
+            </section>
         </main>
     );
 };
 
 export default FeedBack;
-
