@@ -2,6 +2,7 @@
   background-color: #fff;
   padding: 1rem;
 }
+
 .textMembro {
   font-size: 1.25rem;
   text-align: center;
@@ -69,14 +70,17 @@
 .card {
   margin: auto;
   flex-wrap: wrap;
+  width: 40%;
+
+
 }
 
 .info_card {
   background-color: #d9d9d9;
   border: 0.3rem solid #AF0000;
   border-radius: 1.5rem;
-  height: 20rem;
-  width: 50rem;
+  height: 25rem;
+
 
 }
 
@@ -96,10 +100,6 @@
 
 }
 
-.membro {
-  text-align: center;
-  font-weight: bold;
-}
 
 .profileButton {
   background-color: transparent;

@@ -8,8 +8,6 @@ import fervas from '../../../assets/imagens/fervas.jpeg';
 import night from '../../../assets/imagens/Night.jpeg';
 import fp from '../../../assets/imagens/fp.jpeg';
 import pravel from '../../../assets/imagens/pravel.jpeg';
-import logo from "../../../assets/imagens/logo.png";
-import { FaUser } from 'react-icons/fa';
 import Header from '../components/header/header';
 
 export default function Sobre() {
@@ -37,7 +35,6 @@ export default function Sobre() {
             <div className={styles.info_card}>
               <div className={styles.texts_container}>
                 <h4 className={styles.nomeMembro}>João Victor</h4>
-                <p className={styles.membro}>membro</p>
                 <p className={styles.textMembro}>
                   João é um dos membros mais criativos e dedicados da nossa equipe.
                   Com uma mente inovadora e um comprometimento exemplar, João traz
@@ -57,9 +54,7 @@ export default function Sobre() {
             <div className={styles.info_card}>
               <div className={styles.texts_container}>
                 <h4 className={styles.nomeMembro}>Felipe Pedro</h4>
-                <p className={styles.membro}>membro</p>
-                <p className={styles.textMembro}>
-                  Felipe é um membro com uma personalidade forte e um espírito de
+                <p className={styles.textMembro}>  Felipe é um membro com uma personalidade forte e um espírito de
                   liderança marcante, ele se destaca em qualquer desafio que enfrenta.
                   Fazendo dele uma peça chave para o nosso sucesso coletivo.
                 </p>
@@ -67,6 +62,7 @@ export default function Sobre() {
             </div>
 
           </div>
+
 
           <div className={styles.card}>
             <div className={styles.img_container}>
@@ -76,7 +72,6 @@ export default function Sobre() {
             <div className={styles.info_card}>
               <div className={styles.texts_container}>
                 <h4 className={styles.nomeMembro}>Matheus Zambon</h4>
-                <p className={styles.membro}>membro</p>
                 <p className={styles.textMembro}>
                   Matheus Zambon é o membro mais animado e o melhor em trabalho em
                   equipe. Sua energia contagiante e habilidade para colaborar
@@ -96,7 +91,6 @@ export default function Sobre() {
             <div className={styles.info_card}>
               <div className={styles.texts_container}>
                 <h4 className={styles.nomeMembro}>Matheus Gomes</h4>
-                <p className={styles.membro}>membro</p>
                 <p className={styles.textMembro}>
                   Matheus Gomes é um verdadeiro gênio em programação. Com um talento
                   excepcional para desenvolver soluções, ele combina brilhantismo
@@ -115,7 +109,6 @@ export default function Sobre() {
             <div className={styles.info_card}>
               <div className={styles.texts_container}>
                 <h4 className={styles.nomeMembro}>Matheus Carvalho</h4>
-                <p className={styles.membro}>membro</p>
                 <p className={styles.textMembro}>
                   Matheus Carvalho é o mestre da lógica na nossa equipe. Com um
                   conhecimento profundo em diversas tecnologias, ele é a referência na
