@@ -9,7 +9,7 @@ import Image from 'next/image';
 const FormAuth = ({ setError }) => {
   const [name, setName] = useState(null);
   const [password, setPassword] = useState(null);
-  const { signInContext, user, acessToken } = useContext(AuthContext);
+  const { login, user, acessToken } = useContext(AuthContext);
 
   const handleSubmit = async () => {
     if (!name || !password) {
@@ -18,7 +18,7 @@ const FormAuth = ({ setError }) => {
         setError(null);
       }, 3000);
     } else {
-      const response = await signInContext(name, password);
+      const response = await login(name, password);
       setError(response);
       setTimeout(() => {
         setError(null);

@@ -45,21 +45,19 @@ export const AuthProvider = ({ children }) => {
         loadingStoreData();
     }, []);
 
-    const signIn = async (name, password) => {
-        const isLogged = await axios.post(`${apiURL}/users/login`, {
-            name: name,
-            password: password
-        });
-        if (isLogged) {
-            setAcessToken(isLogged.data.token);
-            const { password, ...userData } = isLogged.data.user;
-            setUser(userData);
-            localStorage.setItem('@token', JSON.stringify(isLogged.data.refreshToken.id));
+    const login = async (name, password) => {
+        const response = await signIn(name, password);
+        if (response) {
+            setPopUpMessage(response);
+            setTimeout(() => {
+                setPopUpMessage(null);
+            }, 3000);
         }
-    }
+    };
+
 
     return (
-        <AuthContext.Provider value={{  loading, acessToken, signIn, user, setUser, }}>
+        <AuthContext.Provider value={{ acessToken, login, user, setUser, }}>
             {children}
         </AuthContext.Provider>
     );
