@@ -79,12 +79,6 @@
   transform: scale(1.05);
 }
 
-.linhavermelha {
-  background-color: rgb(197, 10, 10);
-  width: 100%;
-  height: 4px;
-
-}
 
 .welcomeSection {
   padding: 2rem;
