@@ -35,9 +35,11 @@
 
 .aboutImage {
     flex: 1;
-    background-color: #e0e0e0;
+    background-image: url('../../../assets/imagens/feedbackLu.jpg');
+    background-size: cover;
+    background-position: center;
     border-radius: 10px;
-    height: 200px;
+    height: 250px;
 }
 
 /* Seção Valores */
@@ -114,8 +116,10 @@
 .receivedFeedbacks {
     background-color: #ffffff;
     padding: 2rem;
-    border-radius: 12px; /* Maior arredondamento para suavizar os contornos */
-    box-shadow: 0 4px 15px rgba(147, 4, 4, 0.507); /* Menos opacidade na sombra */
+    border-radius: 12px;
+    /* Maior arredondamento para suavizar os contornos */
+    box-shadow: 0 4px 15px rgba(147, 4, 4, 0.507);
+    /* Menos opacidade na sombra */
     max-width: 80%;
     margin: 2rem auto;
     font-family: 'Arial', sans-serif;
@@ -140,11 +144,14 @@
 .feedbackItem {
     width: 48%;
     padding: 1.5rem;
-    border-radius: 12px; /* Bordas mais suaves */
+    border-radius: 12px;
+    /* Bordas mais suaves */
     box-shadow: 0 6px 18px rgba(255, 30, 30, 0.1);
-    background-color: #ffffff; /* Fundo branco para destacar o card */
+    background-color: #ffffff;
+    /* Fundo branco para destacar o card */
     position: relative;
-    border: 2px solid #ff6b6b; /* Borda com cor mais vibrante */
+    border: 2px solid #ff6b6b;
+    /* Borda com cor mais vibrante */
     transition: box-shadow 0.3s, transform 0.3s;
     text-align: center;
     display: flex;
@@ -154,7 +161,8 @@
 
 .feedbackItem:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px) scale(1.02); /* Pequeno aumento ao hover */
+    transform: translateY(-5px) scale(1.02);
+    /* Pequeno aumento ao hover */
 }
 
 /* Estilo das estrelas */
@@ -166,7 +174,8 @@
 
 .starFilled {
     color: #ffd700;
-    font-size: 1.2rem; /* Aumenta o tamanho da estrela */
+    font-size: 1.2rem;
+    /* Aumenta o tamanho da estrela */
 }
 
 .starEmpty {
@@ -215,7 +224,8 @@
     font-size: 1rem;
     color: #333;
     font-weight: 500;
-    background-color: #f4f4f4; /* Fundo leve para destacar */
+    background-color: #f4f4f4;
+    /* Fundo leve para destacar */
     padding: 0.5rem;
     border-radius: 8px;
 }
