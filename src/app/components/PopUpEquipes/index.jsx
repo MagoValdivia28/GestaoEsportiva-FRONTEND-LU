@@ -46,65 +46,46 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const jogadores = [
-      formData.participante1,
-      formData.participante2,
-      formData.participante3,
-      formData.participante4,
-      formData.participante5,
-      formData.participante6,
-      formData.participante7,
-      formData.participante8,
-      formData.participante9,
-      formData.participante10,
-    ];
-  
-    const hasJogadores = jogadores.some(jogador => jogador && jogador.trim() !== '');
-  
+
+    const jogadores = Array.from({ length: 10 }, (_, i) => ({
+      nome: formData[`participante${i + 1}`],
+      sala: formData[`participantesala${i + 1}`],
+    }));
+
+    const hasJogadores = jogadores.some(jogador => jogador.nome && jogador.nome.trim() !== '');
+
     if (!hasJogadores) {
       setError({ status: "error", message: 'Por favor, adicione pelo menos um jogador.' });
       setTimeout(() => setError(null), 3000);
       return;
     }
-  
+
+    const invalidJogadores = jogadores.some(jogador => jogador.nome && jogador.nome.trim() !== '' && (!jogador.sala || jogador.sala.trim() === ''));
+
+    if (invalidJogadores) {
+      setError({ status: "error", message: 'Por favor, preencha a sala de todos os jogadores.' });
+      setTimeout(() => setError(null), 3000);
+      return;
+    }
+
     if (formData.imagem.type !== 'image/jpeg' && formData.imagem.type !== 'image/png') {
       setError({ status: "error", message: 'Formato de imagem inválido' });
       setTimeout(() => setError(null), 3000);
     } else {
       const response = await createEquipe(formData.nome, formData.sala, formData.modalidade, 'pendente');
       if (response.status === 'success') {
-        const jogadoresCriados = await createJogadores(response.data.id);
-        if (jogadoresCriados) {
+        const jogadoresCriados = await createJogadores(response.times.id, jogadores);
+        if (jogadoresCriados === true) {
           onClose();
         }
       }
     }
   };
-  
-  const createJogadores = async (teamId) => {
-    const jogadores = [
-      { nome: formData.participante1, sala: formData.participantesala1 },
-      { nome: formData.participante2, sala: formData.participantesala2 },
-      { nome: formData.participante3, sala: formData.participantesala3 },
-      { nome: formData.participante4, sala: formData.participantesala4 },
-      { nome: formData.participante5, sala: formData.participantesala5 },
-      { nome: formData.participante6, sala: formData.participantesala6 },
-      { nome: formData.participante7, sala: formData.participantesala7 },
-      { nome: formData.participante8, sala: formData.participantesala8 },
-      { nome: formData.participante9, sala: formData.participantesala9 },
-      { nome: formData.participante10, sala: formData.participantesala10 },
-    ];
-  
+
+  const createJogadores = async (teamId, jogadores) => {
     for (const jogador of jogadores) {
       if (jogador.nome && jogador.nome.trim() !== '') {
-        const response = await createJogador(jogador.nome, jogador.sala, teamId);
-        console.log(response);
-  
-        if (response.message === 'Erro ao criar jogador') {
-          setError({ status: "error", message: 'Por favor, preencha a sala de todos os jogadores.' });
-          setTimeout(() => setError(null), 3000);
-          return false;
-        }
+        await createJogador(jogador.nome, jogador.sala, teamId);
       }
     }
     return true;
