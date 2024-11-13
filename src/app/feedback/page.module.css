@@ -62,38 +62,10 @@
     color: #555;
 }
 
-/* Seção Feedback */
-.feedbackSection {
-    display: flex;
-    align-items: center;
-    padding: 2rem 0;
-}
-
 .iconLarge {
     font-size: 4rem;
     color: #d32f2f;
     margin-right: 1rem;
-}
-
-.feedbackContent {
-    flex: 1;
-}
-
-.feedbackContent h1 {
-    font-size: 1.75rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #444;
-}
-
-.feedbackInput {
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
 }
 
 .submitButton {
@@ -109,9 +81,7 @@
 
 .submitButton:hover {
     background-color: #d32f2f;
-
 }
-
 
 .title {
     text-align: left;
@@ -131,32 +101,101 @@
     margin-left: 8px;
     font-weight: 500;
 }
+
 /* Seção de Enviar Feedback */
-.feedbackSection {
+.sendButton:hover {
+    background-color: #d32f2f;
+}
+
+/* Seção de Feedbacks Recebidos */
+
+.receivedFeedbacks {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
+    max-width: 1000px;
+    margin: 2rem auto;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s;
+}
+
+.receivedFeedbacks h2 {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.feedbackList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* Estilos para cada item de feedback */
+.feedbackItem {
+    width: 48%;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    position: relative;
+    border: 2px solid #d32f2f; /* Borda vermelha */
+    transition: box-shadow 0.3s, transform 0.3s;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 2rem 0;
-    border-bottom: 3px solid #d32f2f;
+    justify-content: space-between; /* Garante que o conteúdo fique distribuído ao longo do card */
 }
 
-.feedbackInput {
-    width: 100%;
-    max-width: 600px;
+/* Quando o item de feedback é hoverado */
+.feedbackItem:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Estilo de estrelas */
+.rating {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.starFilled {
+    color: #ffd700;
+}
+
+.starEmpty {
+    color: #ccc;
+}
+
+/* Resposta do feedback */
+.replyContainer {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Caixa de input para responder */
+.replyInput {
     padding: 0.75rem;
-    margin-bottom: 1rem;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    outline: none;
+    width: 100%;
+    box-sizing: border-box;
 }
 
+/* Botão de enviar resposta */
 .sendButton {
     padding: 0.75rem 2rem;
     font-size: 1rem;
     color: #fff;
-    border: none;
     background-color: #ff4b4b;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -166,24 +205,33 @@
     background-color: #d32f2f;
 }
 
-/* Seção de Feedbacks Recebidos */
-.receivedFeedbacks {
-    padding: 2rem 0;
-}
-
-.feedbackList {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.feedbackItem {
-    background-color: #f5f5f5;
-    padding: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    color: #555;
+/* Resposta já enviada */
+.response {
+    margin-top: 1rem;
     font-size: 1rem;
-    line-height: 1.5;
+    color: #333;
+    font-weight: 500;
 }
-    
+
+/* Botão de resposta, inicialmente invisível */
+.replyButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+    display: none; /* Fica invisível por padrão */
+}
+
+/* Mostra o botão de resposta quando o mouse está sobre o feedback */
+.feedbackItem:hover .replyButton {
+    display: block;
+}
+
+.replyButton:hover {
+    background-color: #ff4b4b;
+}
