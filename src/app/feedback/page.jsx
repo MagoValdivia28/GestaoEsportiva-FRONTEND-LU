@@ -9,6 +9,8 @@ import emailjs from '@emailjs/browser';
 import Header from '../components/header/header';
 import { getAPI } from '@/src/actions/api';
 import { updateFeedback } from '@/src/actions/api';
+import feedbackimg from '../../../assets/imagens/feedbackLu.jpg';
+import Image from 'next/image';
 
 const FeedBack = () => {
     const [feedbacks, setFeedbacks] = useState([]);
@@ -60,8 +62,8 @@ const FeedBack = () => {
             console.log("Resposta enviada com sucesso:", responseAPI);
 
             // Update feedbacks to reflect the new response in the UI
-            setFeedbacks(prevFeedbacks => 
-                prevFeedbacks.map(feedback => 
+            setFeedbacks(prevFeedbacks =>
+                prevFeedbacks.map(feedback =>
                     feedback.id === id ? { ...feedback, resposta: response } : feedback
                 )
             );
@@ -83,7 +85,9 @@ const FeedBack = () => {
                     </h1>
                     <p>Página destinada ao gerenciamento de feedbacks e opiniões dos clientes, com o objetivo de melhorar a qualidade dos nossos serviços e produtos.</p>
                 </div>
-                <div className={styles.aboutImage}></div>
+                <div className={styles.aboutImage}>
+                   
+                </div>
             </section>
 
             <section className={styles.valuesSection}>
