@@ -54,6 +54,41 @@ export const createModalidade = async (nameParams, descParams, limitParams, camp
     }
 };
 
+export const createEquipe = async (nameParams, salaParams, modalidade_idParams, statusParams) => {
+    try {
+        const response = await axios.post(`${api}/times`, {
+            nome: nameParams,
+            sala: salaParams,
+            modalidade_id: modalidade_idParams,
+            status: statusParams
+        });
+        return response.data;
+    } catch (error) {
+        if (error.response) {
+            return error.response.data;
+        } else {
+            return error;
+        }
+    }
+};
+
+export const createJogador = async (nameParams, salaParams, time_idParams) => {
+    try {
+        const response = await axios.post(`${api}/jogadores`, {
+            nome: nameParams,
+            sala: salaParams,
+            time_id: time_idParams
+        });
+        return response.data;
+    } catch (error) {
+        if (error.response) {
+            return error.response.data;
+        } else {
+            return error;
+        }
+    }
+};
+
 export const getCampeonatoByDate = async (dateParams) => {
     try {
         const response = await axios.get(`${api}/campeonatos/date/${dateParams}`);
