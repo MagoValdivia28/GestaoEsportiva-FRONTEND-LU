@@ -36,7 +36,7 @@ const FormularioModalidade = ({ isOpen, onClose, campeonato_id, onModalidadeAdde
       formData.value,
       formData.tipo,
     );
-    if (response.status == "success") {
+    if (response.status == "sucess") {
       setIsPopupOpen(true);
       onModalidadeAdded();
       setTimeout(() => {
@@ -62,7 +62,7 @@ const FormularioModalidade = ({ isOpen, onClose, campeonato_id, onModalidadeAdde
 
   return (
     <>
-      {isPopupOpen && <PopUpError error={{ status: "sucess" }} />}
+      {isPopupOpen && <PopUpError error={{ status: "sucess", message: "Modalidade criada com sucesso!" }} />}
       <div className={Styles.PopupOverlay}>
         <div className={Styles.PopupContent}>
           <button type="button" onClick={onClose} className={Styles.CloseButton}>
