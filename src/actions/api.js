@@ -17,6 +17,9 @@ export const getAPI = async (path, id, query) => {
     }
 };
 
+console.log(api);
+
+
 export const createCampeonato = async (nameParams, dateStartsParams, dateEndsParams) => {
     try {
         const response = await axios.post(`${api}/campeonatos`, {
@@ -63,6 +66,24 @@ export const getCampeonatoByDate = async (dateParams) => {
             return error.response.data;
         } else {
             return error;
+        }
+    }
+};
+
+
+export const updateFeedback = async (id, resposta) => {
+    try {
+        const response = await axios.put(`${api}/feedback/${id}`, { resposta });
+        console.log("Resposta enviada com sucesso:", response.data);
+        return response.data;
+    } catch (error) {
+        console.error("Erro ao atualizar feedback:", error);
+        if (error.response) {
+            console.error("Detalhes do erro:", error.response.data);
+            return error.response.data;
+        } else {
+            console.error("Erro de conexão:", error.message);
+            return { status: "error", message: error.message };
         }
     }
 };
