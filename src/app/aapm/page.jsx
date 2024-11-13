@@ -8,8 +8,7 @@ import { GiTennisCourt } from "react-icons/gi";
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import imgtop from '../../../assets/imagens/ImgAapm.png'
-import imgfut from '../../../assets/imagens/imgContainer.png0,
-'
+import imgfut from '../../../assets/imagens/imgContainer.png'
 import imgVolei from '../../../assets/imagens/boladevoleift.jpg'
 import Image from 'next/image';
 
