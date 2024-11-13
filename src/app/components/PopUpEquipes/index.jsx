@@ -8,7 +8,7 @@ import { createJogador } from '@/src/actions/api';
 import { FaX } from "react-icons/fa6";
 
 
-const CadastroPopup = ({ isOpen, onClose, modalities, setError }) => {
+const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) => {
   const [formData, setFormData] = useState({
     nome: '',
     sala: '',
@@ -73,9 +73,12 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError }) => {
       setTimeout(() => setError(null), 3000);
     } else {
       const response = await createEquipe(formData.nome, formData.sala, formData.modalidade, 'pendente');
-      if (response.status === 'success') {
+      if (response.status === 'sucess') {
         const jogadoresCriados = await createJogadores(response.times.id, jogadores);
         if (jogadoresCriados === true) {
+          fetchTeams();
+          setError({ status: "sucess", message: 'Equipe cadastrada com sucesso!' });
+          setTimeout(() => setError(null), 3000);
           onClose();
         }
       }

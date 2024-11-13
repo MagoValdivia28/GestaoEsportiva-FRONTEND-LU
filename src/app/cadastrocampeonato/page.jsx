@@ -35,7 +35,7 @@ const CadastroCampeonato = () => {
     } else {
       const response = await createCampeonato(nome, data_inicio, data_final);
       setError(response);
-      setTimeout(() => {
+      setTimeout(() => {  
         setError(null);
         if (response.status === "sucess") {
           router.push('/campeonato');

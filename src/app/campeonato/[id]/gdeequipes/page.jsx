@@ -19,10 +19,14 @@ const GdeEquipes = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [modalities, setModalities] = useState([]);
 
-    useEffect(() => {
+    const fetchTeams = async () => {
         getAPI('times/campeonato/', id, { status: 'aprovada' }).then(data => setApprovedTeams(data?.times || []));
         getAPI('times/campeonato/', id, { status: 'pendente' }).then(data => setPendingTeams(data?.times || []));
         getAPI('times/campeonato/', id, { status: 'rejeitada' }).then(data => setRejectedTeams(data?.times || []));
+    }
+
+    useEffect(() => {
+        fetchTeams();
     }, []);
 
     useEffect(() => {
@@ -124,6 +128,7 @@ const GdeEquipes = () => {
                             onClose={() => setIsOpen(false)}
                             modalities={modalities}
                             setError={setError}
+                            fetchTeams={fetchTeams}
                         />
                     </div>
                 </div>
