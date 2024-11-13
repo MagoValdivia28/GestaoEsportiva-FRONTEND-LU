@@ -1,6 +1,6 @@
 import styles from './equipes.module.css';
 
-const Equipes = ({nameTeam, members}) => (
+const Equipes = ({nameTeam, members, onApprove, onReject}) => (
         <ul className={styles.listUl}>
 
             <li className={styles.cards_time}>
@@ -19,6 +19,20 @@ const Equipes = ({nameTeam, members}) => (
                         ))
                     }
                 </div>
+                {(onApprove || onReject) && (
+                <div className={styles.actionButtons}>
+                    {onApprove && (
+                        <button onClick={onApprove} className={styles.approveButton}>
+                            Aprovar
+                        </button>
+                    )}
+                    {onReject && (
+                        <button onClick={onReject} className={styles.rejectButton}>
+                            Rejeitar
+                        </button>
+                    )}
+                </div>
+            )}
             </li>
 
         </ul>

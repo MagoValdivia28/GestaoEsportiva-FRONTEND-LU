@@ -57,6 +57,8 @@ export const createModalidade = async (nameParams, descParams, limitParams, camp
     }
 };
 
+
+// Função para criar uma equipe
 export const createEquipe = async (nameParams, salaParams, modalidade_idParams, statusParams) => {
     try {
         const response = await axios.post(`${api}/times`, {
@@ -70,11 +72,26 @@ export const createEquipe = async (nameParams, salaParams, modalidade_idParams, 
         if (error.response) {
             return error.response.data;
         } else {
-            return error;
+            return { status: "error", message: "Erro ao criar equipe." };
         }
     }
 };
 
+// Função para atualizar o status de uma equipe
+export const updateTeamStatus = async (teamId, newStatus) => {
+    try {
+        const response = await axios.patch(`${api}/times/${teamId}`, {
+            status: newStatus
+        });
+        return response.data;
+    } catch (error) {
+        if (error.response) {
+            return error.response.data;
+        } else {
+            return { status: "error", message: "Erro ao atualizar status da equipe." };
+        }
+    }
+};
 export const createJogador = async (nameParams, salaParams, time_idParams) => {
     try {
         const response = await axios.post(`${api}/jogadores`, {

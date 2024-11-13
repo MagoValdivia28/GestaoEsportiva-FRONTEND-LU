@@ -6,7 +6,7 @@ import Header from '@/src/app/components/header/header';
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from 'react';
 import Equipes from '@/src/app/components/equipes/equipes';
-import { getAPI } from '@/src/actions/api';
+import { getAPI, updateTeamStatus } from '@/src/actions/api';
 import { useParams } from 'next/navigation';
 import PopUpError from '@/src/app/components/PopUpError';
 
@@ -20,9 +20,13 @@ const GdeEquipes = () => {
     const [modalities, setModalities] = useState([]);
 
     const fetchTeams = async () => {
-        getAPI('times/campeonato/', id, { status: 'aprovada' }).then(data => setApprovedTeams(data?.times || []));
-        getAPI('times/campeonato/', id, { status: 'pendente' }).then(data => setPendingTeams(data?.times || []));
-        getAPI('times/campeonato/', id, { status: 'rejeitada' }).then(data => setRejectedTeams(data?.times || []));
+        const approved = await getAPI('times/campeonato/', id, { status: 'aprovada' });
+        const pending = await getAPI('times/campeonato/', id, { status: 'pendente' });
+        const rejected = await getAPI('times/campeonato/', id, { status: 'rejeitada' });
+
+        setApprovedTeams(approved?.times || []);
+        setPendingTeams(pending?.times || []);
+        setRejectedTeams(rejected?.times || []);
     }
 
     useEffect(() => {
@@ -45,12 +49,29 @@ const GdeEquipes = () => {
         }
     }, [isOpen]);
 
+    const handleApprove = async (team) => {
+        const updated = await updateTeamStatus(team.time_id, 'aprovada');
+        if (updated) {
+            setPendingTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
+            setApprovedTeams((prev) => [...prev, { ...team, status: 'aprovada' }]);
+        }
+    };
+
+    const handleReject = async (team) => {
+        const updated = await updateTeamStatus(team.time_id, 'rejeitada');
+        if (updated) {
+            setPendingTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
+            setRejectedTeams((prev) => [...prev, { ...team, status: 'rejeitada' }]);
+        }
+    };
+
     const handleSearch = (e) => {
         const search = e.target.value;
         getAPI('times/campeonato/', id, { status: 'aprovada', name: search }).then(data => setApprovedTeams(data?.times || []));
         getAPI('times/campeonato/', id, { status: 'pendente', name: search }).then(data => setPendingTeams(data?.times || []));
         getAPI('times/campeonato/', id, { status: 'rejeitada', name: search }).then(data => setRejectedTeams(data?.times || []));
     };
+
 
     return (
         <div className={styles.main_div}>
@@ -96,7 +117,13 @@ const GdeEquipes = () => {
                 <h2 className={styles.title}>Equipes Pendentes</h2>
                 {(pendingTeams || []).length > 0 ? (
                     pendingTeams.map(team => (
-                        <Equipes key={team.time_id} nameTeam={team.time_nome} members={team.jogadores} />
+                        <Equipes
+                        key={team.time_id}
+                        nameTeam={team.time_nome}
+                        members={team.jogadores}
+                        onApprove={() => handleApprove(team)}
+                        onReject={() => handleReject(team)}
+                    />
                     ))
                 ) : (
                     <p>Não há equipes pendentes</p>

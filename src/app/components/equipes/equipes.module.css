@@ -3,6 +3,8 @@
     flex-wrap: wrap;
     width: 100%;
     align-items: center;
+    list-style: none;
+    padding: 0;
   }
   
   
