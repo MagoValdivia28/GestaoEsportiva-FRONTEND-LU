@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { FaUser, FaUsers, FaArrowRight, FaComments } from 'react-icons/fa';
 import styles from './page.module.css';
+import Header from './components/header/header';
 
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
       <section className={styles.heroSection}>
         <div className={styles.blur}>
           <div className={styles.heroOverlay}>
+            <Header />
             <div className={styles.heroContent}>
               <div className={styles.logo} />
 
