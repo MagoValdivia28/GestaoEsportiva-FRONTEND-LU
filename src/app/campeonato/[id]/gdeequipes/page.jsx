@@ -100,8 +100,8 @@ const GdeEquipes = () => {
                 <div className={styles.blackline}></div>
             </div>
 
+            <h2 className={styles.title}>Equipes Aprovadas</h2>
             <div className={styles.times}>
-                <h2 className={styles.title}>Equipes Aprovadas</h2>
                 {(approvedTeams || []).length > 0 ? (
                     approvedTeams.map(team => (
                         <Equipes key={team.time_id} nameTeam={team.time_nome} members={team.jogadores} />
@@ -113,17 +113,17 @@ const GdeEquipes = () => {
 
             <div className={styles.line}></div>
 
+            <h2 className={styles.title}>Equipes Pendentes</h2>
             <div className={styles.times}>
-                <h2 className={styles.title}>Equipes Pendentes</h2>
                 {(pendingTeams || []).length > 0 ? (
                     pendingTeams.map(team => (
                         <Equipes
-                        key={team.time_id}
-                        nameTeam={team.time_nome}
-                        members={team.jogadores}
-                        onApprove={() => handleApprove(team)}
-                        onReject={() => handleReject(team)}
-                    />
+                            key={team.time_id}
+                            nameTeam={team.time_nome}
+                            members={team.jogadores}
+                            onApprove={() => handleApprove(team)}
+                            onReject={() => handleReject(team)}
+                        />
                     ))
                 ) : (
                     <p>Não há equipes pendentes</p>
@@ -132,8 +132,8 @@ const GdeEquipes = () => {
 
             <div className={styles.line}></div>
 
+            <h2 className={styles.title}>Equipes Rejeitadas</h2>
             <div className={styles.times}>
-                <h2 className={styles.title}>Equipes Rejeitadas</h2>
                 {(rejectedTeams || []).length > 0 ? (
                     rejectedTeams.map(team => (
                         <Equipes key={team.time_id} nameTeam={team.time_nome} members={team.jogadores} />

@@ -1,7 +1,6 @@
 .main_div {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 2em;
 }
 
@@ -15,6 +14,11 @@
 .title {
   text-align: left;
   margin-left: 15%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  text-align: left;
+  color: #000000;
 }
 
 .titleRed {
@@ -73,19 +77,17 @@
 }
 
 .times {
-  width: 100%;
-  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 80%;
+  margin: 0 auto 2em auto;
   align-items: center;
-  margin: 5%;
+  justify-content: center;
+  max-height: 10%;
 }
 
-.times h2 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 0.5em;
-  text-align: left;
-  color: #000000;
-}
+
 
 .button {
   display: flex;

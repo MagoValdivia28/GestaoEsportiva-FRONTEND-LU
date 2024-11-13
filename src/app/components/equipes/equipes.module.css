@@ -1,35 +1,34 @@
 .listUl {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-  }
-  
-  
-  .cards_time {
-    width: 20rem;
-    height: 25rem;
-    display: flex;
-    margin-bottom: 1em;
-    flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
 
-    margin: auto;
-  }
-  
-  .card_top {
-    width: 100%;
-    height: 10rem;
-    background-color: #af0000;
-    display: flex;
-    justify-content: center;
-    border-top-left-radius: 2.5rem;
-    border-top-right-radius: 2.5rem;
-    align-items: flex-end;
-  }
-  
-  /* .exit_button {
+
+.cards_time {
+  width: 18rem;
+  height: 25rem;
+  display: flex;
+  margin-bottom: 1em;
+  flex-direction: column;
+  margin: auto;
+}
+
+.card_top {
+  width: 100%;
+  height: 10rem;
+  background-color: #af0000;
+  display: flex;
+  justify-content: center;
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+  align-items: flex-end;
+}
+
+/* .exit_button {
     color: white;
     position: relative;
     top: -5rem;
@@ -38,41 +37,82 @@
     font-size: 1.2rem;
     font-weight: bold;
   } */
-  
-  .gray_circule {
-    width: 8rem;
-    height: 8rem;
-    background-color: #d9d9d9;
-    border-radius: 50%;
-    display: flex;
-    position: relative;
-    top : 3rem;
-  }
-  
-  .info_card {
-    background-color: #ffff;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 2.5rem;
-    border-bottom-right-radius: 2.5rem;
-    border: 2px solid #af0000;
 
-  }
-  
-  .info_card h3 {
-    font-size: 2rem;
-    color: #000000;
-    font-weight: bold;
-    margin-bottom: 3rem;
-  }
-  
-  .info_card h4 {
-    font-size: 1.3rem;
-    color: #000000;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-  }
+.gray_circule {
+  width: 8rem;
+  height: 8rem;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  display: flex;
+  position: relative;
+  top: 3rem;
+}
+
+.info_card {
+  background-color: #ffff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+  border: 2px solid #af0000;
+  text-align: center;
+
+}
+
+.info_card h3 {
+  font-size: 2rem;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.info_card h4 {
+  font-size: 1.3rem;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.4rem;
+  padding: 0 1rem;
+}
+
+.approveButton,
+.rejectButton {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.approveButton {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.approveButton:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.rejectButton {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.rejectButton:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
