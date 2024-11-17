@@ -9,22 +9,23 @@ import Image from 'next/image';
 const FormAuth = ({ setError }) => {
   const [name, setName] = useState(null);
   const [password, setPassword] = useState(null);
-  const { login, user, acessToken } = useContext(AuthContext);
 
-  const handleSubmit = async () => {
-    if (!name || !password) {
-      setError({ message: 'Preencha todos os campos!' });
-      setTimeout(() => {
-        setError(null);
-      }, 3000);
-    } else {
-      const response = await login(name, password);
-      setError(response);
-      setTimeout(() => {
-        setError(null);
-      }, 3000);
+  const { login } = useContext(AuthContext);
+
+  const handleLogin = async () => {
+
+    try {
+      if(name && password) {
+        await login(name, password);
+      } else {
+        setError("Preencha todos os campos!");
+      }
+
     }
-  };
+    catch (error) {
+      setError("Erro ao fazer login");
+    }
+  }
 
   return (
     <div className={styles.divpai}>
@@ -39,7 +40,7 @@ const FormAuth = ({ setError }) => {
           <label htmlFor="password">Senha</label>
           <input onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" required />
         </div>
-        <button onClick={handleSubmit} className={styles.submitButton}>Entrar</button>
+        <button onClick={handleLogin} className={styles.submitButton}>Entrar</button>
       </div>
     </div>
   );
