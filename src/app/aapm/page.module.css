@@ -1,170 +1,139 @@
 .main_container {
     width: 100%;
-    background-color: #f7f7f7;
+    font-family: "Arial", sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
 }
 
-.firstIMG_container {
+
+.header_container {
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+
+.header_image {
+    position: relative;
+    z-index: 1;
+    bottom: 10rem;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-    background-color: transparent;
+    height: auto;
 }
 
-.img {
-    width: 100%;
-    height: 50rem;
-    object-fit: cover;
-    background-color: gray;
-}
 
-.linhavermelha {
-    background-color: rgb(197, 10, 10);
-    width: 90%;
-    height: 4px;
-    align-items: center;
-  
-  }
 
-.about_container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    background-color: transparent;
-}
-
-.info_about_container {
-    width: 75%;
-    margin: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 2rem;
-    background-color: transparent;
-}
-
-.info_about_container h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    text-align: left;
-    background-color: transparent;
-}
-
-.info_about_container h2 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    text-align: left;
-    background-color: transparent;
-}
-
-.img_about_container {
-    width: 25%;
-    margin: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 10rem;
-    border-radius: 10%;
-}
-
-.MVV_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-    border: solid 0.25rem #ad0000;
-    border-radius: 1rem;
-    padding: 2rem;
+.about_section,
+.benefits_section {
     width: 90%;
     margin: auto;
-    background-color: transparent;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.iconMVV {
-    padding: 2rem;
-    width: 30%;
-    margin: 0 3%;
+.text_container {
+    flex: 1;
+    padding: 1rem;
+}
+
+.text_container h1,
+.text_container h2 {
+    color: #ad0000;
+    margin-bottom: 1rem;
+}
+
+.text_container p {
+    margin-bottom: 1rem;
+}
+
+
+
+.benefits_section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ad0000;
+}
+
+.benefits_container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: transparent;
-    
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.benefit_card {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+    background-color: #fafafa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.benefit_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    border-color: #ad0000;
+}
+
+.benefit_card::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: #ad0000;
+    border-radius: 50%;
+}
+
+.benefit_card h3 {
+    margin-top: 1rem;
+    color: #ad0000;
+    font-size: 1.2rem;
 }
 
 .icon {
-    width: 50%;
-    height: 50%;
-    object-fit: cover;
+    font-size: 3rem;
     color: #ad0000;
-    background-color: transparent;
+    transition: color 0.3s ease;
 }
 
-.iconMVV p {
-    font-size: 1rem;
-    text-align: center;
-    background-color: transparent;
+.benefit_card:hover .icon {
+    color: #000;
 }
 
-
-
-
-.Aapm_container {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0;
-    padding: 3rem;
-    width: 98%;
-    background-color: transparent;
-}
-
-.Aapm_text {
-    width: 100%;
-    background-color: transparent;
-}
-
-.Aapm_text input {
-    font-size: 1.5rem;
-    text-align: left;
-    margin-bottom: 1em;
-    width: 100%;
-    text-decoration: none;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    background-color: transparent;
-    
-}
-
-.feedback_text h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    text-align: left;
-    background-color: transparent;
-}
-.imagem{
-    width: 25rem;
-    height: auto;
-}
-
-.imagem2{
-    width: 25rem;
-    height: auto;
-    border-radius: 30px;
-}
-
-.paragrafo{
-    margin-top: 10px;
-}
-.head{
-    position: relative;
+.benefit_card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
 }
 
 
+.benefit_card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about_section {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about_section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
