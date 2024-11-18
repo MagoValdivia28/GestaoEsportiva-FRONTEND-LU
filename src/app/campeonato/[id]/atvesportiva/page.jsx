@@ -45,8 +45,10 @@ const Gestaoesportes = () => {
     setShowModal(false); // Fecha o modal
   };
 
-  const handleRoute = (idParams) => {
-    router.push(`/campeonato/${id}/atvesportiva/${idParams}`);
+  const handleRoute = (modalidade) => {
+    // console.log(modalidade);
+    
+     router.push(`/campeonato/${id}/atvesportiva/${modalidade.id}`);
   }
 
   return (
@@ -67,7 +69,7 @@ const Gestaoesportes = () => {
         <div className={styles.modalidades}>
         {
             modalities.length > 0 && modalities.map((modality) => (
-              <CardModality onClick={() => handleRoute(modality.id)} key={modality.id} title={modality.nome_modalidade} />
+              <CardModality onClick={() => handleRoute(modality)} key={modality.id} title={modality.nome_modalidade} />
             )) 
           }
           <button onClick={handleAddModality} className={styles.addButton}>+</button>
