@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./page.module.css";
-import logo from "@/assets/imagens/logo.png";
 import Image from "next/image";
 import VDP from "@/src/app/components/vdp/vdp";
 import Confrontos from "@/src/app/components/confrontos/confrontos";
@@ -27,7 +26,7 @@ const GdeAtividade = () => {
             }
         };
         fetchTeams();
-    }, []);
+    }, [atvId]);
 
     useEffect(() => {
         const fetchModalidade = async () => {
@@ -35,7 +34,7 @@ const GdeAtividade = () => {
             setModalidade(response.data);
         };
         fetchModalidade();
-    }, []);
+    }, [atvId]);
 
     const handleAddWinner = () => {
         setShowModal(true);
@@ -44,28 +43,59 @@ const GdeAtividade = () => {
     const handleSelectWinner = (team) => {
         setSelectedWinner(team);
         setShowModal(false);
-        console.log("Vencedor selecionado:", team);
     };
 
     return (
         <main className={styles.main_div}>
             <Header />
 
-            <h2 className={styles.h2Title}>Gerenciamento de atividade</h2>
+            <h2 className={styles.h2Title}>
+                {modalidade.nome_modalidade}
+            </h2>
 
             {modalidade.tipo ? (
                 <div>
-                    <button className={styles.addWinnerButton} onClick={handleAddWinner}>
-                        Adicionar Vencedor
-                    </button>
-                    <h2>Times Participantes:</h2>
-                    <ul className={styles.teamList}>
-                        {teams.map((team, index) => (
-                            <li key={index} className={styles.teamItem}>
-                                {team.nome}
-                            </li>
-                        ))}
-                    </ul>
+                    {!selectedWinner && (
+                        <div className={styles.addWinnerContainer}>
+                            <button className={styles.addWinnerButton} onClick={handleAddWinner}>
+                                Adicionar Vencedor
+                            </button>
+                        </div>
+                    )}
+
+                    {selectedWinner && (
+                        <div className={styles.winnerDisplay}>
+                            <h3>Vencedor: {selectedWinner.nome}</h3>
+                            <div className={styles.winnerInfo}>
+                                <Image
+                                    src={selectedWinner.logo}
+                                    alt={`Logo do time ${selectedWinner.nome}`}
+                                    width={200}
+                                    height={200}
+                                    className={styles.winnerLogo}
+                                />
+                                <span className={styles.winnerName}>{selectedWinner.nome}</span>
+                            </div>
+                            <p>Parabéns ao time vencedor!</p>
+                        </div>
+                    )}
+                    <div className={styles.timesContainer}>
+                        <h2 className={styles.timesTitle}>Times Participantes:</h2>
+                        <ul className={styles.teamList}>
+                            {teams.map((team, index) => (
+                                <li key={index} className={styles.teamItem}>
+                                    <Image
+                                        src={team.logo}
+                                        alt={`Logo do time ${team.nome}`}
+                                        width={50}
+                                        height={50}
+                                        className={styles.teamLogo}
+                                    />
+                                    <span className={styles.teamName}>{team.nome}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
 
                     {showModal && (
                         <div className={styles.modalOverlay}>
@@ -92,7 +122,6 @@ const GdeAtividade = () => {
             )}
 
             <div className={styles.container}>
-                <h2 className={styles.h2Title}>Confrontos</h2>
 
                 {modalidade.tipo === false && (
                     <div>
@@ -102,7 +131,9 @@ const GdeAtividade = () => {
                         <ul className={styles.confrontos_container}>
                             <Confrontos />
                         </ul>
+                        <h2 className={styles.h2Title}>Confrontos</h2>
                     </div>
+
                 )}
             </div>
         </main>

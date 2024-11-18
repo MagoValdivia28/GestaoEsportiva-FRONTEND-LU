@@ -1,121 +1,214 @@
-/* .main_div {
+/* Estrutura Principal */
+.main_div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background-color: none;
-    background-color: #fbfbfb;
-}
-
-.div_img {
-    height: 100%;
-    width: 130px;
-    margin: 2rem;
-}
-
-.title_container {
-    width: 21rem;
-    border-bottom: 0.25rem solid #af1912;
-    display: flex;
-}
-
-.h2Title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0.5rem;
-    color: #767676;
-    margin-left: 6rem;
-    margin-top: 2rem;
-
-}
-
-.list_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: 1rem;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 30px;
+    background-color: #f4f4f4;
+    font-family: 'Roboto', Arial, sans-serif;
 }
 
-.container {
+/* Título */
+.h2Title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #004080; /* Azul SENAI */
+    text-transform: uppercase;
+    border-bottom: 4px solid #af1912; /* Vermelho SESI */
+    padding-bottom: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Centralização e Estilização de "Times Participantes" */
+.timesContainer {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
-.confrontos_container {
-    display: flex;
-    margin: auto;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    width: 80%;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
- */
-
- .main_div {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-}
-
-.h2Title {
-    font-size: 24px;
+.timesTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .teamList {
-    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os itens */
+    gap: 30px; /* Espaçamento maior entre os itens */
     padding: 0;
+    margin: 30px 0;
+    width: 100%;
+    max-width: 1200px; /* Limita a largura máxima */
 }
 
 .teamItem {
-    padding: 10px;
-    background: #f0f0f0;
-    margin-bottom: 5px;
-    border-radius: 5px;
-}
-
-.addWinnerButton {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    flex: 1 1 calc(33.33% - 40px); /* Tamanho dinâmico com espaçamento */
+    max-width: calc(33.33% - 40px);
+    background: #ffffff;
+    padding: 30px;
+    border: 4px solid #af1912; /* Borda mais evidente */
+    border-radius: 16px; /* Cantos arredondados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #004080; /* Azul SENAI */
+    transition: transform 0.4s, background-color 0.3s, box-shadow 0.3s;
     cursor: pointer;
 }
 
-.addWinnerButton:hover {
-    background-color: #0056b3;
+.teamItem:hover {
+    transform: scale(1.05);
 }
 
+.teamLogo {
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    margin-bottom: 10px;
+}
+
+.teamName {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Botão Adicionar Vencedor */
+.addWinnerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.addWinnerButton {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #dd2929;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.addWinnerButton:hover {
+    background-color: #9f0606;
+    transform: scale(1.05);
+}
+
+/* Modal */
 .modalOverlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .modal {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
     text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra mais impactante */
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal h3 {
+    font-size: 28px;
+    color: #004080;
+    margin-bottom: 30px;
+}
+
+.modal ul {
+    list-style: none;
+    padding: 0;
 }
 
 .modalTeamItem {
-    padding: 10px;
-    margin: 5px 0;
-    background: #f8f9fa;
+    padding: 15px;
+    margin: 10px 0;
+    background: #e9ecef;
+    font-size: 20px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .modalTeamItem:hover {
-    background: #e9ecef;
+    background: #dce4f0;
+    transform: scale(1.05);
 }
 
+/* Botão de Cancelar no Modal */
+.modal button {
+    padding: 15px 30px;
+    background-color: #af1912;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.modal button:hover {
+    background-color: #870f0c;
+    transform: scale(1.05);
+}
+
+/* Exibição do Vencedor */
+.winnerDisplay {
+    background: #d4edda; /* Verde claro (sucesso) */
+    color: #155724; /* Verde escuro */
+    padding: 30px;
+    border: 3px solid #c3e6cb;
+    border-radius: 12px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.winnerDisplay h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.winnerDisplay p {
+    font-size: 20px;
+}
+
+/* Animação de entrada do Modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
