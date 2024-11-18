@@ -11,6 +11,7 @@ import imgtop from '../../../assets/imagens/ImgAapm.png'
 import imgfut from '../../../assets/imagens/imgContainer.png'
 import imgVolei from '../../../assets/imagens/boladevoleift.jpg'
 import Image from 'next/image';
+import Header from '../components/header/header';
 
 
 const Aapm = () => {
@@ -27,9 +28,12 @@ const Aapm = () => {
 
     return (
         <main className={styles.main_container}>
+           
             <div className={styles.firstIMG_container}>
                 <div className={styles.img}>
+                    <Header className={styles.head} />
                     <Image src={imgtop} className={styles.img} />
+                  
 
                 </div>
             </div>
