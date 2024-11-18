@@ -14,12 +14,9 @@ export const signIn = async (name, password) => {
         // if (response.data.token) {
         //     localStorage.setItem('@token', JSON.stringify(response.data.token));
         // }
-        console.log(response.data.token);
         return response.data;
     } catch (error) {
         if (error.response) {
-            console.log(error.response.data);
-            
             return error.response.data;
         } else {
             return error;
@@ -33,6 +30,19 @@ export const refresh = async (refreshToken) => {
         const response = await axios.post(url, {
             refreshToken: refreshToken
         });
+        return response.data;
+    } catch (error) {
+        if (error.response) {
+            return error.response.data;
+        } else {
+            return error;
+        }
+    }
+};
+
+export const logout = async (refreshToken) => {
+    try {
+        const response = await axios.delete(`${api}/users/logout/${refreshToken}`);
         return response.data;
     } catch (error) {
         if (error.response) {

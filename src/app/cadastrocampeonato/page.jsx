@@ -1,9 +1,6 @@
 "use client"
 import { useRouter } from 'next/navigation';
 import styles from './page.module.css';
-import Image from 'next/image';
-import logo from "../../../assets/imagens/logo.png";
-import { FaUser } from 'react-icons/fa';
 import { LiaArrowCircleLeftSolid } from "react-icons/lia";
 import Link from 'next/link';
 import { createCampeonato } from '@/src/actions/api';

@@ -1,16 +1,18 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import Link from 'next/link';
 import styles from './header.module.css';
 import logo from '@/assets/imagens/logo.png';
 import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';
-
+import { logout } from '@/src/actions/user';
+import { AuthContext } from '@/src/contexts/AuthContext';
 
 const Header = () => {
     const [showPopup, setShowPopup] = useState(false);
     const popupRef = useRef(null);
+    const { getRefreshToken } = useContext(AuthContext);
 
     const togglePopup = () => {
         setShowPopup(!showPopup);
@@ -29,9 +31,12 @@ const Header = () => {
         };
     }, []);
 
-    const handleLoginClick = () => {
-        window.location.href = '/login';
-    };
+    const handleLogout = () => {
+        const response = getRefreshToken();
+        logout(response);
+        localStorage.clear();
+        window.location.reload();
+    }
 
     return (
         <header className={styles.header}>
@@ -45,8 +50,7 @@ const Header = () => {
                 </button>
                 {showPopup && (
                     <div ref={popupRef} className={styles.popup}>
-                        <button className={styles.logoutButton}>Logout</button>
-                        <button className={styles.loginButton} onClick={handleLoginClick}>Login</button>
+                        <button className={styles.logoutButton} onClick={handleLogout}>Logout</button>
                     </div>
                 )}
             </div>

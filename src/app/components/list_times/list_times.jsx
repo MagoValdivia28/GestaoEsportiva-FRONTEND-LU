@@ -6,8 +6,6 @@ import Image from 'next/image';
 import { FaRegSadTear } from "react-icons/fa";
 import { useEffect, useState } from 'react';
 const List_times = ({ teams }) => {
-    console.log(teams);
-
     return (
         <ul className={styles.placar}>
             <div className={styles.redline}></div>

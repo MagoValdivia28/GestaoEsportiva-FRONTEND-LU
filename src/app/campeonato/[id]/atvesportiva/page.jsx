@@ -46,8 +46,6 @@ const Gestaoesportes = () => {
   };
 
   const handleRoute = (modalidade) => {
-    // console.log(modalidade);
-    
      router.push(`/campeonato/${id}/atvesportiva/${modalidade.id}`);
   }
 

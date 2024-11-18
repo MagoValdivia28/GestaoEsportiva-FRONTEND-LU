@@ -5,21 +5,24 @@ import { AuthContext } from '@/src/contexts/AuthContext';
 import { useContext } from 'react';
 import logo from "@/assets/imagens/logo.png";
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const FormAuth = ({ setError }) => {
   const [name, setName] = useState(null);
   const [password, setPassword] = useState(null);
-
+  const router = useRouter();
   const { login } = useContext(AuthContext);
 
   const handleLogin = async () => {
-
     try {
       if(name && password) {
         const response = await login(name, password);
         setError(response);
         setTimeout(() => {
           setError(null);
+          if (response.status === "sucess") {
+            router.back();
+          }
         }, 3000);
       } else {
         setError({status: "error", message: "Preencha todos os campos"});
