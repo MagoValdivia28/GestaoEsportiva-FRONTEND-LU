@@ -137,7 +137,6 @@
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
-  background-image: url('../../../../assets/imagens/adicionar.jpg'); /* Atualize o caminho da imagem */
   background-size: cover;
   color: white;
   display: flex;

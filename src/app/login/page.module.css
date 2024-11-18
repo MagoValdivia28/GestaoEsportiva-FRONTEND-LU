@@ -2,24 +2,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #FBFBFB;
   height: 100vh;
 }
+
 #logo {
   position: absolute;
   top: 0;
   left: 0;
-} 
+}
 
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 3%;
-  background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0px 33px 32px 9px rgba(0,0,0,0.1);
- 
-  
+  box-shadow: 0px 33px 32px 9px rgba(0, 0, 0, 0.1);
+
+
 }
 
 .formdiv1 label {
@@ -79,7 +80,8 @@
   width: 20rem;
   font-family: 'Questrial', sans-serif;
 }
-.submitButton { 
+
+.submitButton {
   width: 70%;
   padding: 15px;
   background-color: #C72828;
@@ -89,15 +91,16 @@
   cursor: pointer;
   margin-top: 15%;
   font-family: 'Questrial', sans-serif;
-  font-weight: bold ;
+  font-weight: bold;
   font-size: 18px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
 }
 
-.submitButton:hover { 
+.submitButton:hover {
   background-color: #861515;
 }
+
 #h1 {
   color: #C72828;
   text-align: center;
@@ -106,4 +109,3 @@
   font-family: 'Questrial', sans-serif;
   font-size: 42px;
 }
-

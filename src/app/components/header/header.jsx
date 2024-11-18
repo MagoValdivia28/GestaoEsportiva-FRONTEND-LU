@@ -29,6 +29,10 @@ const Header = () => {
         };
     }, []);
 
+    const handleLoginClick = () => {
+        window.location.href = '/login';
+    };
+
     return (
         <header className={styles.header}>
             <Link className={styles.buttonHome} href={"/"}>
@@ -42,6 +46,7 @@ const Header = () => {
                 {showPopup && (
                     <div ref={popupRef} className={styles.popup}>
                         <button className={styles.logoutButton}>Logout</button>
+                        <button className={styles.loginButton} onClick={handleLoginClick}>Login</button>
                     </div>
                 )}
             </div>
@@ -50,3 +55,4 @@ const Header = () => {
 };
 
 export default Header;
+
