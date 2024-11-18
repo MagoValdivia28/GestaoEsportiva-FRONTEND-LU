@@ -50,13 +50,13 @@ export default function Home() {
         <div className={styles.linhavermelha} />
         <h2><span>Seja</span> <span className={styles.highligext}>bem vindo(a)!</span></h2>
         <div className={styles.championshipsManagement}>
+
           <div className={styles.championshipCard} onClick={handleGerenciarCampeonatosClick}>
             <div className={styles.trophyImage}>
               <FaArrowRight size={50} className={styles.icon} />
+              <p className={styles.p2}>Gerenciar Campeonatos</p>
             </div>
-            <div className={styles.cardContent}>
-              <h3 className={styles.p2}>Gerenciar Campeonatos</h3>
-            </div>
+              
           </div>
           <div className={styles.emptyCard} onClick={handleFeedbackClick}>
             <FaArrowRight size={50} className={styles.icon2} />

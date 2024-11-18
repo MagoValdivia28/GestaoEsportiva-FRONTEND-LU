@@ -1,10 +1,9 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import styles from './page.module.css';
-import hometopo from '../../../assets/imagens/hometopo.png';
+import futzin from '../../../assets/imagens/criajogando.jpg';
 import historico from '../../../assets/imagens/historico.jpg';
-import adicionar from '../../../assets/imagens/adicionar.jpg';
-import logo from '../../../assets/imagens/logo.png';
+import adicionar from '../../../assets/imagens/graminha.jpg';
 import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';
 import Card from '../components/Card/page';
@@ -12,6 +11,7 @@ import { useRouter } from 'next/navigation';
 import { getAPI } from '@/src/actions/api';
 import PopUpError from '@/src/app/components/PopUpError';
 import Header from '../components/header/header';
+import adicionarmodal from '../../../assets/imagens/adicionar.jpg';
 
 const geCampeonatos = () => {
   const router = useRouter();
@@ -43,24 +43,24 @@ const geCampeonatos = () => {
   return (
     <div className={styles.container}>
       <Header />
-      
+
       <main className={styles.main}>
         <h1 className={styles.title}>
           <span className={styles.titleRed}>Gerenciamento</span>
           <span className={styles.titleBlack}> de Atividades</span>
         </h1>
         <div className={styles.line}></div>
-        
+
         <div className={styles.cardsContainer}>
           <Card title="Adicionar" imageUrl={adicionar} onClick={handleAddClick} />
           <Card title="Histórico" imageUrl={historico} onClick={handleHistoricoClick} />
           {
-              campeonato && (
-                campeonato.map((item) => (
-                  <Card onClick={() => handleRoute(item.id)} key={item.id} title={item.titulo} imageUrl={hometopo} />
-                ))
-              )
-            }
+            campeonato && (
+              campeonato.map((item) => (
+                <Card onClick={() => handleRoute(item.id)} key={item.id} title={item.titulo} imageUrl={futzin} />
+              ))
+            )
+          }
         </div>
       </main>
 

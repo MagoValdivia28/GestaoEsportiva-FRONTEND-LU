@@ -86,17 +86,20 @@
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
-  background-image: url('../../../../assets/imagens/equipe.jpg'); /* Atualize o caminho da imagem */
-  
+  background-image: url('../../../../assets/imagens/equipe.jpg');
+  /* Atualize o caminho da imagem */
+
   background-size: cover;
   background-position: center;
   color: white;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  border: 3px solid #d32f2f; /* Borda vermelha */
+  border: 3px solid #d32f2f;
+  /* Borda vermelha */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer; /* Adiciona o cursor pointer ao card */
+  cursor: pointer;
+  /* Adiciona o cursor pointer ao card */
 }
 
 .card::after {
@@ -119,13 +122,14 @@
 
 /* Hover effect for cards */
 .card:hover {
-  transform: scale(1.05); /* Aumenta o tamanho do card ao passar o mouse */
+  transform: scale(1.05);
+  /* Aumenta o tamanho do card ao passar o mouse */
 }
 
 .cardContainer {
   display: flex;
   justify-content: space-around;
-  
+
   flex-wrap: wrap;
   margin-top: 3rem;
 }
@@ -137,13 +141,14 @@
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
-  background-image: url('../../../../assets/imagens/adicionar.jpg'); /* Atualize o caminho da imagem */
   background-size: cover;
   color: white;
   display: flex;
+  background-image: url('../../../../assets/imagens/adicionar.jpg');
   align-items: flex-end;
   justify-content: center;
-  border: 3px solid #d32f2f; /* Borda vermelha */
+  border: 3px solid #d32f2f;
+  /* Borda vermelha */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
@@ -168,6 +173,6 @@
 
 /* Hover effect for the second card */
 .card2:hover {
-  transform: scale(1.05); /* Aumenta o tamanho do card ao passar o mouse */
+  transform: scale(1.05);
+  /* Aumenta o tamanho do card ao passar o mouse */
 }
-

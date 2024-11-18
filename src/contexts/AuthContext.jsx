@@ -1,35 +1,35 @@
 "use client"
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-import { signIn } from '@/src/actions/user';
+import { signIn, refresh } from '@/src/actions/user';
+import { getAPI } from "../actions/api";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const apiURL = process.env.EXPO_PUBLIC_API_URL;
-    const [acessToken, setAcessToken] = useState('');
-    const [user, setUser] = useState('');
+    const [acessToken, setAcessToken] = useState(null);
+    const [user, setUser] = useState({});
     const [globalLoading, setGlobalLoading] = useState(false);
     const [popUpMessage, setPopUpMessage] = useState(null);
 
     useEffect(() => {
         const loadingStoreData = async () => {
             setGlobalLoading(true);
-            const storageToken = localStorage.getItem('@token');
-
+            const storageToken = localStorage.getItem('@refresh_token');
+            console.log("oi");
+            
             if (storageToken) {
                 try {
-                    const isLogged = await axios.post(`${apiURL}/users/refresh`, {
-                        refreshToken: JSON.parse(storageToken)
-                    });
+                    const isLogged = await refresh(JSON.parse(storageToken).id);
+                    
                     if (isLogged) {
-                        const userById = await axios.get(`${apiURL}/users/${isLogged.data.id}`, {
-                            headers: {
-                                Authorization: `Bearer ${isLogged.data.token}`
-                            }
-                        });
-                        setAcessToken(isLogged.data.token);
-                        const { password, ...userData } = userById.data;
+                        const userById = await getAPI('users/', isLogged.user_id);
+                        console.log(userById);
+                        setAcessToken(isLogged.token);
+                        console.log(isLogged.token);
+                        console.log(storageToken);
+                        
+                        const { senha, ...userData } = userById.user;
                         setUser(userData);
                     }
                 } catch (error) {
@@ -39,6 +39,10 @@ export const AuthProvider = ({ children }) => {
                     }, 3000);
                     localStorage.clear();
                 }
+            } else {
+                console.log("nao tem");
+                console.log(acessToken);
+                
             }
             setGlobalLoading(false);
         };
@@ -47,17 +51,20 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (name, password) => {
         const response = await signIn(name, password);
-        if (response) {
-            setPopUpMessage(response);
-            setTimeout(() => {
-                setPopUpMessage(null);
-            }, 3000);
+        if (response.status == "sucess") {
+            const { senha, ...userData } = response.user;
+            setUser(userData);
+            setAcessToken(response.token);
+            console.log(response.token);
+            
+            localStorage.setItem('@refresh_token', JSON.stringify(response.refreshToken));
         }
+        return response;
     };
 
 
     return (
-        <AuthContext.Provider value={{ acessToken, login, user, setUser, popUpMessage}}>
+        <AuthContext.Provider value={{ acessToken, login, user, setUser, popUpMessage }}>
             {children}
         </AuthContext.Provider>
     );

@@ -54,6 +54,12 @@ const Historico = () => {
               <h3>{campeonato.titulo}</h3>
               <div className={styles.linecard}></div>
               <h2>{formatDate(campeonato.data_final)}</h2> {/* Aqui usamos a função de formatação */}
+
+              <Image src={Logo} alt={campeonato.titulo} width={130} />
+              <h3>{campeonato.titulo}</h3>
+              <h2>{campeonato.ano}</h2>
+              <p>{campeonato.descricao}</p>
+              <p>Vencedor: {campeonato.vencedor}</p>
             </div>
           )) : <h2 className={styles.none_camp}>Nenhum campeonato cadastrado</h2>
         }

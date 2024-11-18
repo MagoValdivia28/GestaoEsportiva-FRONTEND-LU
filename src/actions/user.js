@@ -8,12 +8,31 @@ export const signIn = async (name, password) => {
     try {
         const url = `${api}/users/login`;
         const response = await axios.post(url, {
-            name,
-            password
+            nome: name,
+            senha: password
         });
-        if (response.data.token) {
-            localStorage.setItem('@token', JSON.stringify(response.data.token));
+        // if (response.data.token) {
+        //     localStorage.setItem('@token', JSON.stringify(response.data.token));
+        // }
+        console.log(response.data.token);
+        return response.data;
+    } catch (error) {
+        if (error.response) {
+            console.log(error.response.data);
+            
+            return error.response.data;
+        } else {
+            return error;
         }
+    }
+}
+
+export const refresh = async (refreshToken) => {
+    try {
+        const url = `${api}/users/refresh`;
+        const response = await axios.post(url, {
+            refreshToken: refreshToken
+        });
         return response.data;
     } catch (error) {
         if (error.response) {
@@ -22,4 +41,4 @@ export const signIn = async (name, password) => {
             return error;
         }
     }
-}
+};
