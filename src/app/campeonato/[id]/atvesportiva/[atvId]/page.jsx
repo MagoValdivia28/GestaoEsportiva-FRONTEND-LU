@@ -87,8 +87,8 @@ const GdeAtividade = () => {
                                     <Image
                                         src={team.logo}
                                         alt={`Logo do time ${team.nome}`}
-                                        width={50}
-                                        height={50}
+                                        width={100}
+                                        height={100}
                                         className={styles.teamLogo}
                                     />
                                     <span className={styles.teamName}>{team.nome}</span>
