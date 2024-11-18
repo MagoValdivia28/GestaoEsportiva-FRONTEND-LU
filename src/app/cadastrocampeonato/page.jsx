@@ -7,9 +7,10 @@ import { FaUser } from 'react-icons/fa';
 import { LiaArrowCircleLeftSolid } from "react-icons/lia";
 import Link from 'next/link';
 import { createCampeonato } from '@/src/actions/api';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import PopUpError from '@/src/app/components/PopUpError';
 import Header from '../components/header/header';
+import { AuthContext } from '@/src/contexts/AuthContext';
 
 const CadastroCampeonato = () => {
   const router = useRouter();
@@ -17,8 +18,9 @@ const CadastroCampeonato = () => {
   const [data_inicio, setDataInicio] = useState(null);
   const [data_final, setDataFinal] = useState(null);
   const [error, setError] = useState(null);
+  const { acessToken } = useContext(AuthContext);
 
-  const handleProfileClick = () => {
+  const handleProfileClick = () => {  
     alert('Perfil clicado!');
   };
 
@@ -34,7 +36,9 @@ const CadastroCampeonato = () => {
         setError(null);
       }, 3000);
     } else {
-      const response = await createCampeonato(nome, data_inicio, data_final);
+      console.log(acessToken);
+      
+      const response = await createCampeonato(nome, data_inicio, data_final, acessToken);
       setError(response);
       setTimeout(() => {  
         setError(null);
