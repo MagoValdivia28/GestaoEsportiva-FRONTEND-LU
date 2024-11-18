@@ -112,3 +112,14 @@
   color: #555;
   margin: 0 
 }
+
+.swiper-button-prev, .swiper-button-next {
+  background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo */
+  color: white; /* Cor das setas */
+  padding: 1rem; /* Espaçamento */
+  border-radius: 50%; /* Tornar as setas circulares */
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Efeito hover */
+}
