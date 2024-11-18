@@ -86,7 +86,7 @@
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
-  background-image: url('../../../../assets/imagens/equipe.jpg');
+  background-image: url('../../../../assets/imagens/gerenteequipes.jpg');
   /* Atualize o caminho da imagem */
 
   background-size: cover;
@@ -144,7 +144,7 @@
   background-size: cover;
   color: white;
   display: flex;
-  background-image: url('../../../../assets/imagens/adicionar.jpg');
+  background-image: url('../../../../assets/imagens/gerentemodalidades.jpg');
   align-items: flex-end;
   justify-content: center;
   border: 3px solid #d32f2f;
