@@ -7,6 +7,7 @@ import Confrontos from '@/src/app/components/confrontos/confrontos';
 import { useParams } from 'next/navigation';
 import { getAPI } from '@/src/actions/api';
 import { useEffect, useState } from 'react';
+import Header from '@/src/app/components/header/header';
 
 const GdeAtividade = () => {
     const { atvId } = useParams();
@@ -28,9 +29,7 @@ const GdeAtividade = () => {
 
     return (
         <main className={styles.main_div}>
-            <div className={styles.div_img}>
-                <Image src={logo} id={styles.logo} width={130} height={130} />
-            </div>
+            <Header />
 
             <h2 className={styles.h2Title}>Gerenciamento de atividade</h2>
 
