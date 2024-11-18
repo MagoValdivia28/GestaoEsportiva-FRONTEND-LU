@@ -136,3 +136,103 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1000;
 }
+
+.popup2 {
+  background-color: #fff;
+  border: 3px solid #ff0000; /* Borda vermelha */
+  border-radius: 15px;
+  padding: 25px;
+  width: 90%;
+  max-width: 550px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Sombra mais destacada */
+  animation: slideIn 0.4s ease-in-out;
+  position: relative;
+}
+
+.popup h3 {
+  margin: 0 0 20px;
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+  border-bottom: 2px solid #ff0000; /* Linha decorativa vermelha */
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.popup p {
+  margin: 10px 0;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.popup ul {
+  list-style-type: disc; /* Marcadores de lista */
+}
+
+.popup ul li {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.popup button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 12px 20px;
+  background-color: #ff0000; /* Botão vermelho */
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.popup button:hover {
+  background-color: #cc0000;
+  transform: scale(1.05); /* Feedback ao passar o mouse */
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #ff0000;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-button:hover {
+  transform: rotate(90deg); /* Animação ao passar o mouse */
+  color: #cc0000;
+}
+
+/* Animações */
+@keyframes fadeInOverlay {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(-30px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.Equipesss:hover {
+  transform: scale(1.5);
+}

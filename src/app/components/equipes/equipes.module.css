@@ -6,6 +6,10 @@
   list-style: none;
   padding: 0;
 }
+.listUl:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
 
 
 .cards_time {
