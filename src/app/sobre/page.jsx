@@ -27,24 +27,21 @@ export default function Sobre() {
         <div className={styles.div_cards}>
 
 
-          <div className={styles.card}>
-            <div className={styles.img_container}>
-              <Image className={styles.fotoMembro} src={night} />
+    <div className={styles.testeCard}>
+      <div className={styles.testeCardHeader}>
+      <div className={styles.img_container}>
+              <Image className={styles.fotoMembro} src={fp} />
             </div>
-
-            <div className={styles.info_card}>
-              <div className={styles.texts_container}>
-                <h4 className={styles.nomeMembro}>João Victor</h4>
-                <p className={styles.textMembro}>
-                  João é um dos membros mais criativos e dedicados da nossa equipe.
-                  Com uma mente inovadora e um comprometimento exemplar, João traz
-                  ideias frescas e soluções eficazes. Sua dedicação incansável é uma
-                  inspiração para todos nós.
-                </p>
-              </div>
-            </div>
-
-          </div>
+      </div>
+      <div className={styles.testeCardBody}>
+        <h3>Felipe Pedro</h3>
+        <p className={styles.testeDescription}>
+        Felipe é um membro com uma personalidade forte e um espírito de
+                  liderança marcante, ele se destaca em qualquer desafio que enfrenta.
+                  Fazendo dele uma peça chave para o nosso sucesso coletivo.
+        </p>
+      </div>
+    </div>
 
           <div className={styles.card}>
             <div className={styles.img_container}>

@@ -45,43 +45,30 @@
   height: 130%;
 }
 
-
-
 .img_container {
-  display: flex;
-  justify-content: center;
   align-items: center;
   background-color: none;
-  position: relative;
-  top: 6rem;
-
 }
 
 .fotoMembro {
+  margin: 0.5rem;
   border-radius: 50%;
-  margin: 0 auto;
-  border: white solid 0.5rem;
-  width: 15rem;
-  height: 15rem;
-
-
+  border: white solid 0.3rem;
+  width: 8rem;
+  height: 8rem;
 }
 
 .card {
   margin: auto;
   flex-wrap: wrap;
   width: 40%;
-
-
 }
 
 .info_card {
   background-color: #d9d9d9;
-  border: 0.3rem solid #AF0000;
+  border: 0.2rem solid #ffffff;
   border-radius: 1.5rem;
-  height: 25rem;
-
-
+  height: 20rem;
 }
 
 .texts_container {
@@ -120,3 +107,83 @@
   right: 1rem;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.testeCard {
+  width: 350px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.testeCardHeader {
+  background: linear-gradient(135deg, #FF6B6B, #f90707);
+  height: 150px;
+  position: relative;
+}
+
+.testeProfileImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  overflow: hidden;
+}
+
+.testeCardBody {
+  padding: 20px;
+}
+
+.testeCardBody h3 {
+  margin: 10px 0 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.testeCardBody p {
+  margin: 5px 0;
+  color: #777;
+}
+
+.testeSocialIcons {
+  margin: 15px 0;
+}
+
+.testeSocialIcons i {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.testeSocialIcons i:hover {
+  color: #ff6b6b;
+}
+
+.testeDescription {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
