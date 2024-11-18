@@ -16,9 +16,16 @@ const FormAuth = ({ setError }) => {
 
     try {
       if(name && password) {
-        await login(name, password);
+        const response = await login(name, password);
+        setError(response);
+        setTimeout(() => {
+          setError(null);
+        }, 3000);
       } else {
-        setError("Preencha todos os campos!");
+        setError({status: "error", message: "Preencha todos os campos"});
+        setTimeout(() => {
+          setError(null);
+        }, 3000);
       }
 
     }
