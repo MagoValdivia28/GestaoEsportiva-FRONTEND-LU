@@ -9,7 +9,7 @@ import Header from '../components/header/header';
 const Historico = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedCampeonato, setSelectedCampeonato] = useState(null);
-  const [campeonatos, setCampeonatos] = useState([]);
+  const [campeonatos, setCampeonatos] = useState([])
 
   useEffect(() => {
     const getAllCampeonatos = async () => {
@@ -65,10 +65,9 @@ const Historico = () => {
             <button className={styles.closeButton} onClick={closeModal}>&times;</button>
             <h3>{selectedCampeonato.titulo}</h3>
             <div className={styles.linecard}></div>
-            <Image src={Logo} alt={selectedCampeonato.titulo} width={130} className={styles.modalImage} />
-            <h2>{selectedCampeonato.ano}</h2>
-            <p>{selectedCampeonato.descricao}</p>
+            <Image src={Logo} alt={selectedCampeonato.titulo} width={150} className={styles.modalImage} />
             <p><strong>Vencedor:</strong> {selectedCampeonato.vencedor}</p>
+
           </div>
         </div>
       )}
