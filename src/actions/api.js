@@ -17,9 +17,6 @@ export const getAPI = async (path, id, query) => {
     }
 };
 
-console.log(api);
-
-
 export const createCampeonato = async (nameParams, dateStartsParams, dateEndsParams) => {
     try {
         const response = await axios.post(`${api}/campeonatos`, {
