@@ -1,118 +1,76 @@
-"use client"
+"use client";
 
-import styles from './page.module.css';
+import styles from "./page.module.css";
 import { IoInformationCircleOutline } from "react-icons/io5";
 import { TbCoins } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
-import { GiTennisCourt } from "react-icons/gi";
-import { useState } from 'react';
-import emailjs from '@emailjs/browser';
-import imgtop from '../../../assets/imagens/ImgAapm.png'
-import imgfut from '../../../assets/imagens/imgContainer.png'
-import imgVolei from '../../../assets/imagens/boladevoleift.jpg'
-import Image from 'next/image';
-import Header from '../components/header/header';
-
+import Image from "next/image";
+import imgtop from "../../../assets/imagens/ImgAapm.png";
+import imgfut from "../../../assets/imagens/imgContainer.png";
+import imgVolei from "../../../assets/imagens/boladevoleift.jpg";
+import Header from "../components/header/header";
 
 const Aapm = () => {
-    const [Aapm, setAapm] = useState('');
-
-    const sendAapm = () => {
-        if (Aapm == '') {
-            alert('O campo de Aapm não pode estar vazio');
-            return;
-        }
-        emailjs.send('service_1q7z5qf', 'template_1q7z5qf', { message: Aapm }, 'user_1q7z5qf')
-    }
-
-
     return (
         <main className={styles.main_container}>
-           
-            <div className={styles.firstIMG_container}>
-                <div className={styles.img}>
-                    <Header className={styles.head} />
-                    <Image src={imgtop} className={styles.img} />
-                  
-
-                </div>
+            <div className={styles.header_container}>
+                <Header className={styles.header} />
+                <Image src={imgtop} className={styles.header_image} />
             </div>
 
-
-            <div className={styles.about_container}>
-                <div className={styles.info_about_container}>
-                    <h1>
-                        Participe das Atividades e
-                    </h1>
-                    <h2>aproveite os benefícios!</h2>
+            <section className={styles.about_section}>
+                <div className={styles.text_container}>
+                    <h1>Bem-vindo à AAPM</h1>
                     <p>
-                    Participe gratuitamente das atividades esportivas e aproveite os benefícios!
+                        A AAPM é a Associação de Pais que contribui para o crescimento
+                        escolar e esportivo dos alunos. Trabalhamos para oferecer eventos
+                        de qualidade, desde competições esportivas até celebrações culturais.
                     </p>
                 </div>
 
-                <div className={styles.img_about_container}>
-                    <Image src={imgfut} className={styles.imagem} />
-                </div>
-            </div>
-
-            <div className={styles.MVV_container}>
-                <div className={styles.iconMVV}>
-                    <IoInformationCircleOutline className={styles.icon} />
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        Consequatur dicta molestiae earum provident inventore accusamus
-                        deserunt neque ducimus, voluptas ullam ut maiores voluptatum soluta!
-                        Modi suscipit facilis soluta in voluptatum.</p>
-                </div>
-
-                <div className={styles.iconMVV}>
-                    <TbCoins className={styles.icon} />
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        Consequatur dicta molestiae earum provident inventore accusamus
-                        deserunt neque ducimus, voluptas ullam ut maiores voluptatum soluta!
-                        Modi suscipit facilis soluta in voluptatum.</p>
-                </div>
-                    <div className={styles.iconMVV}>
-                        <CgProfile className={styles.icon} />
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            Consequatur dicta molestiae earum provident inventore accusamus
-                            deserunt neque ducimus, voluptas ullam ut maiores voluptatum soluta!
-                            Modi suscipit facilis soluta in voluptatum
+            </section>
+            <section className={styles.benefits_section}>
+                <h2>Nossos Benefícios</h2>
+                <div className={styles.benefits_container}>
+                    <div className={styles.benefit_card}>
+                        <IoInformationCircleOutline className={styles.icon} />
+                        <h3>Eventos Inesquecíveis</h3>
+                        <p>
+                            Organizamos competições esportivas, palestras e festividades para
+                            enriquecer o ambiente escolar.
                         </p>
                     </div>
-            </div>
-
-
-            <div className={styles.about_container}>
-            <div className={styles.img_about_container}>
-                    <Image src={imgVolei} className={styles.imagem2} />
+                    <div className={styles.benefit_card}>
+                        <TbCoins className={styles.icon} />
+                        <h3>Apoio Financeiro</h3>
+                        <p>
+                            Investimos em materiais, uniformes e infraestrutura para garantir
+                            o sucesso dos eventos.
+                        </p>
+                    </div>
+                    <div className={styles.benefit_card}>
+                        <CgProfile className={styles.icon} />
+                        <h3>Comunidade Unida</h3>
+                        <p>
+                            Unimos pais, alunos e professores para criar um ambiente de apoio
+                            e crescimento mútuo.
+                        </p>
+                    </div>
                 </div>
-                <div className={styles.info_about_container}>
-                    <h1>
-                        Sobre Nós
-                    </h1>
-                    <p className={styles.paragrafo}>
-                    Na AAPM, você desfruta de uma ampla gama de benefícios, abrangendo tanto o esporte quanto o ambiente escolar. Aqui, você tem acesso a diversas vantagens que enriquecem sua experiência acadêmica e esportiva.
-                    </p>
-                    <p className={styles.paragrafo}>
-                    No âmbito escolar, os membros da AAPM têm direito a armários individuais, proporcionando maior comodidade e segurança para guardar seus pertences. Além disso, você pode aproveitar descontos exclusivos na compra de camisas e uniformes escolares, permitindo que você esteja sempre bem-apresentado e confortável.
-                    </p>
-                    <p className={styles.paragrafo}>
-                    No campo esportivo, a AAPM oferece acesso privilegiado a diversas instalações esportivas, incentivando a prática de atividades físicas que promovem saúde e bem-estar. Sejam treinos regulares ou competições esportivas, você encontrará todo o apoio necessário para desenvolver suas habilidades e alcançar seus objetivos.
-                    </p>
-                    <p className={styles.paragrafo}>
-                    Ao fazer parte da AAPM, você não só usufrui de benefícios práticos e tangíveis, mas também se integra a uma comunidade que valoriza o crescimento pessoal e acadêmico, incentivando sempre o espírito de equipe e a camaradagem.
+            </section>
+
+            <section className={styles.about_section}>
+                <div className={styles.text_container}>
+                    <h1>Sobre Nós</h1>
+                    <p>
+                        Nossa missão é oferecer suporte à escola, promovendo eventos de
+                        qualidade que incentivem o aprendizado, o esporte e o bem-estar dos
+                        alunos. Trabalhamos para construir memórias e experiências únicas.
                     </p>
                 </div>
-
-               
-            </div>
-         
-
-
-
-         
-        </main >
-    )
-}
+            </section>
+        </main>
+    );
+};
 
 export default Aapm;

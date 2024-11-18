@@ -1,9 +1,11 @@
-.header{
+.header {
     width: 100%;
     background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -26,6 +28,7 @@
     margin: 1.5rem;
 
 }
+
 .profileIcon {
     position: relative;
 }
@@ -33,7 +36,8 @@
 
 .popup {
     position: absolute;
-    top: 80%; /* Ajuste conforme necessário */
+    top: 80%;
+    /* Ajuste conforme necessário */
     right: 0;
     background-color: white;
     border: 2px solid #d32f2f;
