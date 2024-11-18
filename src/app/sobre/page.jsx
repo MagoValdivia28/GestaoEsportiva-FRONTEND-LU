@@ -43,7 +43,26 @@ export default function Sobre() {
       </div>
     </div>
 
-          <div className={styles.card}>
+    <div className={styles.testeCard}>
+      <div className={styles.testeCardHeader}>
+      <div className={styles.img_container}>
+              <Image className={styles.fotoMembro} src={zambon} />
+            </div>
+      </div>
+      <div className={styles.testeCardBody}>
+        <h3>Matheus Zambon</h3>
+        <p className={styles.testeDescription}>
+        Matheus Zambon é o membro mais animado e o melhor em trabalho em
+                  equipe. Sua energia contagiante e habilidade para colaborar
+                  eficazmente com todos tornam ele um elemento essencial para o nosso
+                  sucesso coletivo.
+        </p>
+      </div>
+    </div>
+
+    
+
+          {/* <div className={styles.card}>
             <div className={styles.img_container}>
               <Image className={styles.fotoMembro} src={fp} />
             </div>
@@ -57,8 +76,7 @@ export default function Sobre() {
                 </p>
               </div>
             </div>
-
-          </div>
+        </div>
 
 
           <div className={styles.card}>
@@ -96,9 +114,9 @@ export default function Sobre() {
               </div>
             </div>
 
-          </div>
+          </div> */}
 
-          <div className={styles.card}>
+          {/* <div className={styles.card}>
             <div className={styles.img_container}>
               <Image className={styles.fotoMembro} src={fervas} />
             </div>
@@ -114,8 +132,7 @@ export default function Sobre() {
                 </p>
               </div>
             </div>
-
-          </div>
+          </div> */}
         </div>
 
 
