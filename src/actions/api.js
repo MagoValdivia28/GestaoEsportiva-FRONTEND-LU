@@ -17,9 +17,6 @@ export const getAPI = async (path, id, query) => {
     }
 };
 
-console.log(api);
-
-
 export const createCampeonato = async (nameParams, dateStartsParams, dateEndsParams) => {
     try {
         const response = await axios.post(`${api}/campeonatos`, {
@@ -139,3 +136,21 @@ export const updateFeedback = async (id, resposta) => {
         }
     }
 };
+
+export const generateConfrontos = async (date, annotation, updateUser, modalidade_id) => {
+    try {
+        const response = await axios.get(`${api}/gerar`, {
+            data: date,
+            anotacao: annotation,
+            updateUser: updateUser,
+            modalidade_id: modalidade_id
+        });
+        return response.data;
+    } catch (error) {
+        if (error.response) {
+            return error.response.data;
+        } else {
+            return error;
+        }
+    }
+}

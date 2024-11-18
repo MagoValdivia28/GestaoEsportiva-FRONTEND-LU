@@ -1,5 +1,5 @@
 'use client';
-import { useRouter } from 'next/navigation'; // Importando useRouter
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from './page.module.css';
 import List_times from '@/src/app/components/list_times/list_times';
@@ -11,6 +11,7 @@ import FormularioModalidade from '@/src/app/components/PopUpModalidade';
 
 const Gestaoesportes = () => {
   const { id } = useParams();
+  const router = useRouter(); 
   const [teams, setTeams] = useState([]);
   const [modalities, setModalities] = useState([]);
   const [showModal, setShowModal] = useState(false); // Novo estado para controle do modal
@@ -44,6 +45,10 @@ const Gestaoesportes = () => {
     setShowModal(false); // Fecha o modal
   };
 
+  const handleRoute = (idParams) => {
+    router.push(`/campeonato/${id}/atvesportiva/${idParams}`);
+  }
+
   return (
     <div className={styles.main_div}>
       <Header />
@@ -62,7 +67,7 @@ const Gestaoesportes = () => {
         <div className={styles.modalidades}>
         {
             modalities.length > 0 && modalities.map((modality) => (
-              <CardModality key={modality.id} title={modality.nome_modalidade} />
+              <CardModality onClick={() => handleRoute(modality.id)} key={modality.id} title={modality.nome_modalidade} />
             )) 
           }
           <button onClick={handleAddModality} className={styles.addButton}>+</button>
