@@ -4,7 +4,6 @@ import styles from './page.module.css';
 import futzin from '../../../assets/imagens/criajogando.jpg';
 import historico from '../../../assets/imagens/historico.jpg';
 import adicionar from '../../../assets/imagens/graminha.jpg';
-import logo from '../../../assets/imagens/logo.png';
 import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';
 import Card from '../components/Card/page';
