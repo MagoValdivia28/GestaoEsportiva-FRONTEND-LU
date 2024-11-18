@@ -41,6 +41,16 @@
   border-radius: 1.5px;
 }
 
+.linecard {
+  width: 50%;
+  height: 3px;
+  background-color: #d32f2f;
+  border-radius: 1.5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
 .cardsContainer {
   display: flex;
   flex-wrap: wrap;
@@ -72,15 +82,17 @@
 }
 
 .card h2 {
-  font-size: 1.4rem;
+  font-size: 0.8rem;
   margin-bottom: 8px;
   color: #424242;
+  margin-top: 4rem;
 }
 
 .card h3 {
   font-size: 1.1rem;
-  margin-bottom: 6px;
   color: #424242;
+  font-weight: bold;
+  margin-top: 1rem;
 }
 
 .card p {
@@ -101,6 +113,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
+
 }
 
 .modal {
@@ -108,16 +121,16 @@
   padding: 25px;
   width: 85%;
   max-width: 450px;
-  border-radius: 10px;
+  height: 500px;
+  border-radius: 12px;
   text-align: center;
   position: relative;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  border: 2px solid #d32f2f;
   animation: fadeIn 0.3s ease;
 }
 
 .modalImage {
-  width: 100%;
+  width: 20rem;
   height: auto;
   border-radius: 8px;
   margin-bottom: 15px;
