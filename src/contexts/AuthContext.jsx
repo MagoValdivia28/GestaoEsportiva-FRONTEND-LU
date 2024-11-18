@@ -7,7 +7,6 @@ import { getAPI } from "../actions/api";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const apiURL = process.env.EXPO_PUBLIC_API_URL;
     const [acessToken, setAcessToken] = useState('');
     const [user, setUser] = useState({});
     const [globalLoading, setGlobalLoading] = useState(false);
