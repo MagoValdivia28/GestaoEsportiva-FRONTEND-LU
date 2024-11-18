@@ -5,7 +5,7 @@ import Image from 'next/image';
 import VDP from '@/src/app/components/vdp/vdp';
 import Confrontos from '@/src/app/components/confrontos/confrontos';
 import { useParams } from 'next/navigation';
-import { getAPI, getAPIById } from '@/src/actions/api';
+import { getAPI } from '@/src/actions/api';
 import { useEffect, useState } from 'react';
 import Header from '@/src/app/components/header/header';
 
