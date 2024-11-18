@@ -1,4 +1,4 @@
-'use client'// pages/historico.js
+'use client' // pages/historico.js
 import React, { useState, useEffect } from 'react';
 import styles from './page.module.css';
 import Image from 'next/image';
@@ -9,7 +9,7 @@ import Header from '../components/header/header';
 const Historico = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedCampeonato, setSelectedCampeonato] = useState(null);
-  const [campeonatos, setCampeonatos] = useState([]);
+  const [campeonatos, setCampeonatos] = useState([])
 
   useEffect(() => {
     const getAllCampeonatos = async () => {
@@ -19,29 +19,14 @@ const Historico = () => {
     getAllCampeonatos();
   }, []);
 
-  // const campeonatos = [
-  //   {
-  //     ano: 2023,
-  //     titulo: 'Campeonato Interescolar',
-  //     descricao: 'Competição anual entre as escolas do SENAI da região.',
-  //     vencedor: 'Time Vermelho',
-  //     imagem: Logo,
-  //   },
-  //   {
-  //     ano: 2022,
-  //     titulo: 'Torneio de Futsal',
-  //     descricao: 'Torneio interno de futsal entre os cursos do SENAI.',
-  //     vencedor: 'Time Branco',
-  //     imagem: Logo,
-  //   },
-  //   {
-  //     ano: 2021,
-  //     titulo: 'Copa SENAI',
-  //     descricao: 'Evento esportivo que incluiu várias modalidades esportivas.',
-  //     vencedor: 'Time Azul',
-  //     imagem: Logo,
-  //   },
-  // ];
+  // Função para formatar a data
+  const formatDate = (dateString) => {
+    const date = new Date(dateString); // Cria um objeto Date
+    const dia = date.getDate().toString().padStart(2, '0'); // Garantir que o dia tenha 2 dígitos
+    const mes = (date.getMonth() + 1).toString().padStart(2, '0'); // Mes começa do zero, então adicionamos +1
+    const ano = date.getFullYear(); // Obtemos o ano
+    return `${dia}/${mes}/${ano}`; // Formato final dd/mm/yyyy
+  };
 
   const handleCardClick = (campeonato) => {
     setSelectedCampeonato(campeonato);
@@ -65,6 +50,11 @@ const Historico = () => {
         {
           campeonatos.length > 0 ? campeonatos.map((campeonato, index) => (
             <div key={index} className={styles.card} onClick={() => handleCardClick(campeonato)}>
+              <Image src={Logo} alt={campeonato.titulo} width={100} />
+              <h3>{campeonato.titulo}</h3>
+              <div className={styles.linecard}></div>
+              <h2>{formatDate(campeonato.data_final)}</h2> {/* Aqui usamos a função de formatação */}
+
               <Image src={Logo} alt={campeonato.titulo} width={130} />
               <h3>{campeonato.titulo}</h3>
               <h2>{campeonato.ano}</h2>
@@ -79,11 +69,11 @@ const Historico = () => {
         <div className={styles.modalOverlay} onClick={closeModal}>
           <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
             <button className={styles.closeButton} onClick={closeModal}>&times;</button>
-            <Image src={Logo} alt={selectedCampeonato.titulo} width={130} className={styles.modalImage} />
-            <h2>{selectedCampeonato.ano}</h2>
             <h3>{selectedCampeonato.titulo}</h3>
-            <p>{selectedCampeonato.descricao}</p>
+            <div className={styles.linecard}></div>
+            <Image src={Logo} alt={selectedCampeonato.titulo} width={150} className={styles.modalImage} />
             <p><strong>Vencedor:</strong> {selectedCampeonato.vencedor}</p>
+
           </div>
         </div>
       )}

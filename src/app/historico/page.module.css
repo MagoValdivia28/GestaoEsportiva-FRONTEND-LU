@@ -1,5 +1,6 @@
 .container {
   padding: 20px;
+  height: 100vh;
   background-color: #f9f9f9;
   color: #333;
   text-align: center;
@@ -41,19 +42,31 @@
   border-radius: 1.5px;
 }
 
+.linecard {
+  width: 50%;
+  height: 3px;
+  background-color: #d32f2f;
+  border-radius: 1.5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
+
 .cardsContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
 }
 
 .card {
   background-color: #fff;
-  border: 2px solid #d32f2f;
   border-radius: 12px;
   padding: 20px;
-  width: 280px;
+  width: 200px;
+  height: 250px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   cursor: pointer;
@@ -72,15 +85,17 @@
 }
 
 .card h2 {
-  color: #d32f2f;
-  font-size: 1.4rem;
+  font-size: 0.8rem;
   margin-bottom: 8px;
+  color: #424242;
+  margin-top: 4rem;
 }
 
 .card h3 {
   font-size: 1.1rem;
-  margin-bottom: 6px;
   color: #424242;
+  font-weight: bold;
+  margin-top: 1rem;
 }
 
 .card p {
@@ -101,23 +116,36 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
+
 }
 
 .modal {
   background-color: #fff;
-  padding: 25px;
+  padding: 1.5rem;
   width: 85%;
   max-width: 450px;
-  border-radius: 10px;
+  height: auto;
+  border-radius: 12px;
   text-align: center;
   position: relative;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  border: 2px solid #d32f2f;
   animation: fadeIn 0.3s ease;
 }
 
+.modal h3{
+  font-size: 1.1rem;
+  color: #424242;
+  font-weight: bold;
+};
+
+.modal h2{
+  font-size: 2rem;
+  color: #424242;
+  font-weight: bold;
+};
+
 .modalImage {
-  width: 100%;
+  width: 25rem;
   height: auto;
   border-radius: 8px;
   margin-bottom: 15px;
@@ -129,7 +157,7 @@
   right: 15px;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #d32f2f;
   cursor: pointer;
   transition: color 0.2s ease;

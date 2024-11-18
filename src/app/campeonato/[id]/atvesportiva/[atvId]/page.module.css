@@ -1,121 +1,219 @@
-/* .main_div {
+/* Estrutura Principal */
+.main_div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background-color: none;
-    background-color: #fbfbfb;
-}
-
-.div_img {
-    height: 100%;
-    width: 130px;
-    margin: 2rem;
-}
-
-.title_container {
-    width: 21rem;
-    border-bottom: 0.25rem solid #af1912;
-    display: flex;
-}
-
-.h2Title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0.5rem;
-    color: #767676;
-    margin-left: 6rem;
-    margin-top: 2rem;
-
-}
-
-.list_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: 1rem;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 30px;
+    background-color: #f9f9f9;
+    font-family: 'Roboto', Arial, sans-serif;
 }
 
-.container {
+/* Título */
+.h2Title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #000000; /* Preto */
+    text-transform: uppercase;
+    border-bottom: 4px solid #af1912; /* Vermelho SESI */
+    padding-bottom: 0.5rem;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Centralização da Seção "Times Participantes" */
+.timesContainer {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
 }
 
-.confrontos_container {
-    display: flex;
-    margin: auto;
-    margin-top: 1.5rem;
+.timesTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000; /* Preto */
     margin-bottom: 1.5rem;
-    width: 80%;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
- */
-
- .main_div {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-}
-
-.h2Title {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
+/* Lista de Times */
 .teamList {
-    list-style: none;
-    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 1rem;
 }
 
+/* Cada Time */
 .teamItem {
-    padding: 10px;
-    background: #f0f0f0;
-    margin-bottom: 5px;
-    border-radius: 5px;
-}
-
-.addWinnerButton {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #af1912; /* Vermelho SESI */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
     cursor: pointer;
 }
 
-.addWinnerButton:hover {
-    background-color: #0056b3;
+.teamItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.teamLogo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #000000; /* Preto */
+    margin-bottom: 15px;
+}
+
+.teamName {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000; /* Preto */
+    margin-top: 10px;
+}
+
+/* Botão Adicionar Vencedor */
+.addWinnerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.addWinnerButton {
+    padding: 15px 40px;
+    font-size: 1rem;
+    background: linear-gradient(45deg, #dd2929, #af1912);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.addWinnerButton:hover {
+    background: linear-gradient(45deg, #af1912, #870f0c);
+    transform: scale(1.05);
+}
+
+/* Modal */
 .modalOverlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .modal {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
+    max-width: 500px;
+    width: 90%;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal h3 {
+    font-size: 1.8rem;
+    color: #000000; /* Preto */
+    margin-bottom: 1.5rem;
+}
+
+.modal ul {
+    list-style: none;
+    padding: 0;
 }
 
 .modalTeamItem {
-    padding: 10px;
-    margin: 5px 0;
-    background: #f8f9fa;
+    padding: 15px;
+    margin: 10px 0;
+    background: #f5f5f5;
+    font-size: 1rem;
+    border-radius: 10px;
     cursor: pointer;
-    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .modalTeamItem:hover {
-    background: #e9ecef;
+    background: #e2e2e2;
+    transform: scale(1.02);
 }
 
+/* Botão de Cancelar no Modal */
+.modal button {
+    padding: 10px 30px;
+    background: #af1912;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal button:hover {
+    background: #870f0c;
+    transform: scale(1.05);
+}
+
+/* Exibição do Vencedor */
+.winnerDisplay {
+    background: #e6ffe6; /* Verde claro */
+    color: #155724; /* Verde escuro */
+    padding: 20px;
+    border: 2px solid #c3e6cb;
+    border-radius: 10px;
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 700px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.winnerDisplay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.winnerDisplay p {
+    font-size: 1.2rem;
+}
+
+/* Animação de Entrada do Modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
