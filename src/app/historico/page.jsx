@@ -65,10 +65,10 @@ const Historico = () => {
         {
           campeonatos.length > 0 ? campeonatos.map((campeonato, index) => (
             <div key={index} className={styles.card} onClick={() => handleCardClick(campeonato)}>
-              <Image src={Logo} alt={campeonato.titulo} width={130} />
-              <h2>{campeonato.ano}</h2>
+              <Image src={Logo} alt={campeonato.titulo} width={100} />
               <h3>{campeonato.titulo}</h3>
-              <p>{campeonato.descricao}</p>
+              <h2>{campeonato.data_final}</h2>
+             
             </div>
           )) : <h2 className={styles.none_camp}>Nenhum campeonato cadastrado</h2>
         }

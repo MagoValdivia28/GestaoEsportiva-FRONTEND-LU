@@ -50,10 +50,10 @@
 
 .card {
   background-color: #fff;
-  border: 2px solid #d32f2f;
   border-radius: 12px;
   padding: 20px;
-  width: 280px;
+  width: 200px;
+  height: 250px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   cursor: pointer;
@@ -72,9 +72,9 @@
 }
 
 .card h2 {
-  color: #d32f2f;
   font-size: 1.4rem;
   margin-bottom: 8px;
+  color: #424242;
 }
 
 .card h3 {

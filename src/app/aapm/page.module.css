@@ -8,13 +8,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;
     background-color: transparent;
 }
 
 .img {
     width: 100%;
-    height: 50rem;
+    height: auto;
     object-fit: cover;
     background-color: gray;
 }
@@ -152,6 +151,7 @@
 .imagem{
     width: 25rem;
     height: auto;
+    border-radius: 30px;
 }
 
 .imagem2{
