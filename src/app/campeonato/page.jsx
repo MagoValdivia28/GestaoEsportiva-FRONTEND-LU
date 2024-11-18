@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './page.module.css';
 import hometopo from '../../../assets/imagens/hometopo.png';
 import historico from '../../../assets/imagens/historico.jpg';
-import adicionar from '../../../assets/imagens/adicionar.jpg';
+import adicionar from '../../../assets/imagens/graminha.jpg';
 import logo from '../../../assets/imagens/logo.png';
 import Image from 'next/image';
 import { FaUser } from 'react-icons/fa';

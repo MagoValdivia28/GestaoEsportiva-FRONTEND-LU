@@ -3,9 +3,12 @@ import logo from "../../../assets/imagens/logo.png";
 import Image from 'next/image';
 import VDP from '../components/vdp/vdp';
 import Confrontos from '../components/confrontos/confrontos';
+import { getAPI } from '@/src/actions/api';
 
-
-const GdeAtividade = () => {
+const GdeAtividade = () => {    
+    // useEffect(() => {
+    //     const response = getAPI('times/modalidade/', id);
+    // }, []);
     return (
         <main className={styles.main_div}>
             <div className={styles.div_img}>
