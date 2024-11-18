@@ -49,6 +49,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2rem;
+  margin-top: 5px;
 }
 
 .cardsContainer {
@@ -129,6 +130,13 @@
   animation: fadeIn 0.3s ease;
 }
 
+.modal h3{
+  font-size: 1.1rem;
+  color: #424242;
+  font-weight: bold;
+  margin-top: 1rem;
+};
+
 .modalImage {
   width: 20rem;
   height: auto;
@@ -142,7 +150,7 @@
   right: 15px;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 2.0rem;
   color: #d32f2f;
   cursor: pointer;
   transition: color 0.2s ease;
