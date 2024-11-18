@@ -3,13 +3,14 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #FBFBFB;
+  background-color: transparent;
 }
+
 #logo {
   position: absolute;
   top: 0;
   left: 0;
-} 
+}
 
 .form {
   display: flex;
@@ -18,9 +19,9 @@
   padding: 20px;
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 15px 15px 23px -13px rgba(0,0,0,0.37);
- 
-  
+  box-shadow: 15px 15px 23px -13px rgba(0, 0, 0, 0.37);
+
+
 }
 
 .formdiv1 label {
@@ -80,7 +81,8 @@
   width: 20rem;
   font-family: 'Questrial', sans-serif;
 }
-.submitButton { 
+
+.submitButton {
   width: 70%;
   padding: 15px;
   background-color: #C72828;
@@ -90,15 +92,16 @@
   cursor: pointer;
   margin-top: 15%;
   font-family: 'Questrial', sans-serif;
-  font-weight: bold ;
+  font-weight: bold;
   font-size: 18px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
 }
 
-.submitButton:hover { 
+.submitButton:hover {
   background-color: #861515;
 }
+
 #h1 {
   color: #C72828;
   text-align: center;

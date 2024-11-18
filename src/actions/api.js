@@ -1,6 +1,6 @@
 "use server";
 
-import axios from "axios"
+import axios from "axios";
 const api = process.env.EXPO_PUBLIC_API_URL;
 
 export const getAPI = async (path, id, query) => {
@@ -17,12 +17,16 @@ export const getAPI = async (path, id, query) => {
     }
 };
 
-export const createCampeonato = async (nameParams, dateStartsParams, dateEndsParams) => {
+export const createCampeonato = async (nameParams, dateStartsParams, dateEndsParams, acessToken) => {
     try {
         const response = await axios.post(`${api}/campeonatos`, {
             titulo: nameParams,
             data_inicio: dateStartsParams,
             data_final: dateEndsParams
+        }, {
+            headers: {
+                'Authorization': `Bearer ${acessToken}`
+            }
         });
         return response.data;
     } catch (error) {
@@ -53,7 +57,6 @@ export const createModalidade = async (nameParams, descParams, limitParams, camp
         }
     }
 };
-
 
 // Função para criar uma equipe
 export const createEquipe = async (nameParams, salaParams, modalidade_idParams, statusParams) => {
@@ -89,6 +92,7 @@ export const updateTeamStatus = async (teamId, newStatus) => {
         }
     }
 };
+
 export const createJogador = async (nameParams, salaParams, time_idParams) => {
     try {
         const response = await axios.post(`${api}/jogadores`, {
@@ -118,7 +122,6 @@ export const getCampeonatoByDate = async (dateParams) => {
         }
     }
 };
-
 
 export const updateFeedback = async (id, resposta) => {
     try {
@@ -153,4 +156,4 @@ export const generateConfrontos = async (date, annotation, updateUser, modalidad
             return error;
         }
     }
-}
+};
