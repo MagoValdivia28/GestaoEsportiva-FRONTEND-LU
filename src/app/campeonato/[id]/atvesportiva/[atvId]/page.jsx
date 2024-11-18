@@ -20,6 +20,12 @@ const GdeAtividade = () => {
         }
         fetchTeams();
     }, []);
+
+
+    const handleGenerateConfronto = () => {
+        console.log('gerar confronto');
+    };
+
     return (
         <main className={styles.main_div}>
             <div className={styles.div_img}>
@@ -38,6 +44,7 @@ const GdeAtividade = () => {
 
                 <ul className={styles.confrontos_container}>
                     <Confrontos />
+                    <button onClick={handleGenerateConfronto}>gerar</button>
                 </ul>
 
 
