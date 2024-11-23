@@ -1,14 +1,15 @@
 'use client';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { FaUser, FaUsers, FaArrowRight, FaComments } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 import styles from './page.module.css';
 import Header from './components/header/header';
+import { AuthContext } from '@/src/contexts/AuthContext';
+import { useContext } from 'react';
 
 
 export default function Home() {
+  const { user } = useContext(AuthContext);
   const router = useRouter();
-
   const handleConhecaNosClick = () => {
     router.push('/aapm'); // Navigate to the "Conheça-nos" page
   };
@@ -48,15 +49,16 @@ export default function Home() {
       {/* Boas-vindas e Gerenciar Campeonatos */}
       <section className={styles.welcomeSection}>
         <div className={styles.linhavermelha} />
-        <h2><span>Seja</span> <span className={styles.highligext}>bem vindo(a)!</span></h2>
+        {
+          user.nome ? <h2><span>Seja</span> <span className={styles.highligext}>bem vindo(a) {user.nome}!</span></h2> : <h2><span>Seja</span> <span className={styles.highligext}>bem vindo(a)!</span></h2>
+        }
         <div className={styles.championshipsManagement}>
-
           <div className={styles.championshipCard} onClick={handleGerenciarCampeonatosClick}>
             <div className={styles.trophyImage}>
               <FaArrowRight size={50} className={styles.icon} />
               <p className={styles.p2}>Gerenciar Campeonatos</p>
             </div>
-              
+
           </div>
           <div className={styles.emptyCard} onClick={handleFeedbackClick}>
             <FaArrowRight size={50} className={styles.icon2} />
