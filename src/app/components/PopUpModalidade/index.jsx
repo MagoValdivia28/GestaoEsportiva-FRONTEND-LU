@@ -40,6 +40,14 @@ const FormularioModalidade = ({ isOpen, onClose, campeonato_id, onModalidadeAdde
       formData.tipo,
       acessToken
     );
+    console.log(response);
+
+    if (response.message == "Acesso não autorizado") {
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+    }
     if (response.message == "Token não autorizado") {
       setError(true);
       setTimeout(() => {
@@ -72,7 +80,7 @@ const FormularioModalidade = ({ isOpen, onClose, campeonato_id, onModalidadeAdde
 
   return (
     <>
-      {error && <PopUpError error={{ status: "error", message: "Token não autorizado" }} />}
+      {error && <PopUpError error={{ status: "error", message: "Acesso não autorizado" }} />}
       {isPopupOpen && <PopUpError error={{ status: "sucess", message: "Modalidade criada com sucesso!" }} />}
       <div className={Styles.PopupOverlay}>
         <div className={Styles.PopupContent}>

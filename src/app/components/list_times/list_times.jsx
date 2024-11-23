@@ -16,7 +16,7 @@ const List_times = ({ teams }) => {
             {
                 teams.length > 0 ? teams.map((team, index) => {
                     return (
-                        <li className={styles.equipes}>
+                        <li key={index} className={styles.equipes}>
                             <div className={styles.info_container}>
                                 <h3 className={styles.info}>{team.nome}</h3>
                                 <h3 className={styles.info}>{team.pontos}</h3>
