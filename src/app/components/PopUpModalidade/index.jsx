@@ -1,12 +1,15 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Styles from './page.module.css';
 import { FaX } from "react-icons/fa6";
 import { createModalidade } from '@/src/actions/api';
 import PopUpError from '../PopUpError';
+import { AuthContext } from '@/src/contexts/AuthContext';
 
 const FormularioModalidade = ({ isOpen, onClose, campeonato_id, onModalidadeAdded }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const { acessToken } = useContext(AuthContext);
+  const [error, setError] = useState(false);
   // Estado para armazenar os valores dos campos do formulário
   const [formData, setFormData] = useState({
     nome: '',
@@ -35,7 +38,14 @@ const FormularioModalidade = ({ isOpen, onClose, campeonato_id, onModalidadeAdde
       campeonato_id,
       formData.value,
       formData.tipo,
+      acessToken
     );
+    if (response.message == "Token não autorizado") {
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+    }
     if (response.status == "sucess") {
       setIsPopupOpen(true);
       onModalidadeAdded();
@@ -49,19 +59,20 @@ const FormularioModalidade = ({ isOpen, onClose, campeonato_id, onModalidadeAdde
 
   const clearFields = () => {
     setFormData({
-        nome: '',
-        tipo: '',
-        desc: '',
-        limit: '',
-        value: ''
+      nome: '',
+      tipo: '',
+      desc: '',
+      limit: '',
+      value: ''
     });
-};
+  };
 
   // Retorna o pop-up se 'isOpen' for true
   if (!isOpen) return null;
 
   return (
     <>
+      {error && <PopUpError error={{ status: "error", message: "Token não autorizado" }} />}
       {isPopupOpen && <PopUpError error={{ status: "sucess", message: "Modalidade criada com sucesso!" }} />}
       <div className={Styles.PopupOverlay}>
         <div className={Styles.PopupContent}>

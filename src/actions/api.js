@@ -38,7 +38,7 @@ export const createCampeonato = async (nameParams, dateStartsParams, dateEndsPar
     }
 };
 
-export const createModalidade = async (nameParams, descParams, limitParams, campeonato_idParams, valueParams, typeParams) => {
+export const createModalidade = async (nameParams, descParams, limitParams, campeonato_idParams, valueParams, typeParams, acessToken) => {
     try {
         const response = await axios.post(`${api}/modalidades`, {
             nome: nameParams,
@@ -47,6 +47,10 @@ export const createModalidade = async (nameParams, descParams, limitParams, camp
             campeonato_id: campeonato_idParams,
             valor_por_pessoa: valueParams,
             tipo: typeParams
+        }, {
+            headers: {
+                'Authorization': `Bearer ${acessToken}`
+            }
         });
         return response.data;
     } catch (error) {
@@ -59,13 +63,17 @@ export const createModalidade = async (nameParams, descParams, limitParams, camp
 };
 
 // Função para criar uma equipe
-export const createEquipe = async (nameParams, salaParams, modalidade_idParams, statusParams) => {
+export const createEquipe = async (nameParams, salaParams, modalidade_idParams, statusParams, acessToken) => {
     try {
         const response = await axios.post(`${api}/times`, {
             nome: nameParams,
             sala: salaParams,
             modalidade_id: modalidade_idParams,
             status: statusParams
+        }, {
+            headers: {
+                "Authorization": `Bearer ${acessToken}`
+            }
         });
         return response.data;
     } catch (error) {
@@ -93,12 +101,16 @@ export const updateTeamStatus = async (teamId, newStatus) => {
     }
 };
 
-export const createJogador = async (nameParams, salaParams, time_idParams) => {
+export const createJogador = async (nameParams, salaParams, time_idParams, acessToken) => {
     try {
         const response = await axios.post(`${api}/jogadores`, {
             nome: nameParams,
             sala: salaParams,
             time_id: time_idParams
+        }, {
+            headers: {
+                "Authorization": `Bearer ${acessToken}`
+            }
         });
         return response.data;
     } catch (error) {

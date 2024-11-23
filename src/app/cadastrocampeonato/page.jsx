@@ -17,7 +17,7 @@ const CadastroCampeonato = () => {
   const [error, setError] = useState(null);
   const { acessToken } = useContext(AuthContext);
 
-  const handleProfileClick = () => {  
+  const handleProfileClick = () => {
     alert('Perfil clicado!');
   };
 
@@ -34,10 +34,10 @@ const CadastroCampeonato = () => {
       }, 3000);
     } else {
       console.log(acessToken);
-      
+
       const response = await createCampeonato(nome, data_inicio, data_final, acessToken);
       setError(response);
-      setTimeout(() => {  
+      setTimeout(() => {
         setError(null);
         if (response.status === "sucess") {
           router.push('/campeonato');
@@ -48,7 +48,7 @@ const CadastroCampeonato = () => {
 
   return (
     <>
-        <Header />
+      <Header />
       <div className={styles.container}>
         <div className={styles.form}>
           <div className={styles.backtohome}>

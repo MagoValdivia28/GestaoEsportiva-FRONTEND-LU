@@ -19,7 +19,8 @@ const GdeEquipes = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [modalities, setModalities] = useState([]);
     const [teamDetailsOpen, setTeamDetailsOpen] = useState(false); // Controle do pop-up de detalhes
-    const [selectedTeam, setSelectedTeam] = useState(null); // Time selecionado
+    const [selectedTeam, setSelectedTeam] = useState(null); // Time selecionado 
+
 
     const fetchTeams = async () => {
         const approved = await getAPI('times/campeonato/', id, { status: 'aprovada' });
@@ -153,7 +154,7 @@ const GdeEquipes = () => {
             <div className={styles.times}>
                 {(rejectedTeams || []).length > 0 ? (
                     rejectedTeams.map(team => (
-                        <Equipes 
+                        <Equipes
                             key={team.time_id}
                             nameTeam={team.time_nome}
                             members={team.jogadores}

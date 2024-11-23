@@ -1,14 +1,16 @@
 // CadastroPopup.js
 "use client";
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './page.module.css';
 import styles from './page.module.css';
 import { createEquipe } from '@/src/actions/api';
 import { createJogador } from '@/src/actions/api';
 import { FaX } from "react-icons/fa6";
+import { AuthContext } from '@/src/contexts/AuthContext';
 
 
 const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) => {
+  const { acessToken } = useContext(AuthContext);
   const [formData, setFormData] = useState({
     nome: '',
     sala: '',
@@ -72,7 +74,18 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
       setError({ status: "error", message: 'Formato de imagem inválido' });
       setTimeout(() => setError(null), 3000);
     } else {
-      const response = await createEquipe(formData.nome, formData.sala, formData.modalidade, 'pendente');
+      const response = await createEquipe(formData.nome, formData.sala, formData.modalidade, 'pendente', acessToken);
+
+      if (response.message == "Token inválido") {
+        setError({ status: "error", message: 'Token inválido' });
+        setTimeout(() => setError(null), 3000);
+      }
+
+      if (response.message == "Acesso não autorizado") {
+        setError({ status: "error", message: 'Acesso não autorizado' });
+        setTimeout(() => setError(null), 3000);
+      }
+
       if (response.status === 'sucess') {
         const jogadoresCriados = await createJogadores(response.times.id, jogadores);
         if (jogadoresCriados === true) {
@@ -80,15 +93,15 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
           setError({ status: "sucess", message: 'Equipe cadastrada com sucesso!' });
           setTimeout(() => setError(null), 3000);
           onClose();
-        }
-      }
+        };
+      };
     }
   };
 
   const createJogadores = async (teamId, jogadores) => {
     for (const jogador of jogadores) {
       if (jogador.nome && jogador.nome.trim() !== '') {
-        await createJogador(jogador.nome, jogador.sala, teamId);
+        await createJogador(jogador.nome, jogador.sala, teamId, acessToken);
       }
     }
     return true;
@@ -108,7 +121,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
           <input
             type="text"
             name="nome"
-            value={formData.nome}
             onChange={handleChange}
             required
           />
@@ -117,7 +129,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
           <input
             type="text"
             name="sala"
-            value={formData.sala}
             onChange={handleChange}
           />
 
@@ -131,7 +142,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participante1"
-                  value={formData.participante1}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -141,7 +151,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participantesala1"
-                  value={formData.participantesala1}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -154,7 +163,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participante2"
-                  value={formData.participante2}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -164,7 +172,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participantesala2"
-                  value={formData.participantesala2}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -178,7 +185,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participante3"
-                  value={formData.participante3}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -188,7 +194,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participantesala3"
-                  value={formData.participantesala3}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -202,7 +207,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participante4"
-                  value={formData.participante4}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -212,7 +216,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participantesala4"
-                  value={formData.participantesala4}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -225,7 +228,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participante5"
-                  value={formData.participante5}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -235,7 +237,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participantesala5"
-                  value={formData.participantesala5}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -248,7 +249,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participante6"
-                  value={formData.participante6}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -258,7 +258,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participantesala6"
-                  value={formData.participantesala6}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -271,7 +270,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participante7"
-                  value={formData.participante7}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -281,7 +279,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participantesala7"
-                  value={formData.participantesala7}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -293,7 +290,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participante8"
-                  value={formData.participante8}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -303,7 +299,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participantesala8"
-                  value={formData.participantesala8}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -315,7 +310,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participante9"
-                  value={formData.participante9}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -325,7 +319,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participantesala9"
-                  value={formData.participantesala9}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -338,7 +331,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participante10"
-                  value={formData.participante10}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -348,7 +340,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 <input
                   type="text"
                   name="participantesala10"
-                  value={formData.participantesala10}
                   onChange={handleChange}
                   className={styles.participantes}
                 />
@@ -359,7 +350,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
           <label>Modalidade:</label>
           <select
             name="modalidade"
-            value={formData.modalidade}
             onChange={handleChange}
             required
           >
