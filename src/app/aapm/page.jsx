@@ -14,9 +14,12 @@ const Aapm = () => {
             <div className={styles.header_container}>
                 <Header className={styles.header} />
             </div>
+
+            
             <section className={styles.hero_section}>
                 <div className={styles.div_text}>
-                    <h1 className={styles.title}>Conheça a AAPM</h1>
+                    <h1 className={styles.title}><strong>Conheça</strong> a AAPM</h1>
+                    <div className={styles.redline} />  
                     <p className={styles.p_text}>
                         📢 Invista no Seu Futuro com a AAPM!
                         Caros alunos,
