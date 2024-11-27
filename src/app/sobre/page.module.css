@@ -4,8 +4,9 @@
 }
 
 .textMembro {
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-align: center;
+  width: 25rem;
 }
 
 .cardEquipe {
@@ -61,27 +62,20 @@
   border-radius: 50%;
   margin: 0 auto;
   border: white solid 0.5rem;
-  width: 15rem;
-  height: 15rem;
-
-
+  width: 12rem;
+  height: 12rem;
 }
 
 .card {
   margin: auto;
   flex-wrap: wrap;
-  width: 40%;
-
-
+  width: 30%;
 }
 
 .info_card {
-  background-color: #d9d9d9;
-  border: 0.3rem solid #AF0000;
   border-radius: 1.5rem;
-  height: 25rem;
-
-
+  height: 20rem;
+  
 }
 
 .texts_container {
@@ -119,4 +113,57 @@
   top: 1rem;
   right: 1rem;
 
+}
+
+
+.fotoMembro0{
+  width: 10rem;
+  height: 10rem;
+  border-radius: 100%;
+  margin: 1.5rem;
+}
+
+.card0{
+  width: 25rem;
+  height:25rem;
+  background-color: #ffffff;
+  border-radius: 10%;
+  margin: auto;
+  -webkit-box-shadow: 0px 0px 49px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 49px -4px rgba(0,0,0,0.75);
+caixa-sombra: 0px 0px 49px -4px rgba(0,0,0,0.75);
+}
+
+.linha0 {
+  width: 10rem;
+  background-color: #AF0000;
+  height: 0.3rem;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+.nomeMembro0 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  font-weight: bold;
+
+}
+
+.textMembro0 {
+  font-size: 1rem;
+  text-align: center;
+  width: 21rem;
+  color: #727272;
+}
+
+.texts_container0 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
