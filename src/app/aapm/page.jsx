@@ -46,7 +46,7 @@ const Aapm = () => {
                 <div className={styles.text_container}>
                     <h1>Bem-vindo à AAPM</h1>
                     <p>
-                        A AAPM é a Associação de Pais que contribui para o crescimento
+                        AAPM é a Associação de Pais que contribui para o crescimento
                         escolar e esportivo dos alunos. Trabalhamos para oferecer eventos
                         de qualidade, desde competições esportivas até celebrações culturais.
                     </p>
