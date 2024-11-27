@@ -5,18 +5,42 @@ import { IoInformationCircleOutline } from "react-icons/io5";
 import { TbCoins } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 import Image from "next/image";
-import imgtop from "../../../assets/imagens/ImgAapm.png";
-import imgfut from "../../../assets/imagens/imgContainer.png";
-import imgVolei from "../../../assets/imagens/boladevoleift.jpg";
 import Header from "../components/header/header";
+import aapm from "../../../assets/imagens/aapmimg2.webp";
 
 const Aapm = () => {
     return (
         <main className={styles.main_container}>
             <div className={styles.header_container}>
                 <Header className={styles.header} />
-                <Image src={imgtop} className={styles.header_image} />
             </div>
+            <section className={styles.hero_section}>
+                <div className={styles.div_text}>
+                    <h1 className={styles.title}>Conheça a AAPM</h1>
+                    <p className={styles.p_text}>
+                        📢 Invista no Seu Futuro com a AAPM!
+                        Caros alunos,
+                        Ao contribuir com a AAPM (Associação de Apoio aos Pais e Mestres), você ajuda a melhorar seu dia a dia no SENAI!
+                        <br />
+                        💡 Benefícios para você:
+                        Melhor infraestrutura para estudos e aulas práticas;
+                        Organização de eventos esportivos com mais qualidade;
+                        Espaços mais confortáveis e acolhedores;
+                        Apoio a projetos que incentivam seu crescimento.
+                        <br />
+                        ⚽ Mais que estudos, grandes experiências!
+                        A AAPM promove atividades esportivas e culturais que fortalecem o espírito de equipe e tornam sua jornada no SENAI ainda mais especial.
+                        <br />
+
+                        🙌 Participe!
+                        Procure a secretaria ou representantes da AAPM, contribua e faça parte dessa transformação!
+                        AAPM: Juntos, construindo o futuro!</p>
+                </div>
+
+                <Image className={styles.aapm} width={500} height={500} src={aapm} />
+            </section>
+
+            <div className={styles.redline} />
 
             <section className={styles.about_section}>
                 <div className={styles.text_container}>

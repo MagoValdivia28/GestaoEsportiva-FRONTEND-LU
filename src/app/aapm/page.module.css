@@ -86,6 +86,11 @@
     border-color: #ad0000;
 }
 
+.benefit_card:hover h3 {
+    color: #000;
+}
+
+
 .benefit_card::before {
     content: "";
     position: absolute;
@@ -95,6 +100,13 @@
     height: 10px;
     background-color: #ad0000;
     border-radius: 50%;
+}
+
+.title {
+    font-size: 6rem;
+    color: #ad0000;
+    margin-bottom: 1rem;
+    margin-left: 6rem;
 }
 
 .benefit_card h3 {
@@ -128,7 +140,7 @@
 .about_section {
     width: 90%;
     margin: auto;
-    margin-bottom: 3rem;
+    margin-bottom: 7rem;
     padding: 2rem;
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -136,4 +148,34 @@
 .about_section:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.p_text {
+    font-size: 1.6rem;
+    color: #666;
+    margin-bottom: 1rem;
+    margin-bottom: 5rem;
+    margin-left: 6rem;
+    width: 70%;
+    margin-top: 1rem;
+
+}
+
+.hero_section {
+    display: flex;
+}
+
+.aapm {
+    border-radius: 10px;
+    margin-right: 5rem;
+    margin-top: 9.5rem;
+
+}
+
+.redline {
+    height: 0.3rem;
+    background: #ad0000;
+    margin-right: 6rem;
+    margin-left: 6rem;
+    margin-bottom: 3rem;
 }
