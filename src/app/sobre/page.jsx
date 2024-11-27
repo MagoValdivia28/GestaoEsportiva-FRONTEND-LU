@@ -9,6 +9,8 @@ import night from '../../../assets/imagens/Night.jpeg';
 import fp from '../../../assets/imagens/fp.jpeg';
 import pravel from '../../../assets/imagens/pravel.jpeg';
 import Header from '../components/header/header';
+import { FaGithub } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 export default function Sobre() {
   return (
@@ -38,6 +40,8 @@ export default function Sobre() {
 
             <div className={styles.info_card0}>
               <div className={styles.texts_container0}>
+              <FaGithub size={25}/>
+              <FaInstagram size={25}/>
                 <p className={styles.textMembro0}>  Felipe é um membro com uma personalidade forte e um espírito de
                   liderança marcante, ele se destaca em qualquer desafio que enfrenta.
                   Fazendo dele uma peça chave para o nosso sucesso coletivo.
