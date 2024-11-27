@@ -6,7 +6,7 @@ import VDP from "@/src/app/components/vdp/vdp";
 import Confrontos from "@/src/app/components/confrontos/confrontos";
 import { useParams } from "next/navigation";
 import { getAPI } from "@/src/actions/api";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import Header from "@/src/app/components/header/header";
 
 const GdeAtividade = () => {
@@ -14,6 +14,7 @@ const GdeAtividade = () => {
 
     const [teams, setTeams] = useState([]);
     const [modalidade, setModalidade] = useState([]);
+    const [confrontos, setConfrontos] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selectedWinner, setSelectedWinner] = useState(null);
 
@@ -35,6 +36,12 @@ const GdeAtividade = () => {
         };
         fetchModalidade();
     }, [atvId]);
+
+    // useEffect(() => {
+    //     const fetchConfrontos = async () => {
+    //         const response = await getAPI("confrontos");
+
+            
 
     const handleAddWinner = () => {
         setShowModal(true);
