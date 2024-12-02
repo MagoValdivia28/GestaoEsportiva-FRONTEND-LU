@@ -1,6 +1,7 @@
 "use server";
 
 import axios from "axios";
+import { logout } from "./user";
 const api = process.env.EXPO_PUBLIC_API_URL;
 
 export const getAPI = async (path, id, query) => {
@@ -86,11 +87,21 @@ export const createEquipe = async (nameParams, salaParams, modalidade_idParams, 
 };
 
 // Função para atualizar o status de uma equipe
-export const updateTeamStatus = async (teamId, newStatus) => {
+export const updateTeamStatus = async (teamId, teamName, teamClassroom, teamMod, newStatus, teamPoints, acessToken) => {
+    console.log("Atualizando status da equipe", teamId, teamName, teamClassroom, teamMod, newStatus, teamPoints);
     try {
-        const response = await axios.patch(`${api}/times/${teamId}`, {
-            status: newStatus
+        const response = await axios.put(`${api}/times/${teamId}`, {
+            nome: teamName,
+            sala: teamClassroom,
+            modalidade_id: teamMod,
+            status: newStatus,
+            pontos: teamPoints
+        }, {
+            headers: {
+                "Authorization": `Bearer ${acessToken}`
+            }
         });
+        console.log("Status atualizado com sucesso:", response.data);
         return response.data;
     } catch (error) {
         if (error.response) {
@@ -100,6 +111,26 @@ export const updateTeamStatus = async (teamId, newStatus) => {
         }
     }
 };
+
+export const deleteEquipe = async (id, acessToken) => {
+    try {
+        const response = await axios.delete(`${api}/times/${id}`, {
+            headers: {
+                "Authorization": `Bearer ${acessToken}`
+            }
+        });
+        return response.data;
+    }
+    catch (error) {
+        if (error.response) {
+            return error.response.data;
+        } else {
+            return error;
+        }
+    }
+};
+
+
 
 export const createJogador = async (nameParams, salaParams, time_idParams, acessToken) => {
     try {
@@ -194,6 +225,24 @@ export const deleteConfronto = async (id, acessToken) => {
 export const updateConfronto = async (id, data, acessToken) => {
     try {
         const response = await axios.put(`${api}/partidas/${id}`, data, {
+            headers: {
+                "Authorization": `Bearer ${acessToken}`
+            }
+        });
+        return response.data;
+    }
+    catch (error) {
+        if (error.response) {
+            return error.response.data;
+        } else {
+            return error;
+        }
+    }
+};
+
+export const updateTimes = async (id, data, acessToken) => {
+    try {
+        const response = await axios.put(`${api}/times/${id}`, data, {
             headers: {
                 "Authorization": `Bearer ${acessToken}`
             }

@@ -49,9 +49,7 @@ export default function Home() {
       {/* Boas-vindas e Gerenciar Campeonatos */}
       <section className={styles.welcomeSection}>
         <div className={styles.linhavermelha} />
-        {
-          user.nome ? <h2><span>Seja</span> <span className={styles.highligext}>bem vindo(a) {user.nome}!</span></h2> : <h2><span>Seja</span> <span className={styles.highligext}>bem vindo(a)!</span></h2>
-        }
+        <h2><span>Seja</span> <span className={styles.highligext}>bem vindo(a){user.nome ? ` ${user.nome}` : ''}!</span></h2>
         <div className={styles.championshipsManagement}>
           <div className={styles.championshipCard} onClick={handleGerenciarCampeonatosClick}>
             <div className={styles.trophyImage}>

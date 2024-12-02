@@ -25,6 +25,7 @@ const Aapm = () => {
                         Caros alunos,
                         Ao contribuir com a AAPM (Associação de Apoio aos Pais e Mestres), você ajuda a melhorar seu dia a dia no SENAI!
                         <br />
+                
                         💡 Benefícios para você:
                         Melhor infraestrutura para estudos e aulas práticas;
                         Organização de eventos esportivos com mais qualidade;
