@@ -32,7 +32,7 @@ export default function Home() {
       <section className={styles.heroSection}>
         <div className={styles.blur}>
           <div className={styles.heroOverlay}>
-            <Header />
+      <Header />
             <div className={styles.heroContent}>
               <div className={styles.logo} />
 

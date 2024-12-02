@@ -1,71 +1,151 @@
+/* Estrutura principal */
 .header {
     width: 100%;
-    background-color: transparent;
+    background-color: #cf0d0d; /* Vermelho institucional SENAI */
+    color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
-    z-index: 2;
+    padding: 0.1rem 2rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: top; /* Fixa o cabeçalho no topo */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #ffffff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.header:hover {
+    background-color: #d20e0e; /* Ligeiro escurecimento ao passar o mouse */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo */
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.9);
+}
 
 .logo:hover {
-    cursor: pointer;
-
+    transform: scale(1.1);
+    filter: brightness(1);
 }
 
-.profileIcon img {
-    border-radius: 50%;
+/* Navegação */
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.navItem {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+}
+
+.navItem:hover {
+    background-color: white;
+    color: #cf0d0d;
+    transform: scale(1.05);
+}
+
+/* Perfil */
+.profileContainer {
+    position: relative;
 }
 
 .profileButton {
-    background-color: #d9d9d9;
-    color: black;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
     border-radius: 50%;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    width: 3rem;
-    height: 3rem;
-    margin: 1.5rem;
-
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
 }
 
-.profileIcon {
-    position: relative;
+.profileButton:hover {
+    background-color: white;
+    color: #cf0d0d;
+    transform: scale(1.1);
 }
 
-
+/* Popup */
 .popup {
     position: absolute;
-    top: 80%;
-    /* Ajuste conforme necessário */
+    top: 4rem;
     right: 0;
     background-color: white;
-    border: 2px solid #d32f2f;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 160px;
+    z-index: 10;
+    animation: fadeIn 0.3s ease;
 }
 
 .logoutButton {
-    background-color: red;
+    width: 100%;
+    background-color: #cf0d0d;
     color: white;
     border: none;
-    padding: 10px;
+    border-radius: 5px;
+    padding: 0.7rem;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
-    margin: 5px 0;
-}
-
-.loginButton {
-    background-color: rgb(58, 176, 255);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    margin: 5px 0;
+    transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .logoutButton:hover {
-    background: #c0392b;
+    background-color: #a80b0b;
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav {
+        gap: 1rem;
+    }
+
+    .navItem {
+        font-size: 0.95rem;
+    }
+
+    .profileButton {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+    .header {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

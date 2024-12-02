@@ -50,13 +50,11 @@ const CadastroCampeonato = () => {
     <>
       <Header />
       <div className={styles.container}>
+          <h1 className={styles.title}>
+            <span className={styles.titleRed}>Cadastro</span>
+            <span className={styles.titleBlack}>de Campeonatos</span>
+          </h1>
         <div className={styles.form}>
-          <div className={styles.backtohome}>
-            <Link className={styles.backButton} onClick={handleBack} href={"#"}>
-              <LiaArrowCircleLeftSolid size={30} />
-            </Link>
-            <p className={styles.txt1}>Gerenciamento de Campeonatos</p>
-          </div>
 
           <div className={styles.formdiv1}>
             <label htmlFor="nome">Nome</label>
