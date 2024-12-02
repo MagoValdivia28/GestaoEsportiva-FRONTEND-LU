@@ -84,13 +84,12 @@ const GdeEquipes = () => {
     };
 
     const handleDelete = async (team) => {
-        console.log(team);
-        
         const response = await deleteEquipe(team.time_id, acessToken);
         if (response.status === 'sucess') {
             setRejectedTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
         } else {
             setError(response.message);
+            setTimeout(() => setError(null), 1000); // Reduced timeout
         }
     };
 

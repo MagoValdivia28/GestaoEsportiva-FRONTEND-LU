@@ -31,7 +31,7 @@ const CadastroCampeonato = () => {
       setError({ message: 'Preencha todos os campos!' });
       setTimeout(() => {
         setError(null);
-      }, 3000);
+      }, 2000); // Reduced timeout
     } else {
       console.log(acessToken);
 
@@ -42,7 +42,7 @@ const CadastroCampeonato = () => {
         if (response.status === "sucess") {
           router.push('/campeonato');
         }
-      }, 3000);
+      }, 2000); // Reduced timeout
     }
   };
 
