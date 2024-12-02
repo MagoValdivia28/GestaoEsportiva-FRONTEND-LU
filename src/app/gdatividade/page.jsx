@@ -5,10 +5,7 @@ import VDP from '../components/vdp/vdp';
 import Confrontos from '../components/confrontos/confrontos';
 import { getAPI } from '@/src/actions/api';
 
-const GdeAtividade = () => {    
-    // useEffect(() => {
-    //     const response = getAPI('times/modalidade/', id);
-    // }, []);
+const GdeAtividade = () => {
     return (
         <main className={styles.main_div}>
             <div className={styles.div_img}>
@@ -32,7 +29,7 @@ const GdeAtividade = () => {
 
             </div>
         </main>
-    )
+    );
 };
 
 export default GdeAtividade;

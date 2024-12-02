@@ -4,13 +4,15 @@ import styles from './page.module.css';
 import CadastroPopup from '@/src/app/components/PopUpEquipes';
 import Header from '@/src/app/components/header/header';
 import { FaSearch } from "react-icons/fa";
-import { useEffect, useState } from 'react';
+import { use, useContext, useEffect, useState } from 'react';
 import Equipes from '@/src/app/components/equipes/equipes';
-import { getAPI, updateTeamStatus } from '@/src/actions/api';
+import { getAPI, updateTeamStatus, deleteEquipe } from '@/src/actions/api';
 import { useParams } from 'next/navigation';
 import PopUpError from '@/src/app/components/PopUpError';
+import { AuthContext } from '@/src/contexts/AuthContext';
 
 const GdeEquipes = () => {
+    const { acessToken } = useContext(AuthContext);
     const { id } = useParams();
     const [error, setError] = useState(null);
     const [approvedTeams, setApprovedTeams] = useState([]);
@@ -53,7 +55,7 @@ const GdeEquipes = () => {
     }, [isOpen, teamDetailsOpen]);
 
     const handleApprove = async (team) => {
-        const updated = await updateTeamStatus(team.time_id, team.time_nome, team.time_sala, team.modalidade_id, 'aprovada', team.pontos);
+        const updated = await updateTeamStatus(team.time_id, team.time_nome, team.time_sala, team.modalidade_id, 'aprovada', team.pontos, acessToken);
         if (updated) {
             setPendingTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
             setApprovedTeams((prev) => [...prev, { ...team, status: 'aprovada' }]);
@@ -63,7 +65,7 @@ const GdeEquipes = () => {
     const handleReject = async (team) => {
         console.log(team);
 
-        const updated = await updateTeamStatus(team.time_id, team.time_nome, team.time_sala, team.modalidade_id, 'rejeitada', team.pontos);
+        const updated = await updateTeamStatus(team.time_id, team.time_nome, team.time_sala, team.modalidade_id, 'rejeitada', team.pontos, acessToken);;
         // console.log(updated);
 
         if (updated) {
@@ -73,13 +75,24 @@ const GdeEquipes = () => {
     };
 
     const handlePending = async (team) => {
-        const updated = await updateTeamStatus(team.time_id, team.time_nome, team.time_sala, team.modalidade_id, 'pendente', team.pontos);
+        const updated = await updateTeamStatus(team.time_id, team.time_nome, team.time_sala, team.modalidade_id, 'pendente', team.pontos, acessToken);
         closeTeamDetails();
         if (updated) {
             setRejectedTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
             setPendingTeams((prev) => [...prev, { ...team, status: 'pendente' }]);
         }
     };
+
+    const handleDelete = async (team) => {
+        const response = await deleteEquipe(team.time_id, acessToken);
+        if (response.status === 'sucess') {
+            setRejectedTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
+        } else {
+            setError(response.message);
+            setTimeout(() => setError(null), 1000); // Reduced timeout
+        }
+    };
+
 
 
     const handleSearch = (e) => {

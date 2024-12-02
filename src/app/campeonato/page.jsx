@@ -25,7 +25,7 @@ const geCampeonatos = () => {
       const response = await getAPI('campeonatos/date/', formattedDate);
       if (response.message) {
         setError(response);
-        setTimeout(() => setError(null), 1500);
+        setTimeout(() => setError(null), 1000); // Reduced timeout
       } else {
         setCampeonato(response);
       }

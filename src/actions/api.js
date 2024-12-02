@@ -87,7 +87,7 @@ export const createEquipe = async (nameParams, salaParams, modalidade_idParams, 
 };
 
 // Função para atualizar o status de uma equipe
-export const updateTeamStatus = async (teamId, teamName, teamClassroom, teamMod, newStatus, teamPoints) => {
+export const updateTeamStatus = async (teamId, teamName, teamClassroom, teamMod, newStatus, teamPoints, acessToken) => {
     console.log("Atualizando status da equipe", teamId, teamName, teamClassroom, teamMod, newStatus, teamPoints);
     try {
         const response = await axios.put(`${api}/times/${teamId}`, {
@@ -96,6 +96,10 @@ export const updateTeamStatus = async (teamId, teamName, teamClassroom, teamMod,
             modalidade_id: teamMod,
             status: newStatus,
             pontos: teamPoints
+        }, {
+            headers: {
+                "Authorization": `Bearer ${acessToken}`
+            }
         });
         console.log("Status atualizado com sucesso:", response.data);
         return response.data;
