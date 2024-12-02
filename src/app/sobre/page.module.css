@@ -3,6 +3,18 @@
   padding: 1rem;
 }
 
+.text_container {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+}
+
+.text_container h1 {
+  color: #000000;
+  margin-bottom: 1rem;
+  font-size: 4rem;
+}
+
 .cardEquipe {
   text-align: center;
   padding-top: 1.5rem;
