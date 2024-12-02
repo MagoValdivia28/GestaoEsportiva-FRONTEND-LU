@@ -17,12 +17,8 @@ export default function Sobre() {
   return (
     <div className={styles.container}>
       <Header />
-      
-      <div className={styles.text_container}>
-      <h1>Sobre Nós</h1>
-      </div>
+    
       <div className={styles.cardEquipe}>
-        <hr className={styles.linha} />
 
 
         <div className={styles.cardImg}>
