@@ -3,7 +3,6 @@
   padding: 1rem;
 }
 
-
 .cardEquipe {
   text-align: center;
   padding-top: 1.5rem;
@@ -42,17 +41,6 @@
 }
 
 
-
-.img_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: none;
-  position: relative;
-  top: 6rem;
-
-}
-
 .fotoMembro{
   width: 10rem;
   height: 10rem;
@@ -66,12 +54,14 @@
   background-color: #ffffff;
   border-radius: 10%;
   margin: auto;
+  margin: 5rem;
   -webkit-box-shadow: 0px 0px 49px -4px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 49px -4px rgba(0,0,0,0.75);
 caixa-sombra: 0px 0px 49px -4px rgba(0,0,0,0.75);
+
 }
 
-.linha {
+.linha0 {
   width: 10rem;
   background-color: #AF0000;
   height: 0.3rem;
@@ -91,7 +81,7 @@ caixa-sombra: 0px 0px 49px -4px rgba(0,0,0,0.75);
 
 }
 
-.textMembro{
+.textMembro {
   font-size: 0.9rem;
   text-align: center;
   width: 20rem;
