@@ -1,4 +1,4 @@
-.homeContainer {
+/* .homeContainer {
   font-family: Arial, sans-serif;
   color: #333;
 }
@@ -6,10 +6,8 @@
 .heroSection {
   position: relative;
   background-image: url('../../assets/imagens/hometopo.png');
-  /* Substitua pela URL da sua imagem na pasta public */
   background-size: cover;
   background-position: center;
-  height: 90vh;
 }
 
 .blur {
@@ -23,7 +21,6 @@
   align-items: center;
   margin-left: 15%;
   margin-right: 15%;
-
 }
 
 .p {
@@ -35,7 +32,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-
 }
 
 .heroContent {
@@ -75,7 +71,6 @@
   background-color: rgb(197, 10, 10);
   width: 100%;
   height: 4px;
-
 }
 
 .welcomeSection {
@@ -93,7 +88,6 @@
   color: red;
   font-weight: bold;
 }
-
 
 .championshipsManagement {
   display: flex;
@@ -160,6 +154,7 @@
   color: white;
   z-index: 2;
 }
+
 .cardContent {
   position: absolute;
   bottom: 10px;
@@ -167,7 +162,6 @@
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
-
 }
 
 .emptyCard {
@@ -182,7 +176,6 @@
   justify-content: space-between;
   transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
   position: relative;
-  /* Adicionado */
 }
 
 .emptyCard::before {
@@ -195,7 +188,6 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  /* Adicionado para escurecer a imagem */
   z-index: 1;
 }
 
@@ -217,7 +209,6 @@
   text-align: left;
   margin-left: 10px;
 }
-
 
 .icon2 {
   color: white;
@@ -271,9 +262,418 @@
   margin-left: 10px;
 }
 
+.icon2 {
+  color: white;
+  font-size: 10px;
+  align-self: flex-end;
+}
+
+@media (max-width: 1024px) {
+  .heroSection {
+    height: 75vh; /* Menor altura para telas médias 
+  }
+
+  .heroTitle {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .championshipsManagement {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .championshipCard,
+  .emptyCard,
+  .sobrecard {
+    width: 100%; Ajuste para 100% em telas menores 
+    height: 20rem; Altura adaptável ao conteúdo 
+  }
+
+  .button {
+    font-size: 14px; Reduzido para telas menores 
+    padding: 8px 16px;
+  }
+
+  .welcomeSection {
+    padding: 1rem;
+  }
+
+  .heroContent h1 {
+    font-size: 2.5rem; Menor tamanho de fonte 
+  }
+
+  .heroContent p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    height: 60vh; Menor altura para telas pequenas 
+  }
+
+  .heroTitle {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .championshipsManagement {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .championshipCard,
+  .emptyCard,
+  .sobrecard {
+    width: 100%;
+    height: auto;
+  }
+
+  .button {
+    font-size: 12px; Menor tamanho de fonte 
+    padding: 6px 12px;
+  }
+
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .heroContent p {
+    font-size: 0.9rem;
+  }
+} 
+
+*/
+.homeContainer {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.heroSection {
+  position: relative;
+  background-image: url('../../assets/imagens/hometopo.png');
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
+
+.blur {
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0);
+  height: 90vh;
+}
+
+.heroTitle {
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+}
+
+.heroOverlay {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroContent {
+  text-align: center;
+  color: white;
+  margin-top: 10%;
+}
+
+.heroContent h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.heroContent p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 1rem;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.linhavermelha {
+  background-color: rgb(197, 10, 10);
+  width: 100%;
+  height: 4px;
+}
+
+.welcomeSection {
+  padding: 2rem;
+  text-align: left;
+  margin-bottom: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.welcomeSection h2 {
+  font-size: 2rem;
+  padding-top: 6%;
+}
+
+.highligext {
+  color: red;
+  font-weight: bold;
+}
+
+.championshipsManagement {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.championshipCard {
+  position: relative;
+  width: 60%;
+  height: 65vh;
+  border-top-left-radius: 6%;
+  border-bottom-right-radius: 6%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.championshipCard:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.trophyImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-image: url('../../assets/imagens/trofeuzin.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.trophyImage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.p2 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 3.5rem;
+  z-index: 2;
+}
+
+.icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  z-index: 2;
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.emptyCard {
+  width: 40%;
+  border-top-left-radius: 6%;
+  border-bottom-right-radius: 6%;
+  background-image: url('../../assets/imagens/chat.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  position: relative;
+}
+
+.emptyCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  border-top-left-radius: 6%;
+  border-bottom-right-radius: 6%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.emptyCard>* {
+  position: relative;
+  z-index: 2;
+}
+
+.emptyCard:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background-color: rgba(170, 4, 4, 0.9);
+}
+
+.pcard2 {
+  font-size: 3.5rem;
+  color: white;
+  text-align: left;
+  margin-left: 10px;
+}
 
 .icon2 {
   color: white;
   font-size: 10px;
   align-self: flex-end;
+}
+
+.sobrecard {
+  width: 40%;
+  border-top-left-radius: 6%;
+  border-bottom-right-radius: 6%;
+  background-image: url('../../assets/imagens/gpdoscria.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  position: relative;
+}
+
+.sobrecard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 6%;
+  border-bottom-right-radius: 6%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.sobrecard>* {
+  position: relative;
+  z-index: 2;
+}
+
+.sobrecard:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background-color: rgba(170, 4, 4, 0.9);
+}
+
+.pcard2 {
+  font-size: 3.5rem;
+  color: white;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.icon2 {
+  color: white;
+  font-size: 10px;
+  align-self: flex-end;
+}
+
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .championshipCard, .emptyCard, .sobrecard {
+    width: 80%; /* Reduz a largura do card em telas médias */
+    height: 20rem; /* Ajuste a altura para dispositivos menores */
+  }
+
+  .championshipsManagement {
+    align-items: center; /* Centraliza os cards */
+    flex-direction: column; /* Alinha os cards verticalmente */
+    gap: 1.5rem; /* Ajusta o espaço entre os cards */
+  }
+
+  .heroTitle h1 {
+    font-size: 2.5rem; /* Tamanho ajustado do título */
+  }
+  .p2 {
+    font-size: 4rem;
+  }
+  .pcard2 {
+    font-size: 4rem;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .championshipCard, .emptyCard, .sobrecard {
+    width: 100%; /* Ajusta os cards para 100% da largura em telas pequenas */
+    height: 20rem; /* Altura ajustável */
+  }
+
+  .championshipsManagement {
+    align-items: center; /* Centraliza os cards */
+    gap: 1rem; /* Ajuste o espaço entre os cards */
+  }
+  .p2 {
+    font-size: 2.5rem;
+  }
+  .pcard2 {
+    font-size: 2.5rem;
+  }
+
+  .button {
+    font-size: 14px; /* Ajuste do tamanho do botão */
+    padding: 8px 16px;
+  }
+
+  .heroTitle h1 {
+    font-size: 2rem; /* Reduz o tamanho do título em telas pequenas */
+  }
 }
