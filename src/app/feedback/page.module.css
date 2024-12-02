@@ -1,3 +1,253 @@
+/* Containers principais
+
+/* Seção Sobre 
+.aboutSection {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 3px solid #d32f2f;
+}
+
+.aboutText {
+    flex: 1;
+}
+
+.aboutText h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.aboutText p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+.aboutImage {
+    flex: 1;
+    background-image: url('../../../assets/imagens/feedbackLu.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    height: 250px;
+}
+
+/* Seção Valores 
+.valuesSection {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+    border-bottom: 3px solid #d32f2f;
+}
+
+.valueCard {
+    flex: 1;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.icon {
+    font-size: 2rem;
+    color: #d32f2f;
+    margin-bottom: 1rem;
+}
+
+.valueCard p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.iconLarge {
+    font-size: 4rem;
+    color: #d32f2f;
+    margin-right: 1rem;
+}
+
+.submitButton {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    background-color: #ff4b4b;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+    background-color: #d32f2f;
+}
+
+.title {
+    text-align: left;
+    margin-left: 5%;
+    margin-bottom: 10px;
+    margin-top: 4%;
+}
+
+.titleRed {
+    color: #d32f2f;
+    font-size: 3.5rem;
+}
+
+.titleBlack {
+    color: #212121;
+    font-size: 2.2rem;
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+/* Seção de Enviar Feedback 
+.sendButton:hover {
+    background-color: #d32f2f;
+}
+
+/* Seção de Feedbacks Recebidos 
+.receivedFeedbacks {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    /* Maior arredondamento para suavizar os contornos 
+    box-shadow: 0 4px 15px rgba(147, 4, 4, 0.507);
+    /* Menos opacidade na sombra 
+    max-width: 80%;
+    margin: 2rem auto;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.receivedFeedbacks h2 {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.feedbackList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* Estilo para cada item de feedback 
+.feedbackItem {
+    width: 48%;
+    padding: 1.5rem;
+    border-radius: 12px;
+    /* Bordas mais suaves 
+    box-shadow: 0 6px 18px rgba(255, 30, 30, 0.1);
+    background-color: #ffffff;
+    /* Fundo branco para destacar o card 
+    position: relative;
+    border: 2px solid #ff6b6b;
+    /* Borda com cor mais vibrante 
+    transition: box-shadow 0.3s, transform 0.3s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.feedbackItem:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px) scale(1.02);
+    /* Pequeno aumento ao hover 
+}
+
+/* Estilo das estrelas 
+.rating {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.starFilled {
+    color: #ffd700;
+    font-size: 1.2rem;
+    /* Aumenta o tamanho da estrela 
+}
+
+.starEmpty {
+    color: #ddd;
+    font-size: 1.2rem;
+}
+
+/* Container de resposta 
+.replyContainer {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Caixa de input para resposta 
+.replyInput {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Botão de enviar resposta 
+.sendButton {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ff4b4b;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.sendButton:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}
+
+/* Resposta já enviada 
+.response {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+    background-color: #f4f4f4;
+    /* Fundo leve para destacar 
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+/* Botão de resposta 
+.replyButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 1rem;
+    display: none;
+}
+
+.feedbackItem:hover .replyButton {
+    display: block;
+}
+
+.replyButton:hover {
+    background-color: #ff4b4b;
+    transform: scale(1.05);
+} 
+    */
+/* CSS original */
+
 /* Containers principais */
 .mainContainer {
     width: 100%;
@@ -67,59 +317,12 @@
     color: #555;
 }
 
-.iconLarge {
-    font-size: 4rem;
-    color: #d32f2f;
-    margin-right: 1rem;
-}
-
-.submitButton {
-    padding: 0.75rem 2rem;
-    font-size: 1rem;
-    color: #fff;
-    border: none;
-    background-color: #ff4b4b;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.submitButton:hover {
-    background-color: #d32f2f;
-}
-
-.title {
-    text-align: left;
-    margin-left: 5%;
-    margin-bottom: 10px;
-    margin-top: 4%;
-}
-
-.titleRed {
-    color: #d32f2f;
-    font-size: 3.5rem;
-}
-
-.titleBlack {
-    color: #212121;
-    font-size: 2.2rem;
-    margin-left: 8px;
-    font-weight: 500;
-}
-
-/* Seção de Enviar Feedback */
-.sendButton:hover {
-    background-color: #d32f2f;
-}
-
 /* Seção de Feedbacks Recebidos */
 .receivedFeedbacks {
     background-color: #ffffff;
     padding: 2rem;
     border-radius: 12px;
-    /* Maior arredondamento para suavizar os contornos */
     box-shadow: 0 4px 15px rgba(147, 4, 4, 0.507);
-    /* Menos opacidade na sombra */
     max-width: 80%;
     margin: 2rem auto;
     font-family: 'Arial', sans-serif;
@@ -140,18 +343,13 @@
     justify-content: center;
 }
 
-/* Estilo para cada item de feedback */
 .feedbackItem {
     width: 48%;
     padding: 1.5rem;
     border-radius: 12px;
-    /* Bordas mais suaves */
     box-shadow: 0 6px 18px rgba(255, 30, 30, 0.1);
     background-color: #ffffff;
-    /* Fundo branco para destacar o card */
-    position: relative;
     border: 2px solid #ff6b6b;
-    /* Borda com cor mais vibrante */
     transition: box-shadow 0.3s, transform 0.3s;
     text-align: center;
     display: flex;
@@ -159,31 +357,24 @@
     justify-content: space-between;
 }
 
-.feedbackItem:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px) scale(1.02);
-    /* Pequeno aumento ao hover */
+.title {
+    text-align: left;
+    margin-left: 5%;
+    margin-bottom: 10px;
+    margin-top: 4%;
 }
 
-/* Estilo das estrelas */
-.rating {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
+.titleRed {
+    color: #d32f2f;
+    font-size: 3.5rem;
 }
 
-.starFilled {
-    color: #ffd700;
-    font-size: 1.2rem;
-    /* Aumenta o tamanho da estrela */
+.titleBlack {
+    color: #212121;
+    font-size: 2.2rem;
+    margin-left: 8px;
+    font-weight: 500;
 }
-
-.starEmpty {
-    color: #ddd;
-    font-size: 1.2rem;
-}
-
-/* Container de resposta */
 .replyContainer {
     margin-top: 1rem;
     display: flex;
@@ -218,7 +409,7 @@
     transform: scale(1.05);
 }
 
-/* Resposta já enviada */
+/*.Resposta já enviada */
 .response {
     margin-top: 1rem;
     font-size: 1rem;
@@ -251,4 +442,81 @@
 .replyButton:hover {
     background-color: #ff4b4b;
     transform: scale(1.05);
+} 
+
+
+.rating {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.starFilled {
+    color: #ffd700;
+    font-size: 1.2rem;
+    /* Aumenta o tamanho da estrela */
+}
+
+.starEmpty {
+    color: #ddd;
+    font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    /* Containers principais */
+    .mainContainer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Seção Sobre */
+    .aboutSection {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .aboutImage {
+        height: 200px;
+    }
+
+    .aboutText h1 {
+        font-size: 1.5rem;
+    }
+
+    .aboutText p {
+        font-size: 0.9rem;
+    }
+
+    /* Seção Valores */
+    .valuesSection {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .valueCard {
+        padding: 1rem;
+    }
+
+    .icon {
+        font-size: 1.5rem;
+    }
+
+    /* Seção de Feedbacks Recebidos */
+    .receivedFeedbacks {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .feedbackList {
+        gap: 1rem;
+    }
+
+    .feedbackItem {
+        width: 100%;
+    }
+
+    .feedbackItem p {
+        font-size: 0.9rem;
+    }
 }
