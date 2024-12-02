@@ -1,15 +1,12 @@
+/* Estilo global - Nenhuma alteração */
 .container {
   background-color: #fff;
   padding: 1rem;
 }
 
-
-
 .cardEquipe {
   text-align: center;
   padding-top: 1.5rem;
-  flex-direction: wrap;
-
 }
 
 .linha {
@@ -25,23 +22,26 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 5rem;
 }
 
-.cardImg,
-.backImg {
-  border-radius: 0.625rem;
-  width: 100%;
-  max-width: 22.5rem;
-  margin: 1rem auto;
-  padding: 1rem;
+.cardImg {
+  display: flex;
+  gap: 10rem;
+  margin-bottom: 7rem;
+}
+
+.fotoEquipe1 {
+  border-radius: 5%;
+  width: 20rem;
+  height: 20rem;
+  margin: auto;
 }
 
 .fotoEquipe {
-  border-radius: 5%;
-  width: 130%;
-  height: 130%;
+  width: 30rem;
+  height: 20rem;
 }
-
 
 .fotoMembro{
   width: 10rem;
@@ -58,9 +58,8 @@
   margin: auto;
   margin: 5rem;
   -webkit-box-shadow: 0px 0px 49px -4px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 49px -4px rgba(0,0,0,0.75);
-caixa-sombra: 0px 0px 49px -4px rgba(0,0,0,0.75);
-
+  -moz-box-shadow: 0px 0px 49px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 49px -4px rgba(0,0,0,0.75);
 }
 
 .linha0 {
@@ -80,7 +79,6 @@ caixa-sombra: 0px 0px 49px -4px rgba(0,0,0,0.75);
   margin-right: auto;
   margin-bottom: 1rem;
   font-weight: bold;
-
 }
 
 .textMembro {
@@ -99,7 +97,128 @@ caixa-sombra: 0px 0px 49px -4px rgba(0,0,0,0.75);
 }
 
 .icon_containerweb{
-    display: flex;
-    gap: 5px;
-    margin: 0.3rem;
+  display: flex;
+  gap: 5px;
+  margin: 0.3rem;
+}
+
+.divisao {
+  width: 0.375rem;
+  height: 20rem;
+  background-color: #000000;
+}
+
+/* Responsividade para dispositivos móveis (iPhone 11) */
+@media (max-width: 800px) {
+
+  /* Ajustando a imagem da equipe */
+  .cardImg {
+    gap: 2rem;
+    margin-left: 50rem;
+  }
+
+  .fotoEquipe1, .fotoEquipe {
+    width: 12rem;
+    height: 12rem;
+    margin: auto;
+  }
+
+  .divisao {
+    height: 0.3rem;
+    width: 20rem;
+    background-color: #000000;
+    margin: auto;
+  }
+
+  /* Ajustando os cards para tela menor */
+  .div_cards {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .card {
+    width: 90%;  /* Ajuste de largura dos cards */
+    height: auto;
+    margin: 1.5rem auto;
+    background-color: #ffffff;
+  border-radius: 10%;
+  margin: auto;
+  margin: 5rem;
+  -webkit-box-shadow: 0px 0px 49px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 49px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 49px -4px rgba(0,0,0,0.75);
+  }
+
+  /* Ajustando as fotos dos membros */
+  .fotoMembro {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  /* Ajustando a linha nos cards */
+  .linha0 {
+    width: 7rem;
+  }
+
+  /* Ajustando o texto nos cards */
+  .nomeMembro {
+    font-size: 1rem;
+  }
+
+  .textMembro {
+    font-size: 0.85rem;
+    width: 16rem;
+  }
+
+  /* Ajustando os ícones das redes sociais */
+  .icon_containerweb {
+    gap: 8px;
+  }
+}
+
+/* Responsividade para dispositivos ligeiramente maiores (como iPhone Plus ou telas entre 375px e 480px) */
+@media (max-width: 800px) {
+  .cardImg {
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 0;
+  }
+
+  .fotoEquipe1, .fotoEquipe {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .div_cards {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .card {
+    width: 85%;  /* Ajuste para 85% de largura */
+    margin: 2rem auto;
+  }
+
+  .fotoMembro {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .nomeMembro {
+    font-size: 1.1rem;
+  }
+
+  .textMembro {
+    font-size: 0.7rem;
+    width: 18rem;
+    margin-bottom: 2rem;
+  }
+
+  .linha0 {
+    width: 8rem;
+  }
+
+  .icon_containerweb {
+    gap: 10px;
+  }
 }

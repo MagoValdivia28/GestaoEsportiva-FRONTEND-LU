@@ -12,6 +12,7 @@ import gomes from '../../../assets/imagens/pravel.jpeg';
 import Header from '../components/header/header';
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import logo from '../../../assets/imagens/Novagenix.png'
 
 export default function Sobre() {
   return (
@@ -22,7 +23,8 @@ export default function Sobre() {
 
 
         <div className={styles.cardImg}>
-          <Image src={equipe} className={styles.fotoEquipe} />
+        <Image src={logo} className={styles.fotoEquipe1} />
+
 
         </div>
         <hr className={styles.linha} />
@@ -45,7 +47,9 @@ export default function Sobre() {
               <Link href="https://github.com/MagoValdivia28" passHref target='blank'>
               <FaGithub size={25} color="#000000" />
               </Link>
+              <Link href="https://www.instagram.com/felipe_spedro/?igsh=MTFmNGJmd253M3l2eQ%3D%3D#" passHref target='blank'>
               <FaInstagram size={25} color='#000000'/>
+              </Link>
               </div>
                 <p className={styles.textMembro}>  Felipe é um membro com uma personalidade forte e um espírito de
                   liderança marcante, ele se destaca em qualquer desafio que enfrenta.
@@ -71,7 +75,9 @@ export default function Sobre() {
               <Link href="https://github.com/Matheuscosta06" passHref target='blank'>
               <FaGithub size={25} color="#000000" />
               </Link>
+              <Link href="https://www.instagram.com/matheus_zambon/?igsh=dnR2ZXh5a3RobHdo#" passHref target='blank'>
               <FaInstagram size={25} color='#000000'/>
+              </Link>
               </div>
                 <p className={styles.textMembro}>Matheus Zambon é o membro mais animado e o melhor em trabalho em
                   equipe. Sua energia contagiante e habilidade para colaborar
@@ -97,7 +103,9 @@ export default function Sobre() {
               <Link href="https://github.com/joaosantos564" passHref target='blank'>
               <FaGithub size={25} color="#000000" />
               </Link>
+              <Link href="https://www.instagram.com/joaoosntx/?igsh=MWNpNmxiYXhqajZycg%3D%3D#" passHref target='blank'>
               <FaInstagram size={25} color='#000000'/>
+              </Link>
               </div>
                 <p className={styles.textMembro}>João é o membro mais criativo e cuida dos Designs e usabilidades do site. Seu perfil criativo agrega muito ao grupo, seja pela organização ou ideiais criativos.
                 </p>
@@ -120,7 +128,9 @@ export default function Sobre() {
               <Link href="https://github.com/ElMatheus" passHref target='blank'>
               <FaGithub size={25} color="#000000" />
               </Link>
+              <Link href="https://www.instagram.com/prv.mathevss/?igsh=MTJxb3U2djR0cmdjYg%3D%3D" passHref target='blank'>
               <FaInstagram size={25} color='#000000'/>
+              </Link>
               </div>
                 <p className={styles.textMembro}> Matheus Gomes é um verdadeiro gênio em programação. Com um talento
                   excepcional para desenvolver soluções, ele combina brilhantismo
@@ -145,7 +155,9 @@ export default function Sobre() {
                <Link href="https://github.com/Fervalinhos" passHref target='blank'>
               <FaGithub size={25} color="#000000" />
               </Link>
+              <Link href="https://www.instagram.com/fervass.mt/?igsh=MXB4bWowNGw5a2w3bA%3D%3D" passHref target='blank'>
               <FaInstagram size={25} color='#000000'/>
+              </Link>
               </div>
                 <p className={styles.textMembro}>   Matheus Carvalho é o mestre da lógica na nossa equipe. Com um
                   conhecimento profundo em diversas tecnologias, ele é a referência na
