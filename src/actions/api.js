@@ -169,3 +169,38 @@ export const generateConfrontos = async (date, annotation, updateUser, modalidad
         }
     }
 };
+
+export const deleteConfronto = async (id, acessToken) => {
+    try {
+        const response = await axios.delete(`${api}/partidas/${id}`, {
+            headers: {
+                "Authorization": `Bearer ${acessToken}`
+            }
+        });
+        return response.data;
+    } catch (error) {
+        if (error.response) {
+            return error.response.data;
+        } else {
+            return error;
+        }
+    }
+};
+
+export const updateConfronto = async (id, data, acessToken) => {
+    try {
+        const response = await axios.put(`${api}/partidas/${id}`, data, {
+            headers: {
+                "Authorization": `Bearer ${acessToken}`
+            }
+        });
+        return response.data;
+    }
+    catch (error) {
+        if (error.response) {
+            return error.response.data;
+        } else {
+            return error;
+        }
+    }
+};

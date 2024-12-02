@@ -1,13 +1,10 @@
 'use client';
 import styles from './page.module.css';
-import logo from '@/assets/imagens/logo.png';
-import Image from 'next/image';
-import { FaUser } from 'react-icons/fa';
-import { useRouter, useParams } from 'next/navigation'; 
+import { useRouter, useParams } from 'next/navigation';
 import Header from '../../components/header/header';
 
 const CampeonatoDetails = () => {
-  const router = useRouter(); 
+  const router = useRouter();
   const { id } = useParams();
 
   // Função para redirecionar para a página de gerenciamento de equipe
@@ -22,9 +19,9 @@ const CampeonatoDetails = () => {
 
   return (
     <>
-        <Header /> 
+      <Header />
       <div className={styles.container}>
-       
+
         <h1 className={styles.title}>
           <span className={styles.titleRed}>Gerenciamento</span>
           <span className={styles.titleBlack}> de Atividades</span>
