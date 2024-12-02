@@ -7,9 +7,12 @@ import Confrontos from "@/src/app/components/confrontos/confrontos";
 import { useEffect, useState } from "react";
 import { getAPI } from "@/src/actions/api";
 import { useParams } from "next/navigation";
+import CreateConfronto from "@/src/app/components/CreateConfronto/page";
 
 
 const ModalidadeFalsePage = ({ teams }) => {
+  
+  const [popUp, setPopUp] = useState(false);
   const [partidas, setPartidas] = useState([]);
   const { atvId } = useParams();
 
@@ -29,10 +32,17 @@ const ModalidadeFalsePage = ({ teams }) => {
       </div>
       <h2 className={styles.h2Title}>Confrontos</h2>
       <ul className={styles.confrontos_container}>
-        {partidas.map((partida) => (
-          <Confrontos key={partida.id} idPartida={partida.id} data={partida.data} confrontos={partida.confrontos} />
-        ))}
+        {
+          partidas.length > 0 ? partidas.map((partida, index) => (
+            <Confrontos key={partida.id} idPartida={partida.id} data={partida.data} confrontos={partida.confrontos} />
+          )) : <button onClick={() => setPopUp(true)} className={styles.btn}>+</button>
+        }
       </ul>
+      {
+        popUp && (
+          <CreateConfronto onClick={() => setPopUp(false)} />
+        )
+      }
     </div>
   );
 };
