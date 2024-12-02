@@ -11,7 +11,6 @@ import CreateConfronto from "@/src/app/components/CreateConfronto/page";
 
 
 const ModalidadeFalsePage = ({ teams }) => {
-  
   const [popUp, setPopUp] = useState(false);
   const [partidas, setPartidas] = useState([]);
   const { atvId } = useParams();

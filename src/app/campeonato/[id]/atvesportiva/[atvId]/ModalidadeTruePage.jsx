@@ -3,28 +3,52 @@
 
 import styles from "./page.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { generateConfrontos } from "@/src/actions/api";
+import { getAPI } from "@/src/actions/api";
+import { useParams } from "next/navigation";
 
 const ModalidadeTruePage = ({ modalidade, teams }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedWinner, setSelectedWinner] = useState(null);
+  const [partidasData, setPartidasData] = useState(null);
+  const { atvId } = useParams();
 
   const handleAddWinner = () => {
     setShowModal(true);
   };
 
   const handleSelectWinner = (team) => {
+    console.log(team);
+
     setSelectedWinner(team);
     setShowModal(false);
   };
 
+
+  useEffect(() => {
+    const fetchConfrontos = async () => {
+      const response = await getAPI("partidas/confrontos/", atvId);
+      console.log(response);
+      setPartidasData(response);
+    };
+    fetchConfrontos();
+  }, []);
   return (
     <div>
       {!selectedWinner && (
         <div className={styles.addWinnerContainer}>
-          <button className={styles.addWinnerButton} onClick={handleAddWinner}>
-            Adicionar Vencedor
-          </button>
+          {
+            partidasData && partidasData.total > 0 ? (
+              <button className={styles.addWinnerButton} onClick={handleAddWinner}>
+                Adicionar Vencedor
+              </button>
+            ) : (
+              <button className={styles.addWinnerButton} onClick={handleAddWinner}>
+                Definir Data
+              </button>
+            )
+          }
         </div>
       )}
 
