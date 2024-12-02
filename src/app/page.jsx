@@ -5,7 +5,7 @@ import styles from './page.module.css';
 import Header from './components/header/header';
 import { AuthContext } from '@/src/contexts/AuthContext';
 import { useContext } from 'react';
-
+import Footer from './components/footer/page';
 
 export default function Home() {
   const { user } = useContext(AuthContext);
@@ -69,6 +69,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

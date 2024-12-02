@@ -30,18 +30,19 @@
 .logo {
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease;
-    filter: brightness(0.9);
 }
 
 .logo:hover {
     transform: scale(1.1);
-    filter: brightness(1);
+    filter: drop-shadow(0 0 10px white);
 }
 
 /* Navegação */
 .nav {
     display: flex;
     gap: 2rem;
+    align-items: center;
+    padding-right: 5%;
 }
 
 .navItem {

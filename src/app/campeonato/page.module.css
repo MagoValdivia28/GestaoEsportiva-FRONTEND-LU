@@ -4,7 +4,9 @@
     text-align: center;
     position: relative;
 }
-
+.main{
+    margin-top: 4%;
+}
 .header {
     display: flex;
     justify-content: space-between;

@@ -1,0 +1,77 @@
+/* Estrutura principal */
+.footer {
+    width: 100%;
+    background-color: #cf0d0d; /* Vermelho institucional SENAI */
+    color: white;
+    padding: 2rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #ffffff;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Links de navegação */
+.navLinks {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s;
+}
+
+.link:hover {
+    color: #ffffffb3; /* Branco mais claro */
+    transform: scale(1.1);
+}
+
+/* Redes sociais */
+.socialMedia {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.socialLink {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.2s;
+}
+
+.socialLink:hover {
+    color: #ffffffb3;
+    transform: scale(1.2);
+}
+
+/* Direitos autorais */
+.copyright {
+    font-size: 0.9rem;
+    color: #ffffffb3; /* Branco mais claro */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navLinks {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .socialMedia {
+        gap: 1rem;
+    }
+}
