@@ -130,6 +130,24 @@ export const deleteEquipe = async (id, acessToken) => {
     }
 };
 
+export const deletePartida = async (id, acessToken) => {
+    try {
+        const response = await axios.delete(`${api}/partidas/${id}`, {
+            headers: {
+                "Authorization": `Bearer ${acessToken}`
+            }
+        });
+        return response.data;
+    }
+    catch (error) {
+        if (error.response) {
+            return error.response.data;
+        } else {
+            return error;
+        }
+    }
+};
+
 
 
 export const createJogador = async (nameParams, salaParams, time_idParams, acessToken) => {
