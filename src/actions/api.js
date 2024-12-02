@@ -108,6 +108,26 @@ export const updateTeamStatus = async (teamId, teamName, teamClassroom, teamMod,
     }
 };
 
+export const deleteEquipe = async (id, acessToken) => {
+    try {
+        const response = await axios.delete(`${api}/times/${id}`, {
+            headers: {
+                "Authorization": `Bearer ${acessToken}`
+            }
+        });
+        return response.data;
+    }
+    catch (error) {
+        if (error.response) {
+            return error.response.data;
+        } else {
+            return error;
+        }
+    }
+};
+
+
+
 export const createJogador = async (nameParams, salaParams, time_idParams, acessToken) => {
     try {
         const response = await axios.post(`${api}/jogadores`, {
