@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation';
 import { getAPI } from '@/src/actions/api';
 import PopUpError from '@/src/app/components/PopUpError';
 import Header from '../components/header/header';
+import Footer from '../components/footer/page';
 import adicionarmodal from '../../../assets/imagens/adicionar.jpg';
 
 const geCampeonatos = () => {
@@ -65,6 +66,7 @@ const geCampeonatos = () => {
       </main>
 
       {error && <PopUpError error={error} />}
+      <Footer />
     </div>
   );
 };
