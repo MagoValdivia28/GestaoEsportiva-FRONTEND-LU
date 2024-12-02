@@ -124,8 +124,8 @@
 }
 
 .card0{
-  width: 25rem;
-  height:25rem;
+  width: 27rem;
+  height:27rem;
   background-color: #ffffff;
   border-radius: 10%;
   margin: auto;
@@ -155,10 +155,11 @@ caixa-sombra: 0px 0px 49px -4px rgba(0,0,0,0.75);
 }
 
 .textMembro0 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-align: center;
-  width: 21rem;
+  width: 20rem;
   color: #727272;
+  margin-top: 0.7rem;
 }
 
 .texts_container0 {
@@ -166,4 +167,10 @@ caixa-sombra: 0px 0px 49px -4px rgba(0,0,0,0.75);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.icon_containerweb{
+    display: flex;
+    gap: 5px;
+    margin: 0.3rem;
 }
