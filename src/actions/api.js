@@ -242,7 +242,7 @@ export const deleteConfronto = async (id, acessToken) => {
 
 export const updateConfronto = async (id, data, acessToken) => {
     try {
-        const response = await axios.put(`${api}/partidas/${id}`, data, {
+        const response = await axios.put(`${api}/confrontos/${id}`, data, {
             headers: {
                 "Authorization": `Bearer ${acessToken}`
             }

@@ -33,15 +33,20 @@ const GdeAtividade = () => {
         fetchModalidade();
     }, [atvId]);
 
+    if (!modalidade) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <main className={styles.main_div}>
             <Header />
             <h2 className={styles.h2Title}>
                 {modalidade.nome_modalidade}
             </h2>
-            {modalidade.tipo ? (
+            {modalidade.tipo === true && (
                 <ModalidadeTruePage modalidade={modalidade} teams={teams} />
-            ) : (
+            )}
+            {modalidade.tipo === false && (
                 <ModalidadeFalsePage teams={teams} />
             )}
         </main>
