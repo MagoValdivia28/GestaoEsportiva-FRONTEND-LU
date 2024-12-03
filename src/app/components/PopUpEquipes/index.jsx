@@ -1,6 +1,6 @@
 // CadastroPopup.js
 "use client";
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import './page.module.css';
 import styles from './page.module.css';
 import { createEquipe } from '@/src/actions/api';

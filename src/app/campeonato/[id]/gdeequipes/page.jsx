@@ -10,6 +10,7 @@ import { getAPI, updateTeamStatus, deleteEquipe } from '@/src/actions/api';
 import { useParams } from 'next/navigation';
 import PopUpError from '@/src/app/components/PopUpError';
 import { AuthContext } from '@/src/contexts/AuthContext';
+import Guarantee from '@/src/app/components/GuaranteePopUp';
 
 const GdeEquipes = () => {
     const { acessToken } = useContext(AuthContext);
@@ -22,7 +23,7 @@ const GdeEquipes = () => {
     const [modalities, setModalities] = useState([]);
     const [teamDetailsOpen, setTeamDetailsOpen] = useState(false); // Controle do pop-up de detalhes
     const [selectedTeam, setSelectedTeam] = useState(null); // Time selecionado 
-
+    const [showGuarantee, setShowGuarantee] = useState(null);
 
     const fetchTeams = async () => {
         const approved = await getAPI('times/campeonato/', id, { status: 'aprovada' });
@@ -53,12 +54,18 @@ const GdeEquipes = () => {
             document.body.style.overflow = 'auto';
         }
     }, [isOpen, teamDetailsOpen]);
+    // oi
+    const handleVerification = (team) => {
+        console.log(team);
 
+        setShowGuarantee(team);
+    };
     const handleApprove = async (team) => {
         const updated = await updateTeamStatus(team.time_id, team.time_nome, team.time_sala, team.modalidade_id, 'aprovada', team.pontos, acessToken);
         if (updated) {
             setPendingTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
             setApprovedTeams((prev) => [...prev, { ...team, status: 'aprovada' }]);
+            setShowGuarantee(null);
         }
     };
 
@@ -85,12 +92,13 @@ const GdeEquipes = () => {
 
     const handleDelete = async (team) => {
         const response = await deleteEquipe(team.time_id, acessToken);
-        closeTeamDetails();
-        window.location.reload();
         if (response.status === 'sucess') {
-            setRejectedTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
+            setError({ status: 'sucess', message: 'Equipe excluída com sucesso' });
+            setTimeout(() => setError(null), 1000); // Reduced timeout
+            fetchTeams();
+            closeTeamDetails();
         } else {
-            setError(response.message);
+            setError({ status: 'error', message: response.message });
             setTimeout(() => setError(null), 1000); // Reduced timeout
         }
     };
@@ -171,7 +179,7 @@ const GdeEquipes = () => {
                             nameTeam={team.time_nome}
                             members={team.jogadores}
                             onClick={() => openTeamDetails(team)}
-                            onApprove={() => handleApprove(team)}
+                            onApprove={() => handleVerification(team)}
                             onReject={() => handleReject(team)}
                         />
                     ))
@@ -238,6 +246,20 @@ const GdeEquipes = () => {
                             )
                         }
                         <button onClick={() => closeTeamDetails()} className={styles.rejectButton}>Fechar</button>
+                    </div>
+                </div>
+            )}
+
+            {showGuarantee && (
+                <div className={styles.overlay}>
+                    <div className={styles.popup}>
+                        <Guarantee
+                            title="Aprovar Equipe"
+                            message={`Deseja aprovar a equipe ${showGuarantee.time_nome}?`}
+                            close={() => setShowGuarantee(null)}
+                            advance={() => handleApprove(showGuarantee)}
+                            txtAdvance="Aprovar"
+                        />
                     </div>
                 </div>
             )}

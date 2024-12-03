@@ -5,7 +5,8 @@
   width: 100%;
   padding: 12px;
   margin-bottom: 12px;
-  border: 1px solid #c72828; /* Red Border */
+  border: 1px solid #c72828;
+  /* Red Border */
   border-radius: 6px;
   background-color: #ffffff;
   box-sizing: border-box;
@@ -17,18 +18,22 @@
 .popupcontent input[type="text"]:focus,
 .popupcontent input[type="file"]:focus,
 .popupcontent select:focus {
-  border-color: #c72828; /* Red Border */
+  border-color: #c72828;
+  /* Red Border */
   outline: none;
   background-color: #fff;
-  box-shadow: 0 0 5px rgba(199, 40, 40, 0.3); /* Optional shadow effect */
+  box-shadow: 0 0 5px rgba(199, 40, 40, 0.3);
+  /* Optional shadow effect */
 }
 
 /* Error State for Inputs */
 .popupcontent input[type="text"].error,
 .popupcontent input[type="file"].error,
 .popupcontent select.error {
-  border-color: #d32f2f; /* Darker red for error state */
-  background-color: #ffe6e6; /* Light red background */
+  border-color: #d32f2f;
+  /* Darker red for error state */
+  background-color: #ffe6e6;
+  /* Light red background */
 }
 
 /* Flexbox Layout for Participante and Sala */
@@ -40,7 +45,8 @@
   width: 100%;
   margin-bottom: 20px;
 }
-.participantes{
+
+.participantes {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -48,16 +54,19 @@
   width: 100%;
   margin-bottom: 20px;
 }
+
 .participante_sala {
   display: flex;
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  border-bottom: 1px solid #c72828; /* Red Border */
+  border-bottom: 1px solid #c72828;
+  /* Red Border */
 }
 
 .participante_sala div {
-  width: 45%; /* Adjust input width for better balance */
+  width: 45%;
+  /* Adjust input width for better balance */
 }
 
 .title {
@@ -67,9 +76,11 @@
 }
 
 .participante_sala input {
-  width: 45%; /* Adjust input width for better balance */
+  width: 45%;
+  /* Adjust input width for better balance */
   border-radius: 6px;
-  border: 1px solid #c72828; /* Red Border */
+  border: 1px solid #c72828;
+  /* Red Border */
   background-color: #f5f5f5;
   box-sizing: border-box;
 }
@@ -79,12 +90,14 @@
   border-color: #c72828;
   outline: none;
   background-color: #fff;
-  box-shadow: 0 0 5px rgba(199, 40, 40, 0.3); /* Optional shadow effect */
+  box-shadow: 0 0 5px rgba(199, 40, 40, 0.3);
+  /* Optional shadow effect */
 }
 
 /* Label Adjustments for Better Alignment */
 .participante_sala label {
-  width: 40%; /* Keep label width proportional */
+  width: 40%;
+  /* Keep label width proportional */
   font-size: 16px;
   color: #555;
 }
@@ -116,15 +129,17 @@
 
 /* Close Button Styling */
 .X {
-  margin-left: 98%;
+  margin-left: 90% !important;
   border: none;
   background: none;
   cursor: pointer;
 }
+
 .textored {
   color: #c72828;
   font-size: 3rem;
 }
+
 /* Responsive Design Adjustments */
 @media (max-width: 768px) {
   .popupcontent {
@@ -142,6 +157,7 @@
   }
 
   .cadastro {
-    width: 100%; /* Full width for smaller screens */
+    width: 100%;
+    /* Full width for smaller screens */
   }
 }
