@@ -20,8 +20,6 @@ const ModalidadeFalsePage = ({ teams }) => {
     setPartidas(response.data);
   };
 
-  // console.log(teams)
-
   useEffect(() => {
     fetchPartidas();
   }, [atvId]);
@@ -29,7 +27,6 @@ const ModalidadeFalsePage = ({ teams }) => {
 
   return (
     <div>
-
       <div className={styles.list_container}>
         <VDP teams={teams} />
       </div>
@@ -41,7 +38,6 @@ const ModalidadeFalsePage = ({ teams }) => {
           )) : <button onClick={() => setPopUp(true)} className={styles.btn}>+</button>
         }
       </ul>
-
       {
         popUp && (
           <CreateConfronto onClick={() => setPopUp(false)} teams={teams} />

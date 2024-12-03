@@ -13,7 +13,6 @@ const Confrontos = ({ idPartida, data, confrontos }) => {
     const [selectedWinner, setSelectedWinner] = useState(null);
     const [winTimeName, setWinTimeName] = useState(null);
     const [popUpConfronto, setPopUpConfronto] = useState(false);
-
     const handleDelete = async () => {
         const response = await deleteConfronto(idPartida, acessToken);
         window.location.reload();
@@ -42,7 +41,6 @@ const Confrontos = ({ idPartida, data, confrontos }) => {
 
     const handleUpdate = async () => {
     };
-
     const handleWin = (team) => {
         setSelectedWinner(team);
         setWinTimeName(team.time.nome);
@@ -105,6 +103,7 @@ const Confrontos = ({ idPartida, data, confrontos }) => {
                         <HiOutlineTrash onClick={() => handleDelete()} className={styles.icon} />
                     </div>
                 </div>
+
                 <div className={styles.time_container}>
                     <div className={styles.group_container}>
                         <FaUserGroup className={styles.group} />
@@ -118,7 +117,7 @@ const Confrontos = ({ idPartida, data, confrontos }) => {
                         <h5>{confrontos[1].time.nome}</h5>
                     </div>
                 </div>
-            </li>
+            </li >
         </>
     );
 }
