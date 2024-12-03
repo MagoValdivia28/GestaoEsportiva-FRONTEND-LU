@@ -52,6 +52,19 @@
   font-family: 'Questrial', sans-serif;
 }
 
+.passwordContainer {
+  position: relative;
+  width: 20rem;
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
 .formdiv2 {
   display: flex;
   flex-direction: column;
