@@ -12,7 +12,6 @@ import CreateConfronto from "@/src/app/components/CreateConfronto/page";
 
 const ModalidadeFalsePage = ({ teams }) => {
   const [popUp, setPopUp] = useState(false);
-  const [popUpConfronto, setPopUpConfronto] = useState(false);
   const [partidas, setPartidas] = useState([]);
   const { atvId } = useParams();
 
@@ -27,13 +26,6 @@ const ModalidadeFalsePage = ({ teams }) => {
     fetchPartidas();
   }, [atvId]);
 
-  const handlepopUpConfronto = (confrontos, idPartida) => {
-    setPopUpConfronto(!popUpConfronto);
-
-    console.log(popUpConfronto);
-    console.log(confrontos);
-    console.log(idPartida);
-  };
 
   return (
     <div>
@@ -45,7 +37,7 @@ const ModalidadeFalsePage = ({ teams }) => {
       <ul className={styles.confrontos_container}>
         {
           partidas.length > 0 ? partidas.map((partida, index) => (
-            <Confrontos key={index} idPartida={partida.id} data={partida.data} confrontos={partida.confrontos} popUpConfronto={handlepopUpConfronto} popUp={popUpConfronto} />
+            <Confrontos key={index} idPartida={partida.id} data={partida.data} confrontos={partida.confrontos} />
           )) : <button onClick={() => setPopUp(true)} className={styles.btn}>+</button>
         }
       </ul>
