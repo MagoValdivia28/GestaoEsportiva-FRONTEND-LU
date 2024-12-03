@@ -37,7 +37,7 @@
     font-size: 16px;
 }
 
-.popupContent button {
+.popupContent button:nth-child(1) {
     padding: 10px 20px;
     background-color: #dd2929;
     color: white;
@@ -47,6 +47,26 @@
     font-size: 16px;
 }
 
-.popupContent button:hover {
-    background-color: #dd2929;
+.popupContent button:nth-child(2) {
+    padding: 10px 20px;
+    background-color: #838383;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.popupContent button:nth-child(1):hover {
+    background-color: #b92424;
+}
+
+.popupContent button:nth-child(2):hover {
+    background-color: #535353;
+}
+
+.btnContainer {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
 }

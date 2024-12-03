@@ -30,7 +30,7 @@ const CreateConfronto = ({ onClick }) => {
                 setPopUp({ status: "sucess", message: `${response.totalConfrontos} Confrontos Gerados!` });
                 setTimeout(() => {
                     setPopUp(null);
-                    window.location.reload();                    
+                    window.location.reload();
                 }, 3000);
             } else {
                 setPopUp({ status: "error", message: response.message });
@@ -44,7 +44,10 @@ const CreateConfronto = ({ onClick }) => {
             <div className={styles.popupContent} onClick={(e) => e.stopPropagation()}>
                 <h2>Criar Confronto</h2>
                 <input onChange={(e) => setInpDate(e.target.value)} type="date" />
-                <button onClick={handleGenerate}>Gerar</button>
+                <div className={styles.btnContainer}>
+                    <button onClick={handleGenerate}>Gerar</button>
+                    <button onClick={onClick}>Cancelar</button>
+                </div>
             </div>
             {
                 popUp && (

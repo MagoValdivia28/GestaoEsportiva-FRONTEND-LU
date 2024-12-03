@@ -20,9 +20,9 @@
     justify-content: center;
     align-items: center;
     z-index: 5;
-  }
-  
-  .modal {
+}
+
+.modal {
     background: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -30,28 +30,28 @@
     max-width: 400px;
     width: 100%;
     text-align: center;
-  }
-  
-  .modalTitle {
+}
+
+.modalTitle {
     margin-bottom: 20px;
     font-size: 18px;
     font-weight: bold;
-  }
-  
-  .modalInput {
+}
+
+.modalInput {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
-  
-  .modalButtons {
+}
+
+.modalButtons {
     display: flex;
     justify-content: space-between;
-  }
-  
-  .modalButton {
+}
+
+.modalButton {
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
@@ -59,26 +59,23 @@
     color: #fff;
     cursor: pointer;
     transition: background 0.3s;
-  }
-  
-  .modalButton:hover {
+}
+
+.modalButton:hover {
     background: #0056b3;
-  }
+}
 
 /* Título */
 .h2Title {
     font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 2rem;
     color: #000000;
     text-transform: uppercase;
     border-bottom: 4px solid #af1912;
     padding: 0.5rem;
     text-align: center;
-    width: 100%;
-    max-width: 800px;
-
-    }
+    margin-top: 1rem;
+}
 
 .timesContainer {
     display: flex;
@@ -280,6 +277,7 @@
     margin-top: 2rem;
     gap: 3rem;
 }
+
 .list_container {
     display: flex;
     flex-direction: column;
@@ -300,6 +298,10 @@
     margin: 0 auto;
     text-align: center;
 }
+
+
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;
