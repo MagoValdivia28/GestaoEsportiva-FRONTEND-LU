@@ -12,6 +12,7 @@ import CreateConfronto from "@/src/app/components/CreateConfronto/page";
 
 const ModalidadeFalsePage = ({ teams }) => {
   const [popUp, setPopUp] = useState(false);
+  const [popUpConfronto, setPopUpConfronto] = useState(false);
   const [partidas, setPartidas] = useState([]);
   const { atvId } = useParams();
 
@@ -20,12 +21,23 @@ const ModalidadeFalsePage = ({ teams }) => {
     setPartidas(response.data);
   };
 
+  // console.log(teams)
+
   useEffect(() => {
     fetchPartidas();
   }, [atvId]);
 
+  const handlepopUpConfronto = (confrontos, idPartida) => {
+    setPopUpConfronto(!popUpConfronto);
+
+    console.log(popUpConfronto);
+    console.log(confrontos);
+    console.log(idPartida);
+  };
+
   return (
     <div>
+
       <div className={styles.list_container}>
         <VDP teams={teams} />
       </div>
@@ -33,10 +45,11 @@ const ModalidadeFalsePage = ({ teams }) => {
       <ul className={styles.confrontos_container}>
         {
           partidas.length > 0 ? partidas.map((partida, index) => (
-            <Confrontos key={partida.id} idPartida={partida.id} data={partida.data} confrontos={partida.confrontos} />
+            <Confrontos key={index} idPartida={partida.id} data={partida.data} confrontos={partida.confrontos} popUpConfronto={handlepopUpConfronto} popUp={popUpConfronto} />
           )) : <button onClick={() => setPopUp(true)} className={styles.btn}>+</button>
         }
       </ul>
+
       {
         popUp && (
           <CreateConfronto onClick={() => setPopUp(false)} teams={teams} />
