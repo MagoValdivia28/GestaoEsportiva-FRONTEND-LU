@@ -37,6 +37,7 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
     modalidade: '',
     imagem: null
   });
+  const [playerLimit, setPlayerLimit] = useState(0);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -44,6 +45,11 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
       ...formData,
       [name]: files ? files[0] : value
     });
+
+    if (name === 'modalidade') {
+      const selectedModality = modalities.find(modality => modality.id === value);
+      setPlayerLimit(selectedModality ? selectedModality.limite_pessoas : 0);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -132,221 +138,6 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
             onChange={handleChange}
           />
 
-          <h2 className={styles.title}>Participantes:</h2>
-
-
-          <div className={styles.labelpart}>
-            <div className={styles.participante_sala}>
-              <div>
-                <label>Participante 1:</label>
-                <input
-                  type="text"
-                  name="participante1"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-              <div>
-                <label>Sala:</label>
-                <input
-                  type="text"
-                  name="participantesala1"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-            </div>
-
-            <div className={styles.participante_sala}>
-              <div>
-                <label>Participante 2:</label>
-                <input
-                  type="text"
-                  name="participante2"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-              <div>
-                <label>Sala:</label>
-                <input
-                  type="text"
-                  name="participantesala2"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-            </div>
-
-            <div className={styles.participante_sala}>
-              <div>
-
-                <label>Participante 3:</label>
-                <input
-                  type="text"
-                  name="participante3"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-              <div>
-                <label>Sala:</label>
-                <input
-                  type="text"
-                  name="participantesala3"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-            </div>
-
-            <div className={styles.participante_sala}>
-              <div>
-
-                <label>Participante 4:</label>
-                <input
-                  type="text"
-                  name="participante4"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-              <div>
-                <label>Sala:</label>
-                <input
-                  type="text"
-                  name="participantesala4"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-            </div>
-
-            <div className={styles.participante_sala}>
-              <div>
-                <label>Participante 5:</label>
-                <input
-                  type="text"
-                  name="participante5"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-              <div>
-                <label>Sala:</label>
-                <input
-                  type="text"
-                  name="participantesala5"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-            </div>
-            <div className={styles.participante_sala}>
-              <div>
-
-                <label>Participante 6:</label>
-                <input
-                  type="text"
-                  name="participante6"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-              <div>
-                <label>Sala:</label>
-                <input
-                  type="text"
-                  name="participantesala6"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-            </div>
-            <div className={styles.participante_sala}>
-              <div>
-
-                <label>Participante 7:</label>
-                <input
-                  type="text"
-                  name="participante7"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-              <div>
-                <label>Sala:</label>
-                <input
-                  type="text"
-                  name="participantesala7"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-            </div>
-            <div className={styles.participante_sala}>
-              <div>
-                <label>Participante 8:</label>
-                <input
-                  type="text"
-                  name="participante8"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-              <div>
-                <label>Sala:</label>
-                <input
-                  type="text"
-                  name="participantesala8"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-            </div>
-            <div className={styles.participante_sala}>
-              <div>
-                <label>Participante 9:</label>
-                <input
-                  type="text"
-                  name="participante9"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-              <div>
-                <label>Sala:</label>
-                <input
-                  type="text"
-                  name="participantesala9"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-            </div>
-            <div className={styles.participante_sala}>
-              <div>
-
-                <label>Participante 10:</label>
-                <input
-                  type="text"
-                  name="participante10"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-              <div>
-                <label>Sala:</label>
-                <input
-                  type="text"
-                  name="participantesala10"
-                  onChange={handleChange}
-                  className={styles.participantes}
-                />
-              </div>
-            </div>
-          </div>
-
           <label>Modalidade:</label>
           <select
             name="modalidade"
@@ -361,6 +152,35 @@ const CadastroPopup = ({ isOpen, onClose, modalities, setError, fetchTeams }) =>
                 </option>
               ))}
           </select>
+
+          <h2 className={styles.title}>Participantes:</h2>
+
+          <div className={styles.labelpart}>
+            {Array.from({ length: playerLimit }, (_, i) => (
+              <div key={i} className={styles.participante_sala}>
+                <div>
+                  <label>Participante {i + 1}:</label>
+                  <input
+                    type="text"
+                    name={`participante${i + 1}`}
+                    onChange={handleChange}
+                    className={styles.participantes}
+                  />
+                </div>
+                <div>
+                  <label>Sala:</label>
+                  <input
+                    type="text"
+                    name={`participantesala${i + 1}`}
+                    onChange={handleChange}
+                    className={styles.participantes}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+
 
           <label>Imagem:</label>
           <input

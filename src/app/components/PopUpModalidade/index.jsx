@@ -111,7 +111,7 @@ const FormularioModalidade = ({ isOpen, onClose, campeonato_id, onModalidadeAdde
               onChange={handleChange}
               required
               className={Styles.input}
-              placeholder="Limite de Jogadores" />
+              placeholder="Limite de Jogadores por Equipe" />
             <input
               type="number"
               name="value"
