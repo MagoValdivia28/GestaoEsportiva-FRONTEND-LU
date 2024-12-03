@@ -23,6 +23,7 @@ const Confrontos = ({ idPartida, data, confrontos }) => {
         const data = {
             winner: true,
             tie: false,
+            pontos: 100,
             updAtIdUser: user.id
         };
         const response = await updateConfronto(selectedWinner.confrontoid, data, acessToken);
@@ -68,7 +69,15 @@ const Confrontos = ({ idPartida, data, confrontos }) => {
                                     <button className={styles.exitButton} onClick={() => handlepopUpConfronto()}>X</button>
                                 </div>
                                 <h2>Editar Confronto</h2>
-                                <h2>Vencedor: {winTimeName}</h2>
+                                {
+                                    confrontos[0].winner ? (
+                                        <h3>{confrontos[0].time.nome} Venceu</h3>
+                                    ) : confrontos[1].winner ? (
+                                        <h3>{confrontos[1].time.nome} Venceu</h3>
+                                    ) : (
+                                        <h3>Empate</h3>
+                                    )
+                                }
                                 <h3>{data}</h3>
                                 <div className={styles.time_container}>
                                     <div className={styles.group_container}>
