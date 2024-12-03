@@ -6,10 +6,12 @@ import { useContext } from 'react';
 import logo from "@/assets/imagens/logo.png";
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const FormAuth = ({ setError }) => {
   const [name, setName] = useState(null);
   const [password, setPassword] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
   const { login } = useContext(AuthContext);
 
@@ -48,7 +50,12 @@ const FormAuth = ({ setError }) => {
         </div>
         <div className={styles.formdiv2}>
           <label htmlFor="password">Senha</label>
-          <input onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" required />
+          <div className={styles.passwordContainer}>
+            <input onChange={(e) => setPassword(e.target.value)} type={showPassword ? "text" : "password"} id="password" name="password" required />
+            <span onClick={() => setShowPassword(!showPassword)} className={styles.eyeIcon}>
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
         </div>
         <button onClick={handleLogin} className={styles.submitButton}>Entrar</button>
       </div>
