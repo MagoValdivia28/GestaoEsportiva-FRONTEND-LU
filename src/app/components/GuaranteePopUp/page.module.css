@@ -1,0 +1,55 @@
+.guarantee {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 8;
+}
+
+.guarantee__content {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  animation: fadeIn 0.3s ease;
+}
+
+.guarantee__title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.guarantee__message {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.guarantee__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.guarantee__button {
+  padding: 10px 30px;
+  background: #af1912;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.guarantee__button:hover {
+  background: #870f0c;
+  transform: scale(1.05);
+}

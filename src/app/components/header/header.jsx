@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef, useContext } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { FaUser } from "react-icons/fa";
-import styles from "./header.module.css";
-import logo from "@/assets/imagens/logo.png";
-import { AuthContext } from "@/src/contexts/AuthContext";
-import { logout } from "@/src/actions/user";
+import { useState, useEffect, useRef, useContext } from 'react';
+import Link from 'next/link';
+import styles from './header.module.css';
+import logo from '@/assets/imagens/logo.png';
+import Image from 'next/image';
+import { FaUser } from 'react-icons/fa';
+import { logout } from '@/src/actions/user';
+import { AuthContext } from '@/src/contexts/AuthContext';
 
 const Header = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -25,9 +25,9 @@ const Header = () => {
     };
 
     useEffect(() => {
-        document.addEventListener("mousedown", handleClickOutside);
+        document.addEventListener('mousedown', handleClickOutside);
         return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener('mousedown', handleClickOutside);
         };
     }, []);
 
@@ -36,38 +36,21 @@ const Header = () => {
         logout(response);
         localStorage.clear();
         window.location.reload();
-    };
+    }
 
     return (
         <header className={styles.header}>
-            {/* Logo e link para a home */}
-            <Link href="/" className={styles.logoContainer}>
-                <Image src={logo} alt="Logo SENAI" className={styles.logo} width={120} height={120} />
+            <Link className={styles.buttonHome} href={"/"}>
+                <Image src={logo} className={styles.logo} width={130} height={130} />
             </Link>
 
-            {/* Navegação */}
-            <nav className={styles.nav}>
-                <Link href="/campeonatos" className={styles.navItem}>
-                    Campeonatos
-                </Link>
-                <Link href="/aapm" className={styles.navItem}>
-                    AAPM
-                </Link>
-                <Link href="/sobre" className={styles.navItem}>
-                    Sobre
-                </Link>
-            </nav>
-
-            {/* Ícone do perfil */}
-            <div className={styles.profileContainer}>
+            <div className={styles.profileIcon}>
                 <button className={styles.profileButton} onClick={togglePopup}>
                     <FaUser size={20} />
                 </button>
                 {showPopup && (
                     <div ref={popupRef} className={styles.popup}>
-                        <button className={styles.logoutButton} onClick={handleLogout}>
-                            Logout
-                        </button>
+                        <button className={styles.logoutButton} onClick={handleLogout}>Logout</button>
                     </div>
                 )}
             </div>

@@ -9,6 +9,7 @@ import { updateConfronto } from "@/src/actions/api";
 import { useParams } from "next/navigation";
 import { AuthContext } from '@/src/contexts/AuthContext';
 import PopUpError from '@/src/app/components/PopUpError';
+import Guarantee from '@/src/app/components/GuaranteePopUp';
 
 const ModalidadeTruePage = ({ modalidade, teams }) => {
   const { user, acessToken } = useContext(AuthContext);
@@ -19,6 +20,7 @@ const ModalidadeTruePage = ({ modalidade, teams }) => {
   const [popUp, setPopUp] = useState(false);
   const { atvId } = useParams();
   const [popUpMessage, setPopUpMessage] = useState(null);
+  const [popUpGuarantee, setPopUpGuarantee] = useState(null);
 
   const handleAddWinner = () => {
     setShowModal(true);
@@ -33,7 +35,7 @@ const ModalidadeTruePage = ({ modalidade, teams }) => {
     const response = await updateConfronto(confrontoParams.confrontoid, data, acessToken);
     if (response.status == "sucess") {
       setSelectedWinner(confrontoParams.time);
-      setShowModal(false);
+      setPopUpGuarantee(false);
     } else {
       setPopUpMessage({
         status: "error",
@@ -44,6 +46,11 @@ const ModalidadeTruePage = ({ modalidade, teams }) => {
       }, 2000);
     }
   };
+
+  const handlePopUps = (confrontoParams) => {
+    setShowModal(false);
+    setPopUpGuarantee(confrontoParams);
+  }
 
   const handleGenerate = async () => {
     if (!dateInput) {
@@ -155,7 +162,8 @@ const ModalidadeTruePage = ({ modalidade, teams }) => {
                 <li
                   key={confronto.confrontos[0].confrontoid}
                   className={styles.modalTeamItem}
-                  onClick={() => handleSelectWinner(confronto.confrontos[0])}
+                  // onClick={() => handleSelectWinner(confronto.confrontos[0])}
+                  onClick={() => handlePopUps(confronto.confrontos[0])}
                 >
                   {confronto.confrontos[0].time.nome}
                 </li>
@@ -176,6 +184,15 @@ const ModalidadeTruePage = ({ modalidade, teams }) => {
             </div>
           </div>
         </div>
+      )}
+      {popUpGuarantee && (
+        <Guarantee
+          title="Confirmação"
+          message={`Deseja confirmar o time ${popUpGuarantee.time.nome} como vencedor?`}
+          close={() => setPopUpGuarantee(false)}
+          advance={() => handleSelectWinner(popUpGuarantee)}
+          txtAdvance="Confirmar"
+        />
       )}
       {popUpMessage && <PopUpError error={popUpMessage} />}
     </div>
