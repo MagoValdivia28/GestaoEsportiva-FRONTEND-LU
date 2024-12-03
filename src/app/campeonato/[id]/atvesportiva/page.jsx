@@ -8,10 +8,11 @@ import Header from '@/src/app/components/header/header';
 import { getAPI } from '@/src/actions/api';
 import { useParams } from 'next/navigation';
 import FormularioModalidade from '@/src/app/components/PopUpModalidade';
+import ButtonBack from '@/src/app/components/ButtonBack/page';
 
 const Gestaoesportes = () => {
   const { id } = useParams();
-  const router = useRouter(); 
+  const router = useRouter();
   const [teams, setTeams] = useState([]);
   const [modalities, setModalities] = useState([]);
   const [showModal, setShowModal] = useState(false); // Novo estado para controle do modal
@@ -46,14 +47,14 @@ const Gestaoesportes = () => {
   };
 
   const handleRoute = (modalidade) => {
-     router.push(`/campeonato/${id}/atvesportiva/${modalidade.id}`);
+    router.push(`/campeonato/${id}/atvesportiva/${modalidade.id}`);
   }
 
   return (
     <div className={styles.main_div}>
       <Header />
-
       <div className={styles.container}>
+        <ButtonBack />
         <h2 className={styles.h2Title}> Placar do evento atual</h2>
         <List_times teams={teams} />
       </div>
@@ -65,10 +66,10 @@ const Gestaoesportes = () => {
         </div>
 
         <div className={styles.modalidades}>
-        {
+          {
             modalities.length > 0 && modalities.map((modality) => (
               <CardModality onClick={() => handleRoute(modality)} key={modality.id} title={modality.nome_modalidade} />
-            )) 
+            ))
           }
           <button onClick={handleAddModality} className={styles.addButton}>+</button>
         </div>

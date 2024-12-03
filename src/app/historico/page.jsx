@@ -5,8 +5,11 @@ import Image from 'next/image';
 import Logo from '../../../assets/imagens/logo.png';
 import { getAPI } from '@/src/actions/api';
 import Header from '../components/header/header';
+import { useRouter } from 'next/navigation';
+import ButtonBack from '../components/ButtonBack/page';
 
 const Historico = () => {
+  const router = useRouter();
   const [showModal, setShowModal] = useState(false);
   const [selectedCampeonato, setSelectedCampeonato] = useState(null);
   const [campeonatos, setCampeonatos] = useState([])
@@ -42,6 +45,7 @@ const Historico = () => {
     <main className={styles.container}>
       <Header />
       <h1 className={styles.title}>
+        <ButtonBack />
         <span className={styles.titleRed}>Histórico</span>
         <span className={styles.titleBlack}> de Campeonatos</span>
       </h1>

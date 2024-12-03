@@ -2,6 +2,7 @@
 import styles from './page.module.css';
 import { useRouter, useParams } from 'next/navigation';
 import Header from '../../components/header/header';
+import ButtonBack from '@/src/app/components/ButtonBack/page';
 
 const CampeonatoDetails = () => {
   const router = useRouter();
@@ -22,6 +23,7 @@ const CampeonatoDetails = () => {
       <Header />
       <div className={styles.container}>
 
+        <ButtonBack />
         <h1 className={styles.title}>
           <span className={styles.titleRed}>Gerenciamento</span>
           <span className={styles.titleBlack}> de Atividades</span>
