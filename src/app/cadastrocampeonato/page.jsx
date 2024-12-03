@@ -1,13 +1,12 @@
 "use client"
 import { useRouter } from 'next/navigation';
 import styles from './page.module.css';
-import { LiaArrowCircleLeftSolid } from "react-icons/lia";
-import Link from 'next/link';
 import { createCampeonato } from '@/src/actions/api';
 import { useContext, useState } from 'react';
 import PopUpError from '@/src/app/components/PopUpError';
 import Header from '../components/header/header';
 import { AuthContext } from '@/src/contexts/AuthContext';
+import ButtonBack from '../components/ButtonBack/page';
 
 const CadastroCampeonato = () => {
   const router = useRouter();
@@ -16,15 +15,6 @@ const CadastroCampeonato = () => {
   const [data_final, setDataFinal] = useState(null);
   const [error, setError] = useState(null);
   const { acessToken } = useContext(AuthContext);
-
-  const handleProfileClick = () => {
-    alert('Perfil clicado!');
-  };
-
-  const handleBack = (e) => {
-    e.preventDefault();
-    router.back();
-  };
 
   const handleSubmit = async () => {
     if (!nome || !data_inicio || !data_final) {
@@ -50,10 +40,11 @@ const CadastroCampeonato = () => {
     <>
       <Header />
       <div className={styles.container}>
-          <h1 className={styles.title}>
-            <span className={styles.titleRed}>Cadastro</span>
-            <span className={styles.titleBlack}>de Campeonatos</span>
-          </h1>
+        <h1 className={styles.title}>
+          <ButtonBack />
+          <span className={styles.titleRed}>Cadastro</span>
+          <span className={styles.titleBlack}>de Campeonatos</span>
+        </h1>
         <div className={styles.form}>
 
           <div className={styles.formdiv1}>
@@ -71,7 +62,6 @@ const CadastroCampeonato = () => {
               <input onChange={(e) => setDataFinal(e.target.value)} type="date" id="dateEnd" name="daeEnd" required />
             </div>
           </div>
-
 
           <button onClick={handleSubmit} className={styles.submitButton}>Cadastrar</button>
         </div>
