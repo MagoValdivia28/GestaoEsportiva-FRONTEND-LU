@@ -19,23 +19,30 @@ const ModalidadeTruePage = ({ modalidade, teams }) => {
   const [popUp, setPopUp] = useState(false);
   const { atvId } = useParams();
   const [popUpMessage, setPopUpMessage] = useState(null);
-  const [confrontosData, setConfrontosData] = useState(null);
 
   const handleAddWinner = () => {
     setShowModal(true);
   };
 
   const handleSelectWinner = async (confrontoParams) => {
-    console.log(confrontoParams);
     const data = {
       winner: true,
       tie: false,
       updAtIdUser: user.id
     };
-    const response = await updateConfronto(confrontoParams.confrontoid, data, "acessToken");
-    console.log(response);
-    setSelectedWinner(confrontoParams.time);
-    setShowModal(false);
+    const response = await updateConfronto(confrontoParams.confrontoid, data, acessToken);
+    if (response.status == "sucess") {
+      setSelectedWinner(confrontoParams.time);
+      setShowModal(false);
+    } else {
+      setPopUpMessage({
+        status: "error",
+        message: response.message,
+      });
+      setTimeout(() => {
+        setPopUpMessage(null);
+      }, 2000);
+    }
   };
 
   const handleGenerate = async () => {
@@ -74,10 +81,19 @@ const ModalidadeTruePage = ({ modalidade, teams }) => {
   useEffect(() => {
     const fetchConfrontos = async () => {
       const response = await getAPI("partidas/confrontos/", atvId);
-      console.log(response);
       setPartidasData(response);
     };
     fetchConfrontos();
+  }, []);
+
+  useEffect(() => {
+    const fetchWinner = async () => {
+      const response = await getAPI("confrontos/modalidade/", atvId);
+      if (response.status == "sucess") {
+        setSelectedWinner(response.confrontos[0]);
+      }
+    }
+    fetchWinner();
   }, []);
 
   return (
@@ -133,7 +149,7 @@ const ModalidadeTruePage = ({ modalidade, teams }) => {
       {showModal && (
         <div className={styles.modalOverlay}>
           <div className={styles.modal}>
-            <h3 onClick={() => console.log(partidasData)}>Selecione o time vencedor</h3>
+            <h3>Selecione o time vencedor</h3>
             <ul>
               {partidasData && partidasData.data.map((confronto) => (
                 <li
@@ -141,7 +157,7 @@ const ModalidadeTruePage = ({ modalidade, teams }) => {
                   className={styles.modalTeamItem}
                   onClick={() => handleSelectWinner(confronto.confrontos[0])}
                 >
-                  {confronto.confronto.confrontos[0].time.nome}
+                  {confronto.confrontos[0].time.nome}
                 </li>
               ))}
             </ul>
