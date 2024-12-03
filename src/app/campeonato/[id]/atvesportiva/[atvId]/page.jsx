@@ -33,10 +33,6 @@ const GdeAtividade = () => {
         fetchModalidade();
     }, [atvId]);
 
-    if (!modalidade) {
-        return <div>Loading...</div>;
-    }
-
     return (
         <main className={styles.main_div}>
             <Header />

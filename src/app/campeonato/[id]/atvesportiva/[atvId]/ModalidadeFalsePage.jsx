@@ -39,7 +39,7 @@ const ModalidadeFalsePage = ({ teams }) => {
       </ul>
       {
         popUp && (
-          <CreateConfronto onClick={() => setPopUp(false)} />
+          <CreateConfronto onClick={() => setPopUp(false)} teams={teams} />
         )
       }
     </div>

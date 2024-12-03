@@ -28,14 +28,13 @@ const CampeonatoDetails = () => {
         </h1>
         <div className={styles.line}></div>
         <div className={styles.cardContainer}>
-          <div className={styles.card} onClick={navigateToTeamManagement}>
-            <div>
-              <p>Gerenciamento de Equipe</p>
-            </div>
-          </div>
           <div className={styles.card2} onClick={navigateToModalidadeManagement}>
             <p>Modalidades</p>
           </div>
+          <div className={styles.card} onClick={navigateToTeamManagement}>
+            <p>Gerenciamento de Equipe</p>
+          </div>
+
         </div>
       </div>
     </>
