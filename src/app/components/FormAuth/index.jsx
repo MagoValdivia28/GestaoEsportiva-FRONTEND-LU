@@ -15,7 +15,7 @@ const FormAuth = ({ setError }) => {
 
   const handleLogin = async () => {
     try {
-      if(name && password) {
+      if (name && password) {
         const response = await login(name, password);
         setError(response);
         setTimeout(() => {
@@ -25,7 +25,7 @@ const FormAuth = ({ setError }) => {
           }
         }, 3000);
       } else {
-        setError({status: "error", message: "Preencha todos os campos"});
+        setError({ status: "error", message: "Preencha todos os campos" });
         setTimeout(() => {
           setError(null);
         }, 3000);
@@ -43,7 +43,7 @@ const FormAuth = ({ setError }) => {
       <div className={styles.form}>
         <h1 id={styles.h1}>Login</h1>
         <div className={styles.formdiv1}>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="name">Nome</label>
           <input onChange={(e) => setName(e.target.value)} type="text" id="name" name="name" required />
         </div>
         <div className={styles.formdiv2}>
