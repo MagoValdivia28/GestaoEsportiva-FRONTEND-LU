@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation';
 import { getAPI } from '@/src/actions/api';
 import PopUpError from '@/src/app/components/PopUpError';
 import Header from '../components/header/header';
+import Footer from '../components/footer/page';
 import adicionarmodal from '../../../assets/imagens/adicionar.jpg';
 
 const geCampeonatos = () => {
@@ -25,7 +26,7 @@ const geCampeonatos = () => {
       const response = await getAPI('campeonatos/date/', formattedDate);
       if (response.message) {
         setError(response);
-        setTimeout(() => setError(null), 1500);
+        setTimeout(() => setError(null), 1000); // Reduced timeout
       } else {
         setCampeonato(response);
       }
@@ -65,6 +66,7 @@ const geCampeonatos = () => {
       </main>
 
       {error && <PopUpError error={error} />}
+      <Footer />
     </div>
   );
 };

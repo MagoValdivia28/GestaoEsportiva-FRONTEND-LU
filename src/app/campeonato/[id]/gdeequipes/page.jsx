@@ -4,13 +4,15 @@ import styles from './page.module.css';
 import CadastroPopup from '@/src/app/components/PopUpEquipes';
 import Header from '@/src/app/components/header/header';
 import { FaSearch } from "react-icons/fa";
-import { useEffect, useState } from 'react';
+import { use, useContext, useEffect, useState } from 'react';
 import Equipes from '@/src/app/components/equipes/equipes';
-import { getAPI, updateTeamStatus } from '@/src/actions/api';
+import { getAPI, updateTeamStatus, deleteEquipe } from '@/src/actions/api';
 import { useParams } from 'next/navigation';
 import PopUpError from '@/src/app/components/PopUpError';
+import { AuthContext } from '@/src/contexts/AuthContext';
 
 const GdeEquipes = () => {
+    const { acessToken } = useContext(AuthContext);
     const { id } = useParams();
     const [error, setError] = useState(null);
     const [approvedTeams, setApprovedTeams] = useState([]);
@@ -53,7 +55,7 @@ const GdeEquipes = () => {
     }, [isOpen, teamDetailsOpen]);
 
     const handleApprove = async (team) => {
-        const updated = await updateTeamStatus(team.time_id, 'aprovada');
+        const updated = await updateTeamStatus(team.time_id, team.time_nome, team.time_sala, team.modalidade_id, 'aprovada', team.pontos, acessToken);
         if (updated) {
             setPendingTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
             setApprovedTeams((prev) => [...prev, { ...team, status: 'aprovada' }]);
@@ -61,12 +63,39 @@ const GdeEquipes = () => {
     };
 
     const handleReject = async (team) => {
-        const updated = await updateTeamStatus(team.time_id, 'rejeitada');
+        console.log(team);
+
+        const updated = await updateTeamStatus(team.time_id, team.time_nome, team.time_sala, team.modalidade_id, 'rejeitada', team.pontos, acessToken);;
+        // console.log(updated);
+
         if (updated) {
             setPendingTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
             setRejectedTeams((prev) => [...prev, { ...team, status: 'rejeitada' }]);
         }
     };
+
+    const handlePending = async (team) => {
+        const updated = await updateTeamStatus(team.time_id, team.time_nome, team.time_sala, team.modalidade_id, 'pendente', team.pontos, acessToken);
+        closeTeamDetails();
+        if (updated) {
+            setRejectedTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
+            setPendingTeams((prev) => [...prev, { ...team, status: 'pendente' }]);
+        }
+    };
+
+    const handleDelete = async (team) => {
+        const response = await deleteEquipe(team.time_id, acessToken);
+        closeTeamDetails();
+        window.location.reload();
+        if (response.status === 'sucess') {
+            setRejectedTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
+        } else {
+            setError(response.message);
+            setTimeout(() => setError(null), 1000); // Reduced timeout
+        }
+    };
+
+
 
     const handleSearch = (e) => {
         const search = e.target.value;
@@ -76,6 +105,8 @@ const GdeEquipes = () => {
     };
 
     const openTeamDetails = (team) => {
+        console.log(team);
+
         setSelectedTeam(team);
         setTeamDetailsOpen(true);
     };
@@ -121,6 +152,7 @@ const GdeEquipes = () => {
                             nameTeam={team.time_nome}
                             members={team.jogadores}
                             onClick={() => openTeamDetails(team)}
+
                         />
                     ))
                 ) : (
@@ -184,6 +216,7 @@ const GdeEquipes = () => {
                 </div>
             )}
 
+
             {teamDetailsOpen && selectedTeam && (
                 <div className={styles.overlay}>
                     <div className={styles.popup}>
@@ -195,7 +228,16 @@ const GdeEquipes = () => {
                                 <li key={index}>{jogador.nome}</li>
                             ))}
                         </ul>
-                        <button onClick={closeTeamDetails}>Fechar</button>
+                        {
+                            selectedTeam.status === 'rejeitada' && (
+                                <div className={styles.actions}>
+                                    <button onClick={() => handleDelete(selectedTeam)} className={styles.approveButton}>Excluir</button>
+                                    <button onClick={() => handlePending(selectedTeam)} className={styles.rejectButton}>Voltar para pendente</button>
+
+                                </div>
+                            )
+                        }
+                        <button onClick={() => closeTeamDetails()} className={styles.rejectButton}>Fechar</button>
                     </div>
                 </div>
             )}

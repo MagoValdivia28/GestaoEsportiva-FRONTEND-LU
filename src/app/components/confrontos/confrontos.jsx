@@ -11,6 +11,7 @@ const Confrontos = ({ idPartida, data, confrontos }) => {
 
     const handleDelete = async () => {
         const response = await deleteConfronto(idPartida, acessToken);
+        window.location.reload();
         console.log(response);
     };
 

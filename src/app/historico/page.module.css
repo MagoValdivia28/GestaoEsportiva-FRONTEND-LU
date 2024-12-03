@@ -5,6 +5,7 @@
   color: #333;
   text-align: center;
   position: relative;
+  
 }
 
 .logo {
@@ -167,8 +168,56 @@
   color: #b71c1c;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-} 
+/* Responsividade para telas menores que 800px */
+@media (max-width: 800px) {
+  .title {
+    text-align: center; /* Centraliza o título */
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .titleRed {
+    font-size: 2.5rem; /* Reduz o tamanho do título */
+  }
+
+  .titleBlack {
+    font-size: 1.8rem; /* Reduz o tamanho do título */
+  }
+
+  .line {
+    width: 90%; /* Aumenta a linha para se ajustar melhor */
+  }
+
+  .cardsContainer {
+    flex-direction: column; /* Coloca os cards em coluna em vez de linha */
+    align-items: center;
+  }
+
+  .card {
+    width: 70%; /* Cards mais largos em telas pequenas */
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .modal {
+    width: 90%; /* Aumenta a largura do modal em telas menores */
+    padding: 1rem;
+  }
+
+  .modalImage {
+    width: 100%; /* Faz a imagem do modal se ajustar à tela */
+    height: auto;
+  }
+
+  .card h2 {
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte */
+  }
+
+  .card h3 {
+    font-size: 1rem; /* Ajusta o tamanho da fonte */
+  }
+
+  .card p {
+    font-size: 0.85rem; /* Ajusta o tamanho da fonte */
+  }
+}

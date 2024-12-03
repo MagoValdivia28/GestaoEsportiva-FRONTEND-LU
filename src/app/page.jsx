@@ -5,7 +5,7 @@ import styles from './page.module.css';
 import Header from './components/header/header';
 import { AuthContext } from '@/src/contexts/AuthContext';
 import { useContext } from 'react';
-
+import Footer from './components/footer/page';
 
 export default function Home() {
   const { user } = useContext(AuthContext);
@@ -32,7 +32,7 @@ export default function Home() {
       <section className={styles.heroSection}>
         <div className={styles.blur}>
           <div className={styles.heroOverlay}>
-            <Header />
+      <Header />
             <div className={styles.heroContent}>
               <div className={styles.logo} />
 
@@ -49,9 +49,7 @@ export default function Home() {
       {/* Boas-vindas e Gerenciar Campeonatos */}
       <section className={styles.welcomeSection}>
         <div className={styles.linhavermelha} />
-        {
-          user.nome ? <h2><span>Seja</span> <span className={styles.highligext}>bem vindo(a) {user.nome}!</span></h2> : <h2><span>Seja</span> <span className={styles.highligext}>bem vindo(a)!</span></h2>
-        }
+        <h2><span>Seja</span> <span className={styles.highligext}>bem vindo(a){user.nome ? ` ${user.nome}` : ''}!</span></h2>
         <div className={styles.championshipsManagement}>
           <div className={styles.championshipCard} onClick={handleGerenciarCampeonatosClick}>
             <div className={styles.trophyImage}>
@@ -71,6 +69,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

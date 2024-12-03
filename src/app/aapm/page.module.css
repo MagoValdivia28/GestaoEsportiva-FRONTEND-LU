@@ -179,3 +179,94 @@
     margin-left: 6rem;
     margin-bottom: 3rem;
 }
+
+@media (max-width: 800px) {
+
+    /* Ajustando o layout da hero_section (imagem e texto) */
+    .hero_section {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .aapm { display: none; 
+    }
+
+    .p_text {
+        font-size: 1.0rem; /* Ajuste de fonte para leitura em telas menores */
+        width: 90%;
+        text-align: center; /* Centraliza o texto */
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+    }
+
+    .title {
+        font-size: 2rem; /* Ajuste para tamanhos menores */
+        margin-left: 0;
+        text-align: center;
+    }
+
+    /* Ajuste das seções sobre a AAPM e benefícios */
+    .about_section,
+    .benefits_section {
+        width: 95%;
+        margin: 2rem auto;
+        padding: 1.5rem;
+    }
+
+    .text_container h1,
+    .text_container h2 {
+        font-size: 2rem; /* Ajuste para títulos */
+    }
+
+    .benefits_container {
+        display: block;
+        text-align: center;
+    }
+
+    .benefit_card {
+        width: 100%;
+        max-width: 350px;
+        margin: 1rem auto;
+        padding: 1.5rem;
+    }
+
+    .benefit_card h3 {
+        font-size: 1.1rem; /* Ajuste do tamanho da fonte */
+    }
+
+    .benefit_card p {
+        font-size: 0.9rem;
+        margin-top: 1rem;
+    }
+
+    .icon {
+        font-size: 2rem; /* Ajuste no tamanho dos ícones */
+    }
+
+    /* Ajustes no texto do sobre a AAPM */
+    .text_container p {
+        font-size: 1rem; /* Tamanho de texto para dispositivos menores */
+        text-align: center;
+    }
+
+    /* Ajustes na linha vermelha entre seções */
+    .redline {
+        width: 90%; /* Reduz a largura da linha para dispositivos menores */
+        margin: 0 auto;
+    }
+
+    /* Ajustes no layout geral */
+    .main_container {
+        padding: 2rem;
+    }
+
+    .text_container h1 {
+    color: #ad0000;
+    font-size: 2rem; /* Ajuste para tamanhos menores */
+    margin-left: 0;
+    text-align: center;
+}
+}

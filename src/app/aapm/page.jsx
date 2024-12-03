@@ -11,8 +11,8 @@ import aapm from "../../../assets/imagens/aapmimg2.webp";
 const Aapm = () => {
     return (
         <main className={styles.main_container}>
-            <div className={styles.header_container}>
                 <Header className={styles.header} />
+            <div className={styles.header_container}>
             </div>
 
             
@@ -25,6 +25,7 @@ const Aapm = () => {
                         Caros alunos,
                         Ao contribuir com a AAPM (Associação de Apoio aos Pais e Mestres), você ajuda a melhorar seu dia a dia no SENAI!
                         <br />
+                
                         💡 Benefícios para você:
                         Melhor infraestrutura para estudos e aulas práticas;
                         Organização de eventos esportivos com mais qualidade;
