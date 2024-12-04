@@ -4,13 +4,14 @@ import styles from './page.module.css';
 import CadastroPopup from '@/src/app/components/PopUpEquipes';
 import Header from '@/src/app/components/header/header';
 import { FaSearch } from "react-icons/fa";
-import { use, useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Equipes from '@/src/app/components/equipes/equipes';
 import { getAPI, updateTeamStatus, deleteEquipe } from '@/src/actions/api';
 import { useParams } from 'next/navigation';
 import PopUpError from '@/src/app/components/PopUpError';
 import { AuthContext } from '@/src/contexts/AuthContext';
 import Guarantee from '@/src/app/components/GuaranteePopUp';
+import ButtonBack from '@/src/app/components/ButtonBack/page';
 
 const GdeEquipes = () => {
     const { acessToken } = useContext(AuthContext);
@@ -129,6 +130,7 @@ const GdeEquipes = () => {
             <Header />
             <div className={styles.container_times}>
                 <h1 className={styles.title}>
+                    <ButtonBack />
                     <span className={styles.titleRed}>Gerenciamento</span>
                     <span className={styles.titleBlack}> de Equipe</span>
                 </h1>

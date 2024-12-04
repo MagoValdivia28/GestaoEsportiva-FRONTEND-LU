@@ -1,6 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import styles from './page.module.css';
 import List_times from '@/src/app/components/list_times/list_times';
 import CardModality from '@/src/app/components/CardModality/page';
@@ -8,13 +8,15 @@ import Header from '@/src/app/components/header/header';
 import { getAPI } from '@/src/actions/api';
 import { useParams } from 'next/navigation';
 import FormularioModalidade from '@/src/app/components/PopUpModalidade';
+import ButtonBack from '@/src/app/components/ButtonBack/page';
 
 const Gestaoesportes = () => {
   const { id } = useParams();
-  const router = useRouter(); 
+  const router = useRouter();
   const [teams, setTeams] = useState([]);
   const [modalities, setModalities] = useState([]);
   const [showModal, setShowModal] = useState(false); // Novo estado para controle do modal
+  const [confrontos, setConfrontos] = useState([]);
 
   useEffect(() => {
     const fetchTeams = async () => {
@@ -27,6 +29,9 @@ const Gestaoesportes = () => {
     };
     fetchTeams();
   }, []);
+
+
+
 
   const fetchModalidades = async () => {
     const data = await getAPI('modalidades/campeonato/', id);
@@ -46,14 +51,14 @@ const Gestaoesportes = () => {
   };
 
   const handleRoute = (modalidade) => {
-     router.push(`/campeonato/${id}/atvesportiva/${modalidade.id}`);
+    router.push(`/campeonato/${id}/atvesportiva/${modalidade.id}`);
   }
 
   return (
     <div className={styles.main_div}>
       <Header />
-
       <div className={styles.container}>
+        <ButtonBack />
         <h2 className={styles.h2Title}> Placar do evento atual</h2>
         <List_times teams={teams} />
       </div>
@@ -65,10 +70,10 @@ const Gestaoesportes = () => {
         </div>
 
         <div className={styles.modalidades}>
-        {
+          {
             modalities.length > 0 && modalities.map((modality) => (
               <CardModality onClick={() => handleRoute(modality)} key={modality.id} title={modality.nome_modalidade} />
-            )) 
+            ))
           }
           <button onClick={handleAddModality} className={styles.addButton}>+</button>
         </div>
