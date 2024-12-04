@@ -28,7 +28,9 @@
 }
 
 
-
+.add{
+    display: block;
+}
 .title {
     padding: 2%;
     margin-bottom: 10px;
@@ -64,4 +66,11 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
+}
+
+
+@media (max-width: 768px) {
+    .add {
+        display: none; /* Ocultar em telas menores que 768px */
+    }
 }

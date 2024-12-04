@@ -1,129 +1,73 @@
 .container {
-  padding: 20px;
-  height: 100vh;
-  background-color: #f9f9f9;
-  color: #333;
-  text-align: center;
-  position: relative;
-
+  padding: 2rem;
+  background-color: #f4f4f4; /* Background color substituído diretamente */
+  min-height: 100vh;
 }
 
-.backButton {
-  background-color: #f0f0f0;
-  color: #333;
-  border: 2px solid #ccc;
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s, transform 0.3s;
-  margin-right: 10px;
+.header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.backButton:hover {
-  background-color: #e0e0e0;
-  transform: scale(1.1);
-}
-
-.logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 120px;
-  height: auto;
-}
-
-.title {
-  text-align: left;
-  margin-left: 15%;
-  margin-bottom: 10px;
-
+  margin-bottom: 1rem;
 }
 
 .titleRed {
-  color: #d32f2f;
-  font-size: 3.5rem;
+  color: #d32f2f; /* Primary color */
+  font-size: 2.5rem;
 }
 
 .titleBlack {
-  color: #212121;
-  font-size: 2.2rem;
-  margin-left: 8px;
+  color: #333; /* Secondary color */
+  font-size: 2rem;
   font-weight: 500;
+  margin-left: 0.5rem;
 }
 
 .line {
-  width: 75%;
-  height: 3px;
-  background-color: #d32f2f;
-  margin: 20px auto;
-  border-radius: 1.5px;
-}
-
-.linecard {
-  width: 50%;
-  height: 3px;
-  background-color: #d32f2f;
-  border-radius: 1.5px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
+  width: 90%;
+  height: 4px;
+  background-color: #d32f2f; /* Primary color */
+  margin: 1rem auto;
+  border-radius: 2px;
 }
 
 .cardsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-  padding-bottom: 4rem;
-  padding-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 .card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  width: 200px;
-  height: 250px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background: #fff; /* Card background */
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition time substituído */
   cursor: pointer;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-.image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.card h2 {
-  font-size: 0.8rem;
-  margin-bottom: 8px;
-  color: #424242;
-  margin-top: 4rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card h3 {
-  font-size: 1.1rem;
-  color: #424242;
-  font-weight: bold;
-  margin-top: 1rem;
+  color: #333; /* Secondary color */
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
 }
 
-.card p {
-  font-size: 0.95rem;
-  color: #616161;
-  margin-bottom: 4px;
+.linecard {
+  width: 50%;
+  height: 2px;
+  background-color: #d32f2f; /* Primary color */
+  margin: 0.5rem auto;
+}
+
+.noneCamp {
+  color: #888; /* Text-muted color */
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 /* Modal Styles */
@@ -133,127 +77,34 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-
 }
 
 .modal {
-  background-color: #fff;
-  padding: 1.5rem;
-  width: 85%;
-  max-width: 450px;
-  height: auto;
+  background: #fff; /* Card background */
+  padding: 2rem;
   border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
   text-align: center;
   position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 0.3s ease;
-}
-
-.modal h3 {
-  font-size: 1.1rem;
-  color: #424242;
-  font-weight: bold;
-}
-
-;
-
-.modal h2 {
-  font-size: 2rem;
-  color: #424242;
-  font-weight: bold;
-}
-
-;
-
-.modalImage {
-  width: 25rem;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
 }
 
 .closeButton {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 1rem;
+  right: 1rem;
   background: none;
   border: none;
-  font-size: 2rem;
-  color: #d32f2f;
+  font-size: 1.5rem;
+  color: #d32f2f; /* Primary color */
   cursor: pointer;
-  transition: color 0.2s ease;
 }
 
 .closeButton:hover {
-  color: #b71c1c;
-}
-
-/* Responsividade para telas menores que 800px */
-@media (max-width: 800px) {
-  .title {
-    text-align: center;
-    /* Centraliza o título */
-    margin-left: 0;
-    margin-top: 20px;
-  }
-
-  .titleRed {
-    font-size: 2.5rem;
-    /* Reduz o tamanho do título */
-  }
-
-  .titleBlack {
-    font-size: 1.8rem;
-    /* Reduz o tamanho do título */
-  }
-
-  .line {
-    width: 90%;
-    /* Aumenta a linha para se ajustar melhor */
-  }
-
-  .cardsContainer {
-    flex-direction: column;
-    /* Coloca os cards em coluna em vez de linha */
-    align-items: center;
-  }
-
-  .card {
-    width: 70%;
-    /* Cards mais largos em telas pequenas */
-    height: auto;
-    margin-bottom: 20px;
-  }
-
-  .modal {
-    width: 90%;
-    /* Aumenta a largura do modal em telas menores */
-    padding: 1rem;
-  }
-
-  .modalImage {
-    width: 100%;
-    /* Faz a imagem do modal se ajustar à tela */
-    height: auto;
-  }
-
-  .card h2 {
-    font-size: 0.9rem;
-    /* Ajusta o tamanho da fonte */
-  }
-
-  .card h3 {
-    font-size: 1rem;
-    /* Ajusta o tamanho da fonte */
-  }
-
-  .card p {
-    font-size: 0.85rem;
-    /* Ajusta o tamanho da fonte */
-  }
+  color: #333; /* Secondary color */
 }
