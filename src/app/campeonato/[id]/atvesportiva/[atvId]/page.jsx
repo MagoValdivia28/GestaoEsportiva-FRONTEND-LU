@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Header from "@/src/app/components/header/header";
 import ModalidadeTruePage from "./ModalidadeTruePage";
 import ModalidadeFalsePage from "./ModalidadeFalsePage";
+import Footer from "@/src/app/components/footer/page";
 
 const GdeAtividade = () => {
     const { atvId } = useParams();
@@ -34,6 +35,7 @@ const GdeAtividade = () => {
     }, [atvId]);
 
     return (
+        <>
         <main className={styles.main_div}>
             <Header />
             <h2 className={styles.h2Title}>
@@ -46,7 +48,9 @@ const GdeAtividade = () => {
                 <ModalidadeFalsePage teams={teams} />
             )}
         </main>
-    );
+            <Footer />
+            </>
+        );
 };
 
 export default GdeAtividade;

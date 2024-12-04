@@ -18,23 +18,25 @@ const CadastroCampeonato = () => {
 
   const handleSubmit = async () => {
     if (!nome || !data_inicio || !data_final) {
-      setError({ message: 'Preencha todos os campos!' });
-      setTimeout(() => {
-        setError(null);
-      }, 2000); // Reduced timeout
+        setError({ message: 'Preencha todos os campos!' });
+        setTimeout(() => {
+            setError(null);
+        }, 2000); // Reduced timeout
     } else {
-      console.log(acessToken);
+        console.log(acessToken);
 
-      const response = await createCampeonato(nome, data_inicio, data_final, acessToken);
-      setError(response);
-      setTimeout(() => {
-        setError(null);
-        if (response.status === "sucess") {
-          router.push('/campeonato');
-        }
-      }, 2000); // Reduced timeout
+        const response = await createCampeonato(nome, data_inicio, data_final, acessToken);
+        setError(response);
+        setTimeout(() => {
+            setError(null);
+            if (response.status === "sucess") {
+                router.push('/campeonato');
+            } else if (response.message == "Acesso não autorizado" || response.message == "Token não autorizado") {
+                router.push('/login');
+            }
+        }, 2000); // Reduced timeout
     }
-  };
+};
 
   return (
     <>

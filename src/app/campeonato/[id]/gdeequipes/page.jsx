@@ -12,8 +12,10 @@ import PopUpError from '@/src/app/components/PopUpError';
 import { AuthContext } from '@/src/contexts/AuthContext';
 import Guarantee from '@/src/app/components/GuaranteePopUp';
 import ButtonBack from '@/src/app/components/ButtonBack/page';
+import { useRouter } from 'next/navigation';
 
 const GdeEquipes = () => {
+    const router = useRouter();
     const { acessToken } = useContext(AuthContext);
     const { id } = useParams();
     const [error, setError] = useState(null);
@@ -98,7 +100,14 @@ const GdeEquipes = () => {
             setTimeout(() => setError(null), 1000); // Reduced timeout
             fetchTeams();
             closeTeamDetails();
-        } else {
+        } else if (response.message == "Acesso não autorizado" || response.message == "Token não autorizado") {
+            setError({ status: 'error', message: response.message });
+            setTimeout(() => {
+                setError(null);
+                router.push('/login');
+            }, 1000); // Reduced timeout
+        }
+        else {
             setError({ status: 'error', message: response.message });
             setTimeout(() => setError(null), 1000); // Reduced timeout
         }
@@ -238,16 +247,16 @@ const GdeEquipes = () => {
                                 <li key={index}>{jogador.nome}</li>
                             ))}
                         </ul>
-                            {
-                                selectedTeam.status === 'rejeitada' && (
-                                    <div className={styles.actions}>
-                                        <button onClick={() => handleDelete(selectedTeam)} className={styles.approveButton}>Excluir</button>
-                                        <button onClick={() => handlePending(selectedTeam)} className={styles.backbutton}>Voltar para pendente</button>
+                        {
+                            selectedTeam.status === 'rejeitada' && (
+                                <div className={styles.actions}>
+                                    <button onClick={() => handleDelete(selectedTeam)} className={styles.approveButton}>Excluir</button>
+                                    <button onClick={() => handlePending(selectedTeam)} className={styles.backbutton}>Voltar para pendente</button>
 
-                                    </div>
-                                )
-                            }
-                            <button onClick={() => closeTeamDetails()} className={styles.rejectButton}>Fechar</button>
+                                </div>
+                            )
+                        }
+                        <button onClick={() => closeTeamDetails()} className={styles.rejectButton}>Fechar</button>
 
                     </div>
                 </div>

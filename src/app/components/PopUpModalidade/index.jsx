@@ -5,8 +5,10 @@ import { FaX } from "react-icons/fa6";
 import { createModalidade } from '@/src/actions/api';
 import PopUpError from '../PopUpError';
 import { AuthContext } from '@/src/contexts/AuthContext';
+import { useRouter } from 'next/navigation';
 
 const FormularioModalidade = ({ isOpen, onClose, campeonato_id, onModalidadeAdded }) => {
+  const router = useRouter();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const { acessToken } = useContext(AuthContext);
   const [error, setError] = useState(false);
@@ -47,12 +49,14 @@ const FormularioModalidade = ({ isOpen, onClose, campeonato_id, onModalidadeAdde
       setTimeout(() => {
         setError(false);
       }, 3000);
+      router.push('/login');
     }
     if (response.message == "Token não autorizado") {
       setError(true);
       setTimeout(() => {
         setError(false);
       }, 3000);
+      router.push('/login');
     }
     if (response.status == "sucess") {
       setIsPopupOpen(true);

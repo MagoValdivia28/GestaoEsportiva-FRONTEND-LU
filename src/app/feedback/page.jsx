@@ -18,22 +18,42 @@ const FeedBack = () => {
     const [feedback, setFeedback] = useState('');
     const [response, setResponse] = useState('');
     const [respondingTo, setRespondingTo] = useState(null);
+    const [isMobile, setIsMobile] = useState(false);
 
-    const sendFeedBack = () => {
-        if (!feedback) {
-            alert('O campo de feedback não pode estar vazio');
+    const sendFeedBack = async () => {
+        if (!nomeUsuario || !comentario || nota === 0) {
+            alert('Por favor, preencha todos os campos.');
             return;
         }
 
-        emailjs.send('service_1q7z5qf', 'template_1q7z5qf', { message: feedback }, 'user_1q7z5qf')
-            .then(response => {
-                console.log("Feedback enviado com sucesso!", response.status, response.text);
-                setFeedback('');
-            })
-            .catch(error => {
-                console.error("Erro ao enviar feedback:", error);
+        try {
+            const response = await fetch('http://localhost:5000/enviar-feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    nome_usuario: nomeUsuario,
+                    comentario: comentario,
+                    nota: nota,
+                }),
             });
+
+            if (response.ok) {
+                alert('Feedback enviado com sucesso!');
+                setNomeUsuario('');
+                setComentario('');
+                setNota(0);
+            } else {
+                alert('Erro ao enviar feedback.');
+            }
+        } catch (error) {
+            console.error('Erro ao enviar feedback:', error);
+            alert('Erro ao enviar feedback.');
+        }
     };
+
+
 
     useEffect(() => {
         const getAllFeedBacks = async () => {
@@ -46,6 +66,17 @@ const FeedBack = () => {
             }
         };
         getAllFeedBacks();
+
+        // Detecta se a tela é mobile
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Verifica a tela no carregamento
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     const handleRespondClick = (index) => {
@@ -62,7 +93,7 @@ const FeedBack = () => {
             const responseAPI = await updateFeedback(id, response);
             console.log("Resposta enviada com sucesso:", responseAPI);
 
-            // Update feedbacks to reflect the new response in the UI
+            // Atualiza os feedbacks na UI
             setFeedbacks(prevFeedbacks =>
                 prevFeedbacks.map(feedback =>
                     feedback.id === id ? { ...feedback, resposta: response } : feedback
@@ -87,7 +118,6 @@ const FeedBack = () => {
                     <p>Página destinada ao gerenciamento de feedbacks e opiniões dos clientes, com o objetivo de melhorar a qualidade dos nossos serviços e produtos.</p>
                 </div>
                 <div className={styles.aboutImage}>
-                   
                 </div>
             </section>
 
@@ -105,7 +135,46 @@ const FeedBack = () => {
                     <p>Respeito, transparência e trabalho em equipe.</p>
                 </div>
             </section>
+            <div className={styles.sendfeedback}>
+                {isMobile && (
+                    <section className={styles.feedbackForm}>
+                        <h3>Deixe seu Feedback</h3>
 
+                        {/* Nome do usuário */}
+                        <input
+                            type="text"
+                            className={styles.feedbackInput}
+                            onChange={(e) => setNomeUsuario(e.target.value)}
+                            placeholder="Digite seu nome"
+                        />
+
+                        {/* Comentário */}
+                        <textarea
+                            className={styles.feedbackInput}
+                            onChange={(e) => setComentario(e.target.value)}
+                            placeholder="Digite seu feedback aqui..."
+                        />
+
+                        {/* Nota */}
+                        <select
+                            className={styles.feedbackInput}
+                            onChange={(e) => setNota(Number(e.target.value))}
+                        >
+                            <option value={0}>Selecione a nota</option>
+                            <option value={1}>1</option>
+                            <option value={2}>2</option>
+                            <option value={3}>3</option>
+                            <option value={4}>4</option>
+                            <option value={5}>5</option>
+                        </select>
+
+                        {/* Botão de envio */}
+                        <button className={styles.sendButton} onClick={sendFeedBack}>
+                            Enviar Feedback
+                        </button>
+                    </section>
+                )}
+            </div>
             <section className={styles.receivedFeedbacks}>
                 <h2>Feedbacks Recebidos</h2>
                 <div className={styles.feedbackList}>
@@ -133,7 +202,7 @@ const FeedBack = () => {
                                     </div>
                                     <p>data: {formattedDate}</p>
 
-                                    {!feedback.resposta && respondingTo !== index && (
+                                    {!feedback.resposta && respondingTo !== index && !isMobile && (
                                         <button
                                             className={styles.replyButton}
                                             onClick={() => handleRespondClick(index)}
@@ -173,6 +242,7 @@ const FeedBack = () => {
                     )}
                 </div>
             </section>
+
             <Footer />
         </main>
     );
