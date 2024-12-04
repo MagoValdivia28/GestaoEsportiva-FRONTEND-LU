@@ -236,16 +236,17 @@ const GdeEquipes = () => {
                                 <li key={index}>{jogador.nome}</li>
                             ))}
                         </ul>
-                        {
-                            selectedTeam.status === 'rejeitada' && (
-                                <div className={styles.actions}>
-                                    <button onClick={() => handleDelete(selectedTeam)} className={styles.approveButton}>Excluir</button>
-                                    <button onClick={() => handlePending(selectedTeam)} className={styles.rejectButton}>Voltar para pendente</button>
+                            {
+                                selectedTeam.status === 'rejeitada' && (
+                                    <div className={styles.actions}>
+                                        <button onClick={() => handleDelete(selectedTeam)} className={styles.approveButton}>Excluir</button>
+                                        <button onClick={() => handlePending(selectedTeam)} className={styles.backbutton}>Voltar para pendente</button>
 
-                                </div>
-                            )
-                        }
-                        <button onClick={() => closeTeamDetails()} className={styles.rejectButton}>Fechar</button>
+                                    </div>
+                                )
+                            }
+                            <button onClick={() => closeTeamDetails()} className={styles.rejectButton}>Fechar</button>
+
                     </div>
                 </div>
             )}

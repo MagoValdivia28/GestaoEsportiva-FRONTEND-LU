@@ -120,7 +120,8 @@
   justify-content: center;
   align-items: center;
   z-index: 18;
-  overflow: hidden; /* Prevent scrolling */
+  overflow: hidden;
+  /* Prevent scrolling */
 }
 
 /* Estilos para o popup */
@@ -139,12 +140,14 @@
 
 .popup2 {
   background-color: #fff;
-  border: 3px solid #ff0000; /* Borda vermelha */
+  border: 3px solid #ff0000;
+  /* Borda vermelha */
   border-radius: 15px;
   padding: 25px;
   width: 90%;
   max-width: 550px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Sombra mais destacada */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  /* Sombra mais destacada */
   animation: slideIn 0.4s ease-in-out;
   position: relative;
 }
@@ -154,7 +157,8 @@
   font-size: 1.8rem;
   color: #333;
   text-align: center;
-  border-bottom: 2px solid #ff0000; /* Linha decorativa vermelha */
+  border-bottom: 2px solid #ff0000;
+  /* Linha decorativa vermelha */
   padding-bottom: 10px;
   font-weight: bold;
 }
@@ -168,7 +172,8 @@
 }
 
 .popup ul {
-  list-style-type: disc; /* Marcadores de lista */
+  list-style-type: disc;
+  /* Marcadores de lista */
 }
 
 .popup ul li {
@@ -181,7 +186,7 @@
   display: block;
   margin: 20px auto 0;
   padding: 12px 20px;
-  background-color: #ff0000; /* Botão vermelho */
+  background-color: #ff0000;
   color: white;
   font-size: 1.1rem;
   border: none;
@@ -192,7 +197,8 @@
 
 .popup button:hover {
   background-color: #cc0000;
-  transform: scale(1.05); /* Feedback ao passar o mouse */
+  transform: scale(1.05);
+  /* Feedback ao passar o mouse */
 }
 
 .close-button {
@@ -208,28 +214,64 @@
 }
 
 .close-button:hover {
-  transform: rotate(90deg); /* Animação ao passar o mouse */
+  transform: rotate(90deg);
+  /* Animação ao passar o mouse */
   color: #cc0000;
+}
+
+/* .divbtns{
+  display: flex;
+  justify-content: space-between;
+} */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.approveButton {
+  background-color: #fff !important;
+  border: #f44336 2px solid !important;
+  width: 10rem;
+  height: 3.5rem;
+  color: #000 !important;
+
+}
+
+.backbutton {
+  background-color: #fff !important;
+  border: #f44336 2px solid !important;
+  width: 10rem;
+  height: 3.5rem;
+  color: #000 !important;
+}
+
+.rejectButton {
+  background-color: #f44336 !important;
+  width: 10rem;
+  height: 3.5rem;
 }
 
 /* Animações */
 @keyframes fadeInOverlay {
   from {
-      opacity: 0;
+    opacity: 0;
   }
+
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
 @keyframes slideIn {
   from {
-      transform: translateY(-30px);
-      opacity: 0;
+    transform: translateY(-30px);
+    opacity: 0;
   }
+
   to {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 

@@ -11,6 +11,7 @@ import { getAPI } from '@/src/actions/api';
 import { updateFeedback } from '@/src/actions/api';
 import feedbackimg from '../../../assets/imagens/feedbackLu.jpg';
 import Image from 'next/image';
+import Footer from '../components/footer/page';
 
 const FeedBack = () => {
     const [feedbacks, setFeedbacks] = useState([]);
@@ -172,6 +173,7 @@ const FeedBack = () => {
                     )}
                 </div>
             </section>
+            <Footer />
         </main>
     );
 };
