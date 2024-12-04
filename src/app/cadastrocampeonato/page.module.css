@@ -227,3 +227,10 @@
   margin-top: 28rem;
   margin-left: -9rem;
 }
+
+@media (max-width: 768px) {
+  .add {
+    display: none;
+    /* Ocultar em telas menores que 768px */
+  }
+}

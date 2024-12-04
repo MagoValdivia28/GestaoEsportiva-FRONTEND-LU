@@ -12,7 +12,7 @@ const Guarantee = ({ title, message, close, advance, txtAdvance }) => {
           <button className={styles.guarantee__button} onClick={close}>
             Fechar
           </button>
-          <button className={styles.guarantee__button} onClick={advance}>
+          <button className={styles.guarantee__button1} onClick={advance}>
             {txtAdvance}
           </button>
         </div>
