@@ -7,6 +7,7 @@ import PopUpError from '@/src/app/components/PopUpError';
 import Header from '../components/header/header';
 import { AuthContext } from '@/src/contexts/AuthContext';
 import ButtonBack from '../components/ButtonBack/page';
+import Footer from '../components/footer/page';
 
 const CadastroCampeonato = () => {
   const router = useRouter();
@@ -69,6 +70,7 @@ const CadastroCampeonato = () => {
         </div>
       </div>
       {error && <PopUpError error={error} />}
+      <Footer />
     </>
   );
 };
