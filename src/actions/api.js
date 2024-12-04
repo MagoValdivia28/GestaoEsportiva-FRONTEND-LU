@@ -1,6 +1,7 @@
 "use server";
 
 import axios from "axios";
+import { execOnce } from "next/dist/shared/lib/utils";
 const api = process.env.EXPO_PUBLIC_API_URL;
 
 export const getAPI = async (path, id, query) => {
@@ -84,6 +85,24 @@ export const createEquipe = async (nameParams, salaParams, modalidade_idParams, 
         }
     }
 };
+
+export const createFeedback = async (nome_usuario, comentario, nota, resposta) => {
+    try {
+        const response = await axios.post(`${api}/feedback`, {
+            nome_usuario,
+            comentario,
+            nota,
+            resposta
+        });
+        return response.data;
+    } catch (error) {
+        if (error.response) {
+            return error.response.data;
+        } else {
+            return { status: "error", message: "Erro ao criar feedback." };
+        }
+    }
+}
 
 // Função para atualizar o status de uma equipe
 export const updateTeamStatus = async (teamId, teamName, teamClassroom, teamMod, newStatus, teamPoints, acessToken) => {
