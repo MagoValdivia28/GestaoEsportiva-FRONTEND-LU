@@ -72,6 +72,13 @@ const Confrontos = ({ idPartida, data, confrontos }) => {
     const handlepopUpConfronto = (confrontos, idPartida) => {
         setPopUpConfronto(!popUpConfronto);
     };
+    const formattedDate = data 
+    ? new Date(data).toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    })
+    : 'Data inválida';
 
     return (
         <>
@@ -132,7 +139,7 @@ const Confrontos = ({ idPartida, data, confrontos }) => {
             )}
             <li className={styles.confronto}>
                 <div className={styles.date_container}>
-                    <h3 className={styles.date}>{data}</h3>
+                    <h3 className={styles.date}>{formattedDate}</h3>
                     <div className={styles.icons_container}>
                         <FaRegEdit onClick={() => handlepopUpConfronto(confrontos, idPartida)} className={styles.icon} />
                         <HiOutlineTrash onClick={() => handleDelete()} className={styles.icon} />
