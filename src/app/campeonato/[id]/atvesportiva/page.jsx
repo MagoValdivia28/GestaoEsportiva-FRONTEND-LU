@@ -1,6 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import styles from './page.module.css';
 import List_times from '@/src/app/components/list_times/list_times';
 import CardModality from '@/src/app/components/CardModality/page';
@@ -16,6 +16,7 @@ const Gestaoesportes = () => {
   const [teams, setTeams] = useState([]);
   const [modalities, setModalities] = useState([]);
   const [showModal, setShowModal] = useState(false); // Novo estado para controle do modal
+  const [confrontos, setConfrontos] = useState([]);
 
   useEffect(() => {
     const fetchTeams = async () => {
@@ -28,6 +29,9 @@ const Gestaoesportes = () => {
     };
     fetchTeams();
   }, []);
+
+
+
 
   const fetchModalidades = async () => {
     const data = await getAPI('modalidades/campeonato/', id);
