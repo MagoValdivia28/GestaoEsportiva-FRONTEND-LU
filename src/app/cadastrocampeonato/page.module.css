@@ -5,7 +5,7 @@
   justify-content: center;
   height: 100vh;
   margin-bottom: 3%;
-  margin-top: 5% ;
+  margin-top: 5%;
 }
 
 .title {
@@ -13,7 +13,7 @@
   margin-right: 20%;
   margin-bottom: 4%;
   margin-top: 2%;
-  
+
 }
 
 .titleRed {
@@ -199,9 +199,24 @@
 }
 
 .backButton {
-  border: none;
-  text-decoration: none;
-  color: #000;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.backButton:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.1);
 }
 
 .divdatas {

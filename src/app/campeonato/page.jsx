@@ -4,20 +4,19 @@ import styles from './page.module.css';
 import futzin from '../../../assets/imagens/criajogando.jpg';
 import historico from '../../../assets/imagens/historico.jpg';
 import adicionar from '../../../assets/imagens/graminha.jpg';
-import Image from 'next/image';
-import { FaUser } from 'react-icons/fa';
 import Card from '../components/Card/page';
 import { useRouter } from 'next/navigation';
 import { getAPI } from '@/src/actions/api';
 import PopUpError from '@/src/app/components/PopUpError';
 import Header from '../components/header/header';
 import Footer from '../components/footer/page';
-import adicionarmodal from '../../../assets/imagens/adicionar.jpg';
+import { BlinkBlur } from 'react-loading-indicators';
 
 const geCampeonatos = () => {
   const router = useRouter();
   const [error, setError] = useState(null);
   const [campeonato, setCampeonato] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchCampeonato = async () => {
@@ -30,6 +29,7 @@ const geCampeonatos = () => {
       } else {
         setCampeonato(response);
       }
+      setLoading(false);
     };
     fetchCampeonato();
   }, []);
@@ -56,7 +56,9 @@ const geCampeonatos = () => {
           <Card title="Adicionar" imageUrl={adicionar} onClick={handleAddClick} />
           <Card title="Histórico" imageUrl={historico} onClick={handleHistoricoClick} />
           {
-            campeonato && (
+            loading ? (
+              <BlinkBlur color="#cf0d0d" size="medium" />
+            ) : (
               campeonato.map((item) => (
                 <Card onClick={() => handleRoute(item.id)} key={item.id} title={item.titulo} imageUrl={futzin} />
               ))

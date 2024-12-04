@@ -1,7 +1,6 @@
 "use server";
 
 import axios from "axios";
-import { logout } from "./user";
 const api = process.env.EXPO_PUBLIC_API_URL;
 
 export const getAPI = async (path, id, query) => {

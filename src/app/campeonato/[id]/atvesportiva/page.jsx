@@ -8,6 +8,7 @@ import Header from '@/src/app/components/header/header';
 import { getAPI } from '@/src/actions/api';
 import { useParams } from 'next/navigation';
 import FormularioModalidade from '@/src/app/components/PopUpModalidade';
+import ButtonBack from '@/src/app/components/ButtonBack/page';
 
 const Gestaoesportes = () => {
   const { id } = useParams();
@@ -56,8 +57,8 @@ const Gestaoesportes = () => {
   return (
     <div className={styles.main_div}>
       <Header />
-
       <div className={styles.container}>
+        <ButtonBack />
         <h2 className={styles.h2Title}> Placar do evento atual</h2>
         <List_times teams={teams} />
       </div>
