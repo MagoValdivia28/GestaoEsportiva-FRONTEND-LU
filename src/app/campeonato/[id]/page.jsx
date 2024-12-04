@@ -3,6 +3,7 @@ import styles from './page.module.css';
 import { useRouter, useParams } from 'next/navigation';
 import Header from '../../components/header/header';
 import ButtonBack from '@/src/app/components/ButtonBack/page';
+import Footer from '../../components/footer/page';
 
 const CampeonatoDetails = () => {
   const router = useRouter();
@@ -39,6 +40,7 @@ const CampeonatoDetails = () => {
 
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

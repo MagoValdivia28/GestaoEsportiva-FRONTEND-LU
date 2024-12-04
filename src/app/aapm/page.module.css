@@ -103,10 +103,10 @@
 }
 
 .title {
-    font-size: 6rem;
+    font-size: 5rem;
     color: #ad0000;
     margin-bottom: 1rem;
-    margin-left: 6rem;
+    margin-left: 3rem;
 }
 
 .benefit_card h3 {
@@ -168,15 +168,22 @@
 .aapm {
     border-radius: 10px;
     margin-right: 5rem;
-    margin-top: 9.5rem;
+    margin-top: 15rem;
 
 }
 
 .redline {
     height: 0.3rem;
     background: #ad0000;
-    margin-right: 6rem;
-    margin-left: 6rem;
+    margin-right: 5rem;
+    margin-left: 5rem;
+    margin-bottom: 3rem;
+}
+
+.redline1 {
+    height: 0.3rem;
+    background: #ad0000;
+    margin-left: 1.7rem;
     margin-bottom: 3rem;
 }
 
@@ -189,13 +196,16 @@
         padding: 2rem;
     }
 
-    .aapm { display: none; 
+    .aapm {
+        display: none;
     }
 
     .p_text {
-        font-size: 1.0rem; /* Ajuste de fonte para leitura em telas menores */
+        font-size: 1.0rem;
+        /* Ajuste de fonte para leitura em telas menores */
         width: 90%;
-        text-align: center; /* Centraliza o texto */
+        text-align: center;
+        /* Centraliza o texto */
         margin-bottom: auto;
         margin-left: auto;
         margin-right: auto;
@@ -203,7 +213,8 @@
     }
 
     .title {
-        font-size: 2rem; /* Ajuste para tamanhos menores */
+        font-size: 2rem;
+        /* Ajuste para tamanhos menores */
         margin-left: 0;
         text-align: center;
     }
@@ -218,7 +229,8 @@
 
     .text_container h1,
     .text_container h2 {
-        font-size: 2rem; /* Ajuste para títulos */
+        font-size: 2rem;
+        /* Ajuste para títulos */
     }
 
     .benefits_container {
@@ -234,7 +246,8 @@
     }
 
     .benefit_card h3 {
-        font-size: 1.1rem; /* Ajuste do tamanho da fonte */
+        font-size: 1.1rem;
+        /* Ajuste do tamanho da fonte */
     }
 
     .benefit_card p {
@@ -243,18 +256,21 @@
     }
 
     .icon {
-        font-size: 2rem; /* Ajuste no tamanho dos ícones */
+        font-size: 2rem;
+        /* Ajuste no tamanho dos ícones */
     }
 
     /* Ajustes no texto do sobre a AAPM */
     .text_container p {
-        font-size: 1rem; /* Tamanho de texto para dispositivos menores */
+        font-size: 1rem;
+        /* Tamanho de texto para dispositivos menores */
         text-align: center;
     }
 
     /* Ajustes na linha vermelha entre seções */
     .redline {
-        width: 90%; /* Reduz a largura da linha para dispositivos menores */
+        width: 90%;
+        /* Reduz a largura da linha para dispositivos menores */
         margin: 0 auto;
     }
 
@@ -264,9 +280,10 @@
     }
 
     .text_container h1 {
-    color: #ad0000;
-    font-size: 2rem; /* Ajuste para tamanhos menores */
-    margin-left: 0;
-    text-align: center;
-}
+        color: #ad0000;
+        font-size: 2rem;
+        /* Ajuste para tamanhos menores */
+        margin-left: 0;
+        text-align: center;
+    }
 }
