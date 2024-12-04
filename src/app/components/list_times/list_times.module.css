@@ -49,12 +49,16 @@
 .info_container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  /* Ensure items are aligned in the center */
   background-color: white;
 }
 
 .info {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  /* Ensure items are aligned in the center */
   padding: 0 1.5rem;
   background-color: white;
 }
@@ -79,4 +83,62 @@
 .noTeamsText {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .placar {
+    width: 90%;
+    height: auto;
+    margin: 1rem;
+  }
+
+  .equipesXPontos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .infoPlacar {
+    font-size: 1rem;
+  }
+
+  .equipes {
+    padding: 0.5rem;
+  }
+
+  .info {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .grayline {
+    margin-top: 0.5rem;
+  }
+
+  .noTeamsText {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .placar {
+    width: 100%;
+    margin: 0.5rem;
+  }
+
+  .infoPlacar {
+    font-size: 0.8rem;
+  }
+
+  .equipes {
+    padding: 0.25rem;
+  }
+
+  .info {
+    padding: 0.25rem;
+  }
+
+  .noTeamsText {
+    font-size: 1rem;
+  }
 }

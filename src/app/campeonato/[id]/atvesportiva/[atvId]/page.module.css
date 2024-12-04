@@ -313,3 +313,96 @@
         transform: scale(1);
     }
 }
+
+@media (max-width: 768px) {
+    .confrontos_container {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .h2Title {
+        font-size: 2rem;
+    }
+
+    .btn {
+        width: 50%;
+    }
+
+    .main_div {
+        padding: 20px;
+    }
+
+    .modal {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .modalTitle {
+        font-size: 16px;
+    }
+
+    .modalInput {
+        padding: 8px;
+    }
+
+    .modalButton {
+        padding: 8px 15px;
+    }
+
+    .h2Title {
+        font-size: 2rem;
+    }
+
+    .timesTitle {
+        font-size: 1.5rem;
+    }
+
+    .teamList {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .teamItem {
+        padding: 15px;
+    }
+
+    .teamLogo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .teamName {
+        font-size: 1rem;
+    }
+
+    .addWinnerButton {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .winnerDisplay {
+        padding: 15px;
+        margin: 1rem auto;
+    }
+
+    .winnerDisplay h3 {
+        font-size: 1.2rem;
+    }
+
+    .winnerDisplay p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        width: 50%;
+    }
+
+    .confrontos_container {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .h2conf {
+        font-size: 2rem;
+    }
+}
