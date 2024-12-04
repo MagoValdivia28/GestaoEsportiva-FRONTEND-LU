@@ -13,6 +13,7 @@ import { AuthContext } from '@/src/contexts/AuthContext';
 import Guarantee from '@/src/app/components/GuaranteePopUp';
 import ButtonBack from '@/src/app/components/ButtonBack/page';
 import { useRouter } from 'next/navigation';
+import Footer from '@/src/app/components/footer/page';
 
 const GdeEquipes = () => {
     const router = useRouter();
@@ -277,7 +278,9 @@ const GdeEquipes = () => {
             )}
 
             {error && <PopUpError error={error} />}
+            <Footer />
         </div>
+        
     );
 }
 
