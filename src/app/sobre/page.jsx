@@ -13,9 +13,11 @@ import Header from '../components/header/header';
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import logo from '../../../assets/imagens/Novagenix.png'
+import Footer from '../components/footer/page';
 
 export default function Sobre() {
   return (
+    <>
     <div className={styles.container}>
       <Header />
     
@@ -171,6 +173,8 @@ export default function Sobre() {
 
       </div>
     </div>
+      <Footer />
+    </>
   );
 }
 
