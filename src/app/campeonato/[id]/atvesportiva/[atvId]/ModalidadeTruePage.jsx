@@ -11,8 +11,10 @@ import { AuthContext } from '@/src/contexts/AuthContext';
 import PopUpError from '@/src/app/components/PopUpError';
 import Guarantee from '@/src/app/components/GuaranteePopUp';
 import Footer from "@/src/app/components/footer/page";
+import { useRouter } from 'next/navigation';
 
 const ModalidadeTruePage = ({ modalidade, teams }) => {
+  const router = useRouter();
   const { user, acessToken } = useContext(AuthContext);
   const [showModal, setShowModal] = useState(false);
   const [dateInput, setDateInput] = useState(null);
@@ -37,13 +39,15 @@ const ModalidadeTruePage = ({ modalidade, teams }) => {
     if (response.status == "sucess") {
       setSelectedWinner(confrontoParams.time);
       setPopUpGuarantee(false);
-    } else {
+    }
+     else {
       setPopUpMessage({
         status: "error",
         message: response.message,
       });
       setTimeout(() => {
         setPopUpMessage(null);
+        router.push('/login');
       }, 2000);
     }
   };
