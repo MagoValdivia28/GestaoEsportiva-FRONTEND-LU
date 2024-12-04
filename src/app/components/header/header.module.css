@@ -1,3 +1,4 @@
+/* Estilos Gerais */
 .header {
     width: 100%;
     background-color: transparent;
@@ -8,64 +9,98 @@
     z-index: 2;
 }
 
-
 .logo:hover {
     cursor: pointer;
-
 }
 
 .profileIcon img {
     border-radius: 50%;
 }
 
+/* Estilos do Botão de Perfil */
 .profileButton {
-    background-color: #d9d9d9;
-    color: black;
+    background-color: #ffffff;
+    color: rgb(153, 21, 21);
     border-radius: 50%;
+    border: 3px solid #d32f2f;
     cursor: pointer;
     width: 3rem;
     height: 3rem;
     margin: 1.5rem;
-
+    transition: all 0.3s ease; /* Transição suave para o efeito hover */
 }
 
+.profileButton:hover {
+    background-color: #ffffff;
+    border: 3px solid #791717;
+    color: #4e0d0d;
+    transform: scale(1.1); /* Efeito de aumento suave no hover */
+}
+
+/* Estilos do Popup */
 .profileIcon {
     position: relative;
 }
 
-
 .popup {
     position: absolute;
-    top: 80%;
-    /* Ajuste conforme necessário */
+    width: 120px;
+    top: 90%;  /* Ajuste para garantir que o popup não se sobreponha ao botão */
     right: 0;
-    background-color: white;
-    border: 2px solid #d32f2f;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 8px; /* Bordas arredondadas mais suaves */
+    padding: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Sombra mais suave e sutil */
     display: flex;
     flex-direction: column;
+    border: 2px solid #d32f2f;
+    opacity: 0;
+    transform: translateY(-10px); /* Efetividade de animação */
+    pointer-events: none;
+    transition: all 0.3s ease; /* Transição suave para o popup */
 }
 
+.popup.show {
+    opacity: 1;
+    transform: translateY(0); /* Popup aparece com efeito de deslizamento */
+    pointer-events: auto;
+}
+
+/* Estilos do Botão de Logout */
 .logoutButton {
-    background-color: red;
+    background-color: #e74c3c;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px ;
     cursor: pointer;
-    margin: 5px 0;
+    border-radius: 5px; /* Bordas mais suaves */
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+    margin-top: 10px;
 }
 
+.logoutButton:hover {
+    background-color: #c0392b;
+    transform: scale(1.05); /* Efeito de aumento no hover */
+}
+
+.logoutButton:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Foco com sombra */
+}
+
+/* Botão de Login (se necessário) */
 .loginButton {
     background-color: rgb(58, 176, 255);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px 20px;
     cursor: pointer;
-    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
 }
 
-.logoutButton:hover {
-    background: #c0392b;
+.loginButton:hover {
+    background-color: rgb(38, 155, 227);
 }

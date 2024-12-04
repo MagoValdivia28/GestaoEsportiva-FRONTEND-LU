@@ -23,6 +23,19 @@
   margin-left: 15%;
 }
 
+@media (max-width: 768px) {
+  .title {
+    margin: 0;
+    text-align: center;
+    /* Ocultar em telas menores que 768px */
+  }
+
+  .card {
+    display: none;
+  }
+
+}
+
 .titleRed {
   color: #d32f2f;
   font-size: 3rem;
