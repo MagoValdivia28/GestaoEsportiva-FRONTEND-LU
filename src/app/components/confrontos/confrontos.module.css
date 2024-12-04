@@ -72,7 +72,7 @@
     font-weight: bold;
 
 }
-
+/* Container do pop-up */
 .confronto_containerBackground {
     position: fixed;
     top: 0;
@@ -85,27 +85,43 @@
     align-items: center;
     overflow: hidden;
     z-index: 1000;
-    border: 2px solid #dd2929;
 }
 
+/* Container do conteúdo do confronto */
 .confronto_container {
-    background: white;
-    padding: 30px;
+    background-color: #fff;
+    padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
     width: 100%;
+    max-width: 500px;
     text-align: center;
 }
 
+/* Título e subtítulos */
+.sla h2 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.sla h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+.sla{
+    text-align: right;
+}
+/* Contêiner dos times */
 .time_container {
     display: flex;
     justify-content: space-between;
-    margin-top: 6rem;
+    margin-top: 3rem;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 2rem;
 }
 
+/* Contêiner do grupo de cada time */
 .group_container {
     display: flex;
     flex-direction: column;
@@ -114,11 +130,13 @@
     position: relative;
 }
 
+/* Ícone de grupo */
 .group {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #767676;
 }
 
+/* Coroa do time vencedor */
 .crown {
     font-size: 2rem;
     color: gold;
@@ -128,79 +146,95 @@
     transform: rotate(45deg);
 }
 
+/* Contêiner dos botões */
 .btnContainer {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin-top: 2rem;
-    align-items: baseline;
+    gap: 1rem;
+    align-items: center;
 }
 
+/* Botão de sair */
 .exitButton {
-    padding: 10px 20px;
+    padding: 0.5rem 1rem;
     background-color: #dd2929;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    position: relative;
-    left: 9rem;
+    font-size: 1rem;
 }
 
+/* Botão de salvar */
 .saveButton {
-    padding: 10px 20px;
-    background-color: #838383;
+    padding: 0.5rem 1rem;
+    background-color: #2ec426;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    position: relative;
-    right: 9rem;
+    font-size: 1rem;
 }
 
-.sla {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sla h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-    position: relative;
-    left: 2rem;
-}
-
+/* Botões de vitória e empate */
 .buttonsContainer {
     display: flex;
-    margin-top: 2rem;
+    gap: 1rem;
     width: 100%;
-    align-content: center;
     justify-content: space-between;
-    align-items: stretch;
-    position: relative;
-    right: 3rem;
-
 }
 
-.winButton {
-    padding: 6px 12px;
-    background-color: #dd2929;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
+.winButton,
 .drawButton {
-    padding: 6px 12px;
-    background-color: #838383;
-    color: white;
+    padding: 0.5rem 1rem;
+    width: 30%;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
+    border: 2px solid #dd2929;
+}
+
+/* Botões de vitória */
+.winButton {
+    background-color: #ffffff;
+}
+
+/* Botão de empate */
+.drawButton {
+    background-color: #dd2929;
+    color: #ffffff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .confronto_container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .time_container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btnContainer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .buttonsContainer {
+        flex-direction: column;
+    }
+
+    .exitButton,
+    .saveButton,
+    .winButton,
+    .drawButton {
+        width: 100%;
+        font-size: 1.1rem;
+    }
 }

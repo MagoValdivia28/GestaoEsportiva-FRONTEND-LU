@@ -111,12 +111,12 @@ const Confrontos = ({ idPartida, data, confrontos }) => {
                                     </div>
                                 </div>
                                 <div className={styles.btnContainer}>
-                                    <button className={styles.saveButton} onClick={handleSelectWinner}>Salvar</button>
                                     <div className={styles.buttonsContainer}>
                                         <button className={styles.winButton} onClick={() => handleWin(confrontos[0], confrontos[1])}>{confrontos[0].time.nome} Venceu</button>
                                         <button className={styles.drawButton} onClick={() => handleDraw(confrontos[0], confrontos[1])}>Empate</button>
                                         <button className={styles.winButton} onClick={() => handleWin(confrontos[1], confrontos[0])}>{confrontos[1].time.nome} Venceu</button>
                                     </div>
+                                    <button className={styles.saveButton} onClick={handleSelectWinner}>Salvar</button>
 
 
                                 </div>
