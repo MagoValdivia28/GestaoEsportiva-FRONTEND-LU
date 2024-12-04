@@ -39,8 +39,21 @@
 
 .guarantee__button {
   padding: 10px 30px;
-  background: #af1912;
-  color: white;
+  background: #fff !important;
+  border: #f44336 2px solid !important;
+  color: #000 !important;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.guarantee__button1 {
+  padding: 10px 30px;
+  background: #fff !important;
+  border: #5ff436 2px solid !important;
+  color: #000 !important;
   border: none;
   border-radius: 8px;
   cursor: pointer;
