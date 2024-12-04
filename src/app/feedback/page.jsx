@@ -7,7 +7,7 @@ import { CgProfile } from "react-icons/cg";
 import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import Header from '../components/header/header';
-import { getAPI } from '@/src/actions/api';
+import { getAPI, createFeedback } from '@/src/actions/api';
 import { updateFeedback } from '@/src/actions/api';
 import feedbackimg from '../../../assets/imagens/feedbackLu.jpg';
 import Image from 'next/image';
@@ -20,6 +20,10 @@ const FeedBack = () => {
     const [respondingTo, setRespondingTo] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
 
+    const [nomeUsuario, setNomeUsuario] = useState('');
+    const [comentario, setComentario] = useState('');
+    const [nota, setNota] = useState(0);
+
     const sendFeedBack = async () => {
         if (!nomeUsuario || !comentario || nota === 0) {
             alert('Por favor, preencha todos os campos.');
@@ -27,25 +31,15 @@ const FeedBack = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/enviar-feedback', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    nome_usuario: nomeUsuario,
-                    comentario: comentario,
-                    nota: nota,
-                }),
-            });
+            const response = await createFeedback(nomeUsuario, comentario, nota);
+            console.log("Feedback enviado com sucesso:", response);
+
 
             if (response.ok) {
                 alert('Feedback enviado com sucesso!');
                 setNomeUsuario('');
                 setComentario('');
                 setNota(0);
-            } else {
-                alert('Erro ao enviar feedback.');
             }
         } catch (error) {
             console.error('Erro ao enviar feedback:', error);
@@ -79,6 +73,8 @@ const FeedBack = () => {
         };
     }, []);
 
+
+
     const handleRespondClick = (index) => {
         setRespondingTo(index);
     };
@@ -108,143 +104,143 @@ const FeedBack = () => {
 
     return (
         <>
-        <main className={styles.mainContainer}>
-            <Header />
-            <section className={styles.aboutSection}>
-                <div className={styles.aboutText}>
-                    <h1 className={styles.title}>
-                        <span className={styles.titleRed}>gerenciamento</span>
-                        <span className={styles.titleBlack}>dos FeedBacks</span>
-                    </h1>
-                    <p>Página destinada ao gerenciamento de feedbacks e opiniões dos clientes, com o objetivo de melhorar a qualidade dos nossos serviços e produtos.</p>
-                </div>
-                <div className={styles.aboutImage}>
-                </div>
-            </section>
+            <main className={styles.mainContainer}>
+                <Header />
+                <section className={styles.aboutSection}>
+                    <div className={styles.aboutText}>
+                        <h1 className={styles.title}>
+                            <span className={styles.titleRed}>gerenciamento</span>
+                            <span className={styles.titleBlack}>dos FeedBacks</span>
+                        </h1>
+                        <p>Página destinada ao gerenciamento de feedbacks e opiniões dos clientes, com o objetivo de melhorar a qualidade dos nossos serviços e produtos.</p>
+                    </div>
+                    <div className={styles.aboutImage}>
+                    </div>
+                </section>
 
-            <section className={styles.valuesSection}>
-                <div className={styles.valueCard}>
-                    <IoInformationCircleOutline className={styles.icon} />
-                    <p>Valores essenciais e o que nos motiva no dia a dia.</p>
-                </div>
-                <div className={styles.valueCard}>
-                    <TbCoins className={styles.icon} />
-                    <p>Compromisso com a excelência e desenvolvimento sustentável.</p>
-                </div>
-                <div className={styles.valueCard}>
-                    <CgProfile className={styles.icon} />
-                    <p>Respeito, transparência e trabalho em equipe.</p>
-                </div>
-            </section>
-            <div className={styles.sendfeedback}>
-                {isMobile && (
-                    <section className={styles.feedbackForm}>
-                        <h3>Deixe seu Feedback</h3>
+                <section className={styles.valuesSection}>
+                    <div className={styles.valueCard}>
+                        <IoInformationCircleOutline className={styles.icon} />
+                        <p>Valores essenciais e o que nos motiva no dia a dia.</p>
+                    </div>
+                    <div className={styles.valueCard}>
+                        <TbCoins className={styles.icon} />
+                        <p>Compromisso com a excelência e desenvolvimento sustentável.</p>
+                    </div>
+                    <div className={styles.valueCard}>
+                        <CgProfile className={styles.icon} />
+                        <p>Respeito, transparência e trabalho em equipe.</p>
+                    </div>
+                </section>
+                <div className={styles.sendfeedback}>
+                    {isMobile && (
+                        <section className={styles.feedbackForm}>
+                            <h3>Deixe seu Feedback</h3>
 
-                        {/* Nome do usuário */}
-                        <input
-                            type="text"
-                            className={styles.feedbackInput}
-                            onChange={(e) => setNomeUsuario(e.target.value)}
-                            placeholder="Digite seu nome"
-                        />
+                            {/* Nome do usuário */}
+                            <input
+                                type="text"
+                                className={styles.feedbackInput}
+                                onChange={(e) => setNomeUsuario(e.target.value)}
+                                placeholder="Digite seu nome"
+                            />
 
-                        {/* Comentário */}
-                        <textarea
-                            className={styles.feedbackInput}
-                            onChange={(e) => setComentario(e.target.value)}
-                            placeholder="Digite seu feedback aqui..."
-                        />
+                            {/* Comentário */}
+                            <textarea
+                                className={styles.feedbackInput}
+                                onChange={(e) => setComentario(e.target.value)}
+                                placeholder="Digite seu feedback aqui..."
+                            />
 
-                        {/* Nota */}
-                        <select
-                            className={styles.feedbackInput}
-                            onChange={(e) => setNota(Number(e.target.value))}
-                        >
-                            <option value={0}>Selecione a nota</option>
-                            <option value={1}>1</option>
-                            <option value={2}>2</option>
-                            <option value={3}>3</option>
-                            <option value={4}>4</option>
-                            <option value={5}>5</option>
-                        </select>
+                            {/* Nota */}
+                            <select
+                                className={styles.feedbackInput}
+                                onChange={(e) => setNota(Number(e.target.value))}
+                            >
+                                <option value={0}>Selecione a nota</option>
+                                <option value={1}>1</option>
+                                <option value={2}>2</option>
+                                <option value={3}>3</option>
+                                <option value={4}>4</option>
+                                <option value={5}>5</option>
+                            </select>
 
-                        {/* Botão de envio */}
-                        <button className={styles.sendButton} onClick={sendFeedBack}>
-                            Enviar Feedback
-                        </button>
-                    </section>
-                )}
-            </div>
-            <section className={styles.receivedFeedbacks}>
-                <h2>Feedbacks Recebidos</h2>
-                <div className={styles.feedbackList}>
-                    {feedbacks.length > 0 ? (
-                        feedbacks.map((feedback, index) => {
-                            const formattedDate = new Date(feedback.data).toLocaleDateString('pt-BR', {
-                                day: '2-digit',
-                                month: '2-digit',
-                                year: 'numeric'
-                            });
-
-                            return (
-                                <div key={feedback.id} className={styles.feedbackItem}>
-                                    <p>{feedback.nome_usuario}</p>
-                                    <p>{feedback.comentario}</p>
-                                    <div className={styles.rating}>
-                                        {[...Array(5)].map((_, i) => (
-                                            <span
-                                                key={i}
-                                                className={i < feedback.nota ? styles.starFilled : styles.starEmpty}
-                                            >
-                                                ★
-                                            </span>
-                                        ))}
-                                    </div>
-                                    <p>data: {formattedDate}</p>
-
-                                    {!feedback.resposta && respondingTo !== index && !isMobile && (
-                                        <button
-                                            className={styles.replyButton}
-                                            onClick={() => handleRespondClick(index)}
-                                        >
-                                            Responder
-                                        </button>
-                                    )}
-
-                                    {respondingTo === index && (
-                                        <div className={styles.replyContainer}>
-                                            <textarea
-                                                className={styles.replyInput}
-                                                value={response}
-                                                onChange={(e) => setResponse(e.target.value)}
-                                                placeholder="Escreva sua resposta..."
-                                            />
-                                            <button
-                                                className={styles.sendButton}
-                                                onClick={() => handleSubmitResponse(feedback.id)}
-                                            >
-                                                Enviar Resposta
-                                            </button>
-                                        </div>
-                                    )}
-
-                                    {feedback.resposta && (
-                                        <div className={styles.response}>
-                                            <strong>Resposta: </strong>
-                                            <p>{feedback.resposta}</p>
-                                        </div>
-                                    )}
-                                </div>
-                            );
-                        })
-                    ) : (
-                        <p>Nenhum feedback recebido ainda.</p>
+                            {/* Botão de envio */}
+                            <button className={styles.sendButton} onClick={sendFeedBack}>
+                                Enviar Feedback
+                            </button>
+                        </section>
                     )}
                 </div>
-            </section>
+                <section className={styles.receivedFeedbacks}>
+                    <h2>Feedbacks Recebidos</h2>
+                    <div className={styles.feedbackList}>
+                        {feedbacks.length > 0 ? (
+                            feedbacks.map((feedback, index) => {
+                                const formattedDate = new Date(feedback.data).toLocaleDateString('pt-BR', {
+                                    day: '2-digit',
+                                    month: '2-digit',
+                                    year: 'numeric'
+                                });
 
-        </main>
+                                return (
+                                    <div key={feedback.id} className={styles.feedbackItem}>
+                                        <p>{feedback.nome_usuario}</p>
+                                        <p>{feedback.comentario}</p>
+                                        <div className={styles.rating}>
+                                            {[...Array(5)].map((_, i) => (
+                                                <span
+                                                    key={i}
+                                                    className={i < feedback.nota ? styles.starFilled : styles.starEmpty}
+                                                >
+                                                    ★
+                                                </span>
+                                            ))}
+                                        </div>
+                                        <p>data: {formattedDate}</p>
+
+                                        {!feedback.resposta && respondingTo !== index && !isMobile && (
+                                            <button
+                                                className={styles.replyButton}
+                                                onClick={() => handleRespondClick(index)}
+                                            >
+                                                Responder
+                                            </button>
+                                        )}
+
+                                        {respondingTo === index && (
+                                            <div className={styles.replyContainer}>
+                                                <textarea
+                                                    className={styles.replyInput}
+                                                    value={response}
+                                                    onChange={(e) => setResponse(e.target.value)}
+                                                    placeholder="Escreva sua resposta..."
+                                                />
+                                                <button
+                                                    className={styles.sendButton}
+                                                    onClick={() => handleSubmitResponse(feedback.id)}
+                                                >
+                                                    Enviar Resposta
+                                                </button>
+                                            </div>
+                                        )}
+
+                                        {feedback.resposta && (
+                                            <div className={styles.response}>
+                                                <strong>Resposta: </strong>
+                                                <p>{feedback.resposta}</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                );
+                            })
+                        ) : (
+                            <p>Nenhum feedback recebido ainda.</p>
+                        )}
+                    </div>
+                </section>
+
+            </main>
             <Footer />
         </>
     );
