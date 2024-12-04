@@ -18,7 +18,6 @@
 .icons_container {
     display: flex;
     justify-content: space-between;
-
 }
 
 .icon {
@@ -51,7 +50,6 @@
     margin-top: 6rem;
     align-items: center;
     justify-content: space-evenly;
-
 }
 
 .group_container {
@@ -70,8 +68,8 @@
 .versus {
     font-size: 1.5rem;
     font-weight: bold;
-
 }
+
 /* Container do pop-up */
 .confronto_containerBackground {
     position: fixed;
@@ -109,9 +107,11 @@
     font-size: 1.2rem;
     color: #333;
 }
-.sla{
+
+.sla {
     text-align: right;
 }
+
 /* Contêiner dos times */
 .time_container {
     display: flex;
@@ -207,6 +207,12 @@
 .drawButton {
     background-color: #dd2929;
     color: #ffffff;
+}
+
+/* Estilo para o botão selecionado (quando a borda deve ficar verde) */
+.winButton.selected {
+    border: 2px solid green;  /* Aplica a borda verde */
+    background-color: #d0f7d6;  /* Fundo mais claro para o botão selecionado */
 }
 
 /* Responsividade */
