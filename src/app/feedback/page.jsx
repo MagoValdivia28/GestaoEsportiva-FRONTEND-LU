@@ -242,12 +242,8 @@ const FeedBack = () => {
                     )}
                 </div>
             </section>
-<<<<<<< HEAD
 
-
-=======
             <Footer />
->>>>>>> 6580b36ea53088d3eab8059543a546fbf8e9ae5b
         </main>
     );
 };
