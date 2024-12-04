@@ -69,16 +69,6 @@ const GdeEquipes = () => {
             setPendingTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
             setApprovedTeams((prev) => [...prev, { ...team, status: 'aprovada' }]);
             setShowGuarantee(null);
-        } else if (response.message == "Acesso não autorizado" || response.message == "Token não autorizado") {
-            setError({ status: 'error', message: response.message });
-            setTimeout(() => {
-                setError(null);
-                router.push('/login');
-            }, 1000); // Reduced timeout
-        }
-        else {
-            setError({ status: 'error', message: response.message });
-            setTimeout(() => setError(null), 1000); // Reduced timeout
         }
     };
 
@@ -91,16 +81,6 @@ const GdeEquipes = () => {
         if (updated) {
             setPendingTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
             setRejectedTeams((prev) => [...prev, { ...team, status: 'rejeitada' }]);
-        } else if (response.message == "Acesso não autorizado" || response.message == "Token não autorizado") {
-            setError({ status: 'error', message: response.message });
-            setTimeout(() => {
-                setError(null);
-                router.push('/login');
-            }, 1000); // Reduced timeout
-        }
-        else {
-            setError({ status: 'error', message: response.message });
-            setTimeout(() => setError(null), 1000); // Reduced timeout
         }
     };
 
@@ -110,16 +90,6 @@ const GdeEquipes = () => {
         if (updated) {
             setRejectedTeams((prev) => prev.filter((t) => t.time_id !== team.time_id));
             setPendingTeams((prev) => [...prev, { ...team, status: 'pendente' }]);
-        } else if (response.message == "Acesso não autorizado" || response.message == "Token não autorizado") {
-            setError({ status: 'error', message: response.message });
-            setTimeout(() => {
-                setError(null);
-                router.push('/login');
-            }, 1000); // Reduced timeout
-        }
-        else {
-            setError({ status: 'error', message: response.message });
-            setTimeout(() => setError(null), 1000); // Reduced timeout
         }
     };
 
