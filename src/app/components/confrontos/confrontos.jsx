@@ -6,11 +6,16 @@ import { deleteConfronto } from '@/src/actions/api';
 import { AuthContext } from '@/src/contexts/AuthContext';
 import { useContext, useEffect, useState } from 'react';
 import { updateConfronto } from "@/src/actions/api";
+import { FaCrown } from "react-icons/fa";
 
 const Confrontos = ({ idPartida, data, confrontos }) => {
+    console.log(confrontos);
+
     const { user, acessToken } = useContext(AuthContext);
+    console.log(confrontos);
 
     const [selectedWinner, setSelectedWinner] = useState(null);
+    const [selectedDefeat, setSelectedDefeat] = useState(null);
     const [winTimeName, setWinTimeName] = useState(null);
     const [popUpConfronto, setPopUpConfronto] = useState(false);
     const handleDelete = async () => {
@@ -23,39 +28,53 @@ const Confrontos = ({ idPartida, data, confrontos }) => {
         const data = {
             winner: true,
             tie: false,
-            pontos: 100,
             updAtIdUser: user.id
         };
         const response = await updateConfronto(selectedWinner.confrontoid, data, acessToken);
-        if (response.status == "sucess") {
+        const data2 = {
+            winner: false,
+            tie: false,
+            updAtIdUser: user.id
+        };
+        const response2 = await updateConfronto(selectedDefeat.confrontoid, data2, acessToken);
+
+        if (response.status == "sucess" && response2.status == "sucess") {
             setSelectedWinner(selectedWinner.confrontoid.time);
-            console.log(response);
             window.location.reload();
-        } else {
-            console.log(response);
         }
     };
 
-    const handleDraw = async () => {
+    const handleDraw = async (team1, team2) => {
+        const data = {
+            winner: false,
+            tie: true,
+            updAtIdUser: user.id
+        };
+        const response = await updateConfronto(team1.confrontoid, data, acessToken);
+        const data2 = {
+            winner: false,
+            tie: true,
+            updAtIdUser: user.id
+        };
+        const response2 = await updateConfronto(team2.confrontoid, data2, acessToken);
+
+        if (response.status == "sucess" && response2.status == "sucess") {
+            window.location.reload();
+        }
     }
 
 
     const handleUpdate = async () => {
     };
-    const handleWin = (team) => {
-        setSelectedWinner(team);
-        setWinTimeName(team.time.nome);
-        console.log(selectedWinner);
-
+    const handleWin = (team1, team2) => {
+        setSelectedWinner(team1);
+        setSelectedDefeat(team2);
+        setWinTimeName(team1.time.nome);
     };
 
 
     const handlepopUpConfronto = (confrontos, idPartida) => {
         setPopUpConfronto(!popUpConfronto);
-
-        console.log(popUpConfronto);
-        console.log(confrontos);
-        console.log(idPartida);
     };
 
     return (
@@ -83,18 +102,20 @@ const Confrontos = ({ idPartida, data, confrontos }) => {
                                     <div className={styles.group_container}>
                                         <FaUserGroup className={styles.group} />
                                         <h5>{confrontos[0].time.nome}</h5>
+                                        {confrontos[0].winner && <FaCrown className={styles.crown} />}
                                     </div>
                                     <div className={styles.group_container}>
                                         <FaUserGroup className={styles.group} />
                                         <h5>{confrontos[1].time.nome}</h5>
+                                        {confrontos[1].winner && <FaCrown className={styles.crown} />}
                                     </div>
                                 </div>
                                 <div className={styles.btnContainer}>
                                     <button className={styles.saveButton} onClick={handleSelectWinner}>Salvar</button>
                                     <div className={styles.buttonsContainer}>
-                                        <button className={styles.winButton} onClick={() => handleWin(confrontos[0])}>{confrontos[0].time.nome} Venceu</button>
-                                        {/* <button className={styles.drawButton} onClick={handleDraw()}>Empate</button> */}
-                                        <button className={styles.winButton} onClick={() => handleWin(confrontos[1])}>{confrontos[1].time.nome} Venceu</button>
+                                        <button className={styles.winButton} onClick={() => handleWin(confrontos[0], confrontos[1])}>{confrontos[0].time.nome} Venceu</button>
+                                        <button className={styles.drawButton} onClick={() => handleDraw(confrontos[0], confrontos[1])}>Empate</button>
+                                        <button className={styles.winButton} onClick={() => handleWin(confrontos[1], confrontos[0])}>{confrontos[1].time.nome} Venceu</button>
                                     </div>
 
 
@@ -117,13 +138,21 @@ const Confrontos = ({ idPartida, data, confrontos }) => {
                     <div className={styles.group_container}>
                         <FaUserGroup className={styles.group} />
                         <h5>{confrontos[0].time.nome}</h5>
+                        {confrontos[0].winner && <FaCrown className={styles.crown} />}
                     </div>
-                    <h1>00</h1>
-                    <h1 className={styles.versus}>X</h1>
-                    <h1>00</h1>
+                    <div className={styles.containerEmpate}>
+
+                        {
+                            confrontos[0].tie == true && confrontos[1].tie == true && (
+                                <h1 className={styles.versus}>Empate</h1>
+                            )
+                        }
+                        <h1 className={styles.versus}>X</h1>
+                    </div>
                     <div className={styles.group_container}>
                         <FaUserGroup className={styles.group} />
                         <h5>{confrontos[1].time.nome}</h5>
+                        {confrontos[1].winner && <FaCrown className={styles.crown} />}
                     </div>
                 </div>
             </li >

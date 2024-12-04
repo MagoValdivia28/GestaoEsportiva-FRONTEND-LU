@@ -26,6 +26,18 @@
     cursor: pointer;
     font-size: 1.5rem;
     color: #767676;
+    transition: color 0.3s ease;
+}
+
+.containerEmpate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.icon:hover {
+    color: #dd2929;
 }
 
 .date {
@@ -47,6 +59,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .group {
@@ -73,6 +86,7 @@
     overflow: hidden;
     z-index: 1000;
 }
+
 .confronto_container {
     background: white;
     padding: 30px;
@@ -82,6 +96,7 @@
     width: 100%;
     text-align: center;
 }
+
 .time_container {
     display: flex;
     justify-content: space-between;
@@ -89,22 +104,36 @@
     align-items: center;
     justify-content: space-evenly;
 }
+
 .group_container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
+
 .group {
     font-size: 3.5rem;
     color: #767676;
 }
+
+.crown {
+    font-size: 2rem;
+    color: gold;
+    position: absolute;
+    top: -1.5rem;
+    right: -0.5rem;
+    transform: rotate(45deg);
+}
+
 .btnContainer {
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
     align-items: baseline;
 }
+
 .exitButton {
     padding: 10px 20px;
     background-color: #dd2929;
@@ -116,6 +145,7 @@
     position: relative;
     left: 9rem;
 }
+
 .saveButton {
     padding: 10px 20px;
     background-color: #838383;
@@ -127,11 +157,13 @@
     position: relative;
     right: 9rem;
 }
+
 .sla {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .sla h2 {
     font-size: 24px;
     color: #333;
@@ -139,6 +171,7 @@
     position: relative;
     left: 2rem;
 }
+
 .buttonsContainer {
     display: flex;
     margin-top: 2rem;
@@ -148,8 +181,9 @@
     align-items: stretch;
     position: relative;
     right: 3rem;
-    
+
 }
+
 .winButton {
     padding: 6px 12px;
     background-color: #dd2929;
@@ -159,6 +193,7 @@
     cursor: pointer;
     font-size: 16px;
 }
+
 .drawButton {
     padding: 6px 12px;
     background-color: #838383;
