@@ -7,9 +7,11 @@ import { CgProfile } from "react-icons/cg";
 import Image from "next/image";
 import Header from "../components/header/header";
 import aapm from "../../../assets/imagens/aapmimg2.webp";
+import Footer from "../components/footer/page";
 
 const Aapm = () => {
     return (
+        <>
         <main className={styles.main_container}>
                 <Header className={styles.header} />
             <div className={styles.header_container}>
@@ -98,6 +100,8 @@ const Aapm = () => {
                 </div>
             </section>
         </main>
+        <Footer />
+        </>
     );
 };
 
