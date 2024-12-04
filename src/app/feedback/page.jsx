@@ -107,6 +107,7 @@ const FeedBack = () => {
     };
 
     return (
+        <>
         <main className={styles.mainContainer}>
             <Header />
             <section className={styles.aboutSection}>
@@ -243,8 +244,9 @@ const FeedBack = () => {
                 </div>
             </section>
 
-            <Footer />
         </main>
+            <Footer />
+        </>
     );
 };
 
