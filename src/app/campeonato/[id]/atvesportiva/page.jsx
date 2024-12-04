@@ -9,6 +9,7 @@ import { getAPI } from '@/src/actions/api';
 import { useParams } from 'next/navigation';
 import FormularioModalidade from '@/src/app/components/PopUpModalidade';
 import ButtonBack from '@/src/app/components/ButtonBack/page';
+import Footer from '@/src/app/components/footer/page';
 
 const Gestaoesportes = () => {
   const { id } = useParams();
@@ -81,7 +82,10 @@ const Gestaoesportes = () => {
 
       {/* Pop-up modal */}
       <FormularioModalidade isOpen={showModal} onClose={handleCloseModal} campeonato_id={id} onModalidadeAdded={fetchModalidades} />
-    </div>
+
+      <Footer />
+      </div>
+
   );
 };
 
