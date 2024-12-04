@@ -4,10 +4,12 @@
     text-align: center;
     position: relative;
 }
-.main{
+
+.main {
     margin-top: 4%;
     margin-bottom: 3%;
 }
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -28,9 +30,10 @@
 }
 
 
-.add{
+.add {
     display: block;
 }
+
 .title {
     padding: 2%;
     margin-bottom: 10px;
@@ -71,6 +74,7 @@
 
 @media (max-width: 768px) {
     .add {
-        display: none; /* Ocultar em telas menores que 768px */
+        display: none;
+        /* Ocultar em telas menores que 768px */
     }
 }

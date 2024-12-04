@@ -90,3 +90,21 @@
     display: block;
     margin-top: 0.9rem;
 }
+
+@media (max-width: 768px) {
+    .placar {
+        width: 90%;
+        height: auto;
+    }
+
+    .VDP_container,
+    .VDPinfo_container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .VDP,
+    .VDPinfo {
+        margin: 0.5rem 0;
+    }
+}
