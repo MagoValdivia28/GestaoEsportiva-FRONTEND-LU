@@ -15,14 +15,19 @@ const Historico = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedCampeonato, setSelectedCampeonato] = useState(null);
   const [campeonatos, setCampeonatos] = useState([]);
+  const [campeoes, setCampeoes] = useState([]);
+
 
   useEffect(() => {
-    const getAllCampeonatos = async () => {
-      const data = await getAPI('campeonatos');
-      setCampeonatos(data.campeonatos || []);
+    const getCampeoes = async () => {
+      const data = await getAPI('confrontos/top');
+      setCampeoes(data.data || []);
     };
-    getAllCampeonatos();
+    getCampeoes();
   }, []);
+
+  console.log(campeoes);
+  
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -52,13 +57,13 @@ const Historico = () => {
         </div>
         <div className={styles.line}></div>
         <section className={styles.cardsContainer}>
-          {campeonatos.length > 0 ? (
-            campeonatos.map((campeonato, index) => (
+          {campeoes.length > 0 ? (
+            campeoes.map((campeonato, index) => (
               <div key={index} className={styles.card} onClick={() => handleCardClick(campeonato)}>
-                <Image src={Logo} alt={campeonato.titulo} width={80} height={80} className={styles.logo} />
-                <h3>{campeonato.titulo}</h3>
+                <Image src={Logo} alt={campeonato.campeonato_titulo} width={80} height={80} className={styles.logo} />
+                <h3>{campeonato.campeonato_titulo}</h3>
                 <div className={styles.linecard}></div>
-                <p>{formatDate(campeonato.data_final)}</p>
+                <p>{formatDate(campeonato.campeonato_data_final)}</p>
               </div>
             ))
           ) : (
@@ -70,10 +75,10 @@ const Historico = () => {
           <div className={styles.modalOverlay} onClick={closeModal}>
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
               <button className={styles.closeButton} onClick={closeModal}>&times;</button>
-              <h3>{selectedCampeonato.titulo}</h3>
+              <h3>{selectedCampeonato.campeonato_titulo}</h3>
               <div className={styles.linecard}></div>
-              <Image src={Logo} alt={selectedCampeonato.titulo} width={120} height={120} className={styles.modalImage} />
-              <p><strong>Vencedor:</strong> {selectedCampeonato.vencedor}</p>
+              <Image src={Logo} alt={selectedCampeonato.campeonato_titulo} width={120} height={120} className={styles.modalImage} />
+              <p><strong>Vencedor:</strong> {selectedCampeonato.time_nome}</p>
             </div>
           </div>
         )}
