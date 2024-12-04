@@ -1,9 +1,6 @@
 .mainContainer {
     width: 100%;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
-    padding-top: -2rem;
+    padding: 2rem;
 }
 
 /* Seção Sobre */
@@ -20,15 +17,15 @@
 }
 
 .aboutText h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #444;
+    color: #333;
 }
 
 .aboutText p {
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.6;
     color: #666;
 }
 
@@ -37,8 +34,8 @@
     background-image: url('../../../assets/imagens/feedbackLu.jpg');
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
-    height: 250px;
+    border-radius: 12px;
+    height: 300px; /* Aumentei o tamanho da imagem */
 }
 
 /* Seção Valores */
@@ -54,46 +51,42 @@
     text-align: center;
     padding: 2rem;
     margin: 1rem;
-    border-radius: 12px; /* Bordas arredondadas */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-    background-color: #fefefe; /* Fundo claro */
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid #d32f2f; /* Bordas sutis */
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #d32f2f;
 }
 
 .valueCard:hover {
-    transform: translateY(-10px); /* Elevação ao passar o mouse */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Intensifica a sombra */
-    border-color: #d32f2f; /* Realça a borda no hover */
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .valueCard .icon {
-    font-size: 3rem; /* Ícones maiores */
-    color: #000000;
+    font-size: 3rem;
+    color: #d32f2f;
     margin-bottom: 1rem;
 }
 
 .valueCard h3 {
-    font-size: 1.5rem; /* Adiciona título para o valor */
+    font-size: 1.6rem;
     font-weight: bold;
     color: #333;
-    margin-bottom: 1rem;
 }
 
 .valueCard p {
     font-size: 1rem;
     color: #555;
-    line-height: 1.6; /* Melhor espaçamento para legibilidade */
+    line-height: 1.6;
 }
-
-
 
 /* Seção de Feedbacks Recebidos */
 .receivedFeedbacks {
     background-color: #ffffff;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(147, 4, 4, 0.507);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     max-width: 80%;
     margin: 2rem auto;
     font-family: 'Arial', sans-serif;
@@ -118,7 +111,7 @@
     width: 48%;
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(255, 30, 30, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
     border: 2px solid #ff6b6b;
     transition: box-shadow 0.3s, transform 0.3s;
@@ -126,18 +119,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 1.5rem;
 }
 
 .title {
     text-align: left;
     margin-left: 5%;
     margin-bottom: 10px;
-    margin-top: 4%;
 }
 
 .titleRed {
     color: #d32f2f;
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 
 .titleBlack {
@@ -146,6 +139,7 @@
     margin-left: 8px;
     font-weight: 500;
 }
+
 .replyContainer {
     margin-top: 1rem;
     display: flex;
@@ -158,17 +152,95 @@
     padding: 0.75rem;
     font-size: 1rem;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     width: 100%;
     box-sizing: border-box;
+    transition: border-color 0.3s;
 }
+
+.replyInput:focus {
+    border-color: #d32f2f;
+}
+.sendfeedback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .feedbackForm {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .feedbackForm h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .feedbackInput {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .feedbackInput:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .sendButton {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sendButton:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 600px) {
+    .feedbackForm {
+      padding: 15px;
+    }
+    
+    .feedbackInput {
+      height: 120px;
+      font-size: 14px;
+    }
+    
+    .sendButton {
+      padding: 10px;
+    }
+  }
+  
 
 /* Botão de enviar resposta */
 .sendButton {
     padding: 0.75rem 2rem;
     font-size: 1rem;
     color: #fff;
-    background-color: #ff4b4b;
+    background-color: #d32f2f;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -176,7 +248,7 @@
 }
 
 .sendButton:hover {
-    background-color: #d32f2f;
+    background-color: #b71c1c;
     transform: scale(1.05);
 }
 
@@ -187,7 +259,6 @@
     color: #333;
     font-weight: 500;
     background-color: #f4f4f4;
-    /* Fundo leve para destacar */
     padding: 0.5rem;
     border-radius: 8px;
 }
@@ -213,8 +284,7 @@
 .replyButton:hover {
     background-color: #ff4b4b;
     transform: scale(1.05);
-} 
-
+}
 
 .rating {
     display: flex;
@@ -225,7 +295,6 @@
 .starFilled {
     color: #ffd700;
     font-size: 1.2rem;
-    /* Aumenta o tamanho da estrela */
 }
 
 .starEmpty {
@@ -235,10 +304,8 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
-    /* Containers principais */
     .mainContainer {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding: 1rem;
     }
 
     /* Seção Sobre */
@@ -246,15 +313,7 @@
         flex-direction: column;
         gap: 1rem;
     }
-    .title {
-        margin-left: 0;
-    }
-    .titleRed {
-        font-size: 2.5rem;
-    }
-    .titleBlack {
-        font-size: 1.5rem;
-    }
+
     .aboutImage {
         height: 200px;
     }

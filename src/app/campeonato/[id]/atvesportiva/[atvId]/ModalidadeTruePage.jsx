@@ -10,6 +10,7 @@ import { useParams } from "next/navigation";
 import { AuthContext } from '@/src/contexts/AuthContext';
 import PopUpError from '@/src/app/components/PopUpError';
 import Guarantee from '@/src/app/components/GuaranteePopUp';
+import Footer from "@/src/app/components/footer/page";
 
 const ModalidadeTruePage = ({ modalidade, teams }) => {
   const { user, acessToken } = useContext(AuthContext);
