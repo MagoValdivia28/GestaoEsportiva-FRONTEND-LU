@@ -20,6 +20,13 @@
   text-align: left;
   color: #000000;
 }
+@media screen and (max-width: 600px) {
+  .title {
+    margin-left: 0;
+    text-align: center;
+  }
+  
+}
 
 .titleRed {
   color: #d32f2f;
