@@ -63,9 +63,6 @@ O projeto estará disponível em `http://localhost:3000`.
 ### Página de Login
 ![Login](assets/imagens/loginImage.png)
 
-### Página de Modalidade
-![Modalidade](assets/imagens/modalidade.png)
-
 ### Página de Modalidades
 ![Modalidade Placar](assets/imagens/modalidadePageImage.png)
 
