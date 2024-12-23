@@ -75,6 +75,3 @@ O projeto estará disponível em `http://localhost:3000`.
 ### Página de Modalidade - Confrontos
 ![Modalidade Confrontos](assets/imagens/FutebolScreen2.png)
 
-## Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
