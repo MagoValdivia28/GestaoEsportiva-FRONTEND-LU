@@ -29,3 +29,52 @@ Este é o frontend do projeto de Gestão Esportiva, desenvolvido com Next.js e R
 
 ```bash
 git clone https://github.com/seu-usuario/gestao-esportiva-frontend.git
+```
+
+2. Navegue até o diretório do projeto:
+
+```bash
+cd gestao-esportiva-frontend
+```
+
+3. Instale as dependências:
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+4. Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+# ou
+yarn dev
+```
+
+O projeto estará disponível em `http://localhost:3000`.
+
+## Estrutura de Imagens Demonstrativas
+
+### Página de Campeonatos
+![Campeonatos](assets/imagens/campeonatosImage.png)
+
+### Página de Login
+![Login](assets/imagens/loginImage.png)
+
+### Página de Modalidade
+![Modalidade](assets/imagens/modalidade.png)
+
+### Página de Modalidades
+![Modalidade Placar](assets/imagens/modalidadePageImage.png)
+
+### Página de Modalidade - Placar
+![Modalidade Placar](assets/imagens/futebolScreen1.png)
+
+### Página de Modalidade - Confrontos
+![Modalidade Confrontos](assets/imagens/FutebolScreen2.png)
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
